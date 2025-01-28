@@ -122,6 +122,15 @@
     </div>
 
    <style>
+
+@media (max-width: 768px) {
+    .package-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
     .carousel-container {
     overflow: hidden;
     position: relative;
@@ -267,44 +276,48 @@
     
     <script>
         const carouselRow = document.querySelector('.carousel-row');
-        const items = document.querySelectorAll('.package-item');
-        const prevButton = document.querySelector('.carousel-arrow.left');
-        const nextButton = document.querySelector('.carousel-arrow.right');
-        const itemsToShow = 3; // Nombre d'éléments visibles
-        let currentIndex = 0;
-    
-        // Fonction pour afficher l'élément suivant
-        function showNextItem() {
-            if (currentIndex < items.length - itemsToShow) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Retourne au début si on atteint la fin
-            }
-            updateCarousel();
-        }
-    
-        // Fonction pour afficher l'élément précédent
-        function showPrevItem() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = items.length - itemsToShow; // Va à la fin si on est au début
-            }
-            updateCarousel();
-        }
-    
-        // Met à jour la position du carrousel
-        function updateCarousel() {
-            const translateX = -currentIndex * (100 / itemsToShow); // Déplacement en fonction des éléments visibles
-            carouselRow.style.transform = `translateX(${translateX}%)`;
-        }
-    
-        // Ajout des événements sur les boutons
-        nextButton.addEventListener('click', showNextItem);
-        prevButton.addEventListener('click', showPrevItem);
-    
-        // Défilement automatique toutes les 5 secondes
-        setInterval(showNextItem, 5000);
+const items = document.querySelectorAll('.package-item');
+const prevButton = document.querySelector('.carousel-arrow.left');
+const nextButton = document.querySelector('.carousel-arrow.right');
+let itemsToShow = window.innerWidth < 768 ? 1 : 3; // 1 élément sur mobile, 3 sur PC
+let currentIndex = 0;
+
+function updateItemsToShow() {
+    itemsToShow = window.innerWidth < 768 ? 1 : 3;
+    updateCarousel();
+}
+
+function showNextItem() {
+    if (currentIndex < items.length - itemsToShow) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+}
+
+function showPrevItem() {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = items.length - itemsToShow;
+    }
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const translateX = -currentIndex * (100 / itemsToShow);
+    carouselRow.style.transform = `translateX(${translateX}%)`;
+}
+
+// Événements
+nextButton.addEventListener('click', showNextItem);
+prevButton.addEventListener('click', showPrevItem);
+window.addEventListener('resize', updateItemsToShow); // Réajuste en fonction de la taille de l'écran
+
+// Défilement automatique
+setInterval(showNextItem, 5000);
+       
     </script>
     
     
