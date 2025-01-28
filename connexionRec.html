@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BTEC - BEST TECHNOLOGY CORPORATION</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h3 class="text-primary">BTEC Bénin</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="#" class="nav-item nav-link">BTEC Event</a>
+                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                </div>
+                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4">E-tickets</a>
+            </div>
+        </nav> 
+
+      <!-- Hero Header avec le formulaire de connexion -->
+      <div class="hero-header" style="background-image: url('img/accueil.jpg'); background-size: cover; background-position: center; position: relative;">
+        <!-- Overlay assombrissant appliqué uniquement sur l'image -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    
+        <!-- Contenu du texte et des boutons -->
+        <div class="container py-5" style="position: relative; z-index: 2;"> <!-- Assurez-vous que le contenu est au-dessus de l'overlay -->
+            <div class="row justify-content-center py-5">
+                <div class="col-lg-4 d-flex flex-column justify-content-center text-center mt-5">
+                    <h3 class="text-white">
+                        Connectez-vous sur notre plateforme et découvrez <br> 
+                        un espace où les talents rencontrent les opportunités
+                    </h3>
+                </div>
+                
+
+                <div class="col-lg-6 mx-auto mt-5">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-4">
+                            <h4 class="text-center text-primary mb-4">Connexion</h4>
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label"><strong>Adresse Email</strong></label>
+                                    <input type="email" id="email" class="form-control" placeholder="Entrez votre email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label"><strong>Mot de Passe</strong></label>
+                                    <input type="password" id="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                                </div>
+                                <p class="text-center mt-3">
+                                    Pas encore inscrit ? <a href="recruteur.html" class="text-primary">Créez un compte</a>.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+                    <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+                </div>
+
+                <!-- Stay Informed Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Restez informés</h4>
+                    <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+                    <a href="#" class="btn btn-primary">M'inscrire en tant qu'entreprise</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container py-3">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

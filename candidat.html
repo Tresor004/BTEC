@@ -44,7 +44,7 @@
                     <a href="index.html" class="nav-item nav-link active">Accueil</a>
                     <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
                     <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
-                    <a href="package.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
                     <a href="#" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
@@ -60,44 +60,152 @@
         <!-- Contenu du texte et des boutons -->
         <div class="container py-5" style="position: relative; z-index: 2;"> <!-- Assurez-vous que le contenu est au-dessus de l'overlay -->
             <div class="row justify-content-center py-5">
+
                 <div class="col-lg-4 d-flex flex-column justify-content-center text-center mt-5">
                     <h3 class="text-white">
-                        Connectez-vous sur notre plateforme et découvrez <br> 
-                        un espace où les talents rencontrent les opportunités
+                        Pas encore inscrit ? Veuillez suivre les instructions
                     </h3>
                 </div>
-                
 
-                <div class="col-lg-6 mx-auto mt-5">
-                    <div class="card shadow-lg">
-                        <div class="card-body p-4">
-                            <h4 class="text-center text-primary mb-4">Connexion</h4>
-                            <form id="loginForm">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Adresse Email</label>
-                                    <input type="email" id="email" class="form-control" placeholder="Entrez votre email" required>
+                <div class="col-lg-6 mx-auto mt-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-3">
+                            <h4 class="text-center text-primary mb-3">Inscription Candidat</h4>
+                            <form id="multiStepForm">
+                                <!-- Partie 1 -->
+                                <div id="step-1" class="form-step active">
+                                    <h6 class="text-center mb-2">1. Informations personnelles</h6>
+                                    <div class="row mb-2">
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label"><strong>Nom</strong></label>
+                                            <input type="text" id="lastName" class="form-control form-control-sm" placeholder="Nom" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label"><strong>Prénom</strong></label>
+                                            <input type="text" id="firstName" class="form-control form-control-sm" placeholder="Prénom" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="email" class="form-label"><strong>Email</strong></label>
+                                        <input type="email" id="email" class="form-control form-control-sm" placeholder="Email" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="phone" class="form-label"><strong>Téléphone</strong></label>
+                                        <input type="tel" id="phone" class="form-control form-control-sm" placeholder="Téléphone" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="password" class="form-label"><strong>Mot de Passe</strong></label>
+                                        <input type="password" id="password" class="form-control form-control-sm" placeholder="Mot de Passe" required>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="button" class="btn btn-primary btn-sm next-step">Suivant<i class="bi bi-arrow-right-short"></i></button>
+                                    </div>
+                                    <p class="text-center mt-3">
+                                        Vous êtes déjà inscrit ? <a href="connexionCan.html" class="text-primary">Connectez-vous</a>.
+                                    </p>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Mot de Passe</label>
-                                    <input type="password" id="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+                                
+                
+                                <!-- Partie 2 -->
+                                <div id="step-2" class="form-step d-none">
+                                    <h6 class=" text-center mb-2">2. Informations complémentaires</h6>
+                                    <div class="mb-2">
+                                        <label for="birthDate" class="form-label"><strong>Date de Naissance</strong></label>
+                                        <input type="date" id="birthDate" class="form-control form-control-sm" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="birthPlace" class="form-label"><strong>Lieu de Naissance</strong></label>
+                                        <input type="text" id="birthPlace" class="form-control form-control-sm" placeholder="Lieu de Naissance" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="gender" class="form-label"><strong>Sexe</strong></label>
+                                        <select id="gender" class="form-select form-select-sm" required>
+                                            <option value="">Sélectionnez</option>
+                                            <option value="male">Masculin</option>
+                                            <option value="female">Féminin</option>
+                                            <option value="other">Autre</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="residence" class="form-label"><strong>Zone de Résidence</strong></label>
+                                        <input type="text" id="residence" class="form-control form-control-sm" placeholder="Zone de Résidence" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="maritalStatus" class="form-label"><strong>Situation Matrimoniale</strong></label>
+                                        <select id="maritalStatus" class="form-select form-select-sm" required>
+                                            <option value="">Sélectionnez</option>
+                                            <option value="single">Célibataire avec enfant(s)</option>
+                                            <option value="single">Célibataire sans enfant(s)</option>
+                                            <option value="married">Marié(e) avec enfant(s)</option>
+                                            <option value="married">Marié(e) sans enfant(s)</option>
+                                        </select>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <button type="button" class="btn btn-secondary btn-sm prev-step" style="background-color: #6c757d; color: white;"><i class="bi bi-arrow-left-short"></i>Précédent</button>
+                                        <button type="button" class="btn btn-primary btn-sm next-step">Suivant<i class="bi bi-arrow-right-short"></i></button>
+                                    </div>
                                 </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">Se connecter</button>
+                
+                                <!-- Partie 3 -->
+                                <div id="step-3" class="form-step d-none">
+                                    <h6 class="text-center mb-2">3. Informations académiques</h6>
+                                    <div class="mb-2">
+                                        <label for="field" class="form-label"><strong>Filière</strong></label>
+                                        <input type="text" id="field" class="form-control form-control-sm" placeholder="Filière" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="studyLevel" class="form-label"><strong>Niveau d'Étude</strong></label>
+                                        <input type="text" id="studyLevel" class="form-control form-control-sm" placeholder="Niveau d'Étude" required>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <button type="button" class="btn btn-secondary btn-sm prev-step" style="background-color: #6c757d; color: white;"><i class="bi bi-arrow-left-short"></i>Précédent</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">Soumettre  <i class="bi bi-check2-all"></i></button>
+                                    </div> 
                                 </div>
-                                <p class="text-center mt-3">
-                                    Pas encore inscrit ? <a href="inscription.html" class="text-primary">Créez un compte</a>.
-                                </p>
                             </form>
                         </div>
                     </div>
                 </div>
                 
-
+                <script>
+                    const steps = document.querySelectorAll(".form-step");
+                    const nextButtons = document.querySelectorAll(".next-step");
+                    const prevButtons = document.querySelectorAll(".prev-step");
+                
+                    let currentStep = 0;
+                
+                    function showStep(step) {
+                        steps.forEach((formStep, index) => {
+                            formStep.classList.toggle("d-none", index !== step);
+                            formStep.classList.toggle("active", index === step);
+                        });
+                    }
+                
+                    nextButtons.forEach((btn) => {
+                        btn.addEventListener("click", () => {
+                            if (currentStep < steps.length - 1) {
+                                currentStep++;
+                                showStep(currentStep);
+                            }
+                        });
+                    });
+                
+                    prevButtons.forEach((btn) => {
+                        btn.addEventListener("click", () => {
+                            if (currentStep > 0) {
+                                currentStep--;
+                                showStep(currentStep);
+                            }
+                        });
+                    });
+                
+                    showStep(currentStep);
+                </script>                   
             </div>
         </div>
     </div>
-
     </div>
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
         <div class="container">
