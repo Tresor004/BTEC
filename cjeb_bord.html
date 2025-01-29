@@ -23,7 +23,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/stylecj.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,8 +46,8 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Accueil</a>
                     <a href="about.html" class="nav-item nav-link">Qui sommes-nous</a>
-                    <a href="cvtheque.html" class="nav-item nav-link active">CVthèque</a>
-                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link active">Projet CJEB</a>
                     <a href="#" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
@@ -55,32 +55,63 @@
             </div>
         </nav>
 
-        <div class="hero-header" style="background-image: url('img/bib.jpg'); background-size: cover; background-position: center; position: relative;">
-            <!-- Overlay assombrissant appliqué uniquement sur l'image -->
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-        
-            <!-- Contenu du texte et des boutons -->
-            <div class="container py-5" style="position: relative; z-index: 2;"> <!-- Assurez-vous que le contenu est au-dessus de l'overlay -->
-                <div class="row justify-content-center py-5">
-                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                        <h1 class="display-3 text-white mb-3 animated slideInDown"><i>CVthèque</i></h1>
-                        <p class="fs-4 text-white mb-4 animated slideInDown">
-                            <h3 class="text-white">Trouvez le candidat idéal : découvrez leurs expériences, leurs compétences et leur potentiel pour une embauche réussie.</h3>
-                        </p>
+        <br><br><br><br>
+
+        <div class="container-fluid bg-dark text-light py-3 mt-0 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="text-white mb-3 modif">Modifier mon profil</h4>
                     </div>
+                    <div class="col-md-6 d-flex align-items-center essai">
+                        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                        <h4 class="text-white mb-1 border-end border-white pe-3">GANKPE <br> Ornel <i class="fa fa-pencil-alt profile-icon"></i></h4>
+                        <p class="ms-3">Niveau : WELCOME</p>  
+                    </div>
+                    
+                    <style>
+                        .modif{
+                            margin-top: 20px;
+                        }
+                          .profile-img {
+                                width: 80px;
+                                height: 80px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                                border: 1px solid gray;
+                                padding: 3px; 
+                                position: relative;
+                            }
+
+                            .profile-icon {
+                                font-size: 3px; /* Taille de l'icône */
+                                background-color: transparent; /* Fond transparent */
+                                border: 2px solid white; /* Bordure blanche */
+                                border-radius: 50%; /* Forme ronde */
+                                padding: 5px; /* Espacement autour de l'icône */
+                                margin-top: 10px; /* Espacement au-dessus de l'icône */
+                                cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
+                            }
+                            .profile-icon:hover {
+                                font-size: 5px; /* Taille de l'icône */
+                                background-color: transparent; /* Fond transparent */
+                                border: 2px solid greenyellow; /* Bordure blanche */
+                                border-radius: 50%; /* Forme ronde */
+                                padding: 5px; /* Espacement autour de l'icône */
+                                margin-top: 10px; /* Espacement au-dessus de l'icône */
+                                cursor:pointer; /* Change le curseur pour indiquer qu'il est cliquable */
+                            }
+
+                    </style>
                 </div>
             </div>
         </div>
-        
     </div>
-    <!-- Hero Section End -->
-
-  
+    <!-- Process Start -->
     <div class="container py-5">
         <div class="row">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
-                <h1 class="mb-5">Recommandés</h1>
+                <h1 class="mb-1">personnes parrainées : 3 </h1>
             </div>
             <div class="container py-5">
                 <div class="row justify-content-center">
@@ -94,12 +125,11 @@
                                     <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
                                 </div>
                             </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
                         </div>
                     </div>
-            
+                </div> <br>
+
+                <div class="row justify-content-center">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card p-3 mb-3">
                             <div class="d-flex align-items-center">
@@ -110,12 +140,11 @@
                                     <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
                                 </div>
                             </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
                         </div>
                     </div>
-            
+                </div> <br>
+
+                <div class="row justify-content-center">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card p-3 mb-3">
                             <div class="d-flex align-items-center">
@@ -126,64 +155,18 @@
                                     <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
                                 </div>
                             </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="text-center text-md-end mt-3">
-                    <a href="" class="btn btn-primary rounded-pill py-2 px-4 buton">Voir plus <i class="bi bi-arrow-right-short"></i></a>
                 </div>
             </div>
+
+            <div class="row justify-content-center text-center">
+                <div class="col-auto">
+                    <p class="mb-2">Vous avez adhéré au projet CJEB grâce à :</p>
+                    <h6 class="mb-0 fw-bold">Ornel GANKPE</h6>
+                </div>
+            </div>
+            
             
             <style>
                 .card {
@@ -214,16 +197,11 @@
                     border: 2px solid #86B817;
                     padding: 3px;
                 }
-                .buton:hover{
-                    transform: scale(0.8);
-                }
             </style>
             
                 
             </div>
     </div>
-    <!-- Service End -->
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
         <div class="container">
