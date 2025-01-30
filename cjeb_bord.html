@@ -50,13 +50,13 @@
                     <a href="#" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
-                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4">E-tickets</a>
+                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
             </div>
         </nav>
 
         <br><br><br><br>
 
-       <a href="javascript:void(0);" onclick="ouvrirPopup()">
+       
         <div class="container-fluid bg-dark text-light py-3 mt-0 ">
             <div class="container">
                 <div class="row">
@@ -71,8 +71,7 @@
                 </div>
             </div>
         </div>
-       </a> 
-       
+        
     </div>
 
     <!-- Popup Modal -->
@@ -80,7 +79,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="popupModalLabel">Modifier mon profil</h5>
+                    <h5 class="modal-title" id="popupModalLabel">Détails</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -89,28 +88,21 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Prénom"  required>
+                                <input type="text" class="form-control" id="firstName" placeholder="Prénom" value="Ornel" readonly>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Nom" required>
+                                <input type="text" class="form-control" id="lastName" placeholder="Nom" value="GANKPE" readonly>
                             </div>
                         </div>
                 
                         <!-- Champ Niveau (non modifiable) -->
                         <div class="mb-3">
                             <label for="level" class="form-label">Niveau</label>
-                            <input type="text" class="form-control" id="level" value="LEADER" readonly>
-                        </div>
-                
-                        <!-- Champ photo de profil -->
-                        <div class="mb-3">
-                            <label for="profileImage" class="form-label">Photo de profil</label>
-                            <input type="file" class="form-control" id="profileImage" accept="image/*">
-                        </div>
-                
+                            <input type="text" class="form-control" id="level" value="WELCOME" readonly>
+                        </div>    
                         <!-- Bouton de soumission -->
-                        <button type="submit" class="btn btn-primary w-100">Mettre à jour mon profil</button>
+                        <h6 class="mb-0 fw-bold">Nombre de parrainés : 2</h6>
                     </form>
                 </div>
                 
@@ -139,54 +131,62 @@
             <h1 class="mb-1">Personnes Parrainées : 3 </h1>
         </div>
         <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card p-3 mb-3">
-                        <div class="d-flex align-items-center">
-                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                            <div>
-                                <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
-                                <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
-                                <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+
+            <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card p-3 mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                                <div>
+                                    <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
+                                    <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
+                                    <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> 
+                </div> 
+            </a>
+          
             
             <br>
 
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card p-3 mb-3">
-                        <div class="d-flex align-items-center">
-                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                            <div>
-                                <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
-                                <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
-                                <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+            <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card p-3 mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                                <div>
+                                    <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
+                                    <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
+                                    <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> 
+                </div> 
+            </a> 
 
             <br>
 
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card p-3 mb-3">
-                        <div class="d-flex align-items-center">
-                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                            <div>
-                                <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
-                                <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
-                                <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+            <a href="javascript:void(0);" onclick="ouvrirPopup()">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card p-3 mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                                <div>
+                                    <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
+                                    <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
+                                    <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> 
+                </div> 
+            </a>
             
             <br>
 
@@ -209,6 +209,26 @@
                 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                 border: 1px solid #86B817;
             }
+            .card {
+                max-width: 400px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+                padding: 20px;
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                border: 1px solid #86B817;
+            }
+
+            .card:hover {
+                max-width: 400px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+                padding: 20px;
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                border: 1px solid #86B817;
+                transform: scale(1.1);
+            }
         
             .profile-img {
                 width: 80px;
@@ -218,6 +238,16 @@
                 border: 2px solid #86B817;
                 padding: 3px;
             }
+
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #86B817;
+                padding: 3px;
+            }
+            
         </style>
         
     </div>

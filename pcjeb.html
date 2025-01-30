@@ -51,7 +51,7 @@
                     <a href="#" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
-                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4">E-tickets</a>
+                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
             </div>
         </nav>
 
@@ -68,13 +68,48 @@
             </div>
         </div>
     </div>
+
+    <style>
+        .hero-header {
+            height: 510px; /* Ajuste la hauteur selon ton besoin */
+            padding: 50px 0; /* Diminue le padding vertical */
+        }     
+    </style>
+
     <!-- Process Start -->
     <div class="container-xxl py-3">
         <div class="container">
             <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Description</h6>
                 <h1 class="mb-3">Comment ca fonctionne ?</h1>
-                <p class="mb-4"> Le projet CJEB est un projet dont le but est d'accompagner les nouveaux entrepreneurs dans leur déut de carrière. Pour cela les entrepreneurs recevront de la part de l'entreprise un montant de 200 000 Fcfa pour démarrer leur start-Up mais avant, ils se doivent de franchir plusieurs niveaux donnés : </p>
+                <p class="mb-4" style="text-align: justify; text-justify: inter-word;">Le projet CJEB (Cercle des Jeunes Entrepreneurs du Bénin)
+                    est une initiative du cabinet BTEC Bénin avec pour mission de promouvoir 
+                    l'auto-emploi des jeunes à travers une formation et un accompagnement financier.
+                    <br><br> Vous êtes un jeune passionné par l'entrepreneuriat et vous souhaitez créer votre propre entreprise... <br>
+                    C'est le moment de vous lancer. Cliquez sur <a href="#" data-bs-toggle="modal" data-bs-target="#popupModal">ce lien</a> pour connaître les pièces à fournir.
+                </p>
+
+                <!-- Fenêtre modale -->
+<div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel">Pièces à fournir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li><p style="text-align: justify; text-justify: inter-word;">Photocopie de la pièce d'identité</p></li><br>
+                    <li><p style="text-align: justify; text-justify: inter-word;">Photocopie du diplôme</p></li><br>
+                    <li><p style="text-align: justify; text-justify: inter-word;">Fiche d'adhésion</p></li><br>
+                    <li><p style="text-align: justify; text-justify: inter-word;">2 photos d'identité</p></li><br>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
             </div>
             <div class="row row-cols-1 row-cols-md-3 gy-5 gx-4 justify-content-center">
                 <!-- Forfait Simple -->
