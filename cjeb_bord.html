@@ -22,7 +22,6 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/stylecj.css" rel="stylesheet">
 </head>
 
@@ -57,6 +56,7 @@
 
         <br><br><br><br>
 
+       <a href="javascript:void(0);" onclick="ouvrirPopup()">
         <div class="container-fluid bg-dark text-light py-3 mt-0 ">
             <div class="container">
                 <div class="row">
@@ -65,143 +65,174 @@
                     </div>
                     <div class="col-md-6 d-flex align-items-center essai">
                         <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                        <h4 class="text-white mb-1 border-end border-white pe-3">GANKPE <br> Ornel <i class="fa fa-pencil-alt profile-icon"></i></h4>
-                        <p class="ms-3">Niveau : WELCOME</p>  
+                        <h4 class="text-white mb-1 border-end border-white pe-3">GANKPE <br> Ornel</h4>
+                        <p class="ms-3">Niveau : LEADER</p>  
                     </div>
-                    
-                    <style>
-                        .modif{
-                            margin-top: 20px;
-                        }
-                          .profile-img {
-                                width: 80px;
-                                height: 80px;
-                                border-radius: 50%;
-                                object-fit: cover;
-                                border: 1px solid gray;
-                                padding: 3px; 
-                                position: relative;
-                            }
-
-                            .profile-icon {
-                                font-size: 3px; /* Taille de l'icône */
-                                background-color: transparent; /* Fond transparent */
-                                border: 2px solid white; /* Bordure blanche */
-                                border-radius: 50%; /* Forme ronde */
-                                padding: 5px; /* Espacement autour de l'icône */
-                                margin-top: 10px; /* Espacement au-dessus de l'icône */
-                                cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
-                            }
-                            .profile-icon:hover {
-                                font-size: 5px; /* Taille de l'icône */
-                                background-color: transparent; /* Fond transparent */
-                                border: 2px solid greenyellow; /* Bordure blanche */
-                                border-radius: 50%; /* Forme ronde */
-                                padding: 5px; /* Espacement autour de l'icône */
-                                margin-top: 10px; /* Espacement au-dessus de l'icône */
-                                cursor:pointer; /* Change le curseur pour indiquer qu'il est cliquable */
-                            }
-
-                    </style>
                 </div>
             </div>
         </div>
+       </a> 
+       
     </div>
-    <!-- Process Start -->
-    <div class="container py-5">
-        <div class="row">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-1">personnes parrainées : 3 </h1>
-            </div>
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <br>
 
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <br>
-
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Popup Modal -->
+    <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="popupModalLabel">Modifier mon profil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-
-            <div class="row justify-content-center text-center">
-                <div class="col-auto">
-                    <p class="mb-2">Vous avez adhéré au projet CJEB grâce à :</p>
-                    <h6 class="mb-0 fw-bold">Ornel GANKPE</h6>
+                <div class="modal-body">
+                    <form>
+                        <!-- Nom et Prénom côte à côte -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Prénom"  required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Nom" required>
+                            </div>
+                        </div>
+                
+                        <!-- Champ Niveau (non modifiable) -->
+                        <div class="mb-3">
+                            <label for="level" class="form-label">Niveau</label>
+                            <input type="text" class="form-control" id="level" value="LEADER" readonly>
+                        </div>
+                
+                        <!-- Champ photo de profil -->
+                        <div class="mb-3">
+                            <label for="profileImage" class="form-label">Photo de profil</label>
+                            <input type="file" class="form-control" id="profileImage" accept="image/*">
+                        </div>
+                
+                        <!-- Bouton de soumission -->
+                        <button type="submit" class="btn btn-primary w-100">Mettre à jour mon profil</button>
+                    </form>
                 </div>
-            </div>
-            
-            
-            <style>
-                .card {
-                    max-width: 400px;
-                    border-radius: 10px;
-                    border: none;
-                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-                    padding: 20px;
-                    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-                    border-bottom: 2px;
-                    border-color: #86B817;
-                    border-style: solid;
-                    border-top: 0px;
-                    border-left: 0px;
-                    border-right: 0px;
-                }
-            
-                .card:hover {
-                    transform: scale(1.01);
-                    border: 1px solid #86B817;
-                }
-            
-                .profile-img {
-                    width: 80px;
-                    height: 80px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    border: 2px solid #86B817;
-                    padding: 3px;
-                }
-            </style>
-            
                 
             </div>
+        </div>
     </div>
+
+    <style>
+        .modif{
+            margin-top: 20px;
+        }
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid gray;
+            padding: 3px;
+            position: relative;
+        }
+    </style>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-1">Personnes Parrainées : 3 </h1>
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card p-3 mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                            <div>
+                                <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
+                                <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
+                                <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <br>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card p-3 mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                            <div>
+                                <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
+                                <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
+                                <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <br>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card p-3 mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                            <div>
+                                <p class="card-title mb-1"><strong>Nom : </strong><span class="text-muted">GANKPE</span></p>
+                                <p class="card-title mb-1"><strong>Prénom : </strong><span class="text-muted">Ornel</span></p>
+                                <p class="card-title mb-1"><strong>Niveau actuel : </strong><span class="text-muted">WELCOME</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <br>
+
+        </div>
+
+        <div class="row justify-content-center text-center">
+            <div class="col-auto">
+                <p class="mb-2">Vous avez adhéré au projet CJEB grâce à :</p>
+                <h6 class="mb-0 fw-bold">Ornel GANKPE</h6>
+            </div>
+        </div>
+        
+        <style>
+            .card {
+                max-width: 400px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+                padding: 20px;
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                border-bottom: 2px;
+                border-color: #86B817;
+                border-style: solid;
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+            }
+        
+            .card:hover {
+                transform: scale(1.01);
+                border: 1px solid #86B817;
+            }
+        
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #86B817;
+                padding: 3px;
+            }
+        </style>
+        
+    </div>
+</div>
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
         <div class="container">
@@ -251,6 +282,16 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        // Ouvrir le pop-up
+        function ouvrirPopup() {
+            var popup = new bootstrap.Modal(document.getElementById('popupModal'), {
+                keyboard: false
+            });
+            popup.show();
+        }
+    </script>
 </body>
 
 </html>
