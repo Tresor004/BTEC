@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -38,50 +37,152 @@
         </div>
     </nav>
 
+     <!-- Bande défilante d'images -->
+    <div class="image-slider">
+        <div class="slider-track">
+            <img src="img/accueil.jpg" alt="Image 1">
+            <img src="img/accueil.jpg" alt="Image 2">
+            <img src="img/accueil.jpg" alt="Image 3">
+            <img src="img/accueil.jpg" alt="Image 4">
+            <img src="img/accueil.jpg" alt="Image 5">
+            <img src="img/accueil.jpg" alt="Image 6">
+            <img src="img/accueil.jpg" alt="Image 7">
+            <img src="img/accueil.jpg" alt="Image 8">
+            <!-- Doubler les images pour un effet de boucle continue -->
+            <img src="img/accueil.jpg" alt="Image 1">
+            <img src="img/accueil.jpg" alt="Image 2">
+            <img src="img/accueil.jpg" alt="Image 3">
+            <img src="img/accueil.jpg" alt="Image 4">
+            <img src="img/accueil.jpg" alt="Image 5">
+            <img src="img/accueil.jpg" alt="Image 6">
+            <img src="img/accueil.jpg" alt="Image 7">
+            <img src="img/accueil.jpg" alt="Image 8">
+        </div>
+    </div>
+
+    <style>
+    /* Style pour la bande défilante */
+    .image-slider {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        background-color: #000;
+        padding: 10px 0;
+    }
+
+    .slider-track {
+        display: flex;
+        width: 200%;
+        animation: scroll 50s linear infinite;
+    }
+
+    .slider-track img {
+        width: 12.5%; /* 100% / 8 images */
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    /* Animation pour le défilement */
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+    </style>
+
+
+
     <!-- Section Événements -->
     <div class="container py-5">
         <h2 class="text-center mb-4">Événements à venir</h2>
-        <div class="row">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
             <!-- Événement 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/concert.jpg" class="card-img-top" alt="Événement 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Concert Live</h5>
-                        <p class="card-text">Venez vibrer au rythme des meilleurs artistes de l'année !</p>
+            <div class="col">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <img src="img/concert.jpg" class="card-img-top rounded-3" alt="Concert Live">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Concert Live</h6>
+                        <p class="card-text">Venez vibrer au rythme des meilleurs artistes !</p>
                         <p><strong>Prix :</strong> 10.000 CFA</p>
-                        <button class="btn btn-primary w-100" onclick="ouvrirPopup('Concert Live', '10000')">Acheter un ticket</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Événement 2 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/conference.jpg" class="card-img-top" alt="Événement 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Conférence Tech</h5>
-                        <p class="card-text">Découvrez les nouvelles tendances de la technologie.</p>
-                        <p><strong>Prix :</strong> 15.000 CFA</p>
-                        <button class="btn btn-primary w-100" onclick="ouvrirPopup('Conférence Tech', '15000')">Acheter un ticket</button>
+                        <button class="btn btn-primary w-auto py-2 px-4" onclick="ouvrirPopup('Concert Live', '10000')">Acheter</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Événement 3 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/campagne.jpg" class="card-img-top" alt="Événement 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Gala de Charité</h5>
-                        <p class="card-text">Un dîner d’exception pour une belle cause.</p>
-                        <p><strong>Prix :</strong> 20.000 CFA</p>
-                        <button class="btn btn-primary w-100" onclick="ouvrirPopup('Gala de Charité', '20000')">Acheter un ticket</button>
+            <div class="col">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <img src="img/concert.jpg" class="card-img-top rounded-3" alt="Concert Live">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Concert Live</h6>
+                        <p class="card-text">Venez vibrer au rythme des meilleurs artistes !</p>
+                        <p><strong>Prix :</strong> 10.000 CFA</p>
+                        <button class="btn btn-primary w-auto py-2 px-4" onclick="ouvrirPopup('Concert Live', '10000')">Acheter</button>
                     </div>
                 </div>
             </div>
+
+            <div class="col">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <img src="img/concert.jpg" class="card-img-top rounded-3" alt="Concert Live">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Concert Live</h6>
+                        <p class="card-text">Venez vibrer au rythme des meilleurs artistes !</p>
+                        <p><strong>Prix :</strong> 10.000 CFA</p>
+                        <button class="btn btn-primary w-auto py-2 px-4" onclick="ouvrirPopup('Concert Live', '10000')">Acheter</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <img src="img/concert.jpg" class="card-img-top rounded-3" alt="Concert Live">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Concert Live</h6>
+                        <p class="card-text">Venez vibrer au rythme des meilleurs artistes !</p>
+                        <p><strong>Prix :</strong> 10.000 CFA</p>
+                        <button class="btn btn-primary w-auto py-2 px-4" onclick="ouvrirPopup('Concert Live', '10000')">Acheter</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Répéter ce modèle pour les autres événements -->
         </div>
     </div>
+    
+    
+    <style>
+    .card {
+        font-size: 0.8rem;
+        height: 300px; /* Augmenter la hauteur de la card */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border-radius: 1rem; /* Bord arrondi pour la card */
+        transform: perspective(1000px) rotateX(5deg);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: perspective(1000px) rotateX(0deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card img {
+        height: 120px; /* Augmenter la taille de l'image pour mieux remplir la card */
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 1rem; /* Arrondir le coin supérieur gauche de l'image */
+        border-top-right-radius: 1rem; /* Arrondir le coin supérieur droit de l'image */
+    }
+    
+    .btn {
+        width: auto; /* Ajuster la largeur du bouton */
+        padding: 0.5rem 1rem; /* Réduire le padding pour une taille plus ajustée */
+    }
+    </style>
+    
+
+    
 
     <!-- Popup d'achat de ticket -->
     <div class="modal fade" id="popupModal" tabindex="-1" aria-hidden="true">
@@ -113,34 +214,6 @@
             </div>
         </div>
     </div>
-
-     
-<!-- Section Partenaires -->
-<div class="container-fluid bg-white py-4">
-    <div class="container text-center">
-        <h4 class="mb-4">Nos Partenaires</h4>
-        <div class="row justify-content-center">
-            <div class="col-6 col-md-2">
-                <img src="img/aa.jpg" class="img-fluid" alt="Partenaire 1" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="250" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/pac.png" class="img-fluid" alt="Partenaire 4" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/sab.png" class="img-fluid" alt="Partenaire 6" width="200" height="150">
-            </div>
-        </div>
-    </div>
-</div>
 
     
 
