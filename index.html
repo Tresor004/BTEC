@@ -424,35 +424,53 @@
         </div>
     </div>
     
-     <!-- Section Partenaires -->
+    <!-- Section Partenaires avec Carrousel -->
 <div class="container-fluid bg-white py-4">
     <div class="container text-center">
         <h4 class="mb-4">Nos Partenaires</h4>
-        <div class="row justify-content-center">
-            <div class="col-6 col-md-2">
-                <img src="img/aa.jpg" class="img-fluid" alt="Partenaire 1" width="200" height="150">
+        <div id="carouselPartenaires" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active text-center">
+                    <img src="img/aa.jpg" class="img-fluid" alt="Partenaire 1" width="150" height="100">
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="150" height="100">
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3"  width="150" height="100">
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="img/pac.png" class="img-fluid" alt="Partenaire 4"  width="150" height="100">
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="200" height="150">
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="img/sab.png" class="img-fluid" alt="Partenaire 6" width="200" height="150">
+                </div>
             </div>
-            <div class="col-6 col-md-2">
-                <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="250" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/pac.png" class="img-fluid" alt="Partenaire 4" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="200" height="150">
-            </div>
-            <div class="col-6 col-md-2">
-                <img src="img/sab.png" class="img-fluid" alt="Partenaire 6" width="200" height="150">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
         </div>
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let carousel = new bootstrap.Carousel(document.querySelector('#carouselPartenaires'), {
+            interval: 5000, // Défilement automatique toutes les 2 secondes
+            ride: 'carousel',
+            wrap: true
+        });
+    });
+</script>
 
-        
     <!-- Footer Start -->
      
     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
