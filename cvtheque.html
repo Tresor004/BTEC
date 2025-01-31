@@ -92,152 +92,131 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
                 <h1 class="mb-5">Recommandés</h1>
             </div>
+
             <div class="container py-2">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
+                    <div class="container mt-5">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card p-3 mb-3" style="cursor: pointer;" onclick="openPopup()">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
+                                    <div>
+                                        <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
+                                        <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
+                                        <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
+                                    </div>
                                 </div>
+                                <p class="card-text"><strong>École de formation :</strong> SONOU</p>
+                                <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
+                                <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
                             </div>
-                            <p class="card-text"><strong>École de formation :</strong> SONOU</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Master (BAC +5)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> IFRI</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> PIGIER</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Organisé, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
+                             <!-- Overlay -->
+                             <div class="popup-overlay" onclick="closePopup()"></div>
+                             <!-- Pop-up -->
+                             <div class="popup">
+                                 <span class="close-btn" onclick="closePopup()">×</span>
+                                 <h5 class="mb-3">Veuillez vous connecter</h5>
+                                 <p>Pour accéder à cette information, veuillez vous connecter.</p>
+                                 <a href="connexionRec.html" class="btn btn-primary mt-3">Se connecter</a>
+                             </div>
+                        </div> 
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card p-3 mb-3" style="cursor: pointer;" onclick="openPopup()">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
+                                    <div>
+                                        <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
+                                        <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
+                                        <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
+                                    </div>
                                 </div>
+                                <p class="card-text"><strong>École de formation :</strong> SONOU</p>
+                                <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
+                                <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
                             </div>
-                            <p class="card-text"><strong>École de formation :</strong>ISM</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Excellent, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Master (BAC +5)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
+                             <!-- Overlay -->
+                             <div class="popup-overlay" onclick="closePopup()"></div>
+                             <!-- Pop-up -->
+                             <div class="popup">
+                                 <span class="close-btn" onclick="closePopup()">×</span>
+                                 <h5 class="mb-3">Veuillez vous connecter</h5>
+                                 <p>Pour accéder à cette information, veuillez vous connecter.</p>
+                                 <a href="connexionRec.html" class="btn btn-primary mt-3">Se connecter</a>
+                             </div>
+                        </div> 
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card p-3 mb-3" style="cursor: pointer;" onclick="openPopup()">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
+                                    <div>
+                                        <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
+                                        <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
+                                        <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
+                                    </div>
                                 </div>
+                                <p class="card-text"><strong>École de formation :</strong> SONOU</p>
+                                <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
+                                <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
                             </div>
-                            <p class="card-text"><strong>École de formation :</strong> ESM</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Excellent, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">BAC</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> Aucune</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Adaptatif, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> ENEAM</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Master (BAC +5)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Gestion comptable</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> ENAM</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Organisé, Objectif, Travail sous pression</p>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card p-3 mb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                                <div>
-                                    <p class="card-title mb-1">Référence : <span class="text-muted">REF00012320</span></p>
-                                    <p class="card-title mb-1">Diplôme : <span class="text-muted">Licence (BAC +3)</span></p>
-                                    <p class="card-title mb-1">Formation : <span class="text-muted">Génie Informatique</span></p>
-                                </div>
-                            </div>
-                            <p class="card-text"><strong>École de formation :</strong> ERGIS</p>
-                            <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                            <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                        </div>
+                             <!-- Overlay -->
+                             <div class="popup-overlay" onclick="closePopup()"></div>
+                             <!-- Pop-up -->
+                             <div class="popup">
+                                 <span class="close-btn" onclick="closePopup()">×</span>
+                                 <h5 class="mb-3">Veuillez vous connecter</h5>
+                                 <p>Pour accéder à cette information, veuillez vous connecter.</p>
+                                 <a href="connexionRec.html" class="btn btn-primary mt-3">Se connecter</a>
+                             </div>
+                        </div> 
                     </div>
                 </div>
+ 
+                <style>
+                    /* Styles pour la pop-up */
+                    .popup {
+                        display: none;
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 300px;
+                        background: white;
+                        padding: 20px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                        border-radius: 10px;
+                        z-index: 1000;
+                    }
+                    .popup-overlay {
+                        display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        z-index: 999;
+                    }
+                    .close-btn {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                        cursor: pointer;
+                        font-size: 20px;
+                    }
+                </style>
+
+                <script>
+                    function openPopup() {
+                        document.querySelector(".popup").style.display = "block";
+                        document.querySelector(".popup-overlay").style.display = "block";
+                    }
+                    
+                    function closePopup() {
+                        document.querySelector(".popup").style.display = "none";
+                        document.querySelector(".popup-overlay").style.display = "none";
+                    }
+                </script>
             
                 <div class="text-center text-md-end mt-3">
                     <a href="connexionRec.html" class="btn btn-primary rounded-pill py-2 px-4 buton">Voir plus <i class="bi bi-arrow-right-short"></i></a>
@@ -378,37 +357,35 @@
     
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Choisir des nombres fixes dans les plages spécifiées
-            const fixedCandidates = 16451;  // Entre 100000 et 900000
-            const fixedRecruiters = 563;    // Entre 1000 et 10000
-            const fixedFormations = 50;      // Entre 50 et 100
-            const fixedRecrutements = 10000; // Entre 10000 et 100000
-    
-            // Fonction pour l'animation des nombres
-            function animateNumber(element, targetValue, duration) {
-                let currentValue = 0;
-                const stepTime = duration / targetValue;
-                const interval = setInterval(function() {
-                    currentValue++;
-                    element.textContent = currentValue;
-                    if (currentValue === targetValue) {
-                        clearInterval(interval);
-                    }
-                }, stepTime);
+      document.addEventListener("DOMContentLoaded", function() {
+    // Nombres fixes
+    const fixedValues = {
+        candidates: 16451,
+        recruiters: 563,
+        formations: 50,
+        recrutements: 10000
+    };
+
+    // Fonction pour simuler l'animation
+    function animateNumber(element, targetValue, duration) {
+        let startTime = Date.now();
+        let interval = setInterval(() => {
+            let elapsed = Date.now() - startTime;
+            if (elapsed >= duration) {
+                clearInterval(interval);
+                element.textContent = targetValue;
+            } else {
+                element.textContent = Math.floor(Math.random() * targetValue * 1.2);
             }
-    
-            // Remplir les éléments avec les nombres choisis avec animation
-            const candidatesElement = document.querySelector(".number-candidates");
-            const recruitersElement = document.querySelector(".number-recruiters");
-            const formationsElement = document.querySelector(".number-formations");
-            const recrutementsElement = document.querySelector(".number-recrutements");
-    
-            animateNumber(candidatesElement, fixedCandidates, 0.5);  // Animation rapide (1 seconde)
-            animateNumber(recruitersElement, fixedRecruiters, 10);  // Animation rapide (1 seconde)
-            animateNumber(formationsElement, fixedFormations, 1000);  // Animation rapide (1 seconde)
-            animateNumber(recrutementsElement, fixedRecrutements, 0.5);  // Animation rapide (1 seconde)
-        });
+        }, 50);
+    }
+
+    // Sélection des éléments
+    animateNumber(document.querySelector(".number-candidates"), fixedValues.candidates, 2000);
+    animateNumber(document.querySelector(".number-recruiters"), fixedValues.recruiters, 2000);
+    animateNumber(document.querySelector(".number-formations"), fixedValues.formations, 2000);
+    animateNumber(document.querySelector(".number-recrutements"), fixedValues.recrutements, 2000);
+});
     </script>
     
 
