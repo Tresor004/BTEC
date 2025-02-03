@@ -2,71 +2,123 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CV - Exemple</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Sylvie Loiseau</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
         .cv-container {
-            max-width: 800px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        .cv-header {
+        .sidebar {
+            background: #d3d3d3; /* Gris pour le reste */
+            color: black;
+            padding: 20px;
+            width: 30%;
             text-align: center;
         }
-        .cv-header img {
-            width: 120px;
-            border-radius: 50%;
+        .sidebar-header {
+            background: #008cba; /* Bleu pour la partie supérieure */
+            color: white;
+            padding: 20px;
+            margin: -20px -20px 20px -20px; /* Étend la couleur bleue sur toute la largeur */
+            text-align: center;
         }
-        @media print {
-            #download-cv {
-                display: none;
-            }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            background: url('photo.jpg') no-repeat center/cover; /* Ajout de l'image */
+        }
+        .content {
+            padding: 20px;
+            width: 70%;
+        }
+        h2 {
+            color: #008cba;
+        }
+        .nom {
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 5px 0;
         }
     </style>
 </head>
 <body>
-    <div class="container py-5 d-flex justify-content-center">
-        <div id="cv" class="cv-container">
-            <div class="cv-header">
-                <img src="https://via.placeholder.com/120" alt="Photo de profil">
-                <h2>Nom Prénom</h2>
-                <p>Développeur Web</p>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-pic"></div>
+                <h2 class="nom">Sylvie Loiseau</h2>
+                <p>Esthéticienne expérimentée</p>
             </div>
-            <hr>
-            <h4>Expérience professionnelle</h4>
-            <ul>
-                <li><strong>Entreprise A</strong> - Développeur Web (2020 - Présent)</li>
-                <li><strong>Entreprise B</strong> - Intégrateur Web (2018 - 2020)</li>
-            </ul>
-            <h4>Compétences</h4>
-            <ul>
-                <li>HTML, CSS, JavaScript, Bootstrap</li>
-                <li>React, Vue.js</li>
-                <li>PHP, Laravel</li>
-            </ul>
-            <h4>Éducation</h4>
-            <p><strong>Université X</strong> - Licence en Informatique (2015 - 2018)</p>
-            <h4>Contact</h4>
-            <p>Email: exemple@email.com | Téléphone: 06 XX XX XX XX</p>
-            <button class="btn btn-primary" id="download-cv">Télécharger le CV</button>
-        </div>
+            <div class="info">
+                <p><strong>Email:</strong> fr@demo.com</p>
+                <p><strong>Téléphone:</strong> 0623845102</p>
+                <p><strong>Adresse:</strong> 14, rue des rosiers, 37261 Tours</p>
+            </div>
+            <div class="competences">
+                <h3>Compétences</h3>
+                <ul>
+                    <li>Soins visage</li>
+                    <li>Modelage</li>
+                    <li>Vente</li>
+                </ul>
+            </div>
+            <div class="qualites">
+                <h3>Qualités</h3>
+                <ul>
+                    <li>Dynamique</li>
+                    <li>Ponctuelle</li>
+                    <li>Souriante</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="content">
+            <section class="profile">
+                <h2>Profil</h2>
+                <p>Esthéticienne expérimentée (15 ans) ayant exercé en spa et en institut de beauté...</p>
+            </section>
+            <section class="experience">
+                <h2>Expérience professionnelle</h2>
+                <div class="job">
+                    <h3>Esthéticienne spa</h3>
+                    <p>BellaDerm, Tours (2010 - Présent)</p>
+                    <ul>
+                        <li>Soins minceur, gommages, massages...</li>
+                        <li>Vente de produits cosmétiques</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Esthéticienne</h3>
+                    <p>Loire Beauté, Tours (2005 - 2010)</p>
+                    <ul>
+                        <li>Accueil des clientes, fidélisation</li>
+                        <li>Soins du visage, maquillage</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="formation">
+                <h2>Formation</h2>
+                <p>BTS esthétique-cosmétique-parfumerie - 2005</p>
+                <p>Lycée privé esthétique de Touraine, Tours</p>
+            </section>
+        </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script>
-        document.getElementById("download-cv").addEventListener("click", function() {
-            const cvElement = document.getElementById("cv");
-            document.getElementById("download-cv").style.display = "none";
-            html2pdf(cvElement).then(() => {
-                document.getElementById("download-cv").style.display = "block";
-            });
-        });
-    </script>
 </body>
 </html>
