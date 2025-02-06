@@ -276,10 +276,7 @@
           <a href="#" class="nav-item nav-link">BTEC Event</a>
           <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
         </div>
-        <!-- Bouton de déconnexion converti en lien -->
-        <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
-          <i class="bi bi-box-arrow-right deconnect"></i>
-        </a>
+        <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
       </div>
     </nav>
 
@@ -288,24 +285,7 @@
       <div class="container py-5 connect" style="position: relative; z-index: 2;">
         <div class="row justify-content-center py-5">
           <div class="col-md-6 d-flex align-items-center flex-column flex-md-row">
-            <!-- Conteneur pour l'image et le statut -->
-            <div class="profile-container me-3">
-              <img src="img/profil.webp" alt="Photo Profil" class="profil-img">
-              <span class="status-indicator"></span>
-            </div>
-            <h4 class="text-white mb-1 border-end border-white pe-3">
-              GANKPE <br> Ornel
-              <small>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
-                  <i class="bi bi-pencil-square"></i>
-                </a>
-              </small>
-            </h4>
-            <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
-              <i class="bi bi-box-arrow-right deconnect"></i>
-            </a>
-          </div>
-
+    
           <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
             <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
             <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
@@ -389,165 +369,41 @@
   </div>
   
 
-   <!-- Pop-up -->
-   <div id="popup" class="popup-overlay">
-    <div class="popup-content">
-        <div class="popup-left p-4 bg-light rounded-start">
-            <h3>Tech Solutions</h3>
-            <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
-            <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
-            <p><strong>Lieu :</strong> Cotonou</p>
-            <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
-            <p><strong>Expérience requise :</strong> 2 ans minimum</p>
-            <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
-            <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
+  <!-- Pop-up -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content d-flex flex-column flex-md-row">
+      <div class="popup-left p-4 bg-light rounded-start">
+        <h3>Tech Solutions</h3>
+        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
+        <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
+        <p><strong>Lieu :</strong> Cotonou</p>
+        <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
+        <p><strong>Expérience requise :</strong> 2 ans minimum</p>
+        <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
+        <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
+      </div>
+      <div class="popup-right p-4">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h3 class="mb-4">Postuler</h3>
+        <form id="applyForm">
+          <div class="mb-3">
+            <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
+            <input type="file" class="form-control" id="cv" accept=".pdf">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Brève description :</label>
+            <textarea class="form-control" id="description" rows="10"></textarea>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </div>
+        </form>
+        <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
+          <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
         </div>
-        <div class="popup-right p-4">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h3 class="mb-4">Postuler</h3>
-            <form id="applyForm">
-                <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
-                <input type="file" class="form-control" id="cv" accept=".pdf">
-                <label for="description" class="form-label">Brève description :</label>
-                <textarea class="form-control" id="description" rows="5"></textarea>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
-            <div id="successMessage" class="alert" style="display: none;">
-                <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
-            </div>
-        </div>
+      </div>
     </div>
-</div>
-
-<script>
-    // Fonction pour ouvrir la pop-up
-    function openPopup() {
-        document.getElementById("popup").style.display = "flex";
-    }
-
-    // Fonction pour fermer la pop-up
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-
-    // Gestion de l'envoi du formulaire
-    document.getElementById("applyForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        var successMessage = document.getElementById("successMessage");
-        successMessage.style.display = "block";
-        setTimeout(function() {
-            successMessage.style.display = "none";
-            closePopup();
-        }, 3000);
-    });
-</script>
-
-<style>
-    /* Styles généraux */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Overlay de la pop-up */
-    .popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    /* Contenu de la pop-up */
-    .popup-content {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        width: 90%;
-        max-width: 600px;
-        max-height: 70vh;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        animation: fadeIn 0.3s ease-in-out;
-        position: relative;
-    }
-
-    /* Sections gauche et droite de la pop-up */
-    .popup-left,
-    .popup-right {
-        width: 100%;
-    }
-
-    @media (min-width: 768px) {
-        .popup-content {
-            flex-direction: row;
-        }
-        .popup-left,
-        .popup-right {
-            width: 50%;
-        }
-    }
-
-    /* Animation de la pop-up */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
-    }
-
-    /* Bouton de fermeture */
-    .close {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 20px;
-        cursor: pointer;
-    }
-
-    /* Styles du formulaire */
-    .form-label {
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    .form-control {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-
-    .btn:hover {
-        background-color: #039f5b;
-    }
-
-    .alert {
-        padding: 15px;
-        background-color: #4CAF50;
-        color: white;
-        margin-top: 20px;
-        border-radius: 5px;
-    }
-</style>
+  </div>
 
   <!-- Modal pour modifier le profil -->
   <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
