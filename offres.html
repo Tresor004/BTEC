@@ -370,40 +370,58 @@
   
 
   <!-- Pop-up -->
-  <div id="popup" class="popup-overlay">
-    <div class="popup-content d-flex flex-column flex-md-row">
-      <div class="popup-left p-4 bg-light rounded-start">
-        <h3>Tech Solutions</h3>
-        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
-        <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
-        <p><strong>Lieu :</strong> Cotonou</p>
-        <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
-        <p><strong>Expérience requise :</strong> 2 ans minimum</p>
-        <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
-        <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
-      </div>
-      <div class="popup-right p-4">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <h3 class="mb-4">Postuler</h3>
-        <form id="applyForm">
-          <div class="mb-3">
-            <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
-            <input type="file" class="form-control" id="cv" accept=".pdf">
-          </div>
-          <div class="mb-3">
-            <label for="description" class="form-label">Brève description :</label>
-            <textarea class="form-control" id="description" rows="10"></textarea>
-          </div>
-          <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-          </div>
-        </form>
-        <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
-          <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
+   <!-- Pop-up -->
+   <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-left p-4 bg-light rounded-start">
+            <h3>Tech Solutions</h3>
+            <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
+            <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
+            <p><strong>Lieu :</strong> Cotonou</p>
+            <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
+            <p><strong>Expérience requise :</strong> 2 ans minimum</p>
+            <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
+            <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
         </div>
-      </div>
+        <div class="popup-right p-4">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h3 class="mb-4">Postuler</h3>
+            <form id="applyForm">
+                <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
+                <input type="file" class="form-control" id="cv" accept=".pdf">
+                <label for="description" class="form-label">Brève description :</label>
+                <textarea class="form-control" id="description" rows="5"></textarea>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+            <div id="successMessage" class="alert" style="display: none;">
+                <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+<script>
+    // Fonction pour ouvrir la pop-up
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    // Fonction pour fermer la pop-up
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // Gestion de l'envoi du formulaire
+    document.getElementById("applyForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var successMessage = document.getElementById("successMessage");
+        successMessage.style.display = "block";
+        setTimeout(function() {
+            successMessage.style.display = "none";
+            closePopup();
+        }, 3000);
+    });
+</script>
 
   <!-- Modal pour modifier le profil -->
   <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
