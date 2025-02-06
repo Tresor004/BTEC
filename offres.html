@@ -390,8 +390,8 @@
   
 
   <!-- Pop-up -->
-  <div id="popup" class="popup-overlay">
-    <div class="popup-content d-flex flex-column flex-md-row">
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
       <div class="popup-left p-4 bg-light rounded-start">
         <h3>Tech Solutions</h3>
         <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
@@ -424,6 +424,55 @@
       </div>
     </div>
   </div>
+
+  <style>
+    .popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px; /* Largeur maximale réduite */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.popup-left,
+.popup-right {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .popup-content {
+    flex-direction: row;
+  }
+  .popup-left,
+  .popup-right {
+    width: 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+  </style>
 
   <!-- Modal pour modifier le profil -->
   <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
