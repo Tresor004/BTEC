@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voir Mon CV - BTEC</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- External Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Bootstrap and Custom Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylecj.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .cv-container {
+            display: flex;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            background: #d3d3d3; /* Gris pour le reste */
+            color: black;
+            padding: 20px;
+            width: 30%;
+            text-align: center;
+        }
+        .sidebar-header {
+            background: #008cba; /* Bleu pour la partie supérieure */
+            color: white;
+            padding: 20px;
+            margin: -20px -20px 20px -20px; /* Étend la couleur bleue sur toute la largeur */
+            text-align: center;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            background: url('photo.jpg') no-repeat center/cover; /* Ajout de l'image */
+        }
+        .content {
+            padding: 20px;
+            width: 70%;
+        }
+        h2 {
+            color: #008cba;
+        }
+        .nom {
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0">BTEC Bénin</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="offres.html" class="nav-item nav-link active">Offres</a>
+                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="#" class="nav-item nav-link">BTEC Event</a>
+                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                </div>
+                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+            </div>
+        </nav>
+
+        <br><br><br><br>
+    </div>
+
+    <style>
+        .modif{
+            margin-top: 20px;
+            margin-left: 500px;
+        }
+        
+    </style>
+   <div class="container-fluid bg-dark text-light py-3 mt-0 ">
+    <div class="container">
+        <div class="row">
+                <h2 class="text-center mb-5" style="color: white; margin-top: 20px;">Apercu mon CV</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 bg-light shadow-lg rounded p-4">
+            <div class="row">
+                <!-- Sidebar -->
+                 <style>.nom{color: #fff;}</style>
+                <aside class="col-md-4 bg-primary text-white text-center p-4 rounded-start" style="background-color: #008cba;">
+                    <h2 class="fw-bold nom">Sylvie Loiseau</h2>
+                    <div class="mb-3">
+                        <img src="img/contact.jpeg" alt="Profile" class="img-fluid rounded-circle border border-white" style="width: 120px; height: 120px; border: #fff solid 2px;">
+                    </div>
+                    
+                    <div class="text-start">
+                        <h3 class="fw-bold nom ">Informations Personnelles</h3>
+                        <hr class="bg-white">
+                        <p><i class="fas fa-envelope me-2"></i> fr@demo.com</p>
+                        <p><i class="fas fa-phone me-2"></i> 0623845102</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 14, rue des rosiers, 37261 Tours</p>
+                    </div>
+                   
+                    <ul class="list-unstyled text-start">
+                        <h4 class="fw-bold nom">Compétences</h4>
+                        <hr class="bg-white">
+                        <li>Soins visage <span>● ● ● ● ○</span></li>
+                        <li>Modelage <span>● ● ● ○ ○</span></li>
+                        <li>Vente <span>● ● ○ ○ ○</span></li>
+                    </ul>
+
+                    <style>
+                        ul.list-unstyled li {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 200px; /* Ajuste selon ton besoin */
+                        }
+
+                    </style>
+                    
+                    <ul class="list-unstyled text-start">
+                        <h4 class="fw-bold nom">Qualités</h4>
+                        <hr class="bg-white">
+                        <li>** Dynamique </li>
+                        <li>** Ponctuelle </li>
+                        <li>** Souriante </li>
+                    </ul>
+                </aside>
+                
+                <!-- Main Content -->
+                <main class="col-md-8 p-4">
+                    <section class="mb-4">
+                        <h2 class="text-primary">Profil</h2>
+                        <p>Esthéticienne expérimentée (15 ans) ayant exercé en spa et en institut de beauté...</p>
+                    </section>
+                    <section class="mb-4">
+                        <h2 class="text-primary">Expérience professionnelle</h2>
+                        <div class="mb-3">
+                            <h4 class="fw-bold">Esthéticienne spa</h4>
+                            <p class="text-muted">BellaDerm, Tours (2010 - Présent)</p>
+                            <ul>
+                                <li>Soins minceur, gommages, massages...</li>
+                                <li>Vente de produits cosmétiques</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold">Esthéticienne</h4>
+                            <p class="text-muted">Loire Beauté, Tours (2005 - 2010)</p>
+                            <ul>
+                                <li>Accueil des clientes, fidélisation</li>
+                                <li>Soins du visage, maquillage</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-primary">Formation</h2>
+                        <p><strong>BTS esthétique-cosmétique-parfumerie - 2005</strong></p>
+                        <p class="text-muted">Lycée privé esthétique de Touraine, Tours</p>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+     <!-- Footer  -->
+     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+                    <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+                </div>
+
+                <!-- Stay Informed Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Restez informés</h4>
+                    <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+                    <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container py-3">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+</body>
+</html>

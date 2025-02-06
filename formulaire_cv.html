@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer Mon CV - BTEC</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- External Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Bootstrap and Custom Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylecj.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0">BTEC Bénin</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="offres.html" class="nav-item nav-link active">Offres</a>
+                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="#" class="nav-item nav-link">BTEC Event</a>
+                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                </div>
+                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+            </div>
+        </nav>
+
+        <br><br><br><br>
+    </div>
+
+    <style>
+        .modif{
+            margin-top: 20px;
+            margin-left: 500px;
+        }
+        
+    </style>
+
+    <div class="container-fluid bg-dark text-light py-3 mt-0 ">
+        <div class="container">
+            <div class="row">
+                    <h2 class="text-center mb-5" style="color: white; margin-top: 20px;">Créer mon CV</h2>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .hero-header {
+            height: 500px;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <!-- Formulaire de CV -->
+    <div class="container py-5">
+        <h3 class="text-center mb-5">Veuillez renseigner les champs ci-dessous</h3>
+        <form>
+            <!-- Informations personnelles -->
+            <div class="row mb-4">
+                <!-- Champ pour le nom -->
+                <div class="col-md-6">
+                    <label for="nom" class="form-label"><Strong>Nom</Strong></label>
+                    <input type="text" class="form-control" id="nom" required>
+                </div>
+            
+                <!-- Champ pour le prénom -->
+                <div class="col-md-6">
+                    <label for="prenom" class="form-label"><strong>Prénom</strong></label>
+                    <input type="text" class="form-control" id="prenom" required>
+                </div>
+            
+                <!-- Champ pour l'email -->
+                <div class="col-md-6">
+                    <label for="email" class="form-label"><strong>Email</strong></label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+            
+                <!-- Champ pour le téléphone -->
+                <div class="col-md-6">
+                    <label for="telephone" class="form-label"><strong>Téléphone</strong></label>
+                    <input type="tel" class="form-control" id="telephone" required>
+                </div>
+            
+                <!-- Champ pour l'adresse -->
+                <div class="col-12">
+                    <label for="adresse" class="form-label"><strong>Adresse</strong></label>
+                    <input type="text" class="form-control" id="adresse" required>
+                </div>
+            </div>
+            
+
+            <!-- Expérience Professionnelle -->
+            <div class="mb-4">
+                <label for="profil" class="form-label"><strong>Brève Description de Vous-même</strong></label>
+                <textarea class="form-control" id="profil" rows="4" placeholder="Décrivez-vous en quelques mots..." required></textarea>
+            </div>
+            
+            <div class="mb-4">
+                <label for="experience" class="form-label"><strong>Expérience Professionnelle</strong></label>
+                <textarea class="form-control" id="experience" rows="4" placeholder="Décrivez votre expérience professionnelle" required></textarea>
+            </div>
+
+            <!-- Formation -->
+            <div class="mb-4">
+                <label for="formation" class="form-label"><strong>Formation</strong></label>
+                <textarea class="form-control" id="formation" rows="4" placeholder="Listez vos diplômes et formations" required></textarea>
+            </div>
+
+            <!-- Compétences -->
+            <div class="mb-4">
+                <label for="competences" class="form-label"><strong>Compétences</strong></label>
+                <textarea class="form-control" id="competences" rows="4" placeholder="Listez vos compétences" required></textarea>
+            </div>
+
+            <!-- Qualités -->
+            <div class="mb-4">
+                <label for="competences" class="form-label"><strong>Qualités</strong></label>
+                <textarea class="form-control" id="quality" rows="4" placeholder="Listez vos qualités" required></textarea>
+            </div>
+
+             <!-- Centres d'intéret -->
+             <div class="mb-4">
+                <label for="interet" class="form-label"><strong>Centres d'intéret</strong></label>
+                <textarea class="form-control" id="interet" rows="4" placeholder="Listez vos Centres d'intéret" required></textarea>
+            </div>
+
+            <!-- Langues -->
+            <div class="mb-4">
+                <label for="langues" class="form-label"><strong>Langues</strong></label>
+                <input type="text" class="form-control" id="langues" placeholder="Langues parlées (ex: Français, Anglais)" required>
+            </div>
+
+            <!-- Contact et Informations supplémentaires -->
+           
+            <div class="mb-4">
+                <label for="linkedin" class="form-label"><strong>Lien LinkedIn (facultatif)</strong></label>
+                <input type="url" class="form-control" id="linkedin" placeholder="Votre profil LinkedIn">
+            </div>
+
+            <!-- Téléchargement de CV (si applicable) -->
+            <div class="mb-4">
+                <label for="cv" class="form-label"><strong>Télécharger votre CV existant (facultatif)</strong></label>
+                <input type="file" class="form-control" id="cv" accept=".pdf">
+            </div>
+
+            <!-- Soumettre le formulaire -->
+            <div class="text-center">
+                <a href="my_cv.html"><button type="submit" class="btn btn-primary">Créer mon CV</button></a>
+            </div>
+        </form>
+    </div>
+
+     <!-- Footer  -->
+     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+                    <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+                </div>
+
+                <!-- Stay Informed Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Restez informés</h4>
+                    <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+                    <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container py-3">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
