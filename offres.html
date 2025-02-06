@@ -2,548 +2,627 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <title>BTEC-BEST TECHNOLOGY CORPORATION</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+  <meta charset="utf-8">
+  <title>BTEC-BEST TECHNOLOGY CORPORATION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
 
-    <link href="img/favicon.ico" rel="icon">
+  <link href="img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    /* ===== Styles généraux ===== */
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    /* Hero Header */
+    .hero-header {
+      height: 600px;
+      padding: 10px 0;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    .hero-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
 
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    .connect {
+      position: relative;
+      z-index: 2;
+    }
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    /* Profil et statut */
+    .profile-container {
+      position: relative;
+    }
 
-    <link href="css/style.css" rel="stylesheet">
-    <style>
-        /* Styles généraux */
-        .hero-header {
-            height: 600px;
-            padding: 10px 0;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        /* Popup fusionné */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .popup-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 1000px;
-            display: flex;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.3s ease-in-out;
-            position: relative;
-        }
-        .popup-left,
-        .popup-right {
-            width: 50%;
-        }
-        .popup-left {
-            border-right: 1px solid #ddd;
-        }
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        /* Ajustements responsives pour les petits écrans */
-        @media (max-width: 768px) {
-            .hero-header {
-                height: 400px;
-            }
-            .profil-img {
-                width: 60px;
-                height: 60px;
-                margin: 0 auto;
-                display: block;
-            }
-            .status-indicator {
-                width: 10px;
-                height: 10px;
-            }
-            .btn-container {
-                flex-direction: column;
-            }
-        }
-        /* Styles pour la photo de profil et le statut */
-        .profil-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #86B817;
-            padding: 3px;
-        }
-        .status-indicator {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 15px;
-            height: 15px;
-            background-color: #86B817;
-            border: 2px solid #fff;
-            border-radius: 50%;
-        }
-        /* Hover sur les cartes */
-        .card:hover {
-            background-color: rgba(128, 128, 128, 0.221);
-            transform: scale(1.01);
-            border: #86B817 solid 1px;
-        }
-        /* Divers */
-        .deconnect {
-            color: #fff;
-        }
-        .deconnect:hover {
-            color: #fff;
-        }
-        i {
-            color: rgb(160, 160, 160);
-            font-size: 1rem;
-        }
-        i:hover {
-            color: #86B817;
-        }
-        .plus:hover {
-            transform: scale(0.8);
-        }
-        /* Section Statistiques */
-        .stat {
-            position: relative;
-            background-image: url('img/stat.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 60px 0;
-        }
-        .stat::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-        .container .lead,
-        h3.display-4 {
-            z-index: 2;
-        }
-        h3.display-4 {
-            font-size: 2.5rem;
-            color: #fff;
-        }
-        .row .col-md-3 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .lead {
-            font-size: 1.2rem;
-        }
-    </style>
+    .profil-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #86B817;
+      padding: 3px;
+    }
+
+    .status-indicator {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      width: 15px;
+      height: 15px;
+      background-color: #86B817;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+
+    /* Barre de recherche responsive */
+    .search-form .form-select,
+    .search-form .form-control,
+    .search-form .btn {
+      margin-bottom: 10px;
+    }
+
+    /* Boutons */
+    .btn-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Offres d'emploi */
+    .offre-card {
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .offre-card:hover {
+      background-color: rgba(128, 128, 128, 0.221);
+      transform: scale(1.01);
+      border: #86B817 solid 1px;
+    }
+
+    /* Pop-up : disposition responsive */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 1000px;
+      display: flex;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease-in-out;
+      position: relative;
+    }
+
+    .popup-left,
+    .popup-right {
+      width: 50%;
+    }
+
+    .popup-left {
+      border-right: 1px solid #ddd;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Section Statistiques */
+    .stat {
+      position: relative;
+      background-image: url('img/stat.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 0;
+    }
+
+    .stat::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .stat .lead,
+    .stat h3.display-4 {
+      z-index: 2;
+    }
+
+    h3.display-4 {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    .row .col-md-3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+    }
+
+    /* ===== Media Queries pour Mobile ===== */
+    @media (max-width: 768px) {
+      .hero-header {
+        height: 400px;
+      }
+
+      /* Pousser le profil vers la droite */
+      .profile-container {
+        margin-left: auto;
+      }
+
+      .profil-img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .status-indicator {
+        width: 10px;
+        height: 10px;
+      }
+
+      /* Barre de recherche : passage en colonne */
+      .search-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-form .form-select,
+      .search-form .form-control,
+      .search-form .btn {
+        width: 100%;
+      }
+
+      /* Pop-up en colonne */
+      .popup-content {
+        flex-direction: column;
+      }
+
+      .popup-left,
+      .popup-right {
+        width: 100%;
+        border: none;
+      }
+
+      .popup-left {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Animation de chargement -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Animation de chargement -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
+  </div>
 
-    <!-- En-tête et Menu -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="text-primary m-0">BTEC Bénin</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Accueil</a>
-                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
-                    <a href="offres.html" class="nav-item nav-link active">Offres</a>
-                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
-                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
-                    <a href="#" class="nav-item nav-link">BTEC Event</a>
-                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
-                </div>
-                <!-- Bouton de déconnexion converti en lien -->
-                <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
-                    <i class="bi bi-box-arrow-right deconnect"></i>
-                </a>
-            </div>
-        </nav>
-    
-        <div class="hero-header" style="background-image: url('img/offre.jpg');">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-    
-            <div class="container py-5 connect" style="position: relative; z-index: 2;">
-                <div class="row justify-content-center py-5">
-                    <div class="col-md-6 d-flex align-items-center flex-column flex-md-row">
-                        <!-- Conteneur pour l'image et le statut -->
-                        <div class="profile-container me-3 position-relative">
-                            <img src="img/profil.webp" alt="Photo Profil" class="profil-img">
-                            <span class="status-indicator"></span>
-                        </div>
-                        <h4 class="text-white mb-1 border-end border-white pe-3">
-                            GANKPE <br> Ornel 
-                            <small>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                            </small>
-                        </h4>
-                        <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
-                            <i class="bi bi-box-arrow-right deconnect"></i>
-                        </a>
-                    </div>
-   
-                    <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
-                        <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
-                        <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
-    
-                        <!-- Barre de recherche -->
-                        <div class="mt-4">
-                            <form class="d-flex flex-wrap justify-content-center">
-                                <select class="form-select me-2 w-auto" aria-label="Sélectionnez une ville">
-                                    <option selected>Choisissez une ville</option>
-                                    <option value="1">Cotonou</option>
-                                    <option value="2">Porto-Novo</option>
-                                    <option value="3">Calavi</option>
-                                    <option value="4">Ouidah</option>
-                                </select>
-                                <input class="form-control me-2 w-50" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
-                                <select class="form-select me-2 w-auto" aria-label="Sélectionnez un niveau d'étude">
-                                    <option selected>Choisissez un niveau d'étude</option>
-                                    <option value="1">CEP</option>
-                                    <option value="2">BEPC</option>
-                                    <option value="3">Baccalauréat</option>
-                                    <option value="4">Licence</option>
-                                    <option value="5">Master</option>
-                                    <option value="6">Aucun</option>
-                                </select>
-                                <button class="btn btn-primary" type="submit">
-                                    <i class="bi bi-search" style="color: #fff;"></i>
-                                </button>
-                            </form>
-                        </div>
-                        
-                        <!-- Liens pour créer et voir son CV -->
-                        <div class="btn-container d-flex justify-content-center gap-2 mt-3">
-                            <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
-                            <a href="my_cv.html" class="btn btn-register">Voir mon cv</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- En-tête et Menu -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="index.html" class="navbar-brand p-0">
+        <h1 class="text-primary m-0">BTEC Bénin</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a href="index.html" class="nav-item nav-link">Accueil</a>
+          <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+          <a href="offres.html" class="nav-item nav-link active">Offres</a>
+          <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+          <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+          <a href="#" class="nav-item nav-link">BTEC Event</a>
+          <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
         </div>
-    </div>
-    
-    <!-- Affichage des offres d'emploi -->
-    <div class="container py-5 d-flex flex-column align-items-center">
-        <div class="row g-4 w-75">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
-                <h1 class="mb-5">Postes disponibles</h1>
-            </div>
-            <div class="col-12">
-                <div class="card p-4" style="cursor: pointer; width: 100%;" onclick="openPopup()">
-                    <div class="d-flex align-items-center">
-                        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
-                        <div>
-                            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
-                            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
-                            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
-                            <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
-                            <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-              
-            <div class="col-12">
-                <div class="card p-4" style="cursor: pointer; width: 100%;" onclick="openPopup()">
-                    <div class="d-flex align-items-center">
-                        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
-                        <div>
-                            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
-                            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
-                            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
-                            <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
-                            <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="connexionCan.html" class="plus">
-            <button class="btn btn-primary mt-3 align-self-center">Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i></button>
+        <!-- Bouton de déconnexion converti en lien -->
+        <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
+          <i class="bi bi-box-arrow-right deconnect"></i>
         </a>
-    </div>
-    
-    <!-- Pop-up -->
-    <div id="popup" class="popup-overlay">
-        <div class="popup-content d-flex flex-column flex-md-row">
-            <div class="popup-left p-4 bg-light rounded-start">
-                <h3>Tech Solutions</h3>
-                <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
-                <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
-                <p><strong>Lieu :</strong> Cotonou</p>
-                <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
-                <p><strong>Expérience requise :</strong> 2 ans minimum</p>
-                <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
-                <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
-            </div>
-            <div class="popup-right p-4">
-                <span class="close" onclick="closePopup()">&times;</span>
-                <h3 class="mb-4">Postuler</h3>
-                <form id="applyForm">
-                    <div class="mb-3">
-                        <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
-                        <input type="file" class="form-control" id="cv" accept=".pdf">
-                    </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Brève description :</label>
-                        <textarea class="form-control" id="description" rows="10"></textarea>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
-                    </div>
-                </form>
-                <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
-                    <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal pour modifier le profil -->
-    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="profileModalLabel">Modifier votre profil</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="profileForm">
-                        <div class="mb-3">
-                            <label for="userNom" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="userNom" value="GANKPE">
-                        </div>
-                        <div class="mb-3">
-                            <label for="userPrenom" class="form-label">Prénom</label>
-                            <input type="text" class="form-control" id="userPrenom" value="Ornel">
-                        </div>
-                        <div class="mb-3">
-                            <label for="userEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="userEmail" value="exemple@domaine.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="userPhoto" class="form-label">Photo de profil</label>
-                            <input type="file" class="form-control" id="userPhoto" accept="image/*">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Enregistrer</button>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
+    </nav>
 
-    <!-- Statistiques et taux de réussite -->
-    <div class="container-fluid stat">
-        <div class="container text-center text-white">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <h3 class="display-4 number-candidates">0</h3>
-                    <p class="lead">Candidats</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h3 class="display-4 number-recruiters">0</h3>
-                    <p class="lead">Recruteurs</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h3 class="display-4 number-formations">0</h3>
-                    <p class="lead">Formations</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h3 class="display-4 number-recrutements">0</h3>
-                    <p class="lead">Recrutements</p>
-                </div>
+    <div class="hero-header" style="background-image: url('img/offre.jpg');">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+      <div class="container py-5 connect" style="position: relative; z-index: 2;">
+        <div class="row justify-content-center py-5">
+          <div class="col-md-6 d-flex align-items-center flex-column flex-md-row">
+            <!-- Conteneur pour l'image et le statut -->
+            <div class="profile-container me-3">
+              <img src="img/profil.webp" alt="Photo Profil" class="profil-img">
+              <span class="status-indicator"></span>
             </div>
-        </div>
-    </div>
-    
-    <!-- Section Partenaires avec Carrousel -->
-    <div class="container-fluid bg-white py-4">
-        <div class="container text-center">
-            <h4 class="mb-4">Nos Partenaires</h4>
-            <div id="carouselPartenaires" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active text-center">
-                        <img src="img/aa.jpg" class="img-fluid" alt="Partenaire 1" width="150" height="100">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="175" height="110">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3" width="272" height="150">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="img/pac.png" class="img-fluid" alt="Partenaire 4" width="218" height="100">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="150" height="100">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="img/sab.png" class="img-fluid" alt="Partenaire 6" width="359" height="110">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Précédent</span>
+            <h4 class="text-white mb-1 border-end border-white pe-3">
+              GANKPE <br> Ornel
+              <small>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
+                  <i class="bi bi-pencil-square"></i>
+                </a>
+              </small>
+            </h4>
+            <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
+              <i class="bi bi-box-arrow-right deconnect"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
+            <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
+            <!-- Barre de recherche responsive -->
+            <div class="mt-4">
+              <form class="d-flex search-form flex-wrap justify-content-center">
+                <select class="form-select me-2" aria-label="Sélectionnez une ville">
+                  <option selected>Choisissez une ville</option>
+                  <option value="1">Cotonou</option>
+                  <option value="2">Porto-Novo</option>
+                  <option value="3">Calavi</option>
+                  <option value="4">Ouidah</option>
+                </select>
+                <input class="form-control me-2" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
+                <select class="form-select me-2" aria-label="Sélectionnez un niveau d'étude">
+                  <option selected>Choisissez un niveau d'étude</option>
+                  <option value="1">CEP</option>
+                  <option value="2">BEPC</option>
+                  <option value="3">Baccalauréat</option>
+                  <option value="4">Licence</option>
+                  <option value="5">Master</option>
+                  <option value="6">Aucun</option>
+                </select>
+                <button class="btn btn-primary" type="submit">
+                  <i class="bi bi-search" style="color: #fff;"></i>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Suivant</span>
-                </button>
+              </form>
             </div>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <div class="container-fluid bg-dark text-light footer py-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
-                    <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="text-white mb-3">Restez informés</h4>
-                    <p>Connectez-vous pour profiter encore de plus de nos services.</p>
-                    <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
-                </div>
+            <!-- Liens pour créer et voir son CV -->
+            <div class="btn-container mt-3">
+              <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
+              <a href="my_cv.html" class="btn btn-register">Voir mon cv</a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Copyright -->
-    <div class="container py-3">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
-            </div>
-        </div>
-    </div>
-    <!-- Back to Top Button -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        function openPopup() {
-            document.getElementById("popup").style.display = "flex";
-        }
-    
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-    
-        // Affichage du message de succès lors de l'envoi du formulaire de candidature
-        document.getElementById("applyForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var successMessage = document.getElementById("successMessage");
-            successMessage.style.display = "block";
-            successMessage.classList.add("fade-in");
-            setTimeout(function() {
-                successMessage.style.display = "none";
-                closePopup();
-            }, 3000);
-        });
-    
-        // Initialisation des tooltips Bootstrap
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-    
-        // Animation des statistiques
-        document.addEventListener("DOMContentLoaded", function() {
-            const fixedValues = {
-                candidates: 16451,
-                recruiters: 563,
-                formations: 50,
-                recrutements: 10000
-            };
-    
-            function animateNumber(element, targetValue, duration) {
-                let startTime = Date.now();
-                let interval = setInterval(() => {
-                    let elapsed = Date.now() - startTime;
-                    if (elapsed >= duration) {
-                        clearInterval(interval);
-                        element.textContent = targetValue;
-                    } else {
-                        element.textContent = Math.floor(Math.random() * targetValue * 1.2);
-                    }
-                }, 50);
-            }
-    
-            animateNumber(document.querySelector(".number-candidates"), fixedValues.candidates, 2000);
-            animateNumber(document.querySelector(".number-recruiters"), fixedValues.recruiters, 2000);
-            animateNumber(document.querySelector(".number-formations"), fixedValues.formations, 2000);
-            animateNumber(document.querySelector(".number-recrutements"), fixedValues.recrutements, 2000);
-        });
-    </script>
+  <!-- Affichage des offres d'emploi -->
+  <div class="container py-5 d-flex flex-column align-items-center">
+    <div class="row g-4 w-75">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
+        <h1 class="mb-5">Postes disponibles</h1>
+      </div>
+      <div class="col-12">
+        <div class="card offre-card p-4" onclick="openPopup()">
+          <div class="d-flex align-items-center">
+            <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
+            <div>
+              <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
+              <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
+              <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
+              <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
+              <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card offre-card p-4" onclick="openPopup()">
+          <div class="d-flex align-items-center">
+            <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
+            <div>
+              <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
+              <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
+              <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
+              <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
+              <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="connexionCan.html" class="plus">
+      <button class="btn btn-primary mt-3 align-self-center">Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i></button>
+    </a>
+  </div>
+
+  <!-- Pop-up -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content d-flex flex-column flex-md-row">
+      <div class="popup-left p-4 bg-light rounded-start">
+        <h3>Tech Solutions</h3>
+        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
+        <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
+        <p><strong>Lieu :</strong> Cotonou</p>
+        <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
+        <p><strong>Expérience requise :</strong> 2 ans minimum</p>
+        <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
+        <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
+      </div>
+      <div class="popup-right p-4">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h3 class="mb-4">Postuler</h3>
+        <form id="applyForm">
+          <div class="mb-3">
+            <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
+            <input type="file" class="form-control" id="cv" accept=".pdf">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Brève description :</label>
+            <textarea class="form-control" id="description" rows="10"></textarea>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </div>
+        </form>
+        <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
+          <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal pour modifier le profil -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profileModalLabel">Modifier votre profil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <form id="profileForm">
+            <div class="mb-3">
+              <label for="userNom" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="userNom" value="GANKPE">
+            </div>
+            <div class="mb-3">
+              <label for="userPrenom" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="userPrenom" value="Ornel">
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="userEmail" value="exemple@domaine.com">
+            </div>
+            <div class="mb-3">
+              <label for="userPhoto" class="form-label">Photo de profil</label>
+              <input type="file" class="form-control" id="userPhoto" accept="image/*">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistiques et taux de réussite -->
+  <div class="container-fluid stat">
+    <div class="container text-center text-white">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h3 class="display-4 number-candidates">0</h3>
+          <p class="lead">Candidats</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3 class="display-4 number-recruiters">0</h3>
+          <p class="lead">Recruteurs</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3 class="display-4 number-formations">0</h3>
+          <p class="lead">Formations</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3 class="display-4 number-recrutements">0</h3>
+          <p class="lead">Recrutements</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Partenaires avec Carrousel (Bootstrap) -->
+  <div class="container-fluid bg-white py-4">
+    <div class="container text-center">
+      <h4 class="mb-4">Nos Partenaires</h4>
+      <div id="carouselPartenaires" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img src="img/aa.jpg" class="img-fluid" alt="Partenaire 1" width="150" height="100">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="175" height="110">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3" width="272" height="150">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/pac.png" class="img-fluid" alt="Partenaire 4" width="218" height="100">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="150" height="100">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/sab.png" class="img-fluid" alt="Partenaire 6" width="359" height="110">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Suivant</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <!-- Contact -->
+        <div class="col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+          <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+          <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+        </div>
+        <!-- Restez informés -->
+        <div class="col-md-6">
+          <h4 class="text-white mb-3">Restez informés</h4>
+          <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+          <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="container py-3">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/tempusdominus/js/moment.min.js"></script>
+  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Ouvre et ferme la pop-up
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    // Message de succès pour le formulaire de candidature
+    document.getElementById("applyForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var successMessage = document.getElementById("successMessage");
+      successMessage.style.display = "block";
+      successMessage.classList.add("fade-in");
+      setTimeout(function () {
+        successMessage.style.display = "none";
+        closePopup();
+      }, 3000);
+    });
+
+    // Initialisation des tooltips Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Animation des statistiques
+    document.addEventListener("DOMContentLoaded", function () {
+      const fixedValues = {
+        candidates: 16451,
+        recruiters: 563,
+        formations: 50,
+        recrutements: 10000
+      };
+
+      function animateNumber(element, targetValue, duration) {
+        let startTime = Date.now();
+        let interval = setInterval(() => {
+          let elapsed = Date.now() - startTime;
+          if (elapsed >= duration) {
+            clearInterval(interval);
+            element.textContent = targetValue;
+          } else {
+            element.textContent = Math.floor(Math.random() * targetValue * 1.2);
+          }
+        }, 50);
+      }
+
+      animateNumber(document.querySelector(".number-candidates"), fixedValues.candidates, 2000);
+      animateNumber(document.querySelector(".number-recruiters"), fixedValues.recruiters, 2000);
+      animateNumber(document.querySelector(".number-formations"), fixedValues.formations, 2000);
+      animateNumber(document.querySelector(".number-recrutements"), fixedValues.recrutements, 2000);
+    });
+  </script>
 </body>
 
 </html>
