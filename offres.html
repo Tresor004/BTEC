@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <title>BTEC-BEST TECHNOLOGY CORPORATION</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
 
     <link href="img/favicon.ico" rel="icon">
 
@@ -24,17 +24,166 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        .hero-header {
+            height: 600px;
+            padding: 10px 0;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Popup fusionné */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.3s ease-in-out;
+            position: relative;
+        }
+        .popup-left,
+        .popup-right {
+            width: 50%;
+        }
+        .popup-left {
+            border-right: 1px solid #ddd;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        /* Ajustements responsives pour les petits écrans */
+        @media (max-width: 768px) {
+            .hero-header {
+                height: 400px;
+            }
+            .profil-img {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+                display: block;
+            }
+            .status-indicator {
+                width: 10px;
+                height: 10px;
+            }
+            .btn-container {
+                flex-direction: column;
+            }
+        }
+        /* Styles pour la photo de profil et le statut */
+        .profil-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #86B817;
+            padding: 3px;
+        }
+        .status-indicator {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: #86B817;
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }
+        /* Hover sur les cartes */
+        .card:hover {
+            background-color: rgba(128, 128, 128, 0.221);
+            transform: scale(1.01);
+            border: #86B817 solid 1px;
+        }
+        /* Divers */
+        .deconnect {
+            color: #fff;
+        }
+        .deconnect:hover {
+            color: #fff;
+        }
+        i {
+            color: rgb(160, 160, 160);
+            font-size: 1rem;
+        }
+        i:hover {
+            color: #86B817;
+        }
+        .plus:hover {
+            transform: scale(0.8);
+        }
+        /* Section Statistiques */
+        .stat {
+            position: relative;
+            background-image: url('img/stat.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0;
+        }
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .container .lead,
+        h3.display-4 {
+            z-index: 2;
+        }
+        h3.display-4 {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        .row .col-md-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .lead {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 
 <body>
-<!--Animation de chargement-->
+    <!-- Animation de chargement -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
 
-    <!--En-tete et Menu-->
+    <!-- En-tête et Menu -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
@@ -48,86 +197,76 @@
                     <a href="index.html" class="nav-item nav-link">Accueil</a>
                     <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
                     <a href="offres.html" class="nav-item nav-link active">Offres</a>
-                    <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
+                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
                     <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
                     <a href="#" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
-                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+                <!-- Bouton de déconnexion converti en lien -->
+                <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
+                    <i class="bi bi-box-arrow-right deconnect"></i>
+                </a>
             </div>
         </nav>
     
-        <div class="hero-header" style="background-image: url('img/offre.jpg'); background-size: cover; background-position: center; position: relative;">
+        <div class="hero-header" style="background-image: url('img/offre.jpg');">
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     
             <div class="container py-5 connect" style="position: relative; z-index: 2;">
                 <div class="row justify-content-center py-5">
-
-                   <div class="col-md-6 d-flex align-items-center essai">
+                    <div class="col-md-6 d-flex align-items-center flex-column flex-md-row">
                         <!-- Conteneur pour l'image et le statut -->
-                        <div class="profile-container me-3" style="position: relative; display: inline-block;">
+                        <div class="profile-container me-3 position-relative">
                             <img src="img/profil.webp" alt="Photo Profil" class="profil-img">
                             <span class="status-indicator"></span>
                         </div>
                         <h4 class="text-white mb-1 border-end border-white pe-3">
                             GANKPE <br> Ornel 
                             <small>
-                            <!-- L'icône du crayon déclenche la modale -->
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
-                                <i class="bi bi-pencil-square"></i>
-                            </a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
                             </small>
                         </h4>
-                        <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion">
-                            <button class="btn btn-danger">
+                        <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Déconnexion" class="btn btn-danger">
                             <i class="bi bi-box-arrow-right deconnect"></i>
-                            </button>
                         </a>
                     </div>
    
                     <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
                         <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
-                        <h3 class="text-white">Découvrez l'ensemble des offres disponibles </h3>
+                        <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
     
                         <!-- Barre de recherche -->
                         <div class="mt-4">
-                            <form class="d-flex justify-content-center">
-                              <!-- Sélection de la ville -->
-                              <select class="form-select me-2 w-auto" aria-label="Sélectionnez une ville">
-                                <option selected>Choisissez une ville</option>
-                                <option value="1">Cotonou</option>
-                                <option value="2">Porto-Novo</option>
-                                <option value="3">Calavi</option>
-                                <option value="4">Ouidah</option>
-                                <!-- Ajoutez d'autres options de ville ici -->
-                              </select>
-                          
-                              <!-- Champ de recherche pour les postes -->
-                              <input class="form-control me-2 w-50" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
-                          
-                              <!-- Sélection du niveau d'étude -->
-                              <select class="form-select me-2 w-auto" aria-label="Sélectionnez un niveau d'étude">
-                                <option selected>Choisissez un niveau d'étude</option>
-                                <option value="1">CEP</option>
-                                <option value="2">BEPC</option>
-                                <option value="3">Baccalauréat</option>
-                                <option value="4">Licence</option>
-                                <option value="5">Master</option>
-                                <option value="6">Aucun</option>
-                                <!-- Ajoutez d'autres options de niveau d'étude ici -->
-                              </select>
-                          
-                              <!-- Bouton de soumission -->
-                              <button class="btn btn-primary" type="submit">
-                                <i class="bi bi-search" style="color: #fff;"></i>
-                              </button>
+                            <form class="d-flex flex-wrap justify-content-center">
+                                <select class="form-select me-2 w-auto" aria-label="Sélectionnez une ville">
+                                    <option selected>Choisissez une ville</option>
+                                    <option value="1">Cotonou</option>
+                                    <option value="2">Porto-Novo</option>
+                                    <option value="3">Calavi</option>
+                                    <option value="4">Ouidah</option>
+                                </select>
+                                <input class="form-control me-2 w-50" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
+                                <select class="form-select me-2 w-auto" aria-label="Sélectionnez un niveau d'étude">
+                                    <option selected>Choisissez un niveau d'étude</option>
+                                    <option value="1">CEP</option>
+                                    <option value="2">BEPC</option>
+                                    <option value="3">Baccalauréat</option>
+                                    <option value="4">Licence</option>
+                                    <option value="5">Master</option>
+                                    <option value="6">Aucun</option>
+                                </select>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="bi bi-search" style="color: #fff;"></i>
+                                </button>
                             </form>
-                          </div>
-                          
-                        <!--Créer et voir son cv sur le site -->
-                        <div class="btn-container">
-                            <a href="formulaire_cv.html"><button class="btn btn-primary">Créer mon cv</button></a>
-                            <a href="my_cv.html"><button class="btn btn-register">Voir mon cv</button></a>
+                        </div>
+                        
+                        <!-- Liens pour créer et voir son CV -->
+                        <div class="btn-container d-flex justify-content-center gap-2 mt-3">
+                            <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
+                            <a href="my_cv.html" class="btn btn-register">Voir mon cv</a>
                         </div>
                     </div>
                 </div>
@@ -135,33 +274,7 @@
         </div>
     </div>
     
-    <style>
-        @media (max-width: 768px) {
-    .hero-header {
-        height: 400px; /* Ajustez la hauteur pour les petits écrans */
-    }
-    .profil-img {
-        width: 60px; /* Ajustez la taille de l'image de profil pour les petits écrans */
-        height: 60px;
-    }
-    .status-indicator {
-        width: 10px; /* Ajustez la taille du point de statut pour les petits écrans */
-        height: 10px;
-    }
-    .btn-container {
-        flex-direction: column; /* Affichez les boutons en colonne pour les petits écrans */
-    }
-}
-    </style>
-    <style>
-        .hero-header {
-            height: 600px; /* Ajuste la hauteur selon ton besoin */
-            padding: 10px 0; /* Diminue le padding vertical */
-        }     
-    </style>
-
     <!-- Affichage des offres d'emploi -->
-  
     <div class="container py-5 d-flex flex-column align-items-center">
         <div class="row g-4 w-75">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -170,52 +283,45 @@
             </div>
             <div class="col-12">
                 <div class="card p-4" style="cursor: pointer; width: 100%;" onclick="openPopup()">
-                  <div class="d-flex align-items-center">
-                    <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 profile-img" style="width: 120px; height: 120px;">
-                    <div>
-                      <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
-                      <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
-                      <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
-                      <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
-                      <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+                    <div class="d-flex align-items-center">
+                        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
+                        <div>
+                            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
+                            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
+                            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
+                            <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
+                            <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
               
-              <div class="col-12">
+            <div class="col-12">
                 <div class="card p-4" style="cursor: pointer; width: 100%;" onclick="openPopup()">
-                  <div class="d-flex align-items-center">
-                    <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 profile-img" style="width: 120px; height: 120px;">
-                    <div>
-                      <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
-                      <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
-                      <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
-                      <p class="card-text"><strong>Postes recherchés :</strong>Chef mécanicien, Electricien Auto</p>
-                      <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+                    <div class="d-flex align-items-center">
+                        <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
+                        <div>
+                            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
+                            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
+                            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
+                            <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
+                            <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              
+            </div>
         </div>
         <a href="connexionCan.html" class="plus">
-            <button class="btn btn-primary mt-3 align-self-center"> Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i></button>
+            <button class="btn btn-primary mt-3 align-self-center">Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i></button>
         </a>
-        <style>
-            .plus:hover{
-                transform: scale(0.8);
-            }
-        </style>
-       
     </div>
     
     <!-- Pop-up -->
-    <div id="popup" class="popup-overlay" style="z-index: 9999;">
+    <div id="popup" class="popup-overlay">
         <div class="popup-content d-flex flex-column flex-md-row">
             <div class="popup-left p-4 bg-light rounded-start">
-                <h3> Tech Solutions</h3>
-                <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3" style="width: 120px; height: 120px;">
+                <h3>Tech Solutions</h3>
+                <img src="img/entreprise.jpg" alt="Logo Entreprise" class="mb-3 img-fluid" style="width: 120px; height: 120px;">
                 <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
                 <p><strong>Lieu :</strong> Cotonou</p>
                 <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
@@ -239,7 +345,6 @@
                         <button type="submit" class="btn btn-primary">Envoyer</button>
                     </div>
                 </form>
-                <!-- Message de succès caché au départ -->
                 <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
                     <strong>Succès!</strong> Votre candidature a été envoyée avec succès.
                 </div>
@@ -247,234 +352,43 @@
         </div>
     </div>
     
-    
-    <style>
-        .card:hover{
-
-            background-color: rgba(128, 128, 128, 0.221);
-            transform: scale(1.01);
-            border:#86B817 solid 1px;
-
-        }
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-    
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 1000px;
-            display: flex;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.3s ease-in-out;
-            position: relative;
-        }
-    
-        .popup-left {
-            width: 50%;
-            border-right: 1px solid #ddd;
-        }
-    
-        .popup-right {
-            width: 50%;
-        }
-    
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Animation pour afficher le message de succès */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Style pour le pop-up */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Autres styles pour le pop-up */
-.popup-content {
-    display: flex;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 80%;
-    max-width: 1000px;
-}
-
-.popup-left {
-    width: 50%;
-}
-
-.popup-right {
-    width: 50%;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-    </style>
-    
-    <script>
-        function openPopup() {
-            document.getElementById("popup").style.display = "flex";
-        }
-    
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-
-// Fonction pour afficher le message de succès et l'animation
-document.getElementById("applyForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Empêche l'envoi réel du formulaire
-
-    // Masquer le formulaire et afficher le message de succès
-    var successMessage = document.getElementById("successMessage");
-    successMessage.style.display = "block"; // Afficher le message
-    successMessage.classList.add("fade-in"); // Ajouter la classe pour l'animation
-
-    // Ajouter un délai pour cacher le message après quelques secondes
-    setTimeout(function() {
-        successMessage.style.display = "none"; // Cacher le message
-        closePopup(); // Fermer le pop-up
-    }, 3000); // 3 secondes avant de fermer
-});
-
-    </script>
-    
-     <!-- Modal pour modifier le profil -->
-     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <!-- Modal pour modifier le profil -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="profileModalLabel">Modifier votre profil</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-            </div>
-            <div class="modal-body">
-                <form id="profileForm">
-                    <div class="mb-3">
-                      <label for="userNom" class="form-label">Nom</label>
-                      <input type="text" class="form-control" id="userNom" value="GANKPE">
-                    </div>
-                    <div class="mb-3">
-                      <label for="userPrenom" class="form-label">Prénom</label>
-                      <input type="text" class="form-control" id="userPrenom" value="Ornel">
-                    </div>
-                    <div class="mb-3">
-                      <label for="userEmail" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="userEmail" value="exemple@domaine.com">
-                    </div>
-                    <div class="mb-3">
-                      <label for="userPhoto" class="form-label">Photo de profil</label>
-                      <input type="file" class="form-control" id="userPhoto" accept="image/*">
-                    </div>
-                  </form>
-                  
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-primary">Enregistrer</button>
-            </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Modifier votre profil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="mb-3">
+                            <label for="userNom" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="userNom" value="GANKPE">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPrenom" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" id="userPrenom" value="Ornel">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="userEmail" value="exemple@domaine.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPhoto" class="form-label">Photo de profil</label>
+                            <input type="file" class="form-control" id="userPhoto" accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Enregistrer</button>
+                </div>
             </div>
         </div>
-        </div>
+    </div>
 
-        <style>
-        .deconnect {
-            color: #fff;
-        }
-        .deconnect:hover {
-            color: #fff;
-        }
-        .profil-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #86B817;
-            padding: 3px;
-            margin-left: 500px;
-        }
-        /* Petit point vert indiquant le statut connecté */
-        .status-indicator {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 15px;
-            height: 15px;
-            background-color: #86B817;
-            border: 2px solid #fff;
-            border-radius: 50%;
-        }
-        /* Autres styles existants */
-        .modif {
-            margin-top: 20px;
-        }
-        i {
-            color: rgb(160, 160, 160);
-            font-size: 1rem;
-        }
-        i:hover {
-            color: #86B817;
-        }
-        </style>
-
-        <script>
-        // Initialisation des tooltips Bootstrap
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-        </script>
-    
-    
-    
     <!-- Statistiques et taux de réussite -->
-
     <div class="container-fluid stat">
         <div class="container text-center text-white">
             <div class="row">
@@ -498,93 +412,7 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
         </div>
     </div>
     
-    <style>
-        .stat {
-            position: relative; /* Nécessaire pour le pseudo-élément */
-            background-image: url('img/stat.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 60px 0;
-        }
-    
-        /* Pseudo-élément pour assombrir l'image */
-        .stat::before {
-            content: ''; /* Nécessaire pour créer un élément */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Couleur noire avec opacité */
-            z-index: 1; /* Placer la couche sombre au-dessus de l'image mais sous le contenu */
-        }
-    
-        .container .lead {
-            color: #fff; /* Couleur des textes des paragraphes */
-            margin-top: 10px;
-            z-index: 2; /* Assurer que le texte soit au-dessus de l'overlay sombre */
-        }
-    
-        h3.display-4 {
-            font-size: 2.5rem; /* Taille du nombre */
-            color: #fff;
-            z-index: 2;
-        }
-    
-        .row .col-md-3 {
-            display: flex;
-            flex-direction: column; /* Pour afficher le h3 et le p verticalement */
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-    
-        .lead {
-            font-size: 1.2rem; /* Taille du texte */
-        }
-    
-        /* Style pour l'animation */
-        .number {
-            transition: all 0.5s ease-out;
-        }
-    </style>
-    
-    
-    
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-    // Nombres fixes
-    const fixedValues = {
-        candidates: 16451,
-        recruiters: 563,
-        formations: 50,
-        recrutements: 10000
-    };
-
-    // Fonction pour simuler l'animation
-    function animateNumber(element, targetValue, duration) {
-        let startTime = Date.now();
-        let interval = setInterval(() => {
-            let elapsed = Date.now() - startTime;
-            if (elapsed >= duration) {
-                clearInterval(interval);
-                element.textContent = targetValue;
-            } else {
-                element.textContent = Math.floor(Math.random() * targetValue * 1.2);
-            }
-        }, 50);
-    }
-
-    // Sélection des éléments
-    animateNumber(document.querySelector(".number-candidates"), fixedValues.candidates, 2000);
-    animateNumber(document.querySelector(".number-recruiters"), fixedValues.recruiters, 2000);
-    animateNumber(document.querySelector(".number-formations"), fixedValues.formations, 2000);
-    animateNumber(document.querySelector(".number-recrutements"), fixedValues.recrutements, 2000);
-});
-    </script>
-    
-
-   <!-- Section Partenaires avec Carrousel -->
+    <!-- Section Partenaires avec Carrousel -->
     <div class="container-fluid bg-white py-4">
         <div class="container text-center">
             <h4 class="mb-4">Nos Partenaires</h4>
@@ -597,10 +425,10 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
                         <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="175" height="110">
                     </div>
                     <div class="carousel-item text-center">
-                        <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3"  width="272" height="150">
+                        <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3" width="272" height="150">
                     </div>
                     <div class="carousel-item text-center">
-                        <img src="img/pac.png" class="img-fluid" alt="Partenaire 4"   width="218" height="100">
+                        <img src="img/pac.png" class="img-fluid" alt="Partenaire 4" width="218" height="100">
                     </div>
                     <div class="carousel-item text-center">
                         <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="150" height="100">
@@ -621,20 +449,16 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
         </div>
     </div>
 
-
-    <!-- Footer  -->
+    <!-- Footer -->
     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
         <div class="container">
             <div class="row">
-                <!-- Contact Section -->
                 <div class="col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
                     <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
                 </div>
-
-                <!-- Stay Informed Section -->
                 <div class="col-md-6">
                     <h4 class="text-white mb-3">Restez informés</h4>
                     <p>Connectez-vous pour profiter encore de plus de nos services.</p>
@@ -643,9 +467,7 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Copyright Start -->
+    <!-- Copyright -->
     <div class="container py-3">
         <div class="row text-center">
             <div class="col-md-12">
@@ -653,8 +475,6 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
             </div>
         </div>
     </div>
-    <!-- Copyright End -->
-
     <!-- Back to Top Button -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -668,9 +488,62 @@ document.getElementById("applyForm").addEventListener("submit", function(event) 
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+    
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    
+        // Affichage du message de succès lors de l'envoi du formulaire de candidature
+        document.getElementById("applyForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+            successMessage.classList.add("fade-in");
+            setTimeout(function() {
+                successMessage.style.display = "none";
+                closePopup();
+            }, 3000);
+        });
+    
+        // Initialisation des tooltips Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    
+        // Animation des statistiques
+        document.addEventListener("DOMContentLoaded", function() {
+            const fixedValues = {
+                candidates: 16451,
+                recruiters: 563,
+                formations: 50,
+                recrutements: 10000
+            };
+    
+            function animateNumber(element, targetValue, duration) {
+                let startTime = Date.now();
+                let interval = setInterval(() => {
+                    let elapsed = Date.now() - startTime;
+                    if (elapsed >= duration) {
+                        clearInterval(interval);
+                        element.textContent = targetValue;
+                    } else {
+                        element.textContent = Math.floor(Math.random() * targetValue * 1.2);
+                    }
+                }, 50);
+            }
+    
+            animateNumber(document.querySelector(".number-candidates"), fixedValues.candidates, 2000);
+            animateNumber(document.querySelector(".number-recruiters"), fixedValues.recruiters, 2000);
+            animateNumber(document.querySelector(".number-formations"), fixedValues.formations, 2000);
+            animateNumber(document.querySelector(".number-recrutements"), fixedValues.recrutements, 2000);
+        });
+    </script>
 </body>
 
 </html>
