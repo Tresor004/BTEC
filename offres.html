@@ -20,233 +20,111 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <style>
-    /* ===== Styles généraux ===== */
+    /* Styles généraux */
     body {
-      font-family: 'Nunito', sans-serif;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
-    /* Hero Header */
-    .hero-header {
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .hero-header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .connect {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Profil et statut */
-    .profile-container {
-      position: relative;
-    }
-
-    .profil-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid #86B817;
-      padding: 3px;
-    }
-
-    .status-indicator {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      width: 15px;
-      height: 15px;
-      background-color: #86B817;
-      border: 2px solid #fff;
-      border-radius: 50%;
-    }
-
-    /* Barre de recherche responsive */
-    .search-form .form-select,
-    .search-form .form-control,
-    .search-form .btn {
-      margin-bottom: 10px;
-    }
-
-    /* Boutons */
-    .btn-container {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* Offres d'emploi */
-    .offre-card {
-      cursor: pointer;
-      width: 100%;
-      transition: transform 0.3s ease;
-    }
-
-    .offre-card:hover {
-      background-color: rgba(128, 128, 128, 0.221);
-      transform: scale(1.01);
-      border: #86B817 solid 1px;
-    }
-
-    /* Pop-up : disposition responsive */
+    /* Overlay de la pop-up */
     .popup-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
     }
 
+    /* Contenu de la pop-up */
     .popup-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 1000px;
-      display: flex;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 0.3s ease-in-out;
-      position: relative;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 70vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.3s ease-in-out;
+        position: relative;
     }
 
+    /* Sections gauche et droite de la pop-up */
     .popup-left,
     .popup-right {
-      width: 50%;
+        width: 100%;
     }
 
-    .popup-left {
-      border-right: 1px solid #ddd;
+    @media (min-width: 768px) {
+        .popup-content {
+            flex-direction: row;
+        }
+        .popup-left,
+        .popup-right {
+            width: 50%;
+        }
     }
 
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
+    /* Animation de la pop-up */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
     }
 
-    /* Section Statistiques */
-    .stat {
-      position: relative;
-      background-image: url('img/stat.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 60px 0;
+    /* Bouton de fermeture */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
     }
 
-    .stat::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: 1;
+    /* Styles du formulaire */
+    .form-label {
+        font-weight: bold;
+        margin-top: 10px;
     }
 
-    .stat .lead,
-    .stat h3.display-4 {
-      z-index: 2;
-    }
-
-    h3.display-4 {
-      font-size: 2.5rem;
-      color: #fff;
-    }
-
-    .row .col-md-3 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .lead {
-      font-size: 1.2rem;
-    }
-
-    /* ===== Media Queries pour Mobile ===== */
-    @media (max-width: 768px) {
-      .hero-header {
-        height: 600px;
-      }
-
-      /* Pousser le profil vers la droite */
-      .profile-container {
-        margin-left: auto;
-      }
-
-      .profil-img {
-        width: 60px;
-        height: 60px;
-      }
-
-      .status-indicator {
-        width: 10px;
-        height: 10px;
-      }
-
-      /* Barre de recherche : passage en colonne */
-      .search-form {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .search-form .form-select,
-      .search-form .form-control,
-      .search-form .btn {
+    .form-control {
         width: 100%;
-      }
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-      /* Pop-up en colonne */
-      .popup-content {
-        flex-direction: column;
-      }
-
-      .popup-left,
-      .popup-right {
-        width: 100%;
+    .btn {
+       
+        color: white;
+        padding: 10px 20px;
         border: none;
-      }
-
-      .popup-left {
-        margin-bottom: 20px;
-      }
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
     }
-  </style>
+
+    .btn:hover {
+        background-color: #039f5b;
+    }
+
+    .alert {
+        padding: 15px;
+        background-color: #4CAF50;
+        color: white;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+</style>
 </head>
 
 <body>
@@ -315,8 +193,18 @@
             <!-- Liens pour créer et voir son CV -->
             <div class="btn-container mt-3">
               <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
-              <a href="my_cv.html" class="btn btn-register">Voir mon cv</a>
+              <a href="my_cv.html" class="btn btn-register cv">Voir mon cv</a>
             </div>
+            <style>
+                .cv{
+                    border: solid #fff 2px;
+                }
+                .cv:hover{
+                    border: solid #fff 2px;
+                    background-color:white;
+                    color: black;
+                }
+            </style>
           </div>
         </div>
       </div>
