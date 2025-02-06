@@ -343,14 +343,15 @@
     </div>
   </div>
 
-  <!-- Affichage des offres d'emploi -->
-  <div class="container py-5 d-flex flex-column align-items-center">
-    <div class="row g-4 w-75">
+ <!-- Affichage des offres d'emploi -->
+<div class="container py-5 d-flex flex-column align-items-center">
+    <!-- Passage de w-75 à w-100 pour rallonger horizontalement -->
+    <div class="row g-4 w-100 mx-auto">
       <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
         <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
         <h1 class="mb-5">Postes disponibles</h1>
       </div>
-      <div class="col-12">
+      <div class="col-md-6 col-12">
         <div class="card offre-card p-4" onclick="openPopup()">
           <div class="d-flex align-items-center">
             <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
@@ -364,8 +365,8 @@
           </div>
         </div>
       </div>
-
-      <div class="col-12">
+  
+      <div class="col-md-6 col-12">
         <div class="card offre-card p-4" onclick="openPopup()">
           <div class="d-flex align-items-center">
             <img src="img/entreprise.jpg" alt="Logo Entreprise" class="me-3 img-fluid" style="width: 120px; height: 120px;">
@@ -381,9 +382,12 @@
       </div>
     </div>
     <a href="connexionCan.html" class="plus">
-      <button class="btn btn-primary mt-3 align-self-center">Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i></button>
+      <button class="btn btn-primary mt-3 align-self-center">
+        Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i>
+      </button>
     </a>
   </div>
+  
 
   <!-- Pop-up -->
   <div id="popup" class="popup-overlay">
