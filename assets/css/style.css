@@ -86,6 +86,16 @@
     }
 }
 
+h2 {
+    font-size: 2rem; /* Par défaut */
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
 
 
 *{
@@ -422,6 +432,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     -o-transition: 0.3s linear; 
     transition: 0.3s linear;
 }
+.welcome-hero-btn {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+}
+
 .welcome-hero-btn:hover{/*background: #fd4043;*/background: #f43032;}
 
 .welcome-hero-btn svg {
@@ -431,6 +446,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 .works{padding: 0 0 90px; margin-top: 50px;}
+.works-content .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .works-content {margin-top: 73px;}
 
 .single-how-works{
