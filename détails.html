@@ -185,6 +185,29 @@
                                         </tbody>
                                     </table>
                                 </div>
+ 
+                                <style>
+                                    @media (max-width: 576px) {
+    .table-responsive {
+        overflow-x: auto; /* Permet de scroller horizontalement si besoin */
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        white-space: nowrap; /* Évite que les colonnes se cassent sur plusieurs lignes */
+    }
+    
+    .table td, .table th {
+        font-size: 14px; /* Réduit la taille du texte pour éviter les débordements */
+    }
+    
+    .confirm-btn {
+        padding: 5px 10px;
+        font-size: 12px; /* Adapte la taille des boutons sur mobile */
+    }
+}
+
+                                </style>
                                 
 
                                 <div class="d-flex justify-content-between align-items-center mt-3">
