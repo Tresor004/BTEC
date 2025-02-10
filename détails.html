@@ -10,304 +10,270 @@
 
     <style>
         @media (max-width: 768px) {
-    .ticket-image {
-        width: 30px; /* Réduction de l'image dans le tableau */
-    }
-    .card-body img {
-        width: 100%; /* Rendre les images flexibles */
-        height: auto;
-    }
-    h4 {
-        font-size: 18px; /* Réduction du titre */
-    }
+            .ticket-image {
+                width: 30px; /* Réduction de l'image dans le tableau */
+            }
+            .card-body img {
+                width: 100%; /* Rendre les images flexibles */
+                height: auto;
+            }
+            h4 {
+                font-size: 18px; /* Réduction du titre */
+            }
+            .table-responsive {
+                overflow-x: auto;
+                display: block;
+            }
+            .btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .nav-tabs .nav-link {
+                font-size: 14px;
+                padding: 5px;
+            }
+            .container {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .right-column {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            .card {
+                margin-bottom: 20px;
+            }
+        }
 
-    .table-responsive {
-        overflow-x: auto;
-        display: block;
-    }
-    .btn {
-        font-size: 14px;
-        padding: 8px;
-    }
-    .nav-tabs .nav-link {
-        font-size: 14px;
-        padding: 5px;
-    }
-    
-}
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .right-column {
-            margin-left: 20px;
-        }
-        .card {
-            width: 100%;
-            max-width: 800px;
-        }
-        .ticket-image {
-            width: 50px;
-            height: auto;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .hidden {
-            display: none;
-        }
         .card {
             border-radius: 0px;
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
         }
 
+        .retour:hover {
+            color: white;
+        }
     </style>
 </head>
 <body style="background-color: rgba(105, 60, 252, 0.217);">
     <div style="display: flex; align-items: center;">
         <a href="etickets.html" style="color: black; text-decoration: none;">
-            <h2 class="retour" style="margin-left: 100px; margin-top: 15px; display: inline-block;">
+            <h2 class="retour" style="margin-left: 20px; margin-top: 15px; display: inline-block;">
                 <i class="bi bi-arrow-left-circle"></i>
             </h2>
         </a>
         <h4 style="display: inline-block; margin: 0; margin-left: 20px;">FESTIVAL DE L'IMAGINAIRE</h4>
     </div>
-   <style>
-    .retour:hover{
-        color: white;
-    }
-   </style>
 
-    <div class="container" style=" margin-top: 100px; margin-bottom: 150px;">
-        <!-- Colonne de gauche -->
-        <div class="left-column">
-           <!-- Div Visuel -->
-            <div class="card" style="height: 350px; width: 300px;">
-                <div class="card-header">
-                    <h6 class="card-title">VISUEL</h6>
-                </div>
-                <div class="card-body d-flex justify-content-center align-items-center">
-                    <img src="assets/images/welcome-hero/affiche.jpg" class="img-fluid" alt="Image de l'évènement" style="width: 250px; height: 250px;">
-                </div>
-            </div>
-
-
-            <!-- Div Détails -->
-            <div class="card">
-                <div class="card-header">
-                    <h6 class="card-title">DETAILS</h6>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title"><strong>FESTIVAL DE L'IMAGINAIRE</strong></h5>
-                    <p class="card-text"><i class="bi bi-calendar3"></i> 25 Octobre 2023, 18:00 au <br> 25 Octobre 2023, 22:00</p>
-                    <p class="card-text"><i class="bi bi-geo-alt-fill"></i> Palais des congrès cadjèhoun</p>
-                    <p class="card-text"><Strong>COTONOU, BENIN</Strong></p>
-                </div>
-            </div>
-
-            <!-- Div partage -->
-            <div class="card " style="margin-top: 7px;">
-                <div class="card-header">
-                    <h6 class="card-title">PARTAGER</h6>
-                </div>
-                <div class="card-body text-center">
-                    <!-- Grid Bootstrap pour aligner les boutons -->
-                    <div class="row mt-2">
-                        <div class="col-6 d-grid">
-                            <a href="#" class="btn btn-primary mb-2" target="_blank">
-                                <i class="bi bi-facebook"></i> Facebook
-                            </a>
-                            <a href="#" class="btn btn-info text-white" target="_blank">
-                                <i class="bi bi-twitter"></i> Twitter
-                            </a>
-                        </div>
-                        <div class="col-6 d-grid">
-                            <a href="#" class="btn btn-primary mb-2" style="background-color: #0077b5;" target="_blank">
-                                <i class="bi bi-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="#" class="btn btn-danger" target="_blank">
-                                <i class="bi bi-instagram"></i> Instagram
-                            </a>
-                        </div>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <!-- Colonne de gauche -->
+            <div class="col-12 col-md-4">
+                <!-- Div Visuel -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">VISUEL</h6>
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <img src="assets/images/welcome-hero/affiche.jpg" class="img-fluid" alt="Image de l'évènement" style="width: 250px; height: 250px;">
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Colonne de droite -->
-        <div class="right-column">
-          <!-- Div Billetterie -->
-            <div class="card" style="margin-top: -134px;">
-                <div class="card-header">
-                    <h6 class="card-title">BILLETTERIE</h6>
+                <!-- Div Détails -->
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h6 class="card-title">DETAILS</h6>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>FESTIVAL DE L'IMAGINAIRE</strong></h5>
+                        <p class="card-text"><i class="bi bi-calendar3"></i> 25 Octobre 2023, 18:00 au <br> 25 Octobre 2023, 22:00</p>
+                        <p class="card-text"><i class="bi bi-geo-alt-fill"></i> Palais des congrès cadjèhoun</p>
+                        <p class="card-text"><strong>COTONOU, BENIN</strong></p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <ul class="nav nav-tabs" id="billetterieTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="panier-tab" data-bs-toggle="tab" data-bs-target="#panier" type="button" role="tab" aria-controls="panier" aria-selected="true">Panier</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="coordonnees-tab" data-bs-toggle="tab" data-bs-target="#coordonnees" type="button" role="tab" aria-controls="coordonnees" aria-selected="false">Coordonnées</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="paiement-tab" data-bs-toggle="tab" data-bs-target="#paiement" type="button" role="tab" aria-controls="paiement" aria-selected="false">Paiement</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="confirmation-tab" data-bs-toggle="tab" data-bs-target="#confirmation" type="button" role="tab" aria-controls="confirmation" aria-selected="false">Confirmation</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="billetterieTabsContent">
-                        <div class="tab-pane fade show active" id="panier" role="tabpanel" aria-labelledby="panier-tab">
-                            
-                            <!-- Message d'instruction -->
-                            <div class="alert alert-info text-center mt-3">
-                                Sélectionnez vos billets, identifiez-vous, payez et téléchargez vos billets.
-                            </div>
 
-                            <!-- Compte à rebours -->
-                            <div class="text-center">
-                                <h6 style="color: red;">Temps restant : <span id="countdown">10:00</span></h6>
+                <!-- Div Partage -->
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h6 class="card-title">PARTAGER</h6>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="row mt-2">
+                            <div class="col-6 d-grid">
+                                <a href="#" class="btn btn-primary mb-2" target="_blank">
+                                    <i class="bi bi-facebook"></i> Facebook
+                                </a>
+                                <a href="#" class="btn btn-info text-white" target="_blank">
+                                    <i class="bi bi-twitter"></i> Twitter
+                                </a>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table mt-3">
-                                    <thead>
-                                        <tr>
-                                            <th>Tarifs</th>
-                                            <th>Visuel</th>
-                                            <th>Prix TTC</th>
-                                            <th>Quantité</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Pass simple</td>
-                                            <td><img src="assets/images/welcome-hero/ticket.jpg" class="ticket-image" alt="Pass simple"></td>
-                                            <td>2000 Fcfa</td>
-                                            <td><input type="number" class="form-control quantity" data-price="2000" min="0" value="0"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pass soutien</td>
-                                            <td><img src="assets/images/welcome-hero/ticket.jpg" class="ticket-image" alt="Pass soutien"></td>
-                                            <td>5000 Fcfa</td>
-                                            <td><input type="number" class="form-control quantity" data-price="5000" min="0" value="0"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pass VIP</td>
-                                            <td><img src="assets/images/welcome-hero/ticket.jpg" class="ticket-image" alt="Pass VIP"></td>
-                                            <td>10000 Fcfa</td>
-                                            <td><input type="number" class="form-control quantity" data-price="10000" min="0" value="0"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="col-6 d-grid">
+                                <a href="#" class="btn btn-primary mb-2" style="background-color: #0077b5;" target="_blank">
+                                    <i class="bi bi-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="#" class="btn btn-danger" target="_blank">
+                                    <i class="bi bi-instagram"></i> Instagram
+                                </a>
                             </div>
-
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <strong>Total :</strong> <span id="totalAmount">0 Fcfa</span>
-                            
-                                <div>
-                                    <button class="btn btn-danger me-2" onclick="changerOnglet('panier')" >Retour</button>
-                                    <button class="btn btn-primary" onclick="changerOnglet('coordonnees')">Continuer</button>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div class="tab-pane fade" id="coordonnees" role="tabpanel" aria-labelledby="coordonnees-tab">
-                            <form>
-                                <div class="form-group">
-                                    <label for="nom">Nom et prénoms</label>
-                                    <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom et prénoms">
-                                </div>
-                            </form>
-                            <button class="btn btn-primary mt-3" onclick="changerOnglet('paiement')">Valider</button>
-                        </div>
-                        <div class="tab-pane fade" id="paiement" role="tabpanel" aria-labelledby="paiement-tab">
-                            <h5>Coordonnées</h5>
-                            <p id="coordonnees-resume"></p>
-                            <button class="btn btn-primary mt-3" onclick="changerOnglet('confirmation')">Valider</button>
-                        </div>
-                        <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
-                            <div class="alert alert-success d-none" id="confirmation-message">
-                                Paiement réussi ! Votre commande a été validée.
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="validerPaiement()">Valider le paiement</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Div Description -->
-            <div class="card" style="text-align: justify; margin-top: 30px;">
-                <div class="card-header">
-                    <h6 class="card-title mb-0">DESCRIPTION</h6>
+            <!-- Colonne de droite -->
+            <div class="col-12 col-md-8">
+                <!-- Div Billetterie -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">BILLETTERIE</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="billetterieTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="panier-tab" data-bs-toggle="tab" data-bs-target="#panier" type="button" role="tab" aria-controls="panier" aria-selected="true">Panier</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="coordonnees-tab" data-bs-toggle="tab" data-bs-target="#coordonnees" type="button" role="tab" aria-controls="coordonnees" aria-selected="false">Coordonnées</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="paiement-tab" data-bs-toggle="tab" data-bs-target="#paiement" type="button" role="tab" aria-controls="paiement" aria-selected="false">Paiement</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="confirmation-tab" data-bs-toggle="tab" data-bs-target="#confirmation" type="button" role="tab" aria-controls="confirmation" aria-selected="false">Confirmation</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="billetterieTabsContent">
+                            <div class="tab-pane fade show active" id="panier" role="tabpanel" aria-labelledby="panier-tab">
+                                <!-- Message d'instruction -->
+                                <div class="alert alert-info text-center mt-3">
+                                    Sélectionnez vos billets, identifiez-vous, payez et téléchargez vos billets.
+                                </div>
+
+                                <!-- Compte à rebours -->
+                                <div class="text-center">
+                                    <h6 style="color: red;">Temps restant : <span id="countdown">10:00</span></h6>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table mt-3">
+                                        <thead>
+                                            <tr>
+                                                <th>Tarifs</th>
+                                                <th>Visuel</th>
+                                                <th>Prix TTC</th>
+                                                <th>Quantité</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Pass simple</td>
+                                                <td><img src="assets/images/welcome-hero/ticket.jpg" class="ticket-image" alt="Pass simple"></td>
+                                                <td>2000 Fcfa</td>
+                                                <td><input type="number" class="form-control quantity" data-price="2000" min="0" value="0"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pass soutien</td>
+                                                <td><img src="assets/images/welcome-hero/ticket.jpg" class="ticket-image" alt="Pass soutien"></td>
+                                                <td>5000 Fcfa</td>
+                                                <td><input type="number" class="form-control quantity" data-price="5000" min="0" value="0"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pass VIP</td>
+                                                <td><img src="assets/images/welcome-hero/ticket.jpg" class="ticket-image" alt="Pass VIP"></td>
+                                                <td>10000 Fcfa</td>
+                                                <td><input type="number" class="form-control quantity" data-price="10000" min="0" value="0"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <strong>Total :</strong> <span id="totalAmount">0 Fcfa</span>
+                                    <div>
+                                        <button class="btn btn-danger me-2" onclick="changerOnglet('panier')">Retour</button>
+                                        <button class="btn btn-primary" onclick="changerOnglet('coordonnees')">Continuer</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="coordonnees" role="tabpanel" aria-labelledby="coordonnees-tab">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nom">Nom et prénoms</label>
+                                        <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom et prénoms">
+                                    </div>
+                                </form>
+                                <button class="btn btn-primary mt-3" onclick="changerOnglet('paiement')">Valider</button>
+                            </div>
+                            <div class="tab-pane fade" id="paiement" role="tabpanel" aria-labelledby="paiement-tab">
+                                <h5>Coordonnées</h5>
+                                <p id="coordonnees-resume"></p>
+                                <button class="btn btn-primary mt-3" onclick="changerOnglet('confirmation')">Valider</button>
+                            </div>
+                            <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
+                                <div class="alert alert-success d-none" id="confirmation-message">
+                                    Paiement réussi ! Votre commande a été validée.
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="validerPaiement()">Valider le paiement</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body" style="text-align: justify;">
-                    <!-- Description courte -->
-                    <p class="text-muted">
-                        Rejoignez-nous pour une soirée magique avec des spectacles, des artistes et une immersion dans un univers fantastique !
-                    </p>
+
+                <!-- Div Description -->
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h6 class="card-title mb-0">DESCRIPTION</h6>
+                    </div>
+                    <div class="card-body" style="text-align: justify;">
+                        <p class="text-muted">
+                            Rejoignez-nous pour une soirée magique avec des spectacles, des artistes et une immersion dans un univers fantastique !
+                        </p>
+                    </div>
                 </div>
             </div>
-            
-
-            <script>
-                // Compte à rebours de 10 minutes
-                function startCountdown(duration) {
-                    let timer = duration, minutes, seconds;
-                    let countdownElement = document.getElementById('countdown');
-
-                    let interval = setInterval(function () {
-                        minutes = parseInt(timer / 60, 10);
-                        seconds = parseInt(timer % 60, 10);
-
-                        minutes = minutes < 10 ? "0" + minutes : minutes;
-                        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                        countdownElement.textContent = minutes + ":" + seconds;
-
-                        if (--timer < 0) {
-                            clearInterval(interval);
-                            countdownElement.textContent = "Temps écoulé";
-                            alert("Votre session a expiré. Veuillez recommencer l'achat.");
-                            window.location.reload(); // Recharge la page après expiration
-                        }
-                    }, 1000);
-                }
-
-                // Démarrer le compte à rebours dès l'affichage de la page
-                document.addEventListener("DOMContentLoaded", function () {
-                    startCountdown(600); // 600 secondes = 10 minutes
-                });
-            </script>
-
-
-            
-            <script>
-            function changerOnglet(ongletID) {
-                let onglet = new bootstrap.Tab(document.getElementById(ongletID + "-tab"));
-                onglet.show();
-            }
-            </script>
-            
         </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Compte à rebours de 10 minutes
+        function startCountdown(duration) {
+            let timer = duration, minutes, seconds;
+            let countdownElement = document.getElementById('countdown');
+
+            let interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                countdownElement.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    countdownElement.textContent = "Temps écoulé";
+                    alert("Votre session a expiré. Veuillez recommencer l'achat.");
+                    window.location.reload(); // Recharge la page après expiration
+                }
+            }, 1000);
+        }
+
+        // Démarrer le compte à rebours dès l'affichage de la page
+        document.addEventListener("DOMContentLoaded", function () {
+            startCountdown(600); // 600 secondes = 10 minutes
+        });
+
+        // Fonction pour changer d'onglet
+        function changerOnglet(ongletID) {
+            let onglet = new bootstrap.Tab(document.getElementById(ongletID + "-tab"));
+            onglet.show();
+        }
+
         // Calcul du montant total
         const quantityInputs = document.querySelectorAll('.quantity');
         const totalAmount = document.getElementById('totalAmount');
-        const paiementTotal = document.getElementById('paiement-total');
-        const paiementDetails = document.getElementById('paiement-details');
 
         function updateTotal() {
             let total = 0;
@@ -317,70 +283,20 @@
                 total += quantity * price;
             });
             totalAmount.textContent = `${total} Fcfa`;
-            paiementTotal.textContent = `${total} Fcfa`;
-            updatePaiementDetails();
-        }
-
-        function updatePaiementDetails() {
-            let html = '';
-            quantityInputs.forEach(input => {
-                const quantity = parseInt(input.value);
-                if (quantity > 0) {
-                    const price = parseInt(input.getAttribute('data-price'));
-                    const tarif = input.closest('tr').querySelector('td').textContent;
-                    html += `
-                        <tr>
-                            <td>${tarif}</td>
-                            <td>${price} Fcfa</td>
-                            <td>${quantity}</td>
-                        </tr>
-                    `;
-                }
-            });
-            paiementDetails.innerHTML = html;
         }
 
         quantityInputs.forEach(input => {
             input.addEventListener('input', updateTotal);
         });
 
-        // Vérification de l'email et du téléphone
-        function verifierEmail() {
-            const email = document.getElementById('email').value;
-            alert(`Email ${email} vérifié !`);
-        }
-
-        function verifierTelephone() {
-            const telephone = document.getElementById('telephone').value;
-            alert(`Téléphone ${telephone} vérifié !`);
-        }
-
-        // Affichage des coordonnées dans l'onglet Paiement
-        const coordonneesResume = document.getElementById('coordonnees-resume');
-        document.getElementById('coordonnees-tab').addEventListener('click', () => {
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const telephone = document.getElementById('telephone').value;
-            const paiement = document.getElementById('paiement').value;
-            coordonneesResume.innerHTML = `
-                <p><strong>Nom :</strong> ${nom}</p>
-                <p><strong>Email :</strong> ${email}</p>
-                <p><strong>Téléphone :</strong> ${telephone}</p>
-                <p><strong>Moyen de paiement :</strong> ${paiement}</p>
-            `;
-        });
-
         // Validation du paiement
         function validerPaiement() {
             const success = Math.random() > 0.5; // Simule un succès ou un échec aléatoire
             const confirmationMessage = document.getElementById('confirmation-message');
-            const confirmationError = document.getElementById('confirmation-error');
             if (success) {
-                confirmationMessage.classList.remove('hidden');
-                confirmationError.classList.add('hidden');
+                confirmationMessage.classList.remove('d-none');
             } else {
-                confirmationMessage.classList.add('hidden');
-                confirmationError.classList.remove('hidden');
+                alert("Le paiement a échoué. Veuillez réessayer.");
             }
         }
     </script>
