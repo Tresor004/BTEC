@@ -222,23 +222,186 @@
                             <div class="tab-pane fade" id="coordonnees" role="tabpanel" aria-labelledby="coordonnees-tab">
                                 <form>
                                     <div class="form-group">
-                                        <label for="nom">Nom et prénoms</label>
-                                        <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom et prénoms">
+                                        <label for="nom">Nom</label>
+                                        <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="prenom">Prénom</label>
+                                        <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom">
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="photo">Photo</label>
+                                        <input type="file" class="form-control-file" id="photo" accept="image/*">
+                                    </div> <br>
+                                    <div class="form-group">
+                                        <label for="moyenPaiement">Moyen de paiement</label>
+                                        <select class="form-control" id="moyenPaiement" onchange="afficherChampTelephone()">
+                                            <option value="">Sélectionnez un moyen de paiement</option>
+                                            <option value="moov">Moov Money</option>
+                                            <option value="mobile">Mobile Money</option>
+                                            <option value="virement">Virement bancaire</option>
+                                            <option value="carte">Carte bancaire</option>
+                                        </select>
                                     </div>
-                                </form>
-                                <button class="btn btn-primary mt-3" onclick="changerOnglet('paiement')">Valider</button>
+                                    <div class="form-group" id="champTelephone" style="display: none;">
+                                        <label for="telephone">Numéro de téléphone</label>
+                                        <input type="tel" class="form-control" id="telephone" placeholder="Entrez votre numéro">
+                                    </div>
+                                </form><br>
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-danger me-2" onclick="changerOnglet('coordonnees')">Retour</button>
+                                    <button class="btn btn-primary" onclick="changerOnglet('paiement')">Continuer</button>
+                                </div>
+                                
                             </div>
+                            
+                            <script>
+                                function afficherChampTelephone() {
+                                    let moyenPaiement = document.getElementById("moyenPaiement").value;
+                                    let champTelephone = document.getElementById("champTelephone");
+                            
+                                    if (moyenPaiement === "moov" || moyenPaiement === "mobile") {
+                                        champTelephone.style.display = "block";
+                                    } else {
+                                        champTelephone.style.display = "none";
+                                    }
+                                }
+                            </script>
+                            
+
                             <div class="tab-pane fade" id="paiement" role="tabpanel" aria-labelledby="paiement-tab">
-                                <h5>Coordonnées</h5>
-                                <p id="coordonnees-resume"></p>
-                                <button class="btn btn-primary mt-3" onclick="changerOnglet('confirmation')">Valider</button>
+                                <!-- Première partie : Coordonnées du client -->
+                                <div class="p-3 border rounded mb-3">
+                                    <h5>Coordonnées</h5>
+                                    <p><strong>Nom :</strong> <span id="nom-resume"></span></p>
+                                    <p><strong>Prénom :</strong> <span id="prenom-resume"></span></p>
+                                    <p><strong>Email :</strong> <span id="email-resume"></span></p>
+                                    <p><strong>Téléphone :</strong> <span id="telephone-resume"></span></p>
+                                </div>
+                            
+                                <!-- Deuxième partie : Tableau des tickets achetés -->
+                                <div class="p-3 border rounded mb-3">
+                                    <h5>Résumé des tickets</h5>
+                                    <table class="table table-bordered text-center">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Tarif</th>
+                                                <th>Prix Unitaire</th>
+                                                <th>Quantité</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ticket-resume">
+                                            <!-- Les lignes seront ajoutées dynamiquement en JS -->
+                                        </tbody>
+                                    </table>
+                                    <h5 class="text-end mt-3">Montant total : <span id="montant-total">0</span> Fcfa</h5>
+                                </div>
+                            
+                                <!-- Bouton de validation -->
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-danger me-2" onclick="changerOnglet('paiement')">Retour</button>
+                                    <button class="btn btn-primary" onclick="changerOnglet('confirmation')">Continuer</button>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
-                                <div class="alert alert-success d-none" id="confirmation-message">
+                            
+                            <script>
+                                function mettreAJourResume() {
+                                    // Récupération des informations du client
+                                    document.getElementById("nom-resume").textContent = document.getElementById("nom").value;
+                                    document.getElementById("prenom-resume").textContent = document.getElementById("prenom").value;
+                                    document.getElementById("email-resume").textContent = document.getElementById("email").value;
+                                    document.getElementById("telephone-resume").textContent = document.getElementById("telephone").value || "Non renseigné";
+                            
+                                    // Récupération des tickets achetés
+                                    let lignesTickets = "";
+                                    let total = 0;
+                                    document.querySelectorAll(".quantity").forEach(input => {
+                                        let quantite = parseInt(input.value, 10);
+                                        let prix = parseInt(input.dataset.price, 10);
+                                        let tarif = input.closest("tr").querySelector("td:first-child").textContent;
+                            
+                                        if (quantite > 0) {
+                                            total += prix * quantite;
+                                            lignesTickets += `
+                                                <tr>
+                                                    <td>${tarif}</td>
+                                                    <td>${prix} Fcfa</td>
+                                                    <td>${quantite}</td>
+                                                </tr>
+                                            `;
+                                        }
+                                    });
+                            
+                                    document.getElementById("ticket-resume").innerHTML = lignesTickets || "<tr><td colspan='3'>Aucun ticket sélectionné</td></tr>";
+                                    document.getElementById("montant-total").textContent = total;
+                                }
+                            
+                                // Appelle cette fonction au moment de passer à l'onglet "paiement"
+                                document.getElementById("paiement-tab").addEventListener("click", mettreAJourResume);
+                            </script>
+                            
+                            <div class="tab-pane fade text-center" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
+                                <!-- Message de confirmation caché -->
+                                <div id="confirmation-message" class="alert alert-success d-none">
                                     Paiement réussi ! Votre commande a été validée.
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="validerPaiement()">Valider le paiement</button>
+                            
+                                <!-- Bouton centré -->
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button type="button" class="btn btn-primary px-4 py-2" onclick="validerPaiement()">Valider le paiement</button>
+                                </div>
                             </div>
+                            
+                            <!-- Fenêtre pop-up interne -->
+                            <div id="popup" class="d-none">
+                                <div class="popup-content">
+                                    <h3>Paiement réussi !</h3>
+                                    <p>Votre commande a été confirmée.</p>
+                                    <button class="btn btn-light mt-2" onclick="fermerPopup()">OK</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Styles pour la pop-up -->
+                            <style>
+                                #popup {
+                                    position: fixed;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: rgba(0, 0, 0, 0.5);
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            
+                                .popup-content {
+                                    background: #28a745; /* Vert pour succès */
+                                    color: white;
+                                    padding: 20px;
+                                    border-radius: 10px;
+                                    text-align: center;
+                                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+                                }
+                            </style>
+                            
+                            <!-- Script pour gérer la pop-up -->
+                            <script>
+                                function validerPaiement() {
+                                    // Afficher la pop-up
+                                    document.getElementById("popup").classList.remove("d-none");
+                                }
+                            
+                                function fermerPopup() {
+                                    // Fermer la pop-up
+                                    document.getElementById("popup").classList.add("d-none");
+                                }
+                            </script>
+                            
                         </div>
                     </div>
                 </div>
