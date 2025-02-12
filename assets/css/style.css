@@ -278,7 +278,7 @@ html,body{height: 100%;}
     .pub {
         width: 90%; /* Largeur plus petite pour les écrans plus petits */
         margin-left: 0; /* Supprime l'espacement à gauche */
-        height: auto; /* Hauteur automatique pour garder les proportions */
+        height: s proportions */
     }
 
     .p2 {
