@@ -60,159 +60,233 @@
 		<!-- top-area Start -->
 		<section class="top-area">
 			<div class="header-area">
-				<!-- Start Navigation -->
-			    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+				<nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+					<div class="container">
+						<div class="header-content">
+							<!-- Logo -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+									<i class="fa fa-bars"></i>
+								</button>
+								<a class="navbar-brand" href="etickets.html">E-<span>tickets</span></a>
+							</div>
 
-			        <div class="container">
+							<!-- Barre de recherche -->
+							<div class="navbar-search">
+								<form class="search-form" action="#" method="get">
+									<input type="text" class="search-input" placeholder="Rechercher un évènement..." name="search">
+									<button type="submit" class="search-button">
+										<i class="fa fa-search"></i>
+									</button>
+								</form>
+							</div>
 
-			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
-			                <a class="navbar-brand" href="etickets.html">E-<span>tickets</span></a>
-
-			            </div><!--/.navbar-header-->
-			            <!-- End Header Navigation -->
-
-			            <!-- Collect the nav links, forms, and other content for toggling -->
-			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-			                <ul class="nav navbar-nav navbar-right " data-in="fadeInDown" data-out="fadeOutUp">
-			                    <li class=" scroll active"><a href="#home">Accueil</a></li>
-			                    <li class="scroll"><a href="#works">A propos</a></li>
-			                    <li class="scroll"><a href="#explore">Evènements</a></li>
-			                    <li class="scroll"><a href="#contact">contact</a></li>
-								<li ><a href="index.html">BTEC</a></li>
-			                </ul><!--/.nav -->
-
-							
-			            </div><!-- /.navbar-collapse -->
-			        </div><!--/.container-->
-			    </nav><!--/nav-->
-			    <!-- End Navigation -->
-			</div><!--/.header-area-->
-		    <div class="clearfix"></div>
-
-		</section><!-- /.top-area-->
+							<!-- Menu de navigation -->
+							<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+								<ul class="nav navbar-nav navbar-right">
+									<li class="scroll active"><a href="#home">Accueil</a></li>
+									<li class="scroll"><a href="#works">À propos</a></li>
+									<li class="scroll"><a href="#explore">Événements</a></li>
+									<li class="scroll"><a href="#contact">Contact</a></li>
+									<li><a href="index.html">BTEC</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="clearfix"></div>
+		</section>
 		<!-- top-area End -->
 
-		<!--welcome-hero start -->
 		<section id="home" class="welcome-hero">
-			<div class="container">
-				<div class="welcome-hero-txt">
-					<h2>Le meilleur espace <br> Pour la gestion de vos évènements </h2>
+			<div class="carousel-container">
+				<div class="carousel">
+					<img src="../BTEC/assets/images/welcome-hero/banner.jpg" class="carousel-item" alt="Image 1">
+					<img src="../BTEC/assets/images/welcome-hero/concert.jpg" class="carousel-item" alt="Image 2">
+					<img src="../BTEC/assets/images/welcome-hero/theatre.jpg" class="carousel-item" alt="Image 3">
+					<img src="../BTEC/assets/images/welcome-hero/banner.jpg" class="carousel-item" alt="Image 4">
+					<img src="../BTEC/assets/images/welcome-hero/theatre.jpg" class="carousel-item" alt="Image 5">
 				</div>
-				<div class="welcome-hero-serch-box">
-					<div class="welcome-hero-form">
-						<div class="single-welcome-hero-form">
-							<h3>Quoi ?</h3>
-							<form action="index.html">
-								<input type="text" placeholder="Ex: Vodoun days, Festival WeLoveEya..."/>
-							</form>
-							<div class="welcome-hero-form-icon">
-								<i class="flaticon-list-with-dots"></i>
-							</div>
-						</div>
-						<div class="single-welcome-hero-form">
-							<h3>Où ?</h3>
-							<form action="index.html">
-								<input type="text" placeholder="Ex: Cotonou, Ouidah..." />
-							</form>
-							<div class="welcome-hero-form-icon">
-								<i class="flaticon-gps-fixed-indicator"></i>
-							</div>
-						</div>
-					</div><br>
-					<div class="welcome-hero-serch rch">
-						<button class="welcome-hero-btn" onclick="window.location.href='#'">
-							Rechercher  <i data-feather="search"></i> 
-						</button>
-					</div>
-				</div>
+				<button class="prev" onclick="prevSlide()">&#10094;</button>
+				<button class="next" onclick="nextSlide()">&#10095;</button>
+				<div class="carousel-indicators"></div> <!-- Correction du nom de la classe -->
 			</div>
+		</section>
+		
+		<style>
+			.welcome-hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+}
 
-		</section><!--/.welcome-hero-->
-		<!--welcome-hero end -->
-		<div style="background-color: blue; height: 50px;"></div>
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    width: 500%; /* 5 images */
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 0 0 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.carousel-item.active {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-indicators { /* Correction du nom de la classe */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators button.active {
+    background-color: white;
+}
+		</style>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".carousel");
+    const slides = document.querySelectorAll(".carousel-item");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+    const indicatorsContainer = document.querySelector(".carousel-indicators");
+
+    if (!carousel || !slides.length || !prevButton || !nextButton || !indicatorsContainer) {
+        console.error("Éléments du carrousel manquants !");
+        return;
+    }
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Fonction pour mettre à jour le carrousel
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === currentIndex);
+        });
+
+        // Mettre à jour les indicateurs
+        const indicators = indicatorsContainer.querySelectorAll("button");
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    // Fonction pour passer à la diapositive suivante
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    // Fonction pour revenir à la diapositive précédente
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    // Création des indicateurs
+    slides.forEach((_, i) => {
+        const indicator = document.createElement("button");
+        indicator.addEventListener("click", () => {
+            currentIndex = i;
+            updateCarousel();
+        });
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    // Ajout des écouteurs d'événements pour les flèches
+    prevButton.addEventListener("click", prevSlide);
+    nextButton.addEventListener("click", nextSlide);
+
+    // Auto-défilement toutes les 5 secondes
+    setInterval(nextSlide, 5000);
+
+    // Initialisation
+    updateCarousel();
+});
+		</script>
+
 		<!--works start -->
 		<section id="works" class="works">
-			<div class="container">
-				<div class="section-header">
-					<h2>A propos</h2>
-					<p>E-tickets est une plateforme de promotion et de vente en ligne de <br>tickets pour des évènements sur toute l'étendue du territoire national. <br>Voici comment profiter de nos services :</p>
-				</div><!--/.section-header-->
+			<div class="container contpub">
 				<div class="works-content">
 					<div class="row">
-						<div class="col-md-4 col-sm-6 ">
-							<div class="single-how-works how">
-								<div class="single-how-works-icon">
-									<i class="flaticon-lightbulb-idea"></i>
-								</div>
-								<h2><a href="#">Consulter notre liste et <span> choisissez  votre</span> évènement</a></h2>
-					
-							</div>
-								<style>
-									.how:hover{
-										background-color: blue;
-									}
-								</style>
-						</div>
-						<div class="col-md-4 col-sm-6 ">
-							<div class="single-how-works how">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking lampe"></i>
-								</div>
-								<h2><a href="#">Effectuez des réservations <span> ou achetez vos tickets </span></a></h2>
-							</div>
-
-						</div>
-						<div class="col-md-4 col-sm-6 ">
-							<div class="single-how-works how">
-								<div class="single-how-works-icon">
-									<i class="flaticon-location-on-road"></i>
-								</div>
-								<h2><a href="#">Faites <span> la promotion de</span> votre évènement</a></h2>
-							</div>
-						</div>
+							<img src="../BTEC/assets/images/welcome-hero/banner.jpg" class="pub p1" alt="Image 1">
+							<img src="../BTEC/assets/images/welcome-hero/banner.jpg" class="pub p2" alt="Image 1">	
 					</div>
 				</div>
 			</div><!--/.container-->
 		
 		</section><!--/.works-->
 		<!--works end -->
-		<div style="background-color: blue; height: 50px;"></div>
+
+
 		<!--explore start -->
 		<section id="explore" class="explore">
-			<div class="container">
+			<div class="container event">
 				<div class="section-header">
-					<h2>Evènements</h2>
+					<h2><strong>A NE PAS MANQUER</strong></h2>
 				</div><!--/.section-header-->
 				<div class="blog-content">
 					<div class="row">
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-blog-item">
-								<div class="single-blog-item-img">
-									<img src="assets/images/blog/b1.jpg" alt="blog image">
-								</div>
-								<div class="single-blog-item-txt">
-									<h2><a href="détails.html"><strong> After St Valentin</strong></a></h2>
-									<h4><strong>Date: </strong><a href="détails.html" style="color: blue;">15 Février 2025</a></h4>
-									<p>
-										<strong>Lieu: </strong>PLAGE FIDJROSSE, COTONOU
-									</p>
-									<!-- Ajout du bouton "Consulter" -->
-									<div style="text-align: center; margin-top: 15px;">
-										<a href="détails.html" class="btn-consulter" style="background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-											Consulter
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						
-						<div class="col-md-4 col-sm-6">
+				
+						<!-- premier élément -->
+						<div class="col-md-3 col-sm-6">
 							<div class="single-blog-item">
 								<div class="single-blog-item-img">
 									<img src="assets/images/blog/b1.jpg" alt="blog image">
@@ -220,9 +294,7 @@
 								<div class="single-blog-item-txt">
 									<h2><a href="détails.html"><strong> After St Valentin</strong></a></h2>
 									<h4>Date: <a href="détails.html" style="color: blue;">15 Février 2025</a></h4>
-									<p>
-										Lieu: PLAGE FIDJROSSE, COTONOU
-									</p>
+									<p>Lieu: PLAGE FIDJROSSE, COTONOU</p>
 									<div style="text-align: center; margin-top: 15px;">
 										<a href="détails.html" class="btn-consulter" style="background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
 											Consulter
@@ -231,18 +303,54 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="col-md-4 col-sm-6">
+				
+						<!-- Deuxième élément -->
+						<div class="col-md-3 col-sm-6">
 							<div class="single-blog-item">
 								<div class="single-blog-item-img">
 									<img src="assets/images/blog/b1.jpg" alt="blog image">
 								</div>
 								<div class="single-blog-item-txt">
 									<h2><a href="détails.html"><strong> After St Valentin</strong></a></h2>
-									<h4>Date: <a href="détails.html" style="color: blue;" >15 Février 2025</a></h4>
-									<p>
-										Lieu: PLAGE FIDJROSSE, COTONOU
-									</p>
+									<h4>Date: <a href="détails.html" style="color: blue;">15 Février 2025</a></h4>
+									<p>Lieu: PLAGE FIDJROSSE, COTONOU</p>
+									<div style="text-align: center; margin-top: 15px;">
+										<a href="détails.html" class="btn-consulter" style="background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+											Consulter
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+				
+						<!-- Troisième élément -->
+						<div class="col-md-3 col-sm-6">
+							<div class="single-blog-item">
+								<div class="single-blog-item-img">
+									<img src="assets/images/blog/b1.jpg" alt="blog image">
+								</div>
+								<div class="single-blog-item-txt">
+									<h2><a href="détails.html"><strong> After St Valentin</strong></a></h2>
+									<h4>Date: <a href="détails.html" style="color: blue;">15 Février 2025</a></h4>
+									<p>Lieu: PLAGE FIDJROSSE, COTONOU</p>
+									<div style="text-align: center; margin-top: 15px;">
+										<a href="détails.html" class="btn-consulter" style="background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+											Consulter
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Quatrième élément -->
+						<div class="col-md-3 col-sm-6">
+							<div class="single-blog-item">
+								<div class="single-blog-item-img">
+									<img src="assets/images/blog/b1.jpg" alt="blog image">
+								</div>
+								<div class="single-blog-item-txt">
+									<h2><a href="détails.html"><strong> After St Valentin</strong></a></h2>
+									<h4>Date: <a href="détails.html" style="color: blue;">15 Février 2025</a></h4>
+									<p>Lieu: PLAGE FIDJROSSE, COTONOU</p>
 									<div style="text-align: center; margin-top: 15px;">
 										<a href="détails.html" class="btn-consulter" style="background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
 											Consulter
@@ -464,7 +572,8 @@
 		     
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
-        
-    </body>
+
+		
+	</body>
 	
 </html>
