@@ -170,7 +170,7 @@ html,body{height: 100%;}
 
 .search-button {
     padding: 8px 12px;
-    background-color: #007bff;
+    background-color: blue;
     color: #fff;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -179,7 +179,7 @@ html,body{height: 100%;}
 }
 
 .search-button:hover {
-    background-color: #0056b3;
+    background-color: #077fff;
 }
 
 /* Menu */
@@ -627,6 +627,7 @@ html,body{height: 100%;}
 /* Bouton très discret */
 .btn-consulter:hover {
     background-color: rgb(0, 149, 255);
+    color: white;
     transform: scale(1.05);
 }
 
@@ -772,7 +773,7 @@ html,body{height: 100%;}
 	z-index: 2;
 }
 #scroll-Top  .return-to-top:hover {
-    background:#f43032;
+    background:#077fff;
 	border:1px soliblue;
 }
 
