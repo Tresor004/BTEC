@@ -278,13 +278,14 @@ html,body{height: 100%;}
     .pub {
         width: 90%; /* Largeur plus petite pour les écrans plus petits */
         margin-left: 0; /* Supprime l'espacement à gauche */
-        height: s proportions */
+        height: auto; /* Hauteur automatique pour garder les proportions */
     }
 
     .p2 {
         margin-left: 0; /* Retirer l'espacement entre les images */
     }
 }
+
 
 
 .event {
@@ -624,13 +625,9 @@ html,body{height: 100%;}
 }
 
 /* Bouton très discret */
-.btn-consulter {
-    padding: 4px 8px;
-    font-size: 10px;
-    background: none;
-    color: blue;
-    border: none;
-    text-decoration: underline;
+.btn-consulter:hover {
+    background-color: rgb(0, 149, 255);
+    transform: scale(1.05);
 }
 
 
