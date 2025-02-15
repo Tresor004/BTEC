@@ -590,6 +590,22 @@ html,body{height: 100%;}
     border-right: solid white 1px;
 }
 
+@media (max-width: 767px) {
+    .statistics-counter {
+        flex-direction: column; /* Passe les éléments en colonne */
+    }
+    
+    .single-ststistics-box {
+        width: 100%; /* Prend toute la largeur */
+        border-right: none; /* Supprime la bordure droite */
+        border-bottom: 1px solid #fff; /* Ajoute une ligne blanche entre les pubs */
+        padding: 15px 0; /* Espacement entre les pubs */
+    }
+
+    .single-ststistics-box:last-child {
+        border-bottom: none; /* Supprime la bordure du dernier élément */
+    }
+}
 
 /*-------------------------------------
         10. Blog
