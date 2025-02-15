@@ -533,45 +533,53 @@ html,body{height: 100%;}
 }
 /*.slick-slide*/
 
-.statistics{
-    position:relative;
+.statistics {
+    position: relative;
     display: flex;
     align-items: center;
-    background:url(../../assets/images/counter/counter-banner.jpg)no-repeat fixed;
-    background-position:center;
-    background-size:cover;
-    padding:127px 0 120px;
+    background: url(../../assets/images/counter/counter-banner.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 127px 0 120px;
 }
-.statistics:before{
-    position:absolute;
-    content:'';
-    background: rgba(75,75,75,.60);
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
+
+.statistics:before {
+    position: absolute;
+    content: '';
+    background: rgba(75, 75, 75, 0.60);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .statistics-counter {
     display: flex;
-    justify-content: center; /* Centre les éléments horizontalement */
-    align-items: center; /* Centre les éléments verticalement */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
     flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
     width: 100%;
 }
 
-/* single-ststistics-box */
+/* Style des pubs */
 .single-ststistics-box {
     text-align: center;
-    margin-bottom:30px;
-
+    padding: 20px;
+    flex: 1; /* Permet aux éléments d'occuper le même espace */
+    border-right: 1px solid white; /* Ligne blanche entre les pubs */
 }
-/* single-ststistics-box */
-.statistics-content{
+
+/* Supprime la ligne blanche à droite du dernier élément */
+.single-ststistics-box:last-child {
+    border-right: none;
+}
+
+/* Contenu des pubs */
+.statistics-content {
     display: flex;
     justify-content: center;
-    color:#fff;
-    font-size:60px;
+    color: #fff;
+    font-size: 60px;
 }
 
 .statistics-content span {
@@ -579,33 +587,29 @@ html,body{height: 100%;}
     font-size: 30px;
 }
 
-.single-ststistics-box h3{
-    color:#fff;
-    font-size:24px;
-    text-transform:capitalize;
+.single-ststistics-box h3 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: capitalize;
     font-weight: 500;
 }
 
-.line{
-    border-right: solid white 1px;
-}
-
+/* 📱 Mode mobile : affichage en colonne + ligne blanche horizontale */
 @media (max-width: 767px) {
     .statistics-counter {
-        flex-direction: column; /* Passe en mode colonne */
-        align-items: center; /* Centre chaque élément */
-    }
-    
-    .single-ststistics-box {
-        width: 100%; /* Chaque pub prend toute la largeur */
-        border-right: none; /* Supprime la bordure droite */
-        border-bottom: 1px solid #fff; /* Ligne blanche entre les pubs */
-        padding: 15px 0; /* Espacement entre les pubs */
-        text-align: center; /* Centre le texte */
+        flex-direction: column; /* Affichage en colonne */
+        align-items: center;
     }
 
+    .single-ststistics-box {
+        width: 100%;
+        border-right: none; /* Supprime la bordure verticale */
+        border-bottom: 1px solid white; /* Ajoute une bordure blanche horizontale */
+    }
+
+    /* Supprime la bordure en bas du dernier élément */
     .single-ststistics-box:last-child {
-        border-bottom: none; /* Supprime la bordure du dernier élément */
+        border-bottom: none;
     }
 }
 
