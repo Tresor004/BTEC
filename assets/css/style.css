@@ -566,6 +566,10 @@ html,body{height: 100%;}
     text-align: center;
     padding: 20px;
     flex: 1; /* Permet aux éléments d'occuper le même espace */
+    
+}
+
+.line{
     border-right: 1px solid white; /* Ligne blanche entre les pubs */
 }
 
@@ -610,6 +614,10 @@ html,body{height: 100%;}
     /* Supprime la bordure en bas du dernier élément */
     .single-ststistics-box:last-child {
         border-bottom: none;
+    }
+
+    .line{
+        border-bottom: 1px solid white; /* Ajoute une bordure blanche horizontale */
     }
 }
 
