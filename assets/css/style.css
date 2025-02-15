@@ -592,14 +592,16 @@ html,body{height: 100%;}
 
 @media (max-width: 767px) {
     .statistics-counter {
-        flex-direction: column; /* Passe les éléments en colonne */
+        flex-direction: column; /* Passe en mode colonne */
+        align-items: center; /* Centre chaque élément */
     }
     
     .single-ststistics-box {
-        width: 100%; /* Prend toute la largeur */
+        width: 100%; /* Chaque pub prend toute la largeur */
         border-right: none; /* Supprime la bordure droite */
-        border-bottom: 1px solid #fff; /* Ajoute une ligne blanche entre les pubs */
+        border-bottom: 1px solid #fff; /* Ligne blanche entre les pubs */
         padding: 15px 0; /* Espacement entre les pubs */
+        text-align: center; /* Centre le texte */
     }
 
     .single-ststistics-box:last-child {
