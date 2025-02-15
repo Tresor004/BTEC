@@ -551,6 +551,15 @@ html,body{height: 100%;}
     top:0;
     left:0;
 }
+
+.statistics-counter {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    width: 100%;
+}
+
 /* single-ststistics-box */
 .single-ststistics-box {
     text-align: center;
@@ -564,15 +573,23 @@ html,body{height: 100%;}
     color:#fff;
     font-size:60px;
 }
+
 .statistics-content span {
     margin-left: 5px;
+    font-size: 30px;
 }
+
 .single-ststistics-box h3{
     color:#fff;
     font-size:24px;
     text-transform:capitalize;
     font-weight: 500;
 }
+
+.line{
+    border-right: solid white 1px;
+}
+
 
 /*-------------------------------------
         10. Blog
