@@ -2324,78 +2324,7 @@ section.portfolio .thumb {
   margin-bottom: 30px;
 }
 
-section.portfolio .thumb:hover .hover-effect {
-  opacity: 1;
-  visibility: visible;
-}
 
-section.portfolio .thumb .hover-effect {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(42, 42, 42, 0.9);
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s;
-}
-
-section.portfolio .thumb .hover-effect .content {
-  text-align: center;
-  padding: 30px;
-  display: inline-block;
-  width: 100%;
-}
-
-section.portfolio .thumb .hover-effect .content h4 {
-  font-size: 20px;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-section.portfolio .thumb .hover-effect .content span {
-  font-size: 15px;
-  color: #fff;
-  margin: 10px;
-}
-
-section.portfolio .thumb .hover-effect .content span em {
-  font-style: normal;
-  font-weight: 700;
-}
-
-section.portfolio .thumb .hover-effect .content ul {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-section.portfolio .thumb .hover-effect .content ul li {
-  display: inline-block;
-  margin: 0px 5px;
-}
-
-section.portfolio .thumb .hover-effect .content ul li a {
-  width: 46px;
-  height: 46px;
-  display: inline-block;
-  text-align: center;
-  line-height: 46px;
-  border-radius: 10px;
-  background-color: #fff;
-  color: #2a2a2a;
-  font-size: 15px;
-  transition: all .3s;
-}
-
-section.portfolio .thumb .hover-effect .content ul li a:hover {
-  background-color: #86B817;
-  color: #fff;
-}
 
 section.portfolio .main-button {
   text-align: center;
