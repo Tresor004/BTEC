@@ -230,8 +230,53 @@
     </div>
   </div>
   
-  <!-- Modal -->
-  <div id="modal" class="modal">
+ 
+
+ <!-- Affichage des offres d'emploi -->
+<div class="container py-5 d-flex flex-column align-items-center">
+    <!-- Passage de w-75 à w-100 pour rallonger horizontalement -->
+    <div class="row g-4 w-100 mx-auto">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
+        <h1 class="mb-5">Postes disponibles</h1>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="card offre-card p-4" onclick="openPopup()">
+          <div class="d-flex align-items-center">
+            <div>
+              <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
+              <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
+              <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
+              <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
+              <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6 col-12">
+        <div class="card offre-card p-4" onclick="openPopup()">
+          <div class="d-flex align-items-center">
+            <div>
+              <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
+              <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
+              <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
+              <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
+              <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="connexionCan.html" class="plus">
+      <button class="btn btn-primary mt-3 align-self-center">
+        Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i>
+      </button>
+    </a>
+  </div>
+  
+   <!-- Modal -->
+   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
@@ -348,51 +393,6 @@
       window.location.href = "index.html"; // Remplace par ta page de redirection
     }
   </script>
-
- <!-- Affichage des offres d'emploi -->
-<div class="container py-5 d-flex flex-column align-items-center">
-    <!-- Passage de w-75 à w-100 pour rallonger horizontalement -->
-    <div class="row g-4 w-100 mx-auto">
-      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
-        <h1 class="mb-5">Postes disponibles</h1>
-      </div>
-      <div class="col-md-6 col-12">
-        <div class="card offre-card p-4" onclick="openPopup()">
-          <div class="d-flex align-items-center">
-            <div>
-              <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
-              <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
-              <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
-              <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
-              <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="col-md-6 col-12">
-        <div class="card offre-card p-4" onclick="openPopup()">
-          <div class="d-flex align-items-center">
-            <div>
-              <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
-              <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
-              <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
-              <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
-              <button class="btn btn-primary mt-3" onclick="event.stopPropagation(); openPopup();">Postuler</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a href="connexionCan.html" class="plus">
-      <button class="btn btn-primary mt-3 align-self-center">
-        Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i>
-      </button>
-    </a>
-  </div>
-  
-
   
    <!-- Pop-up -->
    <div id="popup" class="popup-overlay">
