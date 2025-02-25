@@ -816,7 +816,7 @@ html,body{height: 100%;}
 	-moz-transition:.5s; 
 	-ms-transition:.5s; 
 	-o-transition:.5s;
-    transition: .5s;
+    transition: .5s; 
 	z-index: 2;
 }
 #scroll-Top  .return-to-top:hover {
