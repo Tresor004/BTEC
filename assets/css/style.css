@@ -144,7 +144,7 @@ html,body{height: 100%;}
 }
 
 .navbar-header a.navbar-brand span {
-    color: blue;
+    color:  rgb(0, 136, 255);
 }
 
 /* Barre de recherche */
@@ -170,7 +170,7 @@ html,body{height: 100%;}
 
 .search-button {
     padding: 8px 12px;
-    background-color: blue;
+    background-color: d  rgb(0, 136, 255);
     color: #fff;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -350,7 +350,7 @@ html,body{height: 100%;}
     width: 83px;
     height: 21px;
     line-height: 21px;
-    background:blue;
+    background:d  rgb(0, 136, 255);
     border-radius: 3px;
     color: #fcfcfc;
     text-transform: capitalize;
@@ -755,7 +755,7 @@ html,body{height: 100%;}
     -o-transition:0.3s linear;
     transition:0.3s linear;
 }
-.footer-menu ul.footer-menu-item li a:hover{color: blue;}
+.footer-menu ul.footer-menu-item li a:hover{color: d  rgb(0, 136, 255);}
 .hm-footer-copyright {
     padding: 40px 0;
     border-top: 1px solid #e1e5eb;
@@ -791,8 +791,8 @@ html,body{height: 100%;}
     border-radius: 50%;
 }
 .footer-social span {margin-right:15px;margin-left: 0;color: #a5adb3;}
-.footer-social span:hove::r{color:blue;}
-.footer-social a:hover {background:blue;color: #fff;}
+.footer-social span:hove::r{color:d  rgb(0, 136, 255);}
+.footer-social a:hover {background:d  rgb(0, 136, 255);color: #fff;}
 
 /*===============================
     Scroll Top
@@ -809,8 +809,8 @@ html,body{height: 100%;}
     font-size: 20px;
     cursor: pointer;
     color: #fff;
-    background:blue;
-	border:1px soliblue;
+    background-color: solid  rgb(0, 136, 255);
+	border:1px solid  rgb(0, 136, 255);
 	border-radius:50%;
 	-webkit-transition: .5s; 
 	-moz-transition:.5s; 
@@ -821,7 +821,7 @@ html,body{height: 100%;}
 }
 #scroll-Top  .return-to-top:hover {
     background:#077fff;
-	border:1px soliblue;
+	border:1px solid  rgb(0, 136, 255);
 }
 
 #scroll-Top  .return-to-top i{

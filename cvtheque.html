@@ -61,7 +61,40 @@
     
             <div class="container py-5" style="position: relative; z-index: 2;">
                 <div class="row justify-content-center py-5">
-                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+
+                    <div class="container position-relative">
+                        <div class="row">
+                          <div class="col-md-12 d-flex flex-column align-items-end position-absolute" style="top: 10px; right: 20px; z-index: 3;">
+                            <div class="d-flex align-items-center">
+                              <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                              <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
+                            </div>
+                            <button class="btn btn-danger mt-2 px-3 py-1 d-flex align-items-center exit">
+                              <i class="bi bi-box-arrow-right me-2 "></i> Déconnecter
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <style>
+                        .modif{
+                            margin-top: 20px;
+                        }
+                        .profile-img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 1px solid gray;
+                            padding: 3px;
+                        }
+                        .exit:hover{
+                          background-color: #fff;
+                          color: red;
+                        }
+            
+                      </style>
+
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center custom-margin-top">
                         <h1 class="display-3 text-white mb-3 animated slideInDown"><i>CVthèque</i></h1>
                         <h3 class="text-white">Trouvez le candidat idéal : découvrez leurs expériences, leurs compétences et leur potentiel pour une embauche réussie.</h3>
     
@@ -73,6 +106,12 @@
                             </form>
                         </div>
                     </div>
+                    <style>
+                        .custom-margin-top {
+                            margin-top: -20px; /* Ajuste la valeur selon tes besoins */
+                        }
+
+                    </style>
                 </div>
             </div>
         </div>

@@ -156,65 +156,198 @@
         </div>
         <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4 etk" target="_blank">E-tickets</a>
         <style>
-          .etk:hover{
+          .etk:hover {
             background-color: #85b817c7;
           }
         </style>
       </div>
     </nav>
-
+  
+    <!-- Nouvelle div horizontale bleu nuit -->
+    <div style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 200px;">
+      <div class="d-flex align-items-center">
+        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+        <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
+      </div>
+      <a href="#" onclick="showModal(event)">
+        <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
+          <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
+        </button>
+      </a>
+    </div>
+  
     <div class="hero-header" style="background-image: url('img/offre.jpg');">
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
       <div class="container py-5 connect" style="position: relative; z-index: 2;">
         <div class="row justify-content-center py-5">
-          <div class="col-md-6 d-flex align-items-center flex-column flex-md-row">
-    
-          <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
-            <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
-            <!-- Barre de recherche responsive -->
-            <div class="mt-4">
-              <form class="d-flex search-form flex-wrap justify-content-center">
-                <select class="form-select me-2" aria-label="Sélectionnez une ville">
-                  <option selected>Choisissez une ville</option>
-                  <option value="1">Cotonou</option>
-                  <option value="2">Porto-Novo</option>
-                  <option value="3">Calavi</option>
-                  <option value="4">Ouidah</option>
-                </select>
-                <input class="form-control me-2" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
-                <select class="form-select me-2" aria-label="Sélectionnez un niveau d'étude">
-                  <option selected>Choisissez un niveau d'étude</option>
-                  <option value="1">CEP</option>
-                  <option value="2">BEPC</option>
-                  <option value="3">Baccalauréat</option>
-                  <option value="4">Licence</option>
-                  <option value="5">Master</option>
-                  <option value="6">Aucun</option>
-                </select>
-              </form>
-            </div>
-
-            <!-- Liens pour créer et voir son CV -->
-            <div class="btn-container mt-3">
-              <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
-              <a href="my_cv.html" class="btn btn-register cv">Voir mon cv</a>
-            </div>
-            <style>
-                .cv{
-                    border: solid #fff 2px;
+          <div class="col-md-6 d-flex align-items-center flex-column flex-md-row mt-n5">
+            <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
+              <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
+              <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
+              <!-- Barre de recherche responsive -->
+              <div class="mt-4">
+                <form class="d-flex search-form flex-wrap justify-content-center">
+                  <select class="form-select me-2" aria-label="Sélectionnez une ville">
+                    <option selected>Choisissez une ville</option>
+                    <option value="1">Cotonou</option>
+                    <option value="2">Porto-Novo</option>
+                    <option value="3">Calavi</option>
+                    <option value="4">Ouidah</option>
+                  </select>
+                  <input class="form-control me-2" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
+                  <select class="form-select me-2" aria-label="Sélectionnez un niveau d'étude">
+                    <option selected>Choisissez un niveau d'étude</option>
+                    <option value="1">CEP</option>
+                    <option value="2">BEPC</option>
+                    <option value="3">Baccalauréat</option>
+                    <option value="4">Licence</option>
+                    <option value="5">Master</option>
+                    <option value="6">Aucun</option>
+                  </select>
+                </form>
+              </div>
+  
+              <!-- Liens pour créer et voir son CV -->
+              <div class="btn-container mt-3">
+                <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
+                <a href="my_cv.html" class="btn btn-register cv">Voir mon cv</a>
+              </div>
+              <style>
+                .cv {
+                  border: solid #fff 2px;
                 }
-                .cv:hover{
-                    border: solid #fff 2px;
-                    background-color:white;
-                    color: black;
+  
+                .cv:hover {
+                  border: solid #fff 2px;
+                  background-color: white;
+                  color: black;
                 }
-            </style>
+              </style>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
+      <button class="btn btn-primary" onclick="deconnecter()">Oui, déconnecter</button>
+      <button class="btn btn-secondary" style="background-color: gray;" onclick="closeModal()">Annuler</button>
+    </div>
+  </div>
+  
+  <style>
+    /* Style du modal (fenêtre pop-up) */
+    .modal {
+      display: none;
+      /* Initialement caché */
+      position: fixed;
+      /* Position fixe pour qu'il reste au centre */
+      z-index: 1;
+      /* Au-dessus du contenu */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Prend toute la largeur */
+      height: 100%;
+      /* Prend toute la hauteur */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Fond semi-transparent */
+    }
+  
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      /* Centre la fenêtre */
+      padding: 20px;
+      border-radius: 5px;
+      width: 90%;
+      /* Plus large sur petits écrans */
+      max-width: 400px;
+      /* Taille maximale sur grands écrans */
+      text-align: center;
+    }
+  
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    .profile-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid gray;
+      padding: 3px;
+    }
+  
+    .exit:hover {
+      background-color: #fff;
+      color: red;
+    }
+  
+    /* Responsivité */
+    @media (max-width: 768px) {
+      .col-12 {
+        position: static !important;
+        margin-bottom: 20px;
+        /* Espacement en bas */
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+  
+      .d-flex.align-items-center {
+        flex-direction: row !important;
+        align-items: center;
+      }
+  
+      .profile-img {
+        width: 40px;
+        height: 40px;
+      }
+  
+      .exit {
+        margin-top: 0 !important;
+      }
+    }
+  </style>
+  
+  <script>
+    // Fonction pour afficher le modal
+    function showModal(event) {
+      event.preventDefault(); // Empêche le lien de fonctionner immédiatement
+      document.getElementById('modal').style.display = 'block'; // Affiche le modal
+    }
+  
+    // Fonction pour fermer le modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none'; // Cache le modal
+    }
+  
+    // Fonction de déconnexion
+    function deconnecter() {
+      window.location.href = "index.html"; // Remplace par ta page de redirection
+    }
+  </script>
 
  <!-- Affichage des offres d'emploi -->
 <div class="container py-5 d-flex flex-column align-items-center">
@@ -272,7 +405,7 @@
             <p><strong>Expérience requise :</strong> 2 ans minimum</p>
             <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
             <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
-        </div>
+        </div> 
         <div class="popup-right p-4">
             <span class="close" onclick="closePopup()">&times;</span>
             <h3 class="mb-4">Postuler</h3>
