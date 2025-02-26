@@ -56,38 +56,179 @@
 
         <br><br><br><br>
 
-       
-        <div class="container-fluid bg-dark text-light py-3 mt-0 ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="text-white mb-3 modif">Modifier mon profil</h4>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-center essai">
-                        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                        <h4 class="text-white mb-1 border-end border-white pe-3">GANKPE <br> Ornel</h4>
-                        <p class="ms-3">Niveau : LEADER</p><br>
-                        <a href="">Modifier</a>  
+        <style>
+            .modif {
+                margin-top: 20px;
+            }
+    
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 1px solid gray;
+                padding: 3px;
+                position: relative;
+            }
+    
+            /* Styles pour la pop-up */
+            .popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                width: 400px;
+                max-width: 90%;
+            }
+    
+            .popup h2 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+    
+            .popup label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #555;
+            }
+    
+            .popup input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            .popup input[type="file"] {
+                padding: 5px;
+            }
+    
+            .popup .buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+    
+            .popup button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+    
+            .popup button[type="submit"] {
+                background: #86B817;
+                color: white;
+            }
+    
+            .popup button[type="submit"]:hover {
+                background: #6a9312;
+            }
+    
+            .popup button[type="button"] {
+                background: #6c757d;
+                color: white;
+            }
+    
+            .popup button[type="button"]:hover {
+                background: #5a6268;
+            }
+    
+            /* Overlay pour l'arrière-plan */
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+        </style>
+
+            <!-- Section du profil -->
+            <div class="container-fluid bg-dark text-light py-3 mt-0" id="profile-section" style="cursor: pointer;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="text-white mb-3 modif">Modifier mon profil</h4>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center essai">
+                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                            <h4 class="text-white mb-1 border-end border-white pe-3">GANKPE <br> Ornel</h4>
+                            <p class="ms-3">Niveau : LEADER</p>
+                        </div>
                     </div>
                 </div>
-                
-    <style>
-        .modif{
-            margin-top: 20px;
-        }
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid gray;
-            padding: 3px;
-            position: relative;
-        }
-    </style>
             </div>
-        </div>
+
+              <!-- Pop-up de modification -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Modifier les informations</h2>
+        <form id="edit-profile-form">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre nouvel email" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre nouveau mot de passe" required>
+
+            <label for="profile-picture">Photo de profil :</label>
+            <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+
+            <div class="buttons">
+                <button type="button" id="cancel-button">Annuler</button>
+                <button type="submit">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+
+            <!-- Script JavaScript -->
+            <script>
+                // Cibler les éléments
+                const profileSection = document.getElementById('profile-section');
+                const popup = document.getElementById('popup');
+                const overlay = document.getElementById('overlay');
+                const cancelButton = document.getElementById('cancel-button');
         
+                // Ouvrir la pop-up au clic sur la section du profil
+                profileSection.addEventListener('click', () => {
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                });
+        
+                // Fermer la pop-up au clic sur l'overlay ou le bouton Annuler
+                overlay.addEventListener('click', () => {
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+        
+                cancelButton.addEventListener('click', () => {
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+        
+                // Gérer la soumission du formulaire
+                const form = document.getElementById('edit-profile-form');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Modifications enregistrées !');
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+            </script>
+
 
     </div>
 
