@@ -146,151 +146,146 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-          <a href="index.html" class="nav-item nav-link">Accueil</a>
-          <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
-          <a href="offres.html" class="nav-item nav-link active">Offres</a>
-          <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
-          <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
-          <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
-          <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+            <a href="index.html" class="nav-item nav-link">Accueil</a>
+            <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+            <a href="offres.html" class="nav-item nav-link active">Offres</a>
+            <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+            <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+            <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
+            <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
         </div>
-        <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4 etk" target="_blank">E-tickets</a>
-        <style>
-          .etk:hover {
-            background-color: #85b817c7;
-          }
-        </style>
+        <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
       </div>
-    </nav><br><br><br><br><br>
-  
-    <!-- Div du profil -->
-<div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;margin-top: -15px;">
-  <a href="modifCan.html">
-    <div class="d-flex align-items-center">
-      <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-      <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
-    </div>
-  </a>
-  
-  <a href="#" onclick="showModal(event)">
-    <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
-      <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
-    </button>
-  </a>
-</div>
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
-    <button class="btn btn-primary" onclick="deconnecter()">Oui, déconnecter</button>
-    <button class="btn btn-secondary" style="background-color: gray;" onclick="closeModal()">Annuler</button>
+    </nav><br><br><br><br>
+
+ <!-- Nouvelle div horizontale bleu nuit -->
+ <div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+    <a href="modifRec.html">
+      <div class="d-flex align-items-center">
+        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+        <h5 class="text-white mb-1">SAGBOHAN <br> Carelle</h5>
+      </div>
+    </a>
+    
+    <a href="#" onclick="showModal(event)">
+      <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
+        <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
+      </button>
+    </a>
   </div>
- </div>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
+        <button class="btn btn-primary me-2" onclick="deconnecter()">Oui, déconnecter</button>
+        <button class="btn btn-secondary" style="background-color: gray;" onclick="closeModal()">Annuler</button>
+    </div>
+</div>
 
-<style>
-  /* Style du modal (fenêtre pop-up) */
-  .modal {
-display: none;
-position: fixed;
-z-index: 1050; /* Assurez-vous qu'il est supérieur à celui de la navbar */
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-}
-
-
-  .modal-content {
-    background-color: white;
-    margin: 15% auto;
-    /* Centre la fenêtre */
-    padding: 20px;
-    border-radius: 5px;
-    width: 90%;
-    /* Plus large sur petits écrans */
-    max-width: 400px;
-    /* Taille maximale sur grands écrans */
-    text-align: center;
+  <style>
+    /* Style du modal (fenêtre pop-up) */
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1050; /* Assurez-vous qu'il est supérieur à celui de la navbar */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   }
-
-  .close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .profile-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #85b817c7;
-    padding: 3px;
-  }
-
-  .exit:hover {
-    background-color: #fff;
-    color: red;
-  }
-
-  /* Responsivité */
-  @media (max-width: 768px) {
-    .col-12 {
-      position: static !important;
-      margin-bottom: 20px;
-      /* Espacement en bas */
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
+  
+  
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      /* Centre la fenêtre */
+      padding: 20px;
+      border-radius: 5px;
+      width: 90%;
+      /* Plus large sur petits écrans */
+      max-width: 400px;
+      /* Taille maximale sur grands écrans */
+      text-align: center;
     }
-
-    .d-flex.align-items-center {
-      flex-direction: row !important;
-      align-items: center;
+  
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 20px;
     }
-
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
     .profile-img {
-      width: 40px;
-      height: 40px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid gray;
+      padding: 3px;
     }
-
-    .exit {
-      margin-top: 0 !important;
+  
+    .exit:hover {
+      background-color: #fff;
+      color: red;
     }
-  }
-</style>
-
-<script>
-  // Fonction pour afficher le modal
-  function showModal(event) {
-    event.preventDefault(); // Empêche le lien de fonctionner immédiatement
-    document.getElementById('modal').style.display = 'block'; // Affiche le modal
-  }
-
-  // Fonction pour fermer le modal
-  function closeModal() {
-    document.getElementById('modal').style.display = 'none'; // Cache le modal
-  }
-
-  // Fonction de déconnexion
-  function deconnecter() {
-    window.location.href = "index.html"; // Remplace par ta page de redirection
-  }
-</script>
+  
+    /* Responsivité */
+    @media (max-width: 768px) {
+      .col-12 {
+        position: static !important;
+        margin-bottom: 20px;
+        /* Espacement en bas */
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+  
+      .d-flex.align-items-center {
+        flex-direction: row !important;
+        align-items: center;
+      }
+  
+      .profile-img {
+        width: 40px;
+        height: 40px;
+      }
+  
+      .exit {
+        margin-top: 0 !important;
+      }
+    }
+  </style>
+  
+  <script>
+    // Fonction pour afficher le modal
+    function showModal(event) {
+      event.preventDefault(); // Empêche le lien de fonctionner immédiatement
+      document.getElementById('modal').style.display = 'block'; // Affiche le modal
+    }
+  
+    // Fonction pour fermer le modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none'; // Cache le modal
+    }
+  
+    // Fonction de déconnexion
+    function deconnecter() {
+      window.location.href = "index.html"; // Remplace par ta page de redirection
+    }
+  </script>
 
 
   
@@ -311,6 +306,7 @@ background-color: rgba(0, 0, 0, 0.5);
                     <option value="2">Porto-Novo</option>
                     <option value="3">Calavi</option>
                     <option value="4">Ouidah</option>
+                    <option value="5">¨Parakou</option>
                   </select>
                   <input class="form-control me-2" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
                   <select class="form-select me-2" aria-label="Sélectionnez un niveau d'étude">
@@ -420,6 +416,7 @@ background-color: rgba(0, 0, 0, 0.5);
             <span class="close" onclick="closePopup()">&times;</span>
             <h3 class="mb-4">Postuler</h3>
             <form id="applyForm">
+              <p><strong>Email:</strong> <a href="">company@gmail.com</a></p>
                 <label for="cv" class="form-label">Télécharger votre CV (PDF uniquement) :</label>
                 <input type="file" class="form-control" id="cv" accept=".pdf">
                 <label for="description" class="form-label">Brève description :</label>
@@ -501,7 +498,7 @@ background-color: rgba(0, 0, 0, 0.5);
         <div class="col-md-6">
           <h4 class="text-white mb-3">Contact</h4>
           <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
-          <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+          <p><i class="fa fa-phone-alt me-3"></i>+229 0148552607 / 0162849541</p>
           <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
         </div>
         <!-- Restez informés -->
