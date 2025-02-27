@@ -291,64 +291,6 @@
                     </div>
                 </div>
             </div>
-
-              <!-- Pop-up de modification -->
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-        <h2>Modifier les informations</h2>
-        <form id="edit-profile-form">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" placeholder="Entrez votre nouvel email" required>
-
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" placeholder="Entrez votre nouveau mot de passe" required>
-
-            <label for="profile-picture">Photo de profil :</label>
-            <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
-
-            <div class="buttons">
-                <button type="button" id="cancel-button">Annuler</button>
-                <button type="submit">Enregistrer</button>
-            </div>
-        </form>
-    </div>
-
-            <!-- Script JavaScript -->
-            <script>
-                // Cibler les éléments
-                const profileSection = document.getElementById('profile-section');
-                const popup = document.getElementById('popup');
-                const overlay = document.getElementById('overlay');
-                const cancelButton = document.getElementById('cancel-button');
-        
-                // Ouvrir la pop-up au clic sur la section du profil
-                profileSection.addEventListener('click', () => {
-                    popup.style.display = 'block';
-                    overlay.style.display = 'block';
-                });
-        
-                // Fermer la pop-up au clic sur l'overlay ou le bouton Annuler
-                overlay.addEventListener('click', () => {
-                    popup.style.display = 'none';
-                    overlay.style.display = 'none';
-                });
-        
-                cancelButton.addEventListener('click', () => {
-                    popup.style.display = 'none';
-                    overlay.style.display = 'none';
-                });
-        
-                // Gérer la soumission du formulaire
-                const form = document.getElementById('edit-profile-form');
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Modifications enregistrées !');
-                    popup.style.display = 'none';
-                    overlay.style.display = 'none';
-                });
-            </script>
-
-
     </div>
 
     <!-- Popup Modal -->
