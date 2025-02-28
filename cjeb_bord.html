@@ -157,25 +157,39 @@
             }
         </style>
 
-            <!-- Section du profil -->
-            <div class="container-fluid bg-dark text-light py-3 mt-0" id="profile-section" style="cursor: pointer;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 class="text-white mb-3 modif">Modifier mon profil</h4>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center essai">
+        <div class="container-fluid bg-dark text-light py-3 mt-0" id="profile-section" style="cursor: pointer;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Colonne de gauche : "Modifier mon profil" -->
+                    <div class="col-md-6">
+                        <h4 class="text-white mb-3 modif">Modifier mon profil</h4>
+                    </div>
+                    <!-- Colonne de droite : Profil utilisateur -->
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                            <!-- Photo de profil -->
                             <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                            <h4 class="text-white mb-1 border-end border-white pe-3">GANKPE <br> Ornel</h4>
-                            <p class="ms-3">Niveau : LEADER</p>
-                            <a href="#" onclick="showModal(event)">
-                                <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
-                                  <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
-                                </button>
-                              </a>
+                            <!-- Nom et niveau -->
+                            <div class="d-flex flex-column">
+                                <h4 class="text-white mb-1">GANKPE <br> Ornel</h4>
+                                <p class="mb-1">Niveau : LEADER</p>
+                            </div>
+                            <!-- Bouton de déconnexion -->
+                            <div class="ms-3">
+                                <a href="#" onclick="showModal(event)">
+                                    <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
+                                        <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                              <!-- Modal -->
-          <div id="modal" class="modal">
+        <!-- Modal -->
+        <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
@@ -184,106 +198,107 @@
             </div>
         </div>
 
-          <style>
-            @media (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .modal-content button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-            /* Style du modal (fenêtre pop-up) */
+        <style>
+            /* Style de base pour la section du profil */
+            #profile-section {
+                padding: 15px 0;
+            }
+        
+            /* Style de l'image de profil */
+            .profile-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 1px solid gray;
+                padding: 3px;
+            }
+        
+            /* Style du bouton de déconnexion */
+            .exit {
+                transition: background-color 0.3s, color 0.3s;
+            }
+        
+            .exit:hover {
+                background-color: #fff;
+                color: red;
+            }
+        
+            /* Style du modal */
             .modal {
-          display: none;
-          position: fixed;
-          z-index: 1050; /* Assurez-vous qu'il est supérieur à celui de la navbar */
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          }
-          
-          
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        
             .modal-content {
-              background-color: white;
-              margin: 15% auto;
-              /* Centre la fenêtre */
-              padding: 20px;
-              border-radius: 5px;
-              width: 90%;
-              /* Plus large sur petits écrans */
-              max-width: 400px;
-              /* Taille maximale sur grands écrans */
-              text-align: center;
+                background-color: white;
+                margin: 15% auto;
+                padding: 20px;
+                border-radius: 5px;
+                width: 90%;
+                max-width: 400px;
+                text-align: center;
             }
-          
+        
             .close {
-              color: #aaa;
-              font-size: 28px;
-              font-weight: bold;
-              position: absolute;
-              top: 10px;
-              right: 20px;
+                color: #aaa;
+                font-size: 28px;
+                font-weight: bold;
+                position: absolute;
+                top: 10px;
+                right: 20px;
             }
-          
+        
             .close:hover,
             .close:focus {
-              color: black;
-              text-decoration: none;
-              cursor: pointer;
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
             }
-          
-            .profile-img {
-              width: 80px;
-              height: 80px;
-              border-radius: 50%;
-              object-fit: cover;
-              border: 1px solid gray;
-              padding: 3px;
-            }
-          
-            .exit:hover {
-              background-color: #fff;
-              color: red;
-            }
-          
+        
             /* Responsivité */
             @media (max-width: 768px) {
-              .col-12 {
-                position: static !important;
-                margin-bottom: 20px;
-                /* Espacement en bas */
-                display: flex !important;
-                flex-direction: row !important;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-              }
-          
-              .d-flex.align-items-center {
-                flex-direction: row !important;
-                align-items: center;
-              }
-          
-              .profile-img {
-                width: 40px;
-                height: 40px;
-              }
-          
-              .exit {
-                margin-top: 0 !important;
-              }
+                /* Ajustement de l'image de profil pour les petits écrans */
+                .profile-img {
+                    width: 60px;
+                    height: 60px;
+                }
+        
+                /* Alignement des éléments sur les petits écrans */
+                .d-flex.align-items-center {
+                    flex-direction: row; /* Garder l'alignement horizontal */
+                    align-items: center; /* Centrer verticalement */
+                }
+        
+                /* Espacement entre les éléments */
+                .ms-3 {
+                    margin-left: 1rem !important;
+                }
+        
+                /* Ajustement du texte */
+                h4.text-white {
+                    font-size: 1.2rem; /* Taille de police réduite */
+                }
+        
+                p.mb-1 {
+                    font-size: 0.9rem; /* Taille de police réduite */
+                }
+        
+                /* Bouton de déconnexion */
+                .exit {
+                    font-size: 0.9rem; /* Taille de police réduite */
+                    padding: 5px 10px; /* Ajustement du padding */
+                }
             }
-          </style>
+        </style>
           
-          <script>
+         <script>
             // Fonction pour afficher le modal
             function showModal(event) {
               event.preventDefault(); // Empêche le lien de fonctionner immédiatement
@@ -299,11 +314,8 @@
             function deconnecter() {
               window.location.href = "index.html"; // Remplace par ta page de redirection
             }
-          </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         </script>
+
     </div>
 
     <!-- Popup Modal -->
