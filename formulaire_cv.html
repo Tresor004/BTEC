@@ -35,46 +35,68 @@
                     <a href="index.html" class="nav-item nav-link">Accueil</a>
                     <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
                     <a href="offres.html" class="nav-item nav-link active">Offres</a>
-                    <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
+                    <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
                     <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
                     <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
                 <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
             </div>
-        </nav>
-
-        <br><br><br><br>
-    </div>
-
-    <style>
-        .modif{
-            margin-top: 20px;
-            margin-left: 500px;
-        }
+          </nav>
         
-    </style>
-
-    <div class="container-fluid bg-dark text-light py-3 mt-0">
-        <div class="container">
-            <div class="row">
-                    <h2 class="text-center mb-5" style="color: white; margin-top: 20px;">Créer mon CV</h2>
+          <div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <h3 class="text-white mb-0">CREER MON CV</h3>
             </div>
-        </div>
-    </div>
+         </div>
+        
+        <style>
+            /* Style de base pour le menu */
+            .navbar {
+                position: relative;
+                z-index: 1000;
+            }
+        
+            /* Style de base pour la div du profil */
+            #profileSection {
+                background-color: #001f3f;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                z-index: 999;
+                margin-top: 0;
+            }
+        
 
-    <style>
-        .hero-header {
-            height: 500px;
-            position: relative;
-        }
-        .overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-    </style>
+            /* Ajustements pour les petits écrans */
+            @media (max-width: 768px) {
+                .navbar {
+                    padding-bottom: 0;
+                }
+        
+                #profileSection {
+                    margin-top: 0;
+                    padding-top: 10px;
+                }
+        
+                .profile-img {
+                    width: 50px;
+                    height: 50px;
+                }
+        
+                h5.text-white {
+                    font-size: 1rem;
+                }
+        
+                .exit {
+                    font-size: 0.9rem;
+                    padding: 5px 10px;
+                }
+            }
+        </style>
 
     <!-- Formulaire de CV -->
     <div class="container py-5">
