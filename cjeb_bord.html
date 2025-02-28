@@ -45,149 +45,105 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Accueil</a>
                     <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="offres.html" class="nav-item nav-link active">Offres</a>
                     <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
-                    <a href="pcjeb.html" class="nav-item nav-link active">Projet CJEB</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
                     <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
-                <a href="eticket.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+                <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
             </div>
         </nav>
-
-        <br><br><br><br>
-
+        
+        <!-- Div du profil -->
+        <div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <a href="modifCan.html">
+                <div class="d-flex align-items-center">
+                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+                    <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
+                </div>
+            </a>
+            <!-- Ajout du paragraphe "Niveau : LEADER" et du bouton de déconnexion -->
+            <div class="d-flex flex-column align-items-end">
+                <p class="text-white mb-1">Niveau : <strong>LEADER</strong></p>
+                <a href="#" onclick="showModal(event)">
+                    <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
+                        <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
+                    </button>
+                </a>
+            </div>
+        </div>
+        
         <style>
-            .modif {
-                margin-top: 20px;
+            /* Style de base pour le menu */
+            .navbar {
+                position: relative;
+                z-index: 1000;
             }
-    
+        
+            /* Style de base pour la div du profil */
+            #profileSection {
+                background-color: #001f3f;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                z-index: 999;
+                margin-top: 0;
+            }
+        
+            /* Style de l'image de profil */
             .profile-img {
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
                 border-radius: 50%;
                 object-fit: cover;
                 border: 1px solid gray;
                 padding: 3px;
-                position: relative;
             }
-    
-            /* Styles pour la pop-up */
-            .popup {
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: white;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-                width: 400px;
-                max-width: 90%;
-            }
-    
-            .popup h2 {
-                margin-bottom: 20px;
-                font-size: 24px;
-                color: #333;
-            }
-    
-            .popup label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-                color: #555;
-            }
-    
-            .popup input {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 15px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
-    
-            .popup input[type="file"] {
-                padding: 5px;
-            }
-    
-            .popup .buttons {
+        
+            /* Style du conteneur des éléments de droite */
+            .d-flex.flex-column.align-items-end {
                 display: flex;
-                justify-content: space-between;
-                margin-top: 20px;
+                flex-direction: column;
+                align-items: flex-end;
             }
-    
-            .popup button {
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 14px;
+        
+            /* Style du texte "Niveau : LEADER" */
+            .text-white.mb-1 {
+                margin-bottom: 5px;
             }
-    
-            .popup button[type="submit"] {
-                background: #86B817;
-                color: white;
+        
+            /* Style du bouton de déconnexion */
+            .exit {
+                transition: background-color 0.3s, color 0.3s;
             }
-    
-            .popup button[type="submit"]:hover {
-                background: #6a9312;
+        
+            .exit:hover {
+                background-color: #fff;
+                color: red;
             }
-    
-            .popup button[type="button"] {
-                background: #6c757d;
-                color: white;
-            }
-    
-            .popup button[type="button"]:hover {
-                background: #5a6268;
-            }
-    
-            /* Overlay pour l'arrière-plan */
-            .overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
+        
+            /* Ajustements pour les petits écrans */
+            @media (max-width: 768px) {
+                .profile-img {
+                    width: 50px;
+                    height: 50px;
+                }
+        
+                h5.text-white {
+                    font-size: 1rem;
+                }
+        
+                .exit {
+                    font-size: 0.9rem;
+                    padding: 5px 10px;
+                }
             }
         </style>
-
-        <div class="container-fluid bg-dark text-light py-3 mt-0" id="profile-section" style="cursor: pointer;">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Colonne de gauche : "Modifier mon profil" -->
-                    <div class="col-md-6">
-                        <h4 class="text-white mb-3 modif">Modifier mon profil</h4>
-                    </div>
-                    <!-- Colonne de droite : Profil utilisateur -->
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-center">
-                            <!-- Photo de profil -->
-                            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                            <!-- Nom et niveau -->
-                            <div class="d-flex flex-column">
-                                <h4 class="text-white mb-1">GANKPE <br> Ornel</h4>
-                                <p class="mb-1">Niveau : LEADER</p>
-                            </div>
-                            <!-- Bouton de déconnexion -->
-                            <div class="ms-3">
-                                <a href="#" onclick="showModal(event)">
-                                    <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
-                                        <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        
         <!-- Modal -->
         <div id="modal" class="modal">
             <div class="modal-content">
