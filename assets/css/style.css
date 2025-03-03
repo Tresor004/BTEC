@@ -616,6 +616,9 @@ html,body{height: 100%;}
         border-bottom: none;
     }
 
+    .line{
+        border-bottom: 1px solid white; /* Ajoute une bordure blanche horizontale */
+    }
 }
 
 /*-------------------------------------
