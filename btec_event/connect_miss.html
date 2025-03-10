@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Event-Accueil</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-snapx-photography.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <style>
+        /* Styles pour le cadre blanc */
+        .login-form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto; /* Centrer le formulaire */
+        }
+
+        .login-form-container h2 {
+            margin-bottom: 20px;
+            color: #86B817; /* Couleur verte pour correspondre au thème */
+        }
+
+        .login-form-container label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .login-form-container input[type="email"],
+        .login-form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #86B817;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form-container button:hover {
+            background-color: #75a316;
+        }
+
+        .login-form-container p {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .login-form-container a {
+            color: #86B817;
+            text-decoration: none;
+        }
+
+        .login-form-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Ajustement de la hauteur de la bannière principale */
+        .main-banner {
+            min-height: 100vh; /* Prendre toute la hauteur de l'écran */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px; /* Ajouter un espace en haut */
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <h3 style="font-weight: bolder;color: #86B817;">BTEC Event</h3>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="index.html" class="active menu">Accueil</a></li>
+                        <li><a href="fonctionnement.html" class="menu">Fonctionnement</a></li>
+                        <li><a href="users.html" class="menu">Mon profil</a></li>
+                        <li><a href="../index.html" class="menu">BTEC</a></li>
+                    </ul>   
+                    <div class="border-button" style="border-radius: 100px;">
+                        <a id="connect" href="users.html" class="sign-in-up"><i class="fa fa-user"></i>Connexion</a>
+                    </div>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+ <!-- ***** Formulaire de Connexion ***** -->
+<div class="main-banner">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="login-form-container">
+                    <strong><h3 class="text-center fw-bold mb-4" style="color: #86b817;">Connexion</h3></strong>
+                    <form id="contact" action="" method="post" class="mt-4">
+                        <!-- Champ Email -->
+                        <div class="mb-4" style="text-align: left;">
+                            <label for="email" class="form-label fw-semibold">Adresse Email</label>
+                            <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Votre adresse email" required>
+                        </div>
+                        <!-- Champ Mot de passe -->
+                        <div class="mb-4" style="text-align: left;">
+                            <label for="password" class="form-label fw-semibold">Mot de passe</label>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Votre mot de passe" required>
+                        </div>
+                        <!-- Bouton de Connexion -->
+                        <div class="text-center">
+                            <button type="submit" id="form-submit" class="btn btn-success w-100 rounded-pill py-2">Se connecter</button>
+                        </div>
+                        <!-- Lien Mot de passe oublié -->
+                        <p class="text-center">
+                            <a href="#" class="text-decoration-none fw-semibold" style="color: #86b817;">Mot de passe oublié ?</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Fin du Formulaire de Connexion ***** -->
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+</body>
+</html>
