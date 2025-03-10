@@ -28,7 +28,8 @@
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: auto; /* Centrer le formulaire */
+            margin-left: 0; /* Alignement à gauche */
+            margin-top: 50px; /* Remonter légèrement vers le haut */
         }
 
         .vote-form-container h2 {
@@ -82,11 +83,7 @@
 
         /* Ajustement de la hauteur de la bannière principale */
         .main-banner {
-            padding-top: 50px; /* Réduire l'espace en haut */
-            min-height: 100vh; /* Prendre toute la hauteur de l'écran */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding-top: 100px; /* Réduire l'espace en haut */
         }
 
         /* Styles pour les onglets */
@@ -146,101 +143,98 @@
 
   <!-- ***** Formulaire de Vote ***** -->
   <div class="main-banner">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10 col-sm-12">
-                <div class="vote-form-container p-4 shadow-lg rounded bg-white">
-                    <strong><h3 class="text-center fw-bold" style="color: #86b817;">Formulaire de Vote</h3></strong> <br>
-                    
-                    <!-- Onglets -->
-                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="step1-tab" data-bs-toggle="tab" data-bs-target="#step1" type="button" role="tab" aria-controls="step1" aria-selected="true">Étape 1</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="step2-tab" data-bs-toggle="tab" data-bs-target="#step2" type="button" role="tab" aria-controls="step2" aria-selected="false">Étape 2</button>
-                        </li>
-                    </ul>
+    <div class="container d-flex justify-content-start align-items-center" style="min-height: 100vh;">
+        <div class="col-lg-7">
+            <div class="vote-form-container p-5 shadow-lg rounded bg-white" style="margin-left: 100px; max-width: 600px;">
+                <strong><h3 class="text-center fw-bold" style="color: #86b817;">Formulaire de Vote</h3></strong> <br>
+                
+                <!-- Onglets -->
+                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="step1-tab" data-bs-toggle="tab" data-bs-target="#step1" type="button" role="tab" aria-controls="step1" aria-selected="true">Étape 1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="step2-tab" data-bs-toggle="tab" data-bs-target="#step2" type="button" role="tab" aria-controls="step2" aria-selected="false">Étape 2</button>
+                    </li>
+                </ul>
 
-                    <!-- Contenu des onglets -->
-                    <div class="tab-content" id="myTabContent" style="text-align: left;"> 
-                        <!-- Onglet 1 : Nom, Prénom, Sexe, Pays -->
-                        <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
-                            <form id="voteForm" action="" method="post">
-                                <!-- Nom et Prénom -->
-                                <div class="mb-3">
-                                    <label for="fullname" class="form-label fw-semibold">Nom et Prénom</label>
-                                    <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Entrez votre nom et prénom" required>
-                                </div>
+                <!-- Contenu des onglets -->
+                <div class="tab-content" id="myTabContent" style="text-align: left;"> 
+                    <!-- Onglet 1 : Nom, Prénom, Sexe, Pays -->
+                    <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
+                        <form id="voteForm" action="" method="post">
+                            <!-- Nom et Prénom -->
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label fw-semibold">Nom et Prénom</label>
+                                <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Entrez votre nom et prénom" required>
+                            </div>
 
-                                <!-- Sexe -->
-                                <div class="mb-3">
-                                    <label class="form-label fw-semibold">Sexe</label>
-                                    <div class="d-flex">
-                                        <div class="me-3">
-                                            <input type="radio" id="male" name="gender" value="male" required>
-                                            <label for="male">Masculin</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" id="female" name="gender" value="female" required>
-                                            <label for="female">Féminin</label>
-                                        </div>
+                            <!-- Sexe -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Sexe</label>
+                                <div class="d-flex"> <!-- Utilisation de flexbox pour aligner les éléments sur la même ligne -->
+                                    <div class="me-3"> <!-- Ajout d'une marge à droite pour espacer les boutons -->
+                                        <input type="radio" id="male" name="gender" value="male" required>
+                                        <label for="male">Masculin</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="female" name="gender" value="female" required>
+                                        <label for="female">Féminin</label>
                                     </div>
                                 </div>
+                            </div>
+                            <!-- Pays -->
+                            <div class="mb-3">
+                                <label for="country" class="form-label fw-semibold">Pays</label>
+                                <select id="country" name="country" class="form-control" required>
+                                    <option value="">Sélectionnez votre pays</option>
+                                    <option value="france">France</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="belgique">Belgique</option>
+                                    <option value="suisse">Suisse</option>
+                                    <option value="autres">Autres</option>
+                                </select>
+                            </div>
 
-                                <!-- Pays -->
-                                <div class="mb-3">
-                                    <label for="country" class="form-label fw-semibold">Pays</label>
-                                    <select id="country" name="country" class="form-control" required>
-                                        <option value="">Sélectionnez votre pays</option>
-                                        <option value="france">France</option>
-                                        <option value="canada">Canada</option>
-                                        <option value="belgique">Belgique</option>
-                                        <option value="suisse">Suisse</option>
-                                        <option value="autres">Autres</option>
-                                    </select>
-                                </div>
+                            <!-- Bouton pour passer à l'étape suivante -->
+                            <div class="text-end">
+                                <button type="button" class="btn btn-success" onclick="nextStep()">Suivant</button>
+                            </div>
+                        </form>
+                    </div>
 
-                                <!-- Bouton pour passer à l'étape suivante -->
-                                <div class="text-end">
-                                    <button type="button" class="btn btn-success" onclick="nextStep()">Suivant</button>
-                                </div>
-                            </form>
-                        </div>
+                    <!-- Onglet 2 : Numéro de téléphone, Montant, Nom de la miss -->
+                    <div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2-tab">
+                        <form id="voteForm" action="" method="post">
+                            <!-- Numéro de téléphone -->
+                            <div class="mb-3">
+                                <label for="phone" class="form-label fw-semibold">Numéro de téléphone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Entrez votre numéro de téléphone" required>
+                            </div>
 
-                        <!-- Onglet 2 : Numéro de téléphone, Montant, Nom de la miss -->
-                        <div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2-tab">
-                            <form id="voteForm" action="" method="post">
-                                <!-- Numéro de téléphone -->
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label fw-semibold">Numéro de téléphone</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Entrez votre numéro de téléphone" required>
-                                </div>
+                            <!-- Montant -->
+                            <div class="mb-3">
+                                <label for="amount" class="form-label fw-semibold">Montant</label>
+                                <select id="amount" name="amount" class="form-control" required>
+                                    <option value="">Sélectionnez un montant</option>
+                                    <option value="500">500 FCFA</option>
+                                    <option value="1000">1000 FCFA</option>
+                                    <option value="2000">2000 FCFA</option>
+                                    <option value="5000">5000 FCFA</option>
+                                </select>
+                            </div>
 
-                                <!-- Montant -->
-                                <div class="mb-3">
-                                    <label for="amount" class="form-label fw-semibold">Montant</label>
-                                    <select id="amount" name="amount" class="form-control" required>
-                                        <option value="">Sélectionnez un montant</option>
-                                        <option value="500">500 FCFA</option>
-                                        <option value="1000">1000 FCFA</option>
-                                        <option value="2000">2000 FCFA</option>
-                                        <option value="5000">5000 FCFA</option>
-                                    </select>
-                                </div>
+                            <!-- Nom de la miss -->
+                            <div class="mb-3">
+                                <label for="miss" class="form-label fw-semibold">Nom de la miss</label>
+                                <input type="text" id="miss" name="miss" class="form-control" placeholder="Entrez le nom de la miss" required>
+                            </div>
 
-                                <!-- Nom de la miss -->
-                                <div class="mb-3">
-                                    <label for="miss" class="form-label fw-semibold">Nom de la miss</label>
-                                    <input type="text" id="miss" name="miss" class="form-control" placeholder="Entrez le nom de la miss" required>
-                                </div>
-
-                                <!-- Bouton pour revenir à l'étape précédente -->
-                                <div class="text-end">
-                                    <button type="submit" class="btn btn-success">Voter</button>
-                                </div>
-                            </form>
-                        </div>
+                            <!-- Bouton pour revenir à l'étape précédente -->
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-success">Voter</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
