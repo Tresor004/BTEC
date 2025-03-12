@@ -17,6 +17,10 @@
     <!-- Bootstrap and Custom Styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/stylecj.css" rel="stylesheet">
+
+    <!--Script de téléchargement-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -233,63 +237,64 @@
 </div>
 
 <div class="text-center mt-4">
-    <a href="" class="btn btn-primary rounded-pill btn-sm px-3">Télécharger mon CV</a>
+    <a href="#" id="downloadCV" class="btn btn-primary rounded-pill btn-sm px-3">Télécharger mon CV</a>
 </div>
 
+<!-- Footer  -->
+<div class="container-fluid bg-dark text-light footer py-5 mt-5">
+    <!-- ... Contenu du footer inchangé ... -->
+</div>
 
+<!-- Copyright Start -->
+<div class="container py-3">
+    <!-- ... Contenu du copyright inchangé ... -->
+</div>
 
-     <!-- Footer  -->
-     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <!-- Contact Section -->
-                <div class="col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
-                    <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
-                </div>
+<!-- Back to Top Button -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-                <!-- Stay Informed Section -->
-                <div class="col-md-6">
-                    <h4 class="text-white mb-3">Restez informés</h4>
-                    <p>Connectez-vous pour profiter encore de plus de nos services.</p>
-                    <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/tempusdominus/js/moment.min.js"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Copyright Start -->
-    <div class="container py-3">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+<script>
+    document.getElementById('downloadCV').addEventListener('click', function (e) {
+        e.preventDefault();
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        // Sélection de la div contenant le CV
+        const cvElement = document.querySelector('.col-lg-10.bg-light.shadow-lg.rounded.p-4');
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+        // Appliquer un délai pour s'assurer que tout est bien chargé
+        setTimeout(() => {
+            html2pdf(cvElement, {
+                margin: 10,
+                filename: 'cv_sylvie_loiseau.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true, 
+                    scrollX: 0, 
+                    scrollY: -window.scrollY 
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            });
+        }, 500);
+    });
+</script>
 
 </body>
 </html>

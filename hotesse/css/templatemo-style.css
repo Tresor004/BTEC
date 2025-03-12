@@ -157,10 +157,15 @@ a.tm-text-primary:hover { color:#666666; }
     font-size: 1.2rem;
 }
 
-.nav-link.active,
+
 .nav-link:hover {
-    border-color: #86B817;
+    color:#86B817;
+    font-weight: bold;
+}
+
+.nav-link.active{
     color: #86B817;
+    font-weight: bold;
 }
 
 .tm-search-input {
