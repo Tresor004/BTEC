@@ -299,22 +299,23 @@ p, .tm-text-gray { color: #999; }
 }
 
 
-/* Style pour l'effet 3D */
-.tm-card-3d {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 80%; /* Réduit la largeur de la card */
-    margin: 0 auto; /* Centre la card */
+/* Style pour les images carrées */
+.tm-square-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ajustez la hauteur à 100% pour remplir le conteneur */
+    object-fit: cover; /* Assure que l'image couvre tout l'espace sans déformation */
+    transition: transform 0.3s ease; /* Ajoute une transition fluide pour l'effet de zoom */
 }
 
-.tm-card-3d:hover {
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Effet de zoom au survol */
+.tm-card-3d:hover .tm-square-img {
+    transform: scale(1.1); /* Zoom léger au survol */
 }
 
-/* Conteneur pour l'image carrée */
+/* Ajustement de la taille du conteneur carré */
 .tm-square-img-container {
     width: 100%;
     padding-top: 100%; /* Crée un conteneur carré */
@@ -322,14 +323,20 @@ p, .tm-text-gray { color: #999; }
     overflow: hidden;
 }
 
-/* Style pour les images carrées */
-.tm-square-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70%; /* Réduit la hauteur de l'image */
-    object-fit: cover; /* Assure que l'image couvre tout l'espace sans déformation */
+/* Ajustement de la card pour mieux afficher les images */
+.tm-card-3d {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem; /* Espace entre les cards */
+    background: #fff; /* Fond blanc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.tm-card-3d:hover {
+    transform: translateY(-5px); /* Effet de levage au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
 }
 
 /* Ajustement de la taille de la card */
