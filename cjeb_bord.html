@@ -48,7 +48,7 @@
                     <a href="offres.html" class="nav-item nav-link">Offres</a>
                     <a href="cvtheque.html" class="nav-item nav-link">CVthèque</a>
                     <a href="pcjeb.html" class="nav-item nav-link active">Projet CJEB</a>
-                    <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
+                    <a href="event.html" class="nav-item nav-link">BTEC Event</a>
                     <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
                 </div>
                 <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
@@ -275,40 +275,40 @@
     </div>
 
     <!-- Popup Modal -->
-    <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupModalLabel">Détails</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <!-- Nom et Prénom côte à côte -->
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="firstName" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Prénom" value="Ornel" readonly>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="lastName" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Nom" value="GANKPE" readonly>
-                            </div>
-                        </div>
-                
-                        <!-- Champ Niveau (non modifiable) -->
-                        <div class="mb-3">
-                            <label for="level" class="form-label">Niveau</label>
-                            <input type="text" class="form-control" id="level" value="WELCOME" readonly>
-                        </div>    
-                        <!-- Bouton de soumission -->
-                        <h6 class="mb-0 fw-bold">Nombre de parrainés : 2</h6>
-                    </form>
-                </div>
-                
+<div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel">Détails</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- Nom -->
+                    <div class="mb-3 text-start">
+                        <label class="form-label fw-bold"><strong>NOM :</strong></label>
+                        <span id="lastName">GANKPE</span>
+                    </div>
+                    
+                    <!-- Prénom -->
+                    <div class="mb-3 text-start">
+                        <label class="form-label fw-bold"><strong>PRÉNOM :</strong></label>
+                        <span id="firstName">Ornel</span>
+                    </div>
+                    
+                    <!-- Niveau -->
+                    <div class="mb-3 text-start">
+                        <label class="form-label fw-bold"><strong>NIVEAU :</strong></label>
+                        <span id="level">WELCOME</span>
+                    </div>
+                    
+                    <!-- Nombre de parrainés -->
+                    <h6 class="mb-0 fw-bold text-start">Nombre de parrainés : <span>2</span></h6>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 
 <div class="container py-5">

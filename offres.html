@@ -151,7 +151,7 @@
               <a href="offres.html" class="nav-item nav-link active">Offres</a>
               <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
               <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
-              <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
+              <a href="event.html" class="nav-item nav-link">BTEC Event</a>
               <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
           </div>
           <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
@@ -388,11 +388,22 @@
                 </form>
               </div>
   
-              <!-- Liens pour créer et voir son CV -->
               <div class="btn-container mt-3">
                 <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
                 <a href="my_cv.html" class="btn btn-register cv">Voir mon cv</a>
-              </div>
+                <button id="suivreCandidatures" class="btn btn-primary" style="border: solid white 2px;">Suivre mes candidatures</button>
+            </div>
+            
+            <!-- Pop-up pour suivre les candidatures -->
+            <div id="popupCandidatures" class="popup">
+                <div class="popup-content">
+                    <span class="close-popup">&times;</span>
+                    <h3>Suivi des candidatures</h3>
+                    <ul id="listeCandidatures">
+                        <!-- Les candidatures seront ajoutées dynamiquement ici -->
+                    </ul>
+                </div>
+            </div>
               <style>
                 .cv {
                   border: solid #fff 2px;
@@ -403,7 +414,173 @@
                   background-color: white;
                   color: black;
                 }
+                
+                /* Style de la pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-popup:hover {
+    color: #000;
+}
+
+#listeCandidatures {
+    list-style-type: none;
+    padding: 0;
+}
+
+#listeCandidatures li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#listeCandidatures li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#listeCandidatures li a:hover {
+    text-decoration: underline;
+}
+
+.statut {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.statut.accepte {
+    color: green;
+}
+
+.statut.en-attente {
+    color: orange;
+}
+
+.statut.rejete {
+    color: red;
+}
+
+.btn-supprimer {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-supprimer:hover {
+    color: #cc0000;
+}
+
               </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const popup = document.getElementById("popupCandidatures");
+      const btnSuivre = document.getElementById("suivreCandidatures");
+      const closePopup = document.querySelector(".close-popup");
+      const listeCandidatures = document.getElementById("listeCandidatures");
+
+      // Données de test pour les candidatures
+      let candidatures = [
+          { titre: "Développeur Web", date: "2023-10-01", statut: "en attente", lien: "https://example.com/annonce1" },
+          { titre: "Designer Graphique", date: "2023-10-05", statut: "accepté", lien: "https://example.com/annonce2" },
+          { titre: "Chef de Projet", date: "2023-10-10", statut: "rejeté", lien: "https://example.com/annonce3" }
+      ];
+
+      // Afficher la pop-up
+      btnSuivre.addEventListener("click", function() {
+          popup.style.display = "flex";
+          afficherCandidatures();
+      });
+
+      // Fermer la pop-up
+      closePopup.addEventListener("click", function() {
+          popup.style.display = "none";
+      });
+
+      // Fermer la pop-up si on clique en dehors
+      window.addEventListener("click", function(event) {
+          if (event.target === popup) {
+              popup.style.display = "none";
+          }
+      });
+
+      // Fonction pour afficher les candidatures
+      function afficherCandidatures() {
+          listeCandidatures.innerHTML = ""; // Vider la liste
+          candidatures.forEach((candidature, index) => {
+              const li = document.createElement("li");
+
+              // Lien de l'annonce
+              const lien = document.createElement("a");
+              lien.href = candidature.lien;
+              lien.textContent = candidature.titre;
+              li.appendChild(lien);
+
+              // Date du postulat
+              const date = document.createElement("span");
+              date.textContent = ` (Postulé le ${candidature.date})`;
+              li.appendChild(date);
+
+              // Statut de la candidature
+              const statut = document.createElement("span");
+              statut.textContent = candidature.statut;
+              statut.classList.add("statut", candidature.statut.replace(" ", "-"));
+              li.appendChild(statut);
+
+              // Bouton de suppression
+              const btnSupprimer = document.createElement("button");
+              btnSupprimer.innerHTML = "&#10006;"; // Icône de suppression (×)
+              btnSupprimer.classList.add("btn-supprimer");
+              btnSupprimer.addEventListener("click", function() {
+                  supprimerCandidature(index);
+              });
+              li.appendChild(btnSupprimer);
+
+              listeCandidatures.appendChild(li);
+          });
+      }
+
+      // Fonction pour supprimer une candidature
+      function supprimerCandidature(index) {
+          candidatures.splice(index, 1); // Supprimer la candidature du tableau
+          afficherCandidatures(); // Re-afficher la liste mise à jour
+      }
+  });
+</script>
             </div>
           </div>
         </div>

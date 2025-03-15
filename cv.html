@@ -231,9 +231,27 @@
     </div>
 </div>
 <div class="text-center mt-4">
-    <a href="" class="btn btn-primary rounded-pill btn-sm px-3">Télécharger le CV</a>
-    <a href="tel:+22961124302" class="btn btn-primary rounded-pill btn-sm px-3 cvappel" style="background-color: white; color: #86B817; border: solid #86B817 1px;">Contacter le candidat</a>
+    <a id="contactCandidat" href="#" class="btn btn-primary rounded-pill btn-sm px-3 cvappel" style="background-color: white; color: #86B817; border: solid #86B817 1px;">Contacter le candidat</a>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Récupérer le bouton par son ID
+        const boutonContact = document.getElementById("contactCandidat");
+
+        // Récupérer l'URL de la page actuelle
+        const urlPage = window.location.href;
+
+        // Construire le message WhatsApp avec l'URL de la page
+        const messageWhatsApp = `Bonjour. Je suis intéressé par ce candidat. Voici le lien de la page : ${urlPage}`;
+
+        // Encoder le message pour l'URL
+        const messageEncoded = encodeURIComponent(messageWhatsApp);
+
+        // Mettre à jour le lien du bouton
+        boutonContact.href = `https://wa.me/22948552607?text=${messageEncoded}`;
+    });
+</script>
 
 <style>
     /* Style de base pour le conteneur des boutons */
