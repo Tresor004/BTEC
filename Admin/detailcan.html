@@ -364,232 +364,275 @@
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
     
-    <div class="app-wrapper">
-	    
-	    <div class="app-content pt-3 p-md-3 p-lg-4">
-		    <div class="container-xl">
-               <div class="row g-0 app-auth-wrapper">
-    <div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-5">
-        <div class="d-flex flex-column align-content-end">
-            <div class="app-auth-body mx-auto w-100"> <!-- Ajout de w-100 pour occuper toute la largeur -->
-                <h2 class="auth-heading text-center mb-4">Détails du candidat</h2>
-
-                <!-- Conteneur des détails (élargi) -->
-                <div class="details-container bg-white p-5 rounded shadow-sm w-100"> <!-- Ajout de w-100 et p-5 -->
-                    <!-- Titres des onglets côte à côte -->
-                    <div class="tabs-header d-flex justify-content-start mb-4">
-                        <button class="tab-title active" data-target="#personal">Informations personnelles</button>
-                        <button class="tab-title" data-target="#additional">Informations supplémentaires</button>
-                        <button class="tab-title" data-target="#academic">Informations académiques</button>
-                    </div>
-
-                    <!-- Contenu des onglets -->
-                    <div class="tabs-content">
-                        <!-- Onglet 1 : Informations personnelles -->
-                        <div id="personal" class="tab-pane active">
-                            <div class="auth-form-container text-start">
-                                <div class="row"> <!-- Utilisation d'une grille Bootstrap -->
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Nom</label>
-                                        <p class="form-control-static">John Doe</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Prénom</label>
-                                        <p class="form-control-static">John</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Email</label>
-                                        <p class="form-control-static">john.doe@example.com</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Téléphone</label>
-                                        <p class="form-control-static">+123 456 789</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Mot de passe</label>
-                                        <p class="form-control-static">********</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Onglet 2 : Informations supplémentaires -->
-                        <div id="additional" class="tab-pane">
-                            <div class="auth-form-container text-start">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Date de naissance</label>
-                                        <p class="form-control-static">01/01/1990</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Lieu de naissance</label>
-                                        <p class="form-control-static">Paris, France</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Sexe</label>
-                                        <p class="form-control-static">Masculin</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Zone de résidence</label>
-                                        <p class="form-control-static">Zone Urbaine</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Situation matrimoniale</label>
-                                        <p class="form-control-static">Célibataire</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Onglet 3 : Informations académiques -->
-                        <div id="academic" class="tab-pane">
-                            <div class="auth-form-container text-start">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Filière</label>
-                                        <p class="form-control-static">Informatique</p>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Niveau d'étude</label>
-                                        <p class="form-control-static">Licence</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--//tabs-content-->
-
-					<div class="text-center mt-4">
-						<a href="modifcan.html"><button type="submit" class="btn btn-warning">Modifier</button></a>
-						<a href="modifcan.html"><button type="submit" class="btn btn-success">Valider</button></a>
-					</div>
-                </div><!--//details-container-->
-
-                <style>
-                    /* Style général */
-                    .app-auth-wrapper {
-                        background-color: #f8f9fa; /* Arrière-plan léger */
-                        min-height: 100vh;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 20px; /* Espacement autour de la div */
-                    }
-
-                    .auth-main-col {
-                        max-width: 1400px; /* Largeur maximale pour le contenu */
-                        margin: 0 auto; /* Centrer la colonne */
-                    }
-
-                    /* Conteneur des détails */
-                    .details-container {
-                        width: 100%;
-                        background-color: #fff;
-                        border-radius: 12px;
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
-                        padding: 30px; /* Espacement interne */
-                    }
-
-                    /* Titres des onglets */
-                    .tabs-header {
-                        display: flex;
-                        border-bottom: 2px solid #dee2e6;
-                        margin-bottom: 20px; /* Espacement sous les onglets */
-                    }
-
-                    .tab-title {
-                        padding: 12px 24px;
-                        font-size: 16px;
-                        font-weight: 500;
-                        color: #6c757d;
-                        background-color: transparent;
-                        border: none;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                        margin-right: 10px; /* Espacement entre les onglets */
-                    }
-
-                    .tab-title.active {
-                        color: #28a745; /* Couleur verte pour l'onglet actif */
-                        border-bottom: 2px solid #28a745;
-                    }
-
-                    .tab-title:hover {
-                        color: #28a745; /* Couleur verte au survol */
-                    }
-
-                    /* Contenu des onglets */
-                    .tabs-content {
-                        padding: 20px;
-                    }
-
-                    .tab-pane {
-                        display: none;
-                    }
-
-                    .tab-pane.active {
-                        display: block;
-                    }
-
-                    /* Style des labels et des données */
-                    .form-label {
-                        font-weight: 600;
-                        color: #495057;
-                    }
-
-                    .form-control-static {
-                        padding: 8px 0;
-                        color: #6c757d;
-                        font-size: 16px;
-                    }
-
-                    /* Style du titre */
-                    .auth-heading {
-                        font-size: 24px;
-                        font-weight: 700;
-                        color: #343a40;
-                        margin-bottom: 20px;
-                    }
-
-                    /* Style du logo */
-                    .app-logo img {
-                        width: 50px;
-                        height: auto;
-                    }
-                </style>
-
-                <script>
-                    // Script pour gérer le changement d'onglets
-                    document.querySelectorAll('.tab-title').forEach((tab) => {
-                        tab.addEventListener('click', () => {
-                            // Retirer la classe active de tous les onglets
-                            document.querySelectorAll('.tab-title').forEach((t) => t.classList.remove('active'));
-                            document.querySelectorAll('.tab-pane').forEach((p) => p.classList.remove('active'));
-
-                            // Ajouter la classe active à l'onglet cliqué
-                            tab.classList.add('active');
-                            document.querySelector(tab.getAttribute('data-target')).classList.add('active');
-                        });
-                    });
-                </script>
-			
-            </div><!--//auth-body-->
-        </div><!--//flex-column-->
-    </div><!--//auth-main-col-->
-</div><!--//row-->
+	<div class="app-wrapper">
+		<div class="app-content pt-3 p-md-3 p-lg-4">
+			<div class="container-xl">
+				<div class="row g-0 app-auth-wrapper">
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5">
+						<div class="d-flex flex-column align-content-end">
+							<div class="app-auth-body mx-auto w-100">
+								<h2 class="auth-heading text-center mb-4">Détails du candidat</h2>
 	
-			    
-		    </div><!--//container-fluid-->
-	    </div><!--//app-content--> <br><br>
-	    
-	    <footer class="app-footer">
-		    <div class="container text-center py-3">
-		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Concu par TDEV</small>
-		       
-		    </div>
-	    </footer><!--//app-footer-->
-	    
-    </div><!--//app-wrapper-->    					
+								<!-- Conteneur des détails - version mobile optimisée -->
+								<div class="details-container bg-white p-3 p-md-5 rounded shadow-sm w-100">
+									<!-- Titres des onglets - version mobile scrollable -->
+									<div class="tabs-header mb-3 mb-md-4">
+										<div class="d-flex overflow-auto pb-2">
+											<button class="tab-title active" data-target="#personal">Personnelles</button>
+											<button class="tab-title" data-target="#additional">Supplémentaires</button>
+											<button class="tab-title" data-target="#academic">Académiques</button>
+										</div>
+									</div>
+	
+									<!-- Contenu des onglets -->
+									<div class="tabs-content">
+										<!-- Onglet 1 : Informations personnelles -->
+										<div id="personal" class="tab-pane active">
+											<div class="auth-form-container text-start">
+												<div class="row g-2">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Nom</label>
+														<div class="form-control-plaintext border-bottom pb-2">John Doe</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Prénom</label>
+														<div class="form-control-plaintext border-bottom pb-2">John</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Email</label>
+														<div class="form-control-plaintext border-bottom pb-2">john.doe@example.com</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Téléphone</label>
+														<div class="form-control-plaintext border-bottom pb-2">+123 456 789</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Mot de passe</label>
+														<div class="form-control-plaintext border-bottom pb-2">********</div>
+													</div>
+												</div>
+											</div>
+										</div>
+	
+										<!-- Onglet 2 : Informations supplémentaires -->
+										<div id="additional" class="tab-pane">
+											<div class="auth-form-container text-start">
+												<div class="row g-2">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Date de naissance</label>
+														<div class="form-control-plaintext border-bottom pb-2">01/01/1990</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Lieu de naissance</label>
+														<div class="form-control-plaintext border-bottom pb-2">Paris, France</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Sexe</label>
+														<div class="form-control-plaintext border-bottom pb-2">Masculin</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Zone de résidence</label>
+														<div class="form-control-plaintext border-bottom pb-2">Zone Urbaine</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Situation matrimoniale</label>
+														<div class="form-control-plaintext border-bottom pb-2">Célibataire</div>
+													</div>
+												</div>
+											</div>
+										</div>
+	
+										<!-- Onglet 3 : Informations académiques -->
+										<div id="academic" class="tab-pane">
+											<div class="auth-form-container text-start">
+												<div class="row g-2">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Filière</label>
+														<div class="form-control-plaintext border-bottom pb-2">Informatique</div>
+													</div>
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
+														<label class="form-label">Niveau d'étude</label>
+														<div class="form-control-plaintext border-bottom pb-2">Licence</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!--//tabs-content-->
+	
+									<!-- Boutons - version mobile optimisée -->
+									<div class="d-flex flex-column flex-md-row justify-content-center gap-2 mt-3 mt-md-4">
+										<a href="modifcan.html" class="btn btn-warning flex-grow-1 flex-md-grow-0">Modifier</a>
+										<a href="#" class="btn btn-success flex-grow-1 flex-md-grow-0">Valider</a>
+									</div>
+								</div><!--//details-container-->
+	
+								<style>
+									/* Style général optimisé pour mobile */
+									.app-auth-wrapper {
+										background-color: #f8f9fa;
+										min-height: 100vh;
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										padding: 0;
+									}
+	
+									.auth-main-col {
+										max-width: 100%;
+										margin: 0 auto;
+									}
+	
+									/* Conteneur des détails */
+									.details-container {
+										width: 100%;
+										background-color: #fff;
+										border-radius: 0;
+										box-shadow: none;
+										padding: 20px;
+									}
+	
+									/* Titres des onglets - version mobile */
+									.tabs-header {
+										margin-bottom: 15px;
+									}
+	
+									.tab-title {
+										padding: 10px 15px;
+										font-size: 14px;
+										font-weight: 500;
+										color: #6c757d;
+										background-color: transparent;
+										border: none;
+										border-bottom: 2px solid transparent;
+										cursor: pointer;
+										transition: all 0.3s ease;
+										white-space: nowrap;
+										margin-right: 5px;
+									}
+	
+									.tab-title.active {
+										color: #28a745;
+										border-bottom: 2px solid #28a745;
+										font-weight: 600;
+									}
+	
+									/* Contenu des onglets */
+									.tabs-content {
+										padding: 10px 0;
+									}
+	
+									.tab-pane {
+										display: none;
+										animation: fadeIn 0.3s ease;
+									}
+	
+									.tab-pane.active {
+										display: block;
+									}
+	
+									@keyframes fadeIn {
+										from { opacity: 0; }
+										to { opacity: 1; }
+									}
+	
+									/* Style des labels et des données */
+									.form-label {
+										font-weight: 600;
+										color: #495057;
+										font-size: 14px;
+										margin-bottom: 5px;
+									}
+	
+									.form-control-plaintext {
+										padding: 5px 0;
+										color: #6c757d;
+										font-size: 14px;
+									}
+	
+									/* Style du titre */
+									.auth-heading {
+										font-size: 22px;
+										font-weight: 700;
+										color: #343a40;
+										margin-bottom: 20px;
+									}
+	
+									/* Boutons */
+									.btn {
+										padding: 8px 16px;
+										font-size: 14px;
+									}
+	
+									/* Styles pour desktop */
+									@media (min-width: 768px) {
+										.details-container {
+											border-radius: 12px;
+											box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+											padding: 30px;
+										}
+	
+										.tab-title {
+											padding: 12px 24px;
+											font-size: 16px;
+											margin-right: 10px;
+										}
+	
+										.auth-heading {
+											font-size: 24px;
+										}
+	
+										.form-label, .form-control-plaintext {
+											font-size: 16px;
+										}
+	
+										.btn {
+											padding: 10px 20px;
+											font-size: 16px;
+										}
+									}
+								</style>
+	
+								<script>
+									// Script amélioré pour la navigation mobile
+									document.addEventListener('DOMContentLoaded', function() {
+										const tabs = document.querySelectorAll('.tab-title');
+										
+										tabs.forEach(tab => {
+											tab.addEventListener('click', function() {
+												// Retirer la classe active de tous les onglets
+												tabs.forEach(t => t.classList.remove('active'));
+												document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+												
+												// Ajouter la classe active à l'onglet cliqué
+												this.classList.add('active');
+												const target = this.getAttribute('data-target');
+												document.querySelector(target).classList.add('active');
+												
+												// Faire défiler l'onglet actif en vue sur mobile
+												if (window.innerWidth < 768) {
+													this.scrollIntoView({
+														behavior: 'smooth',
+														block: 'nearest',
+														inline: 'center'
+													});
+												}
+											});
+										});
+									});
+								</script>
+							</div><!--//auth-body-->
+						</div><!--//flex-column-->
+					</div><!--//auth-main-col-->
+				</div><!--//row-->
+			</div><!--//container-fluid-->
+		</div><!--//app-content-->
+		
+		<footer class="app-footer">
+			<div class="container text-center py-3">
+				<small class="copyright">Conçu par TDEV</small>
+			</div>
+		</footer><!--//app-footer-->
+	</div><!--//app-wrapper--> 					
 
  
     <!-- Javascript -->          
