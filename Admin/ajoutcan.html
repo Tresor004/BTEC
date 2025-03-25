@@ -370,13 +370,13 @@
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
 				<div class="row g-0 app-auth-wrapper">
-					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-5">
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5"> <!-- Modification ici -->
 						<div class="d-flex flex-column align-content-end">
 							<div class="app-auth-body mx-auto w-100">
-								<div class="details-container bg-white p-5 rounded shadow-sm w-100">
+								<div class="details-container bg-white p-4 p-md-5 rounded shadow-sm w-100"> <!-- Modification ici -->
 									<h2 class="auth-heading text-center mb-4">Ajouter un candidat</h2>
 	
-									<!-- En-tête des onglets - version mobile optimisée -->
+									<!-- En-tête des onglets -->
 									<div class="tabs-header mb-4">
 										<div class="d-flex overflow-auto pb-2">
 											<button class="tab-title active" data-target="#personal">1. Personnelles</button>
@@ -390,7 +390,7 @@
 										<!-- Onglet 1 : Informations personnelles -->
 										<div id="personal" class="tab-pane active">
 											<form>
-												<div class="row">
+												<div class="row gx-2"> <!-- Modification ici -->
 													<div class="col-12 col-md-6 mb-3 text-left">
 														<label class="form-label">Nom</label>
 														<input type="text" class="form-control">
@@ -418,7 +418,7 @@
 										<!-- Onglet 2 : Informations supplémentaires -->
 										<div id="additional" class="tab-pane">
 											<form>
-												<div class="row">
+												<div class="row gx-2"> <!-- Modification ici -->
 													<div class="col-12 col-md-6 mb-3 text-left">
 														<label class="form-label">Date de naissance</label>
 														<input type="date" class="form-control">
@@ -454,7 +454,7 @@
 										<!-- Onglet 3 : Informations académiques -->
 										<div id="academic" class="tab-pane">
 											<form>
-												<div class="row">
+												<div class="row gx-2"> <!-- Modification ici -->
 													<div class="col-12 col-md-6 mb-3 text-left">
 														<label class="form-label">Filière</label>
 														<input type="text" class="form-control">
@@ -475,7 +475,7 @@
 										</div>
 									</div>
 	
-									<!-- Boutons de navigation -->
+									<!-- Boutons de navigation (inchangé) -->
 									<div class="nav-buttons mt-4">
 										<button id="previousBtn" class="btn btn-secondary" style="display: none;">Précédent</button>
 										<div class="d-flex justify-content-center flex-grow-1">
@@ -494,11 +494,11 @@
 										display: flex;
 										align-items: center;
 										justify-content: center;
-										padding: 20px;
+										padding: 0; /* Modification ici */
 									}
 	
 									.auth-main-col {
-										max-width: 1400px;
+										max-width: 100%; /* Modification ici */
 										margin: 0 auto;
 									}
 	
@@ -506,9 +506,9 @@
 									.details-container {
 										width: 100%;
 										background-color: #fff;
-										border-radius: 12px;
-										box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-										padding: 25px;
+										border-radius: 0; /* Modification ici */
+										box-shadow: none; /* Modification ici */
+										padding: 20px; /* Modification ici */
 									}
 	
 									/* Titres des onglets */
@@ -565,6 +565,7 @@
 	
 									.form-control {
 										font-size: 14px;
+										width: 100%; /* Modification ici */
 									}
 	
 									/* Style du titre */
@@ -581,6 +582,7 @@
 										justify-content: space-between;
 										align-items: center;
 										gap: 10px;
+										padding: 15px 0;
 									}
 	
 									.step-indicator {
@@ -593,6 +595,10 @@
 									@media (min-width: 768px) {
 										.details-container {
 											padding: 30px;
+											border-radius: 12px;
+											box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+											max-width: 900px; /* Modification ici */
+											margin: 0 auto;
 										}
 	
 										.tab-title {
@@ -608,17 +614,25 @@
 										.form-label, .form-control {
 											font-size: 16px;
 										}
+	
+										.app-auth-wrapper {
+											padding: 20px;
+										}
 									}
 	
-									@media (max-width: 575.98px) {
+									@media (max-width: 767.98px) {
 										.auth-main-col {
 											padding: 0;
 										}
 	
-										.details-container {
-											padding: 20px 15px;
-											box-shadow: none;
-											border-radius: 0;
+										.row.gx-2 {
+											margin-left: -5px;
+											margin-right: -5px;
+										}
+	
+										.row.gx-2 > [class^="col-"] {
+											padding-left: 5px;
+											padding-right: 5px;
 										}
 	
 										.nav-buttons {
@@ -635,6 +649,7 @@
 								</style>
 	
 								<script>
+									// Script inchangé
 									document.addEventListener('DOMContentLoaded', function() {
 										const tabs = document.querySelectorAll('.tab-title');
 										const tabPanes = document.querySelectorAll('.tab-pane');
