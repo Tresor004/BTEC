@@ -365,17 +365,17 @@
     </header><!--//app-header-->
     
 	<div class="app-wrapper">
-		<div class="app-content pt-2 p-md-3 p-lg-4">
-			<div class="container-fluid">
+		<div class="app-content pt-3 p-md-3 p-lg-4">
+			<div class="container-xl">
 				<div class="row g-0 app-auth-wrapper">
-					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5">
+					<div class="col-12 auth-main-col text-center p-0 p-md-5">
 						<div class="d-flex flex-column align-content-end">
 							<div class="app-auth-body mx-auto w-100">
 								<div class="details-container bg-white p-3 p-md-5 rounded shadow-sm w-100">
-									<h2 class="auth-heading text-center mb-3 mb-md-4">Modifier le profil du candidat</h2>
+									<h2 class="auth-heading text-center mb-4">Modifier le profil du candidat</h2>
 	
-									<!-- Navigation par onglets optimisée pour mobile -->
-									<div class="tabs-header mb-3">
+									<!-- Navigation par onglets - version mobile scrollable -->
+									<div class="tabs-header mb-3 mb-md-4">
 										<div class="d-flex overflow-auto pb-2">
 											<button class="tab-title active" data-target="#personal">Personnelles</button>
 											<button class="tab-title" data-target="#additional">Supplémentaires</button>
@@ -388,25 +388,25 @@
 										<div id="personal" class="tab-pane active">
 											<form>
 												<div class="row g-2">
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Nom</label>
 														<input type="text" class="form-control form-control-sm" value="John Doe">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Prénom</label>
 														<input type="text" class="form-control form-control-sm" value="John">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Email</label>
 														<input type="email" class="form-control form-control-sm" value="john.doe@example.com">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Téléphone</label>
 														<input type="tel" class="form-control form-control-sm" value="+123 456 789">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Mot de passe</label>
-														<input type="password" class="form-control form-control-sm" placeholder="Laisser vide pour ne pas changer">
+														<input type="password" class="form-control form-control-sm" value="">
 													</div>
 												</div>
 											</form>
@@ -416,29 +416,29 @@
 										<div id="additional" class="tab-pane">
 											<form>
 												<div class="row g-2">
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Date de naissance</label>
 														<input type="date" class="form-control form-control-sm" value="1990-01-01">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Lieu de naissance</label>
 														<input type="text" class="form-control form-control-sm" value="Paris, France">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Sexe</label>
-														<select class="form-select form-select-sm">
-															<option selected>Masculin</option>
+														<select class="form-control form-control-sm">
+															<option>Masculin</option>
 															<option>Féminin</option>
 														</select>
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Zone de résidence</label>
 														<input type="text" class="form-control form-control-sm" value="Zone Urbaine">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Situation matrimoniale</label>
-														<select class="form-select form-select-sm">
-															<option selected>Célibataire</option>
+														<select class="form-control form-control-sm">
+															<option>Célibataire</option>
 															<option>Marié(e)</option>
 														</select>
 													</div>
@@ -450,14 +450,14 @@
 										<div id="academic" class="tab-pane">
 											<form>
 												<div class="row g-2">
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Filière</label>
 														<input type="text" class="form-control form-control-sm" value="Informatique">
 													</div>
-													<div class="col-12 col-md-6 mb-2 mb-md-3">
+													<div class="col-12 col-md-6 mb-2 mb-md-3 text-left">
 														<label class="form-label">Niveau d'étude</label>
-														<select class="form-select form-select-sm">
-															<option selected>Licence</option>
+														<select class="form-control form-control-sm">
+															<option>Licence</option>
 															<option>Master</option>
 														</select>
 													</div>
@@ -466,11 +466,9 @@
 										</div>
 									</div>
 	
-									<!-- Bouton d'enregistrement -->
-									<div class="d-grid gap-2 mt-3 mt-md-4">
-										<button type="submit" class="btn btn-success btn-lg">
-											<i class="fas fa-save me-1"></i> Enregistrer
-										</button>
+									<!-- Bouton Enregistrer -->
+									<div class="text-center mt-3 mt-md-4">
+										<button type="submit" class="btn btn-success btn-block btn-sm">Enregistrer les modifications</button>
 									</div>
 								</div>
 	
@@ -490,6 +488,7 @@
 										margin: 0 auto;
 									}
 	
+									/* Conteneur des détails */
 									.details-container {
 										width: 100%;
 										background-color: #fff;
@@ -498,102 +497,137 @@
 										padding: 20px;
 									}
 	
-									.auth-heading {
-										font-size: 1.5rem;
-										font-weight: 700;
-										margin-bottom: 1.5rem;
-									}
-	
-									/* Navigation par onglets */
+									/* Titres des onglets */
 									.tabs-header {
-										margin-bottom: 1rem;
+										margin-bottom: 15px;
 									}
 	
 									.tab-title {
-										padding: 0.5rem 1rem;
-										font-size: 0.9rem;
+										padding: 8px 12px;
+										font-size: 14px;
 										font-weight: 500;
 										color: #6c757d;
 										background-color: transparent;
 										border: none;
 										border-bottom: 2px solid transparent;
 										cursor: pointer;
+										transition: all 0.3s ease;
 										white-space: nowrap;
+										margin-right: 5px;
 									}
 	
 									.tab-title.active {
 										color: #28a745;
-										border-bottom-color: #28a745;
+										border-bottom: 2px solid #28a745;
 										font-weight: 600;
 									}
 	
-									/* Contenu des formulaires */
+									/* Contenu des onglets */
+									.tabs-content {
+										padding: 10px 0;
+									}
+	
+									.tab-pane {
+										display: none;
+										animation: fadeIn 0.3s ease;
+									}
+	
+									.tab-pane.active {
+										display: block;
+									}
+	
+									@keyframes fadeIn {
+										from { opacity: 0; }
+										to { opacity: 1; }
+									}
+	
+									/* Style des formulaires */
 									.form-label {
-										font-size: 0.9rem;
 										font-weight: 600;
-										margin-bottom: 0.25rem;
+										color: #495057;
+										font-size: 14px;
+										margin-bottom: 5px;
 									}
 	
-									.form-control, .form-select {
-										font-size: 0.9rem;
-										padding: 0.375rem 0.75rem;
+									.form-control, .form-control-sm {
+										font-size: 14px;
+										padding: 8px 12px;
+										height: auto;
 									}
 	
-									/* Bouton principal */
-									.btn-lg {
-										padding: 0.5rem 1rem;
-										font-size: 1rem;
+									select.form-control-sm {
+										padding: 8px 12px;
+									}
+	
+									/* Style du titre */
+									.auth-heading {
+										font-size: 22px;
+										font-weight: 700;
+										color: #343a40;
+										margin-bottom: 20px;
+									}
+	
+									/* Boutons */
+									.btn {
+										padding: 8px 16px;
+										font-size: 14px;
+									}
+	
+									.btn-block {
+										display: block;
+										width: 100%;
 									}
 	
 									/* Styles pour desktop */
 									@media (min-width: 768px) {
 										.details-container {
-											border-radius: 0.75rem;
-											box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-											padding: 2rem;
-										}
-	
-										.auth-heading {
-											font-size: 1.75rem;
+											border-radius: 12px;
+											box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+											padding: 30px;
 										}
 	
 										.tab-title {
-											font-size: 1rem;
-											padding: 0.75rem 1.5rem;
+											padding: 12px 24px;
+											font-size: 16px;
+											margin-right: 10px;
 										}
 	
-										.form-label {
-											font-size: 1rem;
+										.auth-heading {
+											font-size: 24px;
 										}
 	
-										.form-control, .form-select {
-											font-size: 1rem;
-											padding: 0.5rem 1rem;
+										.form-label, .form-control, .form-control-sm {
+											font-size: 16px;
 										}
 	
-										.btn-lg {
-											padding: 0.75rem 1.5rem;
+										.btn {
+											padding: 10px 20px;
+											font-size: 16px;
+											display: inline-block;
+											width: auto;
 										}
 									}
 								</style>
 	
 								<script>
-									// Gestion améliorée des onglets
+									// Script amélioré pour la navigation mobile
 									document.addEventListener('DOMContentLoaded', function() {
 										const tabs = document.querySelectorAll('.tab-title');
 										
 										tabs.forEach(tab => {
-											tab.addEventListener('click', function() {
-												// Retirer la classe active
+											tab.addEventListener('click', function(e) {
+												e.preventDefault();
+												
+												// Retirer la classe active de tous les onglets
 												tabs.forEach(t => t.classList.remove('active'));
 												document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
 												
-												// Activer l'onglet sélectionné
+												// Ajouter la classe active à l'onglet cliqué
 												this.classList.add('active');
 												const target = this.getAttribute('data-target');
 												document.querySelector(target).classList.add('active');
 												
-												// Scroll horizontal pour mobile
+												// Faire défiler l'onglet actif en vue sur mobile
 												if (window.innerWidth < 768) {
 													this.scrollIntoView({
 														behavior: 'smooth',
@@ -605,19 +639,19 @@
 										});
 									});
 								</script>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
+							</div><!--//auth-body-->
+						</div><!--//flex-column-->
+					</div><!--//auth-main-col-->
+				</div><!--//row-->
+			</div><!--//container-fluid-->
+		</div><!--//app-content-->
+		
 		<footer class="app-footer">
 			<div class="container text-center py-3">
 				<small class="copyright">Conçu par TDEV</small>
 			</div>
-		</footer>
-	</div>
+		</footer><!--//app-footer-->
+	</div><!--//app-wrapper-->
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
