@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     
     <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
@@ -18,6 +19,7 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head> 
 
@@ -374,12 +376,16 @@
 								<div class="details-container bg-white p-5 rounded shadow-sm w-100">
 									<h2 class="auth-heading text-center mb-4">Ajouter un candidat</h2>
 	
-									<div class="tabs-header d-flex flex-column flex-md-row justify-content-start mb-4">
-										<button class="tab-title active" data-target="#personal">Informations personnelles</button>
-										<button class="tab-title" data-target="#additional">Informations supplémentaires</button>
-										<button class="tab-title" data-target="#academic">Informations académiques</button>
+									<!-- En-tête des onglets - version mobile optimisée -->
+									<div class="tabs-header mb-4">
+										<div class="d-flex overflow-auto pb-2">
+											<button class="tab-title active" data-target="#personal">1. Personnelles</button>
+											<button class="tab-title" data-target="#additional">2. Supplémentaires</button>
+											<button class="tab-title" data-target="#academic">3. Académiques</button>
+										</div>
 									</div>
 	
+									<!-- Contenu des onglets -->
 									<div class="tabs-content">
 										<!-- Onglet 1 : Informations personnelles -->
 										<div id="personal" class="tab-pane active">
@@ -470,8 +476,11 @@
 									</div>
 	
 									<!-- Boutons de navigation -->
-									<div class="text-center mt-4">
+									<div class="nav-buttons mt-4">
 										<button id="previousBtn" class="btn btn-secondary" style="display: none;">Précédent</button>
+										<div class="d-flex justify-content-center flex-grow-1">
+											<div class="step-indicator">Étape <span id="currentStep">1</span>/3</div>
+										</div>
 										<button id="nextBtn" class="btn btn-success">Suivant</button>
 										<button id="saveBtn" class="btn btn-primary" style="display: none;">Enregistrer</button>
 									</div>
@@ -499,151 +508,220 @@
 										background-color: #fff;
 										border-radius: 12px;
 										box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-										padding: 30px;
+										padding: 25px;
 									}
 	
 									/* Titres des onglets */
 									.tabs-header {
-										display: flex;
-										flex-direction: column;
-										align-items: center;
-										border-bottom: 2px solid #dee2e6;
 										margin-bottom: 20px;
 									}
 	
 									.tab-title {
-										padding: 12px 24px;
-										font-size: 16px;
+										padding: 10px 15px;
+										font-size: 14px;
 										font-weight: 500;
 										color: #6c757d;
 										background-color: transparent;
 										border: none;
+										border-bottom: 2px solid transparent;
 										cursor: pointer;
 										transition: all 0.3s ease;
-										margin-right: 10px;
-										width: 100%;
-										text-align: center;
+										white-space: nowrap;
+										margin-right: 5px;
 									}
 	
 									.tab-title.active {
 										color: #28a745;
 										border-bottom: 2px solid #28a745;
-									}
-	
-									.tab-title:hover {
-										color: #28a745;
+										font-weight: 600;
 									}
 	
 									/* Contenu des onglets */
 									.tabs-content {
-										padding: 20px;
+										padding: 15px 0;
 									}
 	
 									.tab-pane {
 										display: none;
+										animation: fadeIn 0.3s ease;
 									}
 	
 									.tab-pane.active {
 										display: block;
 									}
 	
+									@keyframes fadeIn {
+										from { opacity: 0; }
+										to { opacity: 1; }
+									}
+	
 									/* Style des labels et des données */
 									.form-label {
 										font-weight: 600;
 										color: #495057;
-										text-align: left; /* Alignement à gauche des labels */
+										text-align: left;
+										font-size: 14px;
 									}
 	
-									.form-control-static {
-										padding: 8px 0;
-										color: #6c757d;
-										font-size: 16px;
+									.form-control {
+										font-size: 14px;
 									}
 	
 									/* Style du titre */
 									.auth-heading {
-										font-size: 24px;
+										font-size: 22px;
 										font-weight: 700;
 										color: #343a40;
 										margin-bottom: 20px;
 									}
 	
-									/* Style du logo */
-									.app-logo img {
-										width: 50px;
-										height: auto;
+									/* Boutons de navigation */
+									.nav-buttons {
+										display: flex;
+										justify-content: space-between;
+										align-items: center;
+										gap: 10px;
 									}
 	
-									/* Alignement à gauche des champs */
-									.text-left {
-										text-align: left;
+									.step-indicator {
+										font-size: 14px;
+										color: #6c757d;
+										font-weight: 500;
 									}
 	
+									/* Styles responsives */
 									@media (min-width: 768px) {
-										.tabs-header {
-											flex-direction: row;
+										.details-container {
+											padding: 30px;
 										}
 	
 										.tab-title {
-											width: auto;
+											padding: 12px 24px;
+											font-size: 16px;
+											margin-right: 10px;
+										}
+	
+										.auth-heading {
+											font-size: 24px;
+										}
+	
+										.form-label, .form-control {
+											font-size: 16px;
+										}
+									}
+	
+									@media (max-width: 575.98px) {
+										.auth-main-col {
+											padding: 0;
+										}
+	
+										.details-container {
+											padding: 20px 15px;
+											box-shadow: none;
+											border-radius: 0;
+										}
+	
+										.nav-buttons {
+											position: fixed;
+											bottom: 0;
+											left: 0;
+											right: 0;
+											background: white;
+											padding: 15px;
+											box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+											z-index: 100;
 										}
 									}
 								</style>
 	
 								<script>
-									// Script pour gérer le changement d'onglets
-									const tabs = document.querySelectorAll('.tab-title');
-									const tabPanes = document.querySelectorAll('.tab-pane');
-									const previousBtn = document.getElementById('previousBtn');
-									const nextBtn = document.getElementById('nextBtn');
-									const saveBtn = document.getElementById('saveBtn');
+									document.addEventListener('DOMContentLoaded', function() {
+										const tabs = document.querySelectorAll('.tab-title');
+										const tabPanes = document.querySelectorAll('.tab-pane');
+										const previousBtn = document.getElementById('previousBtn');
+										const nextBtn = document.getElementById('nextBtn');
+										const saveBtn = document.getElementById('saveBtn');
+										const currentStep = document.getElementById('currentStep');
 	
-									let currentTabIndex = 0;
+										let currentTabIndex = 0;
 	
-									tabs.forEach((tab, index) => {
-										tab.addEventListener('click', () => {
-											switchTab(index);
+										// Initialisation
+										updateNavigation();
+	
+										// Gestion des clics sur les onglets
+										tabs.forEach((tab, index) => {
+											tab.addEventListener('click', () => {
+												currentTabIndex = index;
+												updateNavigation();
+												scrollToActiveTab();
+											});
 										});
-									});
 	
-									nextBtn.addEventListener('click', () => {
-										if (currentTabIndex < tabs.length - 1) {
-											currentTabIndex++;
-											switchTab(currentTabIndex);
+										// Bouton Suivant
+										nextBtn.addEventListener('click', () => {
+											if (currentTabIndex < tabs.length - 1) {
+												currentTabIndex++;
+												updateNavigation();
+												scrollToActiveTab();
+											}
+										});
+	
+										// Bouton Précédent
+										previousBtn.addEventListener('click', () => {
+											if (currentTabIndex > 0) {
+												currentTabIndex--;
+												updateNavigation();
+												scrollToActiveTab();
+											}
+										});
+	
+										function updateNavigation() {
+											// Mettre à jour les onglets actifs
+											tabs.forEach((tab, index) => {
+												if (index === currentTabIndex) {
+													tab.classList.add('active');
+												} else {
+													tab.classList.remove('active');
+												}
+											});
+	
+											// Mettre à jour le contenu visible
+											tabPanes.forEach((pane, index) => {
+												if (index === currentTabIndex) {
+													pane.classList.add('active');
+												} else {
+													pane.classList.remove('active');
+												}
+											});
+	
+											// Mettre à jour l'indicateur d'étape
+											currentStep.textContent = currentTabIndex + 1;
+	
+											// Gérer la visibilité des boutons
+											if (currentTabIndex === 0) {
+												previousBtn.style.display = 'none';
+												nextBtn.style.display = 'block';
+												saveBtn.style.display = 'none';
+											} else if (currentTabIndex === tabs.length - 1) {
+												previousBtn.style.display = 'block';
+												nextBtn.style.display = 'none';
+												saveBtn.style.display = 'block';
+											} else {
+												previousBtn.style.display = 'block';
+												nextBtn.style.display = 'block';
+												saveBtn.style.display = 'none';
+											}
+										}
+	
+										function scrollToActiveTab() {
+											const activeTab = tabs[currentTabIndex];
+											activeTab.scrollIntoView({
+												behavior: 'smooth',
+												block: 'nearest',
+												inline: 'center'
+											});
 										}
 									});
-	
-									previousBtn.addEventListener('click', () => {
-										if (currentTabIndex > 0) {
-											currentTabIndex--;
-											switchTab(currentTabIndex);
-										}
-									});
-	
-									function switchTab(index) {
-										// Retirer la classe active de tous les onglets
-										tabs.forEach((t) => t.classList.remove('active'));
-										tabPanes.forEach((p) => p.classList.remove('active'));
-	
-										// Ajouter la classe active à l'onglet cliqué
-										tabs[index].classList.add('active');
-										tabPanes[index].classList.add('active');
-	
-										// Gestion des boutons
-										if (index === 0) {
-											previousBtn.style.display = 'none';
-											nextBtn.style.display = 'inline-block';
-											saveBtn.style.display = 'none';
-										} else if (index === tabs.length - 1) {
-											previousBtn.style.display = 'inline-block';
-											nextBtn.style.display = 'none';
-											saveBtn.style.display = 'inline-block';
-										} else {
-											previousBtn.style.display = 'inline-block';
-											nextBtn.style.display = 'inline-block';
-											saveBtn.style.display = 'none';
-										}
-									}
 								</script>
 							</div><!--//auth-body-->
 						</div><!--//flex-column-->
@@ -654,7 +732,7 @@
 	
 		<footer class="app-footer">
 			<div class="container text-center py-3">
-				<small class="copyright">Concu par TDEV</small>
+				<small class="copyright">Conçu par TDEV</small>
 			</div>
 		</footer><!--//app-footer-->
 	</div><!--//app-wrapper-->
