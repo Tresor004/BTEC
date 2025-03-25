@@ -365,45 +365,48 @@
     </header><!--//app-header-->
     
 	<div class="app-wrapper">
-		<div class="app-content pt-3 p-md-3 p-lg-4">
-			<div class="container-xl">
+		<div class="app-content pt-2 p-md-3 p-lg-4">
+			<div class="container-fluid">
 				<div class="row g-0 app-auth-wrapper">
-					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-5">
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5">
 						<div class="d-flex flex-column align-content-end">
 							<div class="app-auth-body mx-auto w-100">
-								<div class="details-container bg-white p-5 rounded shadow-sm w-100">
-									<h2 class="auth-heading text-center mb-4">Modifier le profil du candidat</h2>
+								<div class="details-container bg-white p-3 p-md-5 rounded shadow-sm w-100">
+									<h2 class="auth-heading text-center mb-3 mb-md-4">Modifier le profil du candidat</h2>
 	
-									<div class="tabs-header d-flex justify-content-start mb-4">
-										<button class="tab-title active" data-target="#personal">Informations personnelles</button>
-										<button class="tab-title" data-target="#additional">Informations supplémentaires</button>
-										<button class="tab-title" data-target="#academic">Informations académiques</button>
+									<!-- Navigation par onglets optimisée pour mobile -->
+									<div class="tabs-header mb-3">
+										<div class="d-flex overflow-auto pb-2">
+											<button class="tab-title active" data-target="#personal">Personnelles</button>
+											<button class="tab-title" data-target="#additional">Supplémentaires</button>
+											<button class="tab-title" data-target="#academic">Académiques</button>
+										</div>
 									</div>
 	
 									<div class="tabs-content">
 										<!-- Onglet 1 : Informations personnelles -->
 										<div id="personal" class="tab-pane active">
 											<form>
-												<div class="row">
-													<div class="col-md-6 mb-3 text-left">
+												<div class="row g-2">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Nom</label>
-														<input type="text" class="form-control" value="John Doe">
+														<input type="text" class="form-control form-control-sm" value="John Doe">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Prénom</label>
-														<input type="text" class="form-control" value="John">
+														<input type="text" class="form-control form-control-sm" value="John">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Email</label>
-														<input type="email" class="form-control" value="john.doe@example.com">
+														<input type="email" class="form-control form-control-sm" value="john.doe@example.com">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Téléphone</label>
-														<input type="tel" class="form-control" value="+123 456 789">
+														<input type="tel" class="form-control form-control-sm" value="+123 456 789">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Mot de passe</label>
-														<input type="password" class="form-control" value="">
+														<input type="password" class="form-control form-control-sm" placeholder="Laisser vide pour ne pas changer">
 													</div>
 												</div>
 											</form>
@@ -412,30 +415,30 @@
 										<!-- Onglet 2 : Informations supplémentaires -->
 										<div id="additional" class="tab-pane">
 											<form>
-												<div class="row">
-													<div class="col-md-6 mb-3 text-left">
+												<div class="row g-2">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Date de naissance</label>
-														<input type="date" class="form-control" value="1990-01-01">
+														<input type="date" class="form-control form-control-sm" value="1990-01-01">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Lieu de naissance</label>
-														<input type="text" class="form-control" value="Paris, France">
+														<input type="text" class="form-control form-control-sm" value="Paris, France">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Sexe</label>
-														<select class="form-control">
-															<option>Masculin</option>
+														<select class="form-select form-select-sm">
+															<option selected>Masculin</option>
 															<option>Féminin</option>
 														</select>
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Zone de résidence</label>
-														<input type="text" class="form-control" value="Zone Urbaine">
+														<input type="text" class="form-control form-control-sm" value="Zone Urbaine">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Situation matrimoniale</label>
-														<select class="form-control">
-															<option>Célibataire</option>
+														<select class="form-select form-select-sm">
+															<option selected>Célibataire</option>
 															<option>Marié(e)</option>
 														</select>
 													</div>
@@ -446,15 +449,15 @@
 										<!-- Onglet 3 : Informations académiques -->
 										<div id="academic" class="tab-pane">
 											<form>
-												<div class="row">
-													<div class="col-md-6 mb-3 text-left">
+												<div class="row g-2">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Filière</label>
-														<input type="text" class="form-control" value="Informatique">
+														<input type="text" class="form-control form-control-sm" value="Informatique">
 													</div>
-													<div class="col-md-6 mb-3 text-left">
+													<div class="col-12 col-md-6 mb-2 mb-md-3">
 														<label class="form-label">Niveau d'étude</label>
-														<select class="form-control">
-															<option>Licence</option>
+														<select class="form-select form-select-sm">
+															<option selected>Licence</option>
 															<option>Master</option>
 														</select>
 													</div>
@@ -463,137 +466,158 @@
 										</div>
 									</div>
 	
-									<div class="text-center mt-4">
-										<button type="submit" class="btn btn-success">Enregistrer les modifications</button>
+									<!-- Bouton d'enregistrement -->
+									<div class="d-grid gap-2 mt-3 mt-md-4">
+										<button type="submit" class="btn btn-success btn-lg">
+											<i class="fas fa-save me-1"></i> Enregistrer
+										</button>
 									</div>
 								</div>
 	
 								<style>
-									/* Style général */
+									/* Styles optimisés pour mobile */
 									.app-auth-wrapper {
 										background-color: #f8f9fa;
 										min-height: 100vh;
 										display: flex;
 										align-items: center;
 										justify-content: center;
-										padding: 20px;
+										padding: 0;
 									}
 	
 									.auth-main-col {
-										max-width: 1400px;
+										max-width: 100%;
 										margin: 0 auto;
 									}
 	
-									/* Conteneur des détails */
 									.details-container {
 										width: 100%;
 										background-color: #fff;
-										border-radius: 12px;
-										box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-										padding: 30px;
+										border-radius: 0;
+										box-shadow: none;
+										padding: 20px;
 									}
 	
-									/* Titres des onglets */
+									.auth-heading {
+										font-size: 1.5rem;
+										font-weight: 700;
+										margin-bottom: 1.5rem;
+									}
+	
+									/* Navigation par onglets */
 									.tabs-header {
-										display: flex;
-										border-bottom: 2px solid #dee2e6;
-										margin-bottom: 20px;
+										margin-bottom: 1rem;
 									}
 	
 									.tab-title {
-										padding: 12px 24px;
-										font-size: 16px;
+										padding: 0.5rem 1rem;
+										font-size: 0.9rem;
 										font-weight: 500;
 										color: #6c757d;
 										background-color: transparent;
 										border: none;
+										border-bottom: 2px solid transparent;
 										cursor: pointer;
-										transition: all 0.3s ease;
-										margin-right: 10px;
+										white-space: nowrap;
 									}
 	
 									.tab-title.active {
 										color: #28a745;
-										border-bottom: 2px solid #28a745;
-									}
-	
-									.tab-title:hover {
-										color: #28a745;
-									}
-	
-									/* Contenu des onglets */
-									.tabs-content {
-										padding: 20px;
-									}
-	
-									.tab-pane {
-										display: none;
-									}
-	
-									.tab-pane.active {
-										display: block;
-									}
-	
-									/* Style des labels et des données */
-									.form-label {
+										border-bottom-color: #28a745;
 										font-weight: 600;
-										color: #495057;
-										text-align: left; /* Alignement à gauche des labels */
 									}
 	
-									.form-control-static {
-										padding: 8px 0;
-										color: #6c757d;
-										font-size: 16px;
+									/* Contenu des formulaires */
+									.form-label {
+										font-size: 0.9rem;
+										font-weight: 600;
+										margin-bottom: 0.25rem;
 									}
 	
-									/* Style du titre */
-									.auth-heading {
-										font-size: 24px;
-										font-weight: 700;
-										color: #343a40;
-										margin-bottom: 20px;
+									.form-control, .form-select {
+										font-size: 0.9rem;
+										padding: 0.375rem 0.75rem;
 									}
 	
-									/* Style du logo */
-									.app-logo img {
-										width: 50px;
-										height: auto;
+									/* Bouton principal */
+									.btn-lg {
+										padding: 0.5rem 1rem;
+										font-size: 1rem;
 									}
 	
-									/* Alignement à gauche des champs */
-									.text-left {
-										text-align: left;
+									/* Styles pour desktop */
+									@media (min-width: 768px) {
+										.details-container {
+											border-radius: 0.75rem;
+											box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+											padding: 2rem;
+										}
+	
+										.auth-heading {
+											font-size: 1.75rem;
+										}
+	
+										.tab-title {
+											font-size: 1rem;
+											padding: 0.75rem 1.5rem;
+										}
+	
+										.form-label {
+											font-size: 1rem;
+										}
+	
+										.form-control, .form-select {
+											font-size: 1rem;
+											padding: 0.5rem 1rem;
+										}
+	
+										.btn-lg {
+											padding: 0.75rem 1.5rem;
+										}
 									}
 								</style>
 	
 								<script>
-									// Script pour gérer le changement d'onglets
-									document.querySelectorAll('.tab-title').forEach((tab) => {
-										tab.addEventListener('click', () => {
-											// Retirer la classe active de tous les onglets
-											document.querySelectorAll('.tab-title').forEach((t) => t.classList.remove('active'));
-											document.querySelectorAll('.tab-pane').forEach((p) => p.classList.remove('active'));
-	
-											// Ajouter la classe active à l'onglet cliqué
-											tab.classList.add('active');
-											document.querySelector(tab.getAttribute('data-target')).classList.add('active');
+									// Gestion améliorée des onglets
+									document.addEventListener('DOMContentLoaded', function() {
+										const tabs = document.querySelectorAll('.tab-title');
+										
+										tabs.forEach(tab => {
+											tab.addEventListener('click', function() {
+												// Retirer la classe active
+												tabs.forEach(t => t.classList.remove('active'));
+												document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+												
+												// Activer l'onglet sélectionné
+												this.classList.add('active');
+												const target = this.getAttribute('data-target');
+												document.querySelector(target).classList.add('active');
+												
+												// Scroll horizontal pour mobile
+												if (window.innerWidth < 768) {
+													this.scrollIntoView({
+														behavior: 'smooth',
+														block: 'nearest',
+														inline: 'center'
+													});
+												}
+											});
 										});
 									});
 								</script>
-							</div><!--//auth-body-->
-						</div><!--//flex-column-->
-					</div><!--//auth-main-col-->
-				</div><!--//row-->
-			</div><!--//container-fluid-->
-		</div><!--//app-content-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<footer class="app-footer">
 			<div class="container text-center py-3">
-				<small class="copyright">Concu par TDEV</small>
+				<small class="copyright">Conçu par TDEV</small>
 			</div>
-		</footer><!--//app-footer-->
-	</div><!--//app-wrapper-->
+		</footer>
+	</div>
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
