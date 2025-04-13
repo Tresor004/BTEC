@@ -363,219 +363,275 @@
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
     
-   <div class="app-wrapper">
-    <div class="app-content pt-3 p-md-3 p-lg-4">
-        <div class="container-xl">
-            <div class="row g-0 app-auth-wrapper">
-                <div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-5">
-                    <div class="d-flex flex-column align-content-end">
-                        <div class="app-auth-body mx-auto w-100">
-                            <h2 class="auth-heading text-center mb-4">Détails du Recruteur</h2>
-
-                            <!-- Conteneur des détails (élargi) -->
-                            <div class="details-container bg-white p-5 rounded shadow-sm w-100">
-                                <!-- Titres des onglets -->
-                                <div class="tabs-header d-flex justify-content-start mb-4">
-                                    <button class="tab-title active" data-target="#company-info">Informations de l'entreprise</button>
-                                    <button class="tab-title" data-target="#additional-info">Informations complémentaires</button>
-                                </div>
-
-                                <!-- Contenu des onglets -->
-                                <div class="tabs-content">
-                                    <!-- Onglet 1 : Informations de l'entreprise -->
-                                    <div id="company-info" class="tab-pane active">
-                                        <div class="auth-form-container text-start">
-                                            <div class="row">
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Nom de l'entreprise</label>
-                                                    <p class="form-control-static">TechCorp</p>
-                                                </div>
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Téléphone</label>
-                                                    <p class="form-control-static">+229 123 456 789</p>
-                                                </div>
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Email</label>
-                                                    <p class="form-control-static">contact@techcorp.com</p>
-                                                </div>
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Mot de passe</label>
-                                                    <p class="form-control-static">********</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Onglet 2 : Informations complémentaires -->
-                                    <div id="additional-info" class="tab-pane">
-                                        <div class="auth-form-container text-start">
-                                            <div class="row">
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Domaine d'activité</label>
-                                                    <p class="form-control-static">Informatique</p>
-                                                </div>
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Situation géographique</label>
-                                                    <p class="form-control-static">Cotonou, Bénin</p>
-                                                </div>
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Registre de commerce</label>
-                                                    <p class="form-control-static">RC-123456</p>
-                                                </div>
-                                                <div class="col-md-6 mb-3 text-left">
-                                                    <label class="form-label">Numéro IFU</label>
-                                                    <p class="form-control-static">1234567890123</p>
-                                                </div>
-                                                <div class="col-md-12 mb-3 text-left">
-                                                    <div class="d-flex align-items-center">
-                                                        <label class="form-label me-3">Logo de l'entreprise</label>
-                                                        <img src="assets/images/user.png" alt="Logo" class="img-fluid" style="max-width: 150px; border-radius: 5px;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--//tabs-content-->
-
-                                <div class="text-center mt-4">
-									<a href="modifrec.html"><button type="submit" class="btn btn-warning">Modifier</button></a>
-                                    <a href="modifrec.html"><button type="submit" class="btn btn-success">Valider</button></a>
-                                </div>
-                            </div><!--//details-container-->
-
-                            <script>
-                                // Script pour gérer le changement d'onglets
-                                document.querySelectorAll('.tab-title').forEach((tab) => {
-                                    tab.addEventListener('click', () => {
-                                        document.querySelectorAll('.tab-title').forEach((t) => t.classList.remove('active'));
-                                        document.querySelectorAll('.tab-pane').forEach((p) => p.classList.remove('active'));
-
-                                        tab.classList.add('active');
-                                        document.querySelector(tab.getAttribute('data-target')).classList.add('active');
-                                    });
-                                });
-                            </script>
-
-                            <style>
-                                /* Style général */
-                                .app-auth-wrapper {
-                                    background-color: #f8f9fa;
-                                    min-height: 100vh;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    padding: 20px;
-                                }
-
-                                .auth-main-col {
-                                    max-width: 1400px;
-                                    margin: 0 auto;
-                                }
-
-                                /* Conteneur des détails */
-                                .details-container {
-                                    width: 100%;
-                                    background-color: #fff;
-                                    border-radius: 12px;
-                                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                                    padding: 30px;
-                                }
-
-                                /* Titres des onglets */
-                                .tabs-header {
-                                    display: flex;
-                                    border-bottom: 2px solid #dee2e6;
-                                    margin-bottom: 20px;
-                                }
-
-                                .tab-title {
-                                    padding: 12px 24px;
-                                    font-size: 16px;
-                                    font-weight: 500;
-                                    color: #6c757d;
-                                    background-color: transparent;
-                                    border: none;
-                                    cursor: pointer;
-                                    transition: all 0.3s ease;
-                                    margin-right: 10px;
-                                }
-
-                                .tab-title.active {
-                                    color: #28a745;
-                                    border-bottom: 2px solid #28a745;
-                                }
-
-                                .tab-title:hover {
-                                    color: #28a745;
-                                }
-
-                                /* Contenu des onglets */
-                                .tabs-content {
-                                    padding: 20px;
-                                }
-
-                                .tab-pane {
-                                    display: none;
-                                }
-
-                                .tab-pane.active {
-                                    display: block;
-                                }
-
-                                /* Style des labels et des données */
-                                .form-label {
-                                    font-weight: 600;
-                                    color: #495057;
-                                }
-
-                                .form-control-static {
-                                    padding: 8px 0;
-                                    color: #6c757d;
-                                    font-size: 16px;
-                                }
-
-                                /* Style du titre */
-                                .auth-heading {
-                                    font-size: 24px;
-                                    font-weight: 700;
-                                    color: #343a40;
-                                    margin-bottom: 20px;
-                                }
-
-                                /* Style du logo */
-                                .app-logo img {
-                                    width: 50px;
-                                    height: auto;
-                                }
-
-                                /* Alignement à gauche des champs */
-                                .text-left {
-                                    text-align: left;
-                                }
-
-                                /* Alignement du logo et du label */
-                                .d-flex.align-items-center {
-                                    display: flex;
-                                    align-items: center;
-                                }
-
-                                .me-3 {
-                                    margin-right: 1rem;
-                                }
-                            </style>
-                        </div><!--//auth-body-->
-                    </div><!--//flex-column-->
-                </div><!--//auth-main-col-->
-            </div><!--//row-->
-        </div><!--//container-fluid-->
-    </div><!--//app-content--> <br> <br>
-
-    <footer class="app-footer">
-        <div class="container text-center py-3">
-            <small class="copyright"> Concu par TDEV </small>
-        </div>
-    </footer><!--//app-footer-->
-</div><!--//app-wrapper-->					
+	<div class="app-wrapper">
+		<div class="app-content pt-3 p-md-3 p-lg-4">
+			<div class="container-xl">
+				<div class="row g-0 app-auth-wrapper">
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-2 p-md-5">
+						<div class="d-flex flex-column align-content-end">
+							<div class="app-auth-body mx-auto w-100">
+								<h2 class="auth-heading text-center mb-4">Détails du Recruteur</h2>
+	
+								<!-- Conteneur des détails (élargi) -->
+								<div class="details-container bg-white p-3 p-md-5 rounded shadow-sm w-100">
+									<!-- Titres des onglets -->
+									<div class="tabs-header d-flex flex-wrap justify-content-start mb-4">
+										<button class="tab-title active" data-target="#company-info">Infos Entreprise</button>
+										<button class="tab-title" data-target="#additional-info">Infos Complémentaires</button>
+									</div>
+	
+									<!-- Contenu des onglets -->
+									<div class="tabs-content">
+										<!-- Onglet 1 : Informations de l'entreprise -->
+										<div id="company-info" class="tab-pane active">
+											<div class="auth-form-container text-start">
+												<div class="row">
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Nom de l'entreprise</label>
+														<p class="form-control-static">TechCorp</p>
+													</div>
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Téléphone</label>
+														<p class="form-control-static">+229 123 456 789</p>
+													</div>
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Email</label>
+														<p class="form-control-static">contact@techcorp.com</p>
+													</div>
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Mot de passe</label>
+														<p class="form-control-static">********</p>
+													</div>
+												</div>
+											</div>
+										</div>
+	
+										<!-- Onglet 2 : Informations complémentaires -->
+										<div id="additional-info" class="tab-pane">
+											<div class="auth-form-container text-start">
+												<div class="row">
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Domaine d'activité</label>
+														<p class="form-control-static">Informatique</p>
+													</div>
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Situation géographique</label>
+														<p class="form-control-static">Cotonou, Bénin</p>
+													</div>
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Registre de commerce</label>
+														<p class="form-control-static">RC-123456</p>
+													</div>
+													<div class="col-12 col-md-6 mb-3 text-left">
+														<label class="form-label">Numéro IFU</label>
+														<p class="form-control-static">1234567890123</p>
+													</div>
+													<div class="col-12 mb-3 text-left">
+														<div class="d-flex flex-column flex-md-row align-items-md-center">
+															<label class="form-label me-md-3 mb-2 mb-md-0">Logo de l'entreprise</label>
+															<img src="assets/images/user.png" alt="Logo" class="img-fluid" style="max-width: 150px; border-radius: 5px;">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!--//tabs-content-->
+	
+									<div class="text-center mt-4 d-flex flex-wrap justify-content-center gap-2">
+										<a href="modifrec.html"><button type="submit" class="btn btn-warning mb-2 mb-md-0">Modifier</button></a>
+										<a href="modifrec.html"><button type="submit" class="btn btn-success">Valider</button></a>
+									</div>
+								</div><!--//details-container-->
+	
+								<script>
+									// Script pour gérer le changement d'onglets
+									document.querySelectorAll('.tab-title').forEach((tab) => {
+										tab.addEventListener('click', () => {
+											document.querySelectorAll('.tab-title').forEach((t) => t.classList.remove('active'));
+											document.querySelectorAll('.tab-pane').forEach((p) => p.classList.remove('active'));
+	
+											tab.classList.add('active');
+											document.querySelector(tab.getAttribute('data-target')).classList.add('active');
+										});
+									});
+								</script>
+	
+								<style>
+									/* Style général */
+									.app-auth-wrapper {
+										background-color: #f8f9fa;
+										min-height: 100vh;
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										padding: 10px;
+									}
+	
+									.auth-main-col {
+										max-width: 100%;
+										margin: 0 auto;
+									}
+	
+									/* Conteneur des détails */
+									.details-container {
+										width: 100%;
+										background-color: #fff;
+										border-radius: 12px;
+										box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+										padding: 15px;
+									}
+	
+									@media (min-width: 768px) {
+										.details-container {
+											padding: 30px;
+										}
+									}
+	
+									/* Titres des onglets */
+									.tabs-header {
+										display: flex;
+										flex-wrap: wrap;
+										border-bottom: 2px solid #dee2e6;
+										margin-bottom: 15px;
+									}
+	
+									.tab-title {
+										padding: 8px 16px;
+										font-size: 14px;
+										font-weight: 500;
+										color: #6c757d;
+										background-color: transparent;
+										border: none;
+										cursor: pointer;
+										transition: all 0.3s ease;
+										margin-right: 5px;
+										margin-bottom: 5px;
+									}
+	
+									@media (min-width: 768px) {
+										.tab-title {
+											padding: 12px 24px;
+											font-size: 16px;
+											margin-right: 10px;
+											margin-bottom: 0;
+										}
+									}
+	
+									.tab-title.active {
+										color: #28a745;
+										border-bottom: 2px solid #28a745;
+									}
+	
+									.tab-title:hover {
+										color: #28a745;
+									}
+	
+									/* Contenu des onglets */
+									.tabs-content {
+										padding: 10px;
+									}
+	
+									@media (min-width: 768px) {
+										.tabs-content {
+											padding: 20px;
+										}
+									}
+	
+									.tab-pane {
+										display: none;
+									}
+	
+									.tab-pane.active {
+										display: block;
+									}
+	
+									/* Style des labels et des données */
+									.form-label {
+										font-weight: 600;
+										color: #495057;
+										font-size: 14px;
+									}
+	
+									@media (min-width: 768px) {
+										.form-label {
+											font-size: 16px;
+										}
+									}
+	
+									.form-control-static {
+										padding: 6px 0;
+										color: #6c757d;
+										font-size: 14px;
+									}
+	
+									@media (min-width: 768px) {
+										.form-control-static {
+											padding: 8px 0;
+											font-size: 16px;
+										}
+									}
+	
+									/* Style du titre */
+									.auth-heading {
+										font-size: 20px;
+										font-weight: 700;
+										color: #343a40;
+										margin-bottom: 15px;
+									}
+	
+									@media (min-width: 768px) {
+										.auth-heading {
+											font-size: 24px;
+											margin-bottom: 20px;
+										}
+									}
+	
+									/* Style du logo */
+									.app-logo img {
+										width: 40px;
+										height: auto;
+									}
+	
+									/* Boutons */
+									.btn {
+										padding: 8px 16px;
+										font-size: 14px;
+									}
+	
+									@media (min-width: 768px) {
+										.btn {
+											padding: 10px 20px;
+											font-size: 16px;
+										}
+									}
+	
+									/* Espacement */
+									.mb-3 {
+										margin-bottom: 1rem !important;
+									}
+	
+									.mt-4 {
+										margin-top: 1.5rem !important;
+									}
+	
+									/* Alignement des boutons */
+									.gap-2 {
+										gap: 0.5rem;
+									}
+								</style>
+							</div><!--//auth-body-->
+						</div><!--//flex-column-->
+					</div><!--//auth-main-col-->
+				</div><!--//row-->
+			</div><!--//container-fluid-->
+		</div><!--//app-content--> <br> <br>
+	
+		<footer class="app-footer">
+			<div class="container text-center py-3">
+				<small class="copyright"> Concu par TDEV </small>
+			</div>
+		</footer><!--//app-footer-->
+	</div><!--//app-wrapper-->					
 
  
     <!-- Javascript -->          

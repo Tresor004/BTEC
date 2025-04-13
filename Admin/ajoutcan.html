@@ -370,14 +370,24 @@
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
 				<div class="row g-0 app-auth-wrapper">
-					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5"> <!-- Modification ici -->
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5">
 						<div class="d-flex flex-column align-content-end">
 							<div class="app-auth-body mx-auto w-100">
-								<div class="details-container bg-white p-4 p-md-5 rounded shadow-sm w-100"> <!-- Modification ici -->
+								<!-- Conteneur principal -->
+								<div class="details-container bg-white p-4 p-md-5 rounded shadow-sm w-100">
 									<h2 class="auth-heading text-center mb-4">Ajouter un candidat</h2>
 	
-									<!-- En-tête des onglets -->
-									<div class="tabs-header mb-4">
+									<!-- Navigation par onglets - version mobile avec sélecteur -->
+									<div class="d-md-none mb-3">
+										<select class="form-select mobile-tab-selector">
+											<option value="#personal">1. Personnelles</option>
+											<option value="#additional">2. Supplémentaires</option>
+											<option value="#academic">3. Académiques</option>
+										</select>
+									</div>
+									
+									<!-- Navigation par onglets - version desktop -->
+									<div class="tabs-header d-none d-md-flex mb-4">
 										<div class="d-flex overflow-auto pb-2">
 											<button class="tab-title active" data-target="#personal">1. Personnelles</button>
 											<button class="tab-title" data-target="#additional">2. Supplémentaires</button>
@@ -390,7 +400,7 @@
 										<!-- Onglet 1 : Informations personnelles -->
 										<div id="personal" class="tab-pane active">
 											<form>
-												<div class="row gx-2"> <!-- Modification ici -->
+												<div class="row g-2">
 													<div class="col-12 col-md-6 mb-3 text-left">
 														<label class="form-label">Nom</label>
 														<input type="text" class="form-control">
@@ -418,7 +428,7 @@
 										<!-- Onglet 2 : Informations supplémentaires -->
 										<div id="additional" class="tab-pane">
 											<form>
-												<div class="row gx-2"> <!-- Modification ici -->
+												<div class="row g-2">
 													<div class="col-12 col-md-6 mb-3 text-left">
 														<label class="form-label">Date de naissance</label>
 														<input type="date" class="form-control">
@@ -454,7 +464,7 @@
 										<!-- Onglet 3 : Informations académiques -->
 										<div id="academic" class="tab-pane">
 											<form>
-												<div class="row gx-2"> <!-- Modification ici -->
+												<div class="row g-2">
 													<div class="col-12 col-md-6 mb-3 text-left">
 														<label class="form-label">Filière</label>
 														<input type="text" class="form-control">
@@ -475,7 +485,7 @@
 										</div>
 									</div>
 	
-									<!-- Boutons de navigation (inchangé) -->
+									<!-- Boutons de navigation -->
 									<div class="nav-buttons mt-4">
 										<button id="previousBtn" class="btn btn-secondary" style="display: none;">Précédent</button>
 										<div class="d-flex justify-content-center flex-grow-1">
@@ -485,272 +495,324 @@
 										<button id="saveBtn" class="btn btn-primary" style="display: none;">Enregistrer</button>
 									</div>
 								</div>
-	
-								<style>
-									/* Style général */
-									.app-auth-wrapper {
-										background-color: #f8f9fa;
-										min-height: 100vh;
-										display: flex;
-										align-items: center;
-										justify-content: center;
-										padding: 0; /* Modification ici */
-									}
-	
-									.auth-main-col {
-										max-width: 100%; /* Modification ici */
-										margin: 0 auto;
-									}
-	
-									/* Conteneur des détails */
-									.details-container {
-										width: 100%;
-										background-color: #fff;
-										border-radius: 0; /* Modification ici */
-										box-shadow: none; /* Modification ici */
-										padding: 20px; /* Modification ici */
-									}
-	
-									/* Titres des onglets */
-									.tabs-header {
-										margin-bottom: 20px;
-									}
-	
-									.tab-title {
-										padding: 10px 15px;
-										font-size: 14px;
-										font-weight: 500;
-										color: #6c757d;
-										background-color: transparent;
-										border: none;
-										border-bottom: 2px solid transparent;
-										cursor: pointer;
-										transition: all 0.3s ease;
-										white-space: nowrap;
-										margin-right: 5px;
-									}
-	
-									.tab-title.active {
-										color: #28a745;
-										border-bottom: 2px solid #28a745;
-										font-weight: 600;
-									}
-	
-									/* Contenu des onglets */
-									.tabs-content {
-										padding: 15px 0;
-									}
-	
-									.tab-pane {
-										display: none;
-										animation: fadeIn 0.3s ease;
-									}
-	
-									.tab-pane.active {
-										display: block;
-									}
-	
-									@keyframes fadeIn {
-										from { opacity: 0; }
-										to { opacity: 1; }
-									}
-	
-									/* Style des labels et des données */
-									.form-label {
-										font-weight: 600;
-										color: #495057;
-										text-align: left;
-										font-size: 14px;
-									}
-	
-									.form-control {
-										font-size: 14px;
-										width: 100%; /* Modification ici */
-									}
-	
-									/* Style du titre */
-									.auth-heading {
-										font-size: 22px;
-										font-weight: 700;
-										color: #343a40;
-										margin-bottom: 20px;
-									}
-	
-									/* Boutons de navigation */
-									.nav-buttons {
-										display: flex;
-										justify-content: space-between;
-										align-items: center;
-										gap: 10px;
-										padding: 15px 0;
-									}
-	
-									.step-indicator {
-										font-size: 14px;
-										color: #6c757d;
-										font-weight: 500;
-									}
-	
-									/* Styles responsives */
-									@media (min-width: 768px) {
-										.details-container {
-											padding: 30px;
-											border-radius: 12px;
-											box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-											max-width: 900px; /* Modification ici */
-											margin: 0 auto;
-										}
-	
-										.tab-title {
-											padding: 12px 24px;
-											font-size: 16px;
-											margin-right: 10px;
-										}
-	
-										.auth-heading {
-											font-size: 24px;
-										}
-	
-										.form-label, .form-control {
-											font-size: 16px;
-										}
-	
-										.app-auth-wrapper {
-											padding: 20px;
-										}
-									}
-	
-									@media (max-width: 767.98px) {
-										.auth-main-col {
-											padding: 0;
-										}
-	
-										.row.gx-2 {
-											margin-left: -5px;
-											margin-right: -5px;
-										}
-	
-										.row.gx-2 > [class^="col-"] {
-											padding-left: 5px;
-											padding-right: 5px;
-										}
-	
-										.nav-buttons {
-											position: fixed;
-											bottom: 0;
-											left: 0;
-											right: 0;
-											background: white;
-											padding: 15px;
-											box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-											z-index: 100;
-										}
-									}
-								</style>
-	
-								<script>
-									// Script inchangé
-									document.addEventListener('DOMContentLoaded', function() {
-										const tabs = document.querySelectorAll('.tab-title');
-										const tabPanes = document.querySelectorAll('.tab-pane');
-										const previousBtn = document.getElementById('previousBtn');
-										const nextBtn = document.getElementById('nextBtn');
-										const saveBtn = document.getElementById('saveBtn');
-										const currentStep = document.getElementById('currentStep');
-	
-										let currentTabIndex = 0;
-	
-										// Initialisation
-										updateNavigation();
-	
-										// Gestion des clics sur les onglets
-										tabs.forEach((tab, index) => {
-											tab.addEventListener('click', () => {
-												currentTabIndex = index;
-												updateNavigation();
-												scrollToActiveTab();
-											});
-										});
-	
-										// Bouton Suivant
-										nextBtn.addEventListener('click', () => {
-											if (currentTabIndex < tabs.length - 1) {
-												currentTabIndex++;
-												updateNavigation();
-												scrollToActiveTab();
-											}
-										});
-	
-										// Bouton Précédent
-										previousBtn.addEventListener('click', () => {
-											if (currentTabIndex > 0) {
-												currentTabIndex--;
-												updateNavigation();
-												scrollToActiveTab();
-											}
-										});
-	
-										function updateNavigation() {
-											// Mettre à jour les onglets actifs
-											tabs.forEach((tab, index) => {
-												if (index === currentTabIndex) {
-													tab.classList.add('active');
-												} else {
-													tab.classList.remove('active');
-												}
-											});
-	
-											// Mettre à jour le contenu visible
-											tabPanes.forEach((pane, index) => {
-												if (index === currentTabIndex) {
-													pane.classList.add('active');
-												} else {
-													pane.classList.remove('active');
-												}
-											});
-	
-											// Mettre à jour l'indicateur d'étape
-											currentStep.textContent = currentTabIndex + 1;
-	
-											// Gérer la visibilité des boutons
-											if (currentTabIndex === 0) {
-												previousBtn.style.display = 'none';
-												nextBtn.style.display = 'block';
-												saveBtn.style.display = 'none';
-											} else if (currentTabIndex === tabs.length - 1) {
-												previousBtn.style.display = 'block';
-												nextBtn.style.display = 'none';
-												saveBtn.style.display = 'block';
-											} else {
-												previousBtn.style.display = 'block';
-												nextBtn.style.display = 'block';
-												saveBtn.style.display = 'none';
-											}
-										}
-	
-										function scrollToActiveTab() {
-											const activeTab = tabs[currentTabIndex];
-											activeTab.scrollIntoView({
-												behavior: 'smooth',
-												block: 'nearest',
-												inline: 'center'
-											});
-										}
-									});
-								</script>
-							</div><!--//auth-body-->
-						</div><!--//flex-column-->
-					</div><!--//auth-main-col-->
-				</div><!--//row-->
-			</div><!--//container-fluid-->
-		</div><!--//app-content-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<footer class="app-footer">
 			<div class="container text-center py-3">
 				<small class="copyright">Conçu par TDEV</small>
 			</div>
-		</footer><!--//app-footer-->
-	</div><!--//app-wrapper-->
+		</footer>
+	</div>
+	
+	<style>
+		/* Styles généraux */
+		.app-auth-wrapper {
+			background-color: #f8f9fa;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+		}
+	
+		.auth-main-col {
+			max-width: 100%;
+			margin: 0 auto;
+		}
+	
+		/* Conteneur des détails */
+		.details-container {
+			width: 100%;
+			background-color: #fff;
+			border-radius: 0;
+			box-shadow: none;
+			padding: 20px;
+		}
+	
+		/* Styles pour mobile */
+		@media (max-width: 767.98px) {
+			.auth-main-col {
+				padding: 0 !important;
+			}
+			
+			.mobile-tab-selector {
+				width: 100%;
+				margin-bottom: 15px;
+				padding: 10px;
+				border: 1px solid #ced4da;
+				border-radius: 4px;
+			}
+			
+			.tabs-header {
+				display: none;
+			}
+			
+			.form-control {
+				font-size: 14px;
+				padding: 8px 12px;
+			}
+			
+			.nav-buttons {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: white;
+				padding: 15px;
+				box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+				z-index: 100;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+			}
+			
+			.btn {
+				flex: 1;
+				padding: 10px;
+				font-size: 14px;
+			}
+			
+			.step-indicator {
+				font-size: 14px;
+				color: #6c757d;
+				font-weight: 500;
+			}
+			
+			.row.g-2 {
+				margin-left: -5px;
+				margin-right: -5px;
+			}
+			
+			.row.g-2 > [class^="col-"] {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	
+		/* Styles pour desktop */
+		@media (min-width: 768px) {
+			.mobile-tab-selector {
+				display: none;
+			}
+			
+			.details-container {
+				padding: 30px;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+				max-width: 900px;
+				margin: 0 auto;
+			}
+			
+			.tab-title {
+				padding: 12px 24px;
+				font-size: 16px;
+				font-weight: 500;
+				color: #6c757d;
+				background-color: transparent;
+				border: none;
+				border-bottom: 2px solid transparent;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				white-space: nowrap;
+				margin-right: 10px;
+			}
+			
+			.tab-title.active {
+				color: #28a745;
+				border-bottom: 2px solid #28a745;
+				font-weight: 600;
+			}
+			
+			.auth-heading {
+				font-size: 24px;
+			}
+			
+			.form-label, .form-control {
+				font-size: 16px;
+			}
+			
+			.app-auth-wrapper {
+				padding: 20px;
+			}
+			
+			.nav-buttons {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+				padding: 15px 0;
+			}
+		}
+	
+		/* Styles communs */
+		.form-label {
+			font-weight: 600;
+			color: #495057;
+			text-align: left;
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+	
+		.tab-pane {
+			display: none;
+			animation: fadeIn 0.3s ease;
+		}
+	
+		.tab-pane.active {
+			display: block;
+		}
+	
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+	
+		.auth-heading {
+			font-weight: 700;
+			color: #343a40;
+			margin-bottom: 20px;
+		}
+	
+		/* Boutons */
+		.btn {
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			border: none;
+		}
+	
+		.btn-secondary {
+			background-color: #6c757d;
+			color: white;
+		}
+	
+		.btn-success {
+			background-color: #28a745;
+			color: white;
+		}
+	
+		.btn-primary {
+			background-color: #007bff;
+			color: white;
+		}
+	
+		.btn:hover {
+			opacity: 0.9;
+		}
+	</style>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Éléments du DOM
+			const mobileTabSelector = document.querySelector('.mobile-tab-selector');
+			const tabs = document.querySelectorAll('.tab-title');
+			const tabPanes = document.querySelectorAll('.tab-pane');
+			const previousBtn = document.getElementById('previousBtn');
+			const nextBtn = document.getElementById('nextBtn');
+			const saveBtn = document.getElementById('saveBtn');
+			const currentStep = document.getElementById('currentStep');
+			
+			let currentTabIndex = 0;
+	
+			// Initialisation
+			updateNavigation();
+	
+			// Gestion du sélecteur mobile
+			if (mobileTabSelector) {
+				mobileTabSelector.addEventListener('change', (e) => {
+					currentTabIndex = Array.from(tabPanes).findIndex(pane => `#${pane.id}` === e.target.value);
+					updateNavigation();
+				});
+			}
+	
+			// Gestion des clics sur les onglets (desktop)
+			tabs.forEach((tab, index) => {
+				tab.addEventListener('click', () => {
+					currentTabIndex = index;
+					updateNavigation();
+					scrollToActiveTab();
+				});
+			});
+	
+			// Bouton Suivant
+			nextBtn.addEventListener('click', () => {
+				if (currentTabIndex < tabs.length - 1) {
+					currentTabIndex++;
+					updateNavigation();
+					scrollToActiveTab();
+				}
+			});
+	
+			// Bouton Précédent
+			previousBtn.addEventListener('click', () => {
+				if (currentTabIndex > 0) {
+					currentTabIndex--;
+					updateNavigation();
+					scrollToActiveTab();
+				}
+			});
+	
+			function updateNavigation() {
+				// Mettre à jour les onglets actifs
+				tabs.forEach((tab, index) => {
+					if (index === currentTabIndex) {
+						tab.classList.add('active');
+					} else {
+						tab.classList.remove('active');
+					}
+				});
+	
+				// Mettre à jour le contenu visible
+				tabPanes.forEach((pane, index) => {
+					if (index === currentTabIndex) {
+						pane.classList.add('active');
+					} else {
+						pane.classList.remove('active');
+					}
+				});
+	
+				// Mettre à jour le sélecteur mobile
+				if (mobileTabSelector) {
+					mobileTabSelector.value = `#${tabPanes[currentTabIndex].id}`;
+				}
+	
+				// Mettre à jour l'indicateur d'étape
+				currentStep.textContent = currentTabIndex + 1;
+	
+				// Gérer la visibilité des boutons
+				if (currentTabIndex === 0) {
+					previousBtn.style.display = 'none';
+					nextBtn.style.display = 'block';
+					saveBtn.style.display = 'none';
+				} else if (currentTabIndex === tabs.length - 1) {
+					previousBtn.style.display = 'block';
+					nextBtn.style.display = 'none';
+					saveBtn.style.display = 'block';
+				} else {
+					previousBtn.style.display = 'block';
+					nextBtn.style.display = 'block';
+					saveBtn.style.display = 'none';
+				}
+			}
+	
+			function scrollToActiveTab() {
+				if (window.innerWidth >= 768) { // Seulement sur desktop
+					const activeTab = tabs[currentTabIndex];
+					activeTab.scrollIntoView({
+						behavior: 'smooth',
+						block: 'nearest',
+						inline: 'center'
+					});
+				}
+			}
+		});
+	</script>
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>

@@ -415,7 +415,6 @@
 				
 				
 				<div class="tab-content" id="orders-table-tab-content">
-
 					<div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
 						<div class="app-card app-card-orders-table shadow-sm mb-5">
 							<div class="app-card-body">
@@ -441,7 +440,7 @@
 												<td class="cell">
 													<a class="btn-sm app-btn-secondary detail" href="detailrec.html"><i class="fas fa-eye"></i></a>
 													<a class="btn-sm app-btn-secondary modif" href="modifrec.html"><i class="fas fa-edit"></i></a>
-													<a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
+													<a class="btn-sm app-btn-secondary delete" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" data-company="TechCorp"><i class="fas fa-trash"></i></a>
 												</td>
 											</tr>
 											<tr>
@@ -453,7 +452,7 @@
 												<td class="cell">
 													<a class="btn-sm app-btn-secondary detail" href="detailrec.html"><i class="fas fa-eye"></i></a>
 													<a class="btn-sm app-btn-secondary modif" href="modifrec.html"><i class="fas fa-edit"></i></a>
-													<a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
+													<a class="btn-sm app-btn-secondary delete" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" data-company="AgroPlus"><i class="fas fa-trash"></i></a>
 												</td>
 											</tr>
 											<tr>
@@ -465,26 +464,9 @@
 												<td class="cell">
 													<a class="btn-sm app-btn-secondary detail" href="detailrec.html"><i class="fas fa-eye"></i></a>
 													<a class="btn-sm app-btn-secondary modif" href="modifrec.html"><i class="fas fa-edit"></i></a>
-													<a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
-													<a class="btn-sm app-btn-secondary validate" href="#" style="background-color: #15a362; color: #fff;"><i class="fas fa-check"></i></a> <!-- Nouveau bouton de validation -->
+													<a class="btn-sm app-btn-secondary delete" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" data-company="MediCare"><i class="fas fa-trash"></i></a>
+													<a class="btn-sm app-btn-secondary validate" href="#" data-bs-toggle="modal" data-bs-target="#validateModal" data-company="MediCare" style="background-color: #15a362; color: #fff;"><i class="fas fa-check"></i></a>
 												</td>
-												<style>
-													/* Effet au survol */
-.detail:hover {
-    border-color: #218838; /* Vert plus foncé */
-	color: #218838;
-}
-
-.modif:hover {
-    border-color: #e0a800; /* Jaune plus foncé */
-	color: #e0a800;
-}
-
-.delete:hover {
-    border-color: #c82333; /* Rouge plus foncé */
-	color: #c82333;
-}
-												</style>
 											</tr>
 										</tbody>
 									</table>
@@ -505,117 +487,107 @@
 							</ul>
 						</nav><!--//app-pagination-->
 					</div><!--//tab-pane-->
-
-					<!-- Recruteurs Validés -->
-					<div class="tab-pane fade" id="orders-paid" role="tabpanel" aria-labelledby="orders-paid-tab">
-					    <div class="app-card app-card-orders-table mb-5">
-						    <div class="app-card-body">
-							    <div class="table-responsive">
-							        <table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Nom de l'entreprise</th>
-												<th class="cell">Domaine d'activité</th>
-												<th class="cell">Téléphone</th>
-												<th class="cell">E-mail</th>
-												<th class="cell">Statut</th>
-												<th class="cell">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="cell">TechCorp</td>
-												<td class="cell">Informatique</td>
-												<td class="cell">+229 123 456 789</td>
-												<td class="cell">contact@techcorp.com</td>
-												<td class="cell"><span class="badge bg-success">Validé</span></td>
-												<td class="cell">
-													<a class="btn-sm app-btn-secondary detail" href="detailrec.html"><i class="fas fa-eye"></i></a>
-													<a class="btn-sm app-btn-secondary modif" href="modifrec.html"><i class="fas fa-edit"></i></a>
-													<a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
-											</tr>
-											<tr>
-												<td class="cell">AgroPlus</td>
-												<td class="cell">Agriculture</td>
-												<td class="cell">+229 987 654 321</td>
-												<td class="cell">info@agroplus.com</td>
-												<td class="cell"><span class="badge bg-success">Validé</span></td>
-												<td class="cell">
-													<a class="btn-sm app-btn-secondary detail" href="detailrec.html"><i class="fas fa-eye"></i></a>
-													<a class="btn-sm app-btn-secondary modif" href="modifrec.html"><i class="fas fa-edit"></i></a>
-													<a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-						        </div><!--//table-responsive-->
-						    </div><!--//app-card-body-->		
-						</div><!--//app-card-->
-						<nav class="app-pagination">
-							<ul class="pagination justify-content-center">
-								<li class="page-item disabled">
-									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
-								</li>
-								<li class="page-item active"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item">
-									<a class="page-link" href="#">Suivant</a>
-								</li>
-							</ul>
-						</nav><!--//app-pagination-->
-			        </div><!--//tab-pane-->
-
-					<!-- Recruteurs En attente -->
-					<div class="tab-pane fade" id="orders-pending" role="tabpanel" aria-labelledby="orders-pending-tab">
-						<div class="app-card app-card-orders-table mb-5">
-							<div class="app-card-body">
-								<div class="table-responsive">
-									<table class="table mb-0 text-left">
-										<thead>
-											<tr>
-												<th class="cell">Nom de l'entreprise</th>
-												<th class="cell">Domaine d'activité</th>
-												<th class="cell">Téléphone</th>
-												<th class="cell">E-mail</th>
-												<th class="cell">Statut</th>
-												<th class="cell">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="cell">MediCare</td>
-												<td class="cell">Santé</td>
-												<td class="cell">+229 555 123 456</td>
-												<td class="cell">contact@medicare.com</td>
-												<td class="cell"><span class="badge bg-warning">En attente</span></td>
-												<td class="cell">
-													<a class="btn-sm app-btn-secondary detail" href="detailrec.html"><i class="fas fa-eye"></i></a>
-													<a class="btn-sm app-btn-secondary modif" href="modifrec.html"><i class="fas fa-edit"></i></a>
-													<a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
-													<a class="btn-sm app-btn-secondary validate" href="#" style="background-color: #15a362; color: #fff;"><i class="fas fa-check"></i></a> <!-- Nouveau bouton de validation -->
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div><!--//table-responsive-->
-							</div><!--//app-card-body-->		
-						</div><!--//app-card-->					
-						<nav class="app-pagination">
-							<ul class="pagination justify-content-center">
-								<li class="page-item disabled">
-									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
-								</li>
-								<li class="page-item active"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item">
-									<a class="page-link" href="#">Suivant</a>
-								</li>
-							</ul>
-						</nav><!--//app-pagination-->
-					</div><!--//tab-pane-->
-
+				
+					<!-- Modal de suppression -->
+					<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="deleteModalLabel">Confirmation de suppression</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<p id="deleteModalMessage">Voulez-vous vraiment supprimer ce partenaire ?</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+									<button type="button" class="btn btn-danger" id="confirmDelete">Oui, supprimer</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<!-- Modal de validation -->
+					<div class="modal fade" id="validateModal" tabindex="-1" aria-labelledby="validateModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="validateModalLabel">Confirmation de validation</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<p id="validateModalMessage">Voulez-vous vraiment confirmer ce candidat ?</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+									<button type="button" class="btn btn-success" id="confirmValidate">Oui, confirmer</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<style>
+						/* Effet au survol */
+						.detail:hover {
+							border-color: #218838;
+							color: #218838;
+						}
+						.modif:hover {
+							border-color: #e0a800;
+							color: #e0a800;
+						}
+						.delete:hover {
+							border-color: #c82333;
+							color: #c82333;
+						}
+						.validate:hover {
+							border-color: #15a362;
+							color: #fff;
+							opacity: 0.9;
+						}
+					</style>
+				
+					<script>
+						// Gestion des modales de suppression
+						document.addEventListener('DOMContentLoaded', function() {
+							const deleteModal = document.getElementById('deleteModal');
+							const validateModal = document.getElementById('validateModal');
+							
+							// Configuration de la modale de suppression
+							deleteModal.addEventListener('show.bs.modal', function(event) {
+								const button = event.relatedTarget;
+								const companyName = button.getAttribute('data-company');
+								const message = `Voulez-vous vraiment supprimer le partenaire "${companyName}" ?`;
+								document.getElementById('deleteModalMessage').textContent = message;
+								
+								// Stocker l'ID ou autre identifiant pour la suppression
+								document.getElementById('confirmDelete').onclick = function() {
+									// Ici, ajouter le code pour supprimer l'élément
+									alert(`Suppression de ${companyName} confirmée`);
+									// Fermer la modale
+									const modal = bootstrap.Modal.getInstance(deleteModal);
+									modal.hide();
+								};
+							});
+							
+							// Configuration de la modale de validation
+							validateModal.addEventListener('show.bs.modal', function(event) {
+								const button = event.relatedTarget;
+								const companyName = button.getAttribute('data-company');
+								const message = `Voulez-vous vraiment confirmer le candidat "${companyName}" ?`;
+								document.getElementById('validateModalMessage').textContent = message;
+								
+								// Stocker l'ID ou autre identifiant pour la validation
+								document.getElementById('confirmValidate').onclick = function() {
+									// Ici, ajouter le code pour valider l'élément
+									alert(`Validation de ${companyName} confirmée`);
+									// Fermer la modale
+									const modal = bootstrap.Modal.getInstance(validateModal);
+									modal.hide();
+								};
+							});
+						});
+					</script>
 				</div><!--//tab-content-->
 	
 		    </div><!--//container-fluid-->

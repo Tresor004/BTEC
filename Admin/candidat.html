@@ -425,10 +425,10 @@
 					<!-- Tous Les Candidats -->
 					<div class="tab-pane fade show active" id="orders-all" role="tabpanel">
 						<div class="app-card app-card-orders-table shadow-sm mb-3">
-							<div class="app-card-body p-0"> <!-- Padding réduit -->
+							<div class="app-card-body p-0">
 								<div class="table-responsive">
 									<table class="table app-table-hover mb-0">
-										<thead class="d-none d-md-table-header-group"> <!-- Masqué sur mobile -->
+										<thead class="d-none d-md-table-header-group">
 											<tr>
 												<th>ID</th>
 												<th>Nom</th>
@@ -441,7 +441,7 @@
 										</thead>
 										<tbody>
 											<!-- Ligne 1 - Version mobile -->
-											<tr class="d-md-none"> <!-- Visible uniquement sur mobile -->
+											<tr class="d-md-none">
 												<td colspan="2" class="p-2">
 													<div class="fw-bold">#15346</div>
 													<div>John Sanders</div>
@@ -452,7 +452,7 @@
 													<div class="btn-group mt-1">
 														<a class="btn btn-sm detail" href="detailcan.html"><i class="fas fa-eye"></i></a>
 														<a class="btn btn-sm modif" href="modifcan.html"><i class="fas fa-edit"></i></a>
-														<a class="btn btn-sm delete" href="#"><i class="fas fa-trash"></i></a>
+														<button class="btn btn-sm delete" onclick="showDeleteConfirmationModal('John Sanders', '#15346')"><i class="fas fa-trash"></i></button>
 													</div>
 												</td>
 											</tr>
@@ -469,7 +469,7 @@
 													<div class="btn-group">
 														<a class="btn btn-sm detail" href="detailcan.html"><i class="fas fa-eye"></i></a>
 														<a class="btn btn-sm modif" href="modifcan.html"><i class="fas fa-edit"></i></a>
-														<a class="btn btn-sm delete" href="#"><i class="fas fa-trash"></i></a>
+														<button class="btn btn-sm delete" onclick="showDeleteConfirmationModal('John Sanders', '#15346')"><i class="fas fa-trash"></i></button>
 													</div>
 												</td>
 											</tr>
@@ -486,8 +486,8 @@
 													<div class="btn-group mt-1">
 														<a class="btn btn-sm detail" href="detailcan.html"><i class="fas fa-eye"></i></a>
 														<a class="btn btn-sm modif" href="modifcan.html"><i class="fas fa-edit"></i></a>
-														<a class="btn btn-sm delete" href="#"><i class="fas fa-trash"></i></a>
-														<a class="btn btn-sm validate" href="#" style="background-color: #15a362; color: #fff;"><i class="fas fa-check"></i></a>
+														<button class="btn btn-sm delete" onclick="showDeleteConfirmationModal('Dylan Ambrose', '#15345')"><i class="fas fa-trash"></i></button>
+														<button class="btn btn-sm validate" style="background-color: #15a362; color: #fff;" onclick="showValidationConfirmationModal('Dylan Ambrose', '#15345')"><i class="fas fa-check"></i></button>
 													</div>
 												</td>
 											</tr>
@@ -504,8 +504,8 @@
 													<div class="btn-group">
 														<a class="btn btn-sm detail" href="detailcan.html"><i class="fas fa-eye"></i></a>
 														<a class="btn btn-sm modif" href="modifcan.html"><i class="fas fa-edit"></i></a>
-														<a class="btn btn-sm delete" href="#"><i class="fas fa-trash"></i></a>
-														<a class="btn btn-sm validate" href="#" style="background-color: #15a362; color: #fff;"><i class="fas fa-check"></i></a>
+														<button class="btn btn-sm delete" onclick="showDeleteConfirmationModal('Dylan Ambrose', '#15345')"><i class="fas fa-trash"></i></button>
+														<button class="btn btn-sm validate" style="background-color: #15a362; color: #fff;" onclick="showValidationConfirmationModal('Dylan Ambrose', '#15345')"><i class="fas fa-check"></i></button>
 													</div>
 												</td>
 											</tr>
@@ -530,10 +530,115 @@
 							</ul>
 						</nav>
 					</div>
-					
-					<!-- Les autres onglets (Validés et En attente) suivent la même structure -->
-					<!-- ... -->
 				</div>
+				
+				<!-- Modal de confirmation pour la validation -->
+				<div class="modal fade" id="validationConfirmationModal" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Confirmation de validation</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p id="validationConfirmationMessage">Voulez-vous vraiment valider ce candidat ?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+								<button type="button" class="btn btn-success" id="confirmValidation">Oui, valider</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Modal de confirmation pour la suppression -->
+				<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Confirmation de suppression</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p id="deleteConfirmationMessage">Voulez-vous vraiment supprimer ce candidat ?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+								<button type="button" class="btn btn-danger" id="confirmDelete">Oui, supprimer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<script>
+					// Variables pour stocker les informations du candidat
+					let currentCandidateId = null;
+					let currentCandidateName = null;
+					
+					// Fonction pour afficher la modal de confirmation de validation
+					function showValidationConfirmationModal(candidateName, candidateId) {
+						currentCandidateName = candidateName;
+						currentCandidateId = candidateId;
+						
+						// Mettre à jour le message de confirmation
+						document.getElementById('validationConfirmationMessage').textContent = 
+							`Voulez-vous vraiment valider le candidat ${candidateName} (${candidateId}) ?`;
+						
+						// Afficher la modal
+						const modal = new bootstrap.Modal(document.getElementById('validationConfirmationModal'));
+						modal.show();
+					}
+					
+					// Fonction pour afficher la modal de confirmation de suppression
+					function showDeleteConfirmationModal(candidateName, candidateId) {
+						currentCandidateName = candidateName;
+						currentCandidateId = candidateId;
+						
+						// Mettre à jour le message de confirmation
+						document.getElementById('deleteConfirmationMessage').textContent = 
+							`Voulez-vous vraiment supprimer le candidat ${candidateName} (${candidateId}) ? Cette action est irréversible.`;
+						
+						// Afficher la modal
+						const modal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
+						modal.show();
+					}
+					
+					// Gestionnaire d'événement pour le bouton de confirmation de validation
+					document.getElementById('confirmValidation').addEventListener('click', function() {
+						// Ici vous pouvez ajouter le code pour valider effectivement le candidat
+						console.log(`Validation du candidat ${currentCandidateName} (${currentCandidateId})`);
+						
+						// Fermer la modal
+						const modal = bootstrap.Modal.getInstance(document.getElementById('validationConfirmationModal'));
+						modal.hide();
+						
+						// Afficher un message de succès (optionnel)
+						alert(`Le candidat ${currentCandidateName} a été validé avec succès !`);
+						
+						// Réinitialiser les variables
+						currentCandidateId = null;
+						currentCandidateName = null;
+					});
+					
+					// Gestionnaire d'événement pour le bouton de confirmation de suppression
+					document.getElementById('confirmDelete').addEventListener('click', function() {
+						// Ici vous pouvez ajouter le code pour supprimer effectivement le candidat
+						console.log(`Suppression du candidat ${currentCandidateName} (${currentCandidateId})`);
+						
+						// Fermer la modal
+						const modal = bootstrap.Modal.getInstance(document.getElementById('deleteConfirmationModal'));
+						modal.hide();
+						
+						// Afficher un message de succès (optionnel)
+						alert(`Le candidat ${currentCandidateName} a été supprimé avec succès !`);
+						
+						// Réinitialiser les variables
+						currentCandidateId = null;
+						currentCandidateName = null;
+						
+						// Ici vous pourriez aussi actualiser la liste des candidats ou supprimer la ligne du tableau
+					});
+				</script>
 			</div>
 		</div>
 		

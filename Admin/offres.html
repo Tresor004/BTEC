@@ -415,81 +415,141 @@
 				</nav>
 				
 				<div class="tab-content" id="orders-table-tab-content">
-                    <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
-                        <div class="app-card app-card-orders-table shadow-sm mb-5">
-                            <div class="app-card-body">
-                                <div class="table-responsive">
-                                    <table class="table app-table-hover mb-0 text-left">
-                                        <thead>
-                                            <tr>
-                                                <th class="cell">Référence</th>
-                                                <th class="cell">Nom de l'entreprise</th>
-                                                <th class="cell">Domaine d'activité</th>
-                                                <th class="cell">Postes recherchés</th>
-                                                <th class="cell">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="cell">#REF001</td>
-                                                <td class="cell">Tech Solutions</td>
-                                                <td class="cell">Informatique</td>
-                                                <td class="cell">Développeur Web</td>
-                                                <td class="cell">
-                                                    <a class="btn-sm app-btn-secondary detail" href="detailoff.html"><i class="fas fa-eye"></i></a>
-                                                    <a class="btn-sm app-btn-secondary modif" href="modifoff.html"><i class="fas fa-edit"></i></a>
-                                                    <a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="cell">#REF002</td>
-                                                <td class="cell">Finance Corp</td>
-                                                <td class="cell">Banque</td>
-                                                <td class="cell">Analyste financier</td>
-                                                <td class="cell">
-                                                    <a class="btn-sm app-btn-secondary detail" href="detailoff.html"><i class="fas fa-eye"></i></a>
-                                                    <a class="btn-sm app-btn-secondary modif" href="modifoff.html"><i class="fas fa-edit"></i></a>
-                                                    <a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <nav class="app-pagination">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Suivant</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                
-                <style>
-                    /* Effet au survol */
-.detail:hover {
-border-color: #218838; /* Vert plus foncé */
-color: #218838;
-}
-
-.modif:hover {
-border-color: #e0a800; /* Jaune plus foncé */
-color: #e0a800;
-}
-
-.delete:hover {
-border-color: #c82333; /* Rouge plus foncé */
-color: #c82333;
-}
-                </style>
+					<div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+						<div class="app-card app-card-orders-table shadow-sm mb-5">
+							<div class="app-card-body">
+								<div class="table-responsive">
+									<table class="table app-table-hover mb-0 text-left">
+										<thead>
+											<tr>
+												<th class="cell">Référence</th>
+												<th class="cell">Nom de l'entreprise</th>
+												<th class="cell">Domaine d'activité</th>
+												<th class="cell">Postes recherchés</th>
+												<th class="cell">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="cell">#REF001</td>
+												<td class="cell">Tech Solutions</td>
+												<td class="cell">Informatique</td>
+												<td class="cell">Développeur Web</td>
+												<td class="cell">
+													<a class="btn-sm app-btn-secondary detail" href="detailoff.html"><i class="fas fa-eye"></i></a>
+													<a class="btn-sm app-btn-secondary modif" href="modifoff.html"><i class="fas fa-edit"></i></a>
+													<a class="btn-sm app-btn-secondary delete" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" data-offer="Tech Solutions (Développeur Web)"><i class="fas fa-trash"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td class="cell">#REF002</td>
+												<td class="cell">Finance Corp</td>
+												<td class="cell">Banque</td>
+												<td class="cell">Analyste financier</td>
+												<td class="cell">
+													<a class="btn-sm app-btn-secondary detail" href="detailoff.html"><i class="fas fa-eye"></i></a>
+													<a class="btn-sm app-btn-secondary modif" href="modifoff.html"><i class="fas fa-edit"></i></a>
+													<a class="btn-sm app-btn-secondary delete" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" data-offer="Finance Corp (Analyste financier)"><i class="fas fa-trash"></i></a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<nav class="app-pagination">
+							<ul class="pagination justify-content-center">
+								<li class="page-item disabled">
+									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+								</li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+									<a class="page-link" href="#">Suivant</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				
+				<!-- Modal de suppression -->
+				<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="deleteModalLabel">Confirmation de suppression</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p id="deleteModalMessage">Voulez-vous vraiment supprimer cette offre ?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+								<button type="button" class="btn btn-danger" id="confirmDelete">Oui, supprimer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<style>
+					/* Effet au survol */
+					.detail:hover {
+						border-color: #218838;
+						color: #218838;
+					}
+					.modif:hover {
+						border-color: #e0a800;
+						color: #e0a800;
+					}
+					.delete:hover {
+						border-color: #c82333;
+						color: #c82333;
+					}
+					
+					/* Style pour les petits écrans */
+					@media (max-width: 768px) {
+						.table-responsive {
+							overflow-x: auto;
+							-webkit-overflow-scrolling: touch;
+						}
+						.cell {
+							white-space: nowrap;
+						}
+						.btn-sm {
+							padding: 0.25rem 0.5rem;
+							font-size: 0.875rem;
+							line-height: 1.5;
+						}
+					}
+				</style>
+				
+				<script>
+					// Gestion de la modale de suppression
+					document.addEventListener('DOMContentLoaded', function() {
+						const deleteModal = document.getElementById('deleteModal');
+						
+						// Configuration de la modale de suppression
+						deleteModal.addEventListener('show.bs.modal', function(event) {
+							const button = event.relatedTarget;
+							const offerInfo = button.getAttribute('data-offer');
+							const message = `Voulez-vous vraiment supprimer l'offre "${offerInfo}" ?`;
+							document.getElementById('deleteModalMessage').textContent = message;
+							
+							// Stocker l'ID ou autre identifiant pour la suppression
+							document.getElementById('confirmDelete').onclick = function() {
+								// Ici, ajouter le code pour supprimer l'élément
+								alert(`Suppression de "${offerInfo}" confirmée`);
+								// Fermer la modale
+								const modal = bootstrap.Modal.getInstance(deleteModal);
+								modal.hide();
+								
+								// Rediriger ou actualiser la page si nécessaire
+								// window.location.reload();
+							};
+						});
+					});
+				</script>
             
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
