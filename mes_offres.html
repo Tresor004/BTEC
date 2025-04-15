@@ -148,8 +148,8 @@
           <div class="navbar-nav ms-auto py-0">
               <a href="index.html" class="nav-item nav-link">Accueil</a>
               <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
-              <a href="offres.html" class="nav-item nav-link active">Offres</a>
-              <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
+              <a href="offres.html" class="nav-item nav-link ">Offres</a>
+              <a href="cvtheque.html" class="nav-item nav-link active">CVthèque</a>
               <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
               <a href="event.html" class="nav-item nav-link">BTEC Event</a>
               <a href="candidatures.html" class="nav-item nav-link">Contactez-Nous</a>
@@ -353,109 +353,77 @@
       window.location.href = "index.html"; // Remplace par ta page de redirection
     }
   </script>
-
-
-  
-    <div class="hero-header" style="background-image: url('img/offre.jpg');">
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-      <div class="container py-5 connect" style="position: relative; z-index: 2;">
-        <div class="row justify-content-center py-5">
-          <div class="col-md-6 d-flex align-items-center flex-column flex-md-row mt-n5 custom">
-            <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
-              <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
-              <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
-              <!-- Barre de recherche responsive -->
-              <div class="mt-4">
-                <form class="d-flex search-form flex-wrap justify-content-center">
-                  <select class="form-select me-2" aria-label="Sélectionnez une ville">
-                    <option selected>Choisissez une ville</option>
-                    <option value="1">Cotonou</option>
-                    <option value="2">Porto-Novo</option>
-                    <option value="3">Calavi</option>
-                    <option value="4">Ouidah</option>
-                    <option value="5">¨Parakou</option>
-                  </select>
-                  <input class="form-control me-2" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
-                  <select class="form-select me-2" aria-label="Sélectionnez un niveau d'étude">
-                    <option selected>Choisissez un niveau d'étude</option>
-                    <option value="1">CEP</option>
-                    <option value="2">BEPC</option>
-                    <option value="3">Baccalauréat</option>
-                    <option value="4">Licence</option>
-                    <option value="5">Master</option>
-                    <option value="6">Aucun</option>
-                  </select>
-                </form>
-              </div>
-  
-              <div class="btn-container mt-3">
-                <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
-                <a href="my_cv.html" class="btn btn-register cv">Voir mon cv</a>
-                <a href="candidatures.html" class="btn btn-primary" style="border: solid white 2px;">Suivre mes candidatures</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <style>
-      .custom {
-          margin-top: -20px; /* Ajuste la valeur selon tes besoins */
-      }
-
-  </style>
-  </div>
   
  <!-- Affichage des offres d'emploi -->
 <div class="container py-5 d-flex flex-column align-items-center">
   <!-- Passage de w-75 à w-100 pour rallonger horizontalement -->
   <div class="row g-4 w-100 mx-auto">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
-      <h1 class="mb-5">Postes disponibles</h1>
+      <h6 class="section-title bg-white text-center text-primary px-3">CVthèque</h6>
+      <h1 class="mb-5">Mes publications</h1>
     </div>
 
     <!-- Offre 1 -->
-    <div class="col-12 col-md-6">
-      <div class="card offre-card p-4">
-        <div class="d-flex align-items-center">
-          <div>
-            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
-            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
-            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
-            <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
-           <a href="postulat.html"><button class="btn btn-primary mt-3">Postuler</button></a>
+    <div class="row justify-content-center"> <!-- Centrage horizontal -->
+        <div class="col-12 col-md-8 col-lg-6"> <!-- Contrôle de la largeur -->
+          <div class="card offre-card p-4">
+            <div class="d-flex align-items-center">
+              <div class="w-100"> <!-- Prend toute la largeur disponible -->
+                <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
+                <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
+                <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
+                <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
+                
+                <div class="d-flex gap-2 mt-3">
+                  <a href="detail_offre.html" class="btn btn-primary flex-grow-1">
+                    Voir
+                  </a>
+                  <button class="btn btn-outline-danger flex-grow-1 delete-offre-btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-offre-id="ENTR00045678" style="background-color: gray;">
+                    <i class="fas fa-trash-alt me-1"></i> Supprimer
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Offre 2 -->
-    <div class="col-12 col-md-6">
-      <div class="card offre-card p-4">
-        <div class="d-flex align-items-center">
-          <div>
-            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
-            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
-            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
-            <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
-            <a href="postulat.html"><button class="btn btn-primary mt-3">Postuler</button></a>
+      
+      <!-- Modal de confirmation -->
+      <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Confirmation de suppression</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Êtes-vous sûr de vouloir supprimer cette offre ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Non</button>
+              <button type="button" class="btn btn-danger" id="confirmDelete">Oui, supprimer</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      
+      <script>
+      // Gestion de la suppression
+      document.getElementById('confirmDelete').addEventListener('click', function() {
+        const offreId = document.querySelector('.delete-offre-btn').getAttribute('data-offre-id');
+        // Ici vous pouvez ajouter votre logique de suppression
+        console.log('Suppression de l\'offre:', offreId);
+        
+        // Fermer le modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+        modal.hide();
+        
+        // Optionnel: Supprimer la carte visuellement
+        document.querySelector('.offre-card').remove();
+      });
+      </script>
   </div>
 </div>
-<!-- Bouton "Voir plus" -->
-<div class="d-flex justify-content-center">
-  <a href="connexionCan.html" class="plus">
-    <button class="btn btn-primary mt-3">
-      Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i>
-    </button>
-  </a>
-</div>
-
 
   <!-- Section Partenaires avec Carrousel (Bootstrap) -->
   <div class="container-fluid bg-white py-4">

@@ -104,29 +104,72 @@
         <form>
             <!-- Informations personnelles -->
             <div class="row mb-4">
-                <!-- Champ pour le nom -->
-                <div class="col-md-6">
-                    <label for="nom" class="form-label"><Strong>Nom</Strong></label>
-                    <input type="text" class="form-control" id="nom" required>
+                <div class="row g-3">
+                    <!-- Champ pour la photo -->
+                    <div class="col-12">
+                        <label for="photo" class="form-label"><strong>Photo de profil</strong></label>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3" style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; background-color: #f8f9fa;">
+                                <img id="photoPreview" src="assets/images/clients/c1.png" alt="Preview photo" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="flex-grow-1">
+                                <input type="file" class="form-control" id="photo" accept="image/*" style="display: none;">
+                                <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('photo').click()">
+                                    <i class="fas fa-camera me-2"></i>Choisir une photo
+                                </button>
+                                <small class="text-muted d-block mt-1">Formats acceptés : JPG, PNG (max 2MB)</small>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Champ pour le nom -->
+                    <div class="col-md-6">
+                        <label for="nom" class="form-label"><strong>Nom</strong></label>
+                        <input type="text" class="form-control" id="nom" required>
+                    </div>
+                    
+                    <!-- Champ pour le prénom -->
+                    <div class="col-md-6">
+                        <label for="prenom" class="form-label"><strong>Prénom</strong></label>
+                        <input type="text" class="form-control" id="prenom" required>
+                    </div>
+                    
+                    <!-- Champ pour l'email -->
+                    <div class="col-md-6">
+                        <label for="email" class="form-label"><strong>Email</strong></label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    
+                    <!-- Champ pour le téléphone -->
+                    <div class="col-md-6">
+                        <label for="telephone" class="form-label"><strong>Téléphone</strong></label>
+                        <input type="tel" class="form-control" id="telephone" required>
+                    </div>
                 </div>
-            
-                <!-- Champ pour le prénom -->
-                <div class="col-md-6">
-                    <label for="prenom" class="form-label"><strong>Prénom</strong></label>
-                    <input type="text" class="form-control" id="prenom" required>
-                </div>
-            
-                <!-- Champ pour l'email -->
-                <div class="col-md-6">
-                    <label for="email" class="form-label"><strong>Email</strong></label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-            
-                <!-- Champ pour le téléphone -->
-                <div class="col-md-6">
-                    <label for="telephone" class="form-label"><strong>Téléphone</strong></label>
-                    <input type="tel" class="form-control" id="telephone" required>
-                </div>
+                
+                <script>
+                // Aperçu de la photo sélectionnée
+                document.getElementById('photo').addEventListener('change', function(e) {
+                    if (e.target.files && e.target.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            document.getElementById('photoPreview').src = event.target.result;
+                        };
+                        reader.readAsDataURL(e.target.files[0]);
+                    }
+                });
+                </script>
+                
+                <style>
+                /* Style pour l'aperçu de la photo */
+                #photoPreview {
+                    border: 2px solid #dee2e6;
+                    transition: all 0.3s ease;
+                }
+                #photoPreview:hover {
+                    opacity: 0.8;
+                }
+                </style>
             
                 <!-- Champ pour l'adresse -->
                 <div class="col-12">

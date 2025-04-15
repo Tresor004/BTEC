@@ -152,7 +152,7 @@
               <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
               <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
               <a href="event.html" class="nav-item nav-link">BTEC Event</a>
-              <a href="candidatures.html" class="nav-item nav-link">Contactez-Nous</a>
+              <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
           </div>
           <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
       </div>
@@ -356,105 +356,170 @@
 
 
   
-    <div class="hero-header" style="background-image: url('img/offre.jpg');">
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-      <div class="container py-5 connect" style="position: relative; z-index: 2;">
-        <div class="row justify-content-center py-5">
-          <div class="col-md-6 d-flex align-items-center flex-column flex-md-row mt-n5 custom">
-            <div class="col-lg-10 pt-lg-2 mt-lg-5 text-center">
-              <h1 class="display-3 text-white mb-3 animated slideInDown">Offres d'emploi</h1>
-              <h3 class="text-white">Découvrez l'ensemble des offres disponibles</h3>
-              <!-- Barre de recherche responsive -->
-              <div class="mt-4">
-                <form class="d-flex search-form flex-wrap justify-content-center">
-                  <select class="form-select me-2" aria-label="Sélectionnez une ville">
-                    <option selected>Choisissez une ville</option>
-                    <option value="1">Cotonou</option>
-                    <option value="2">Porto-Novo</option>
-                    <option value="3">Calavi</option>
-                    <option value="4">Ouidah</option>
-                    <option value="5">¨Parakou</option>
-                  </select>
-                  <input class="form-control me-2" type="search" placeholder="Rechercher un poste" aria-label="Rechercher un poste">
-                  <select class="form-select me-2" aria-label="Sélectionnez un niveau d'étude">
-                    <option selected>Choisissez un niveau d'étude</option>
-                    <option value="1">CEP</option>
-                    <option value="2">BEPC</option>
-                    <option value="3">Baccalauréat</option>
-                    <option value="4">Licence</option>
-                    <option value="5">Master</option>
-                    <option value="6">Aucun</option>
-                  </select>
-                </form>
-              </div>
+   
+  </div>
   
-              <div class="btn-container mt-3">
-                <a href="formulaire_cv.html" class="btn btn-primary">Créer mon cv</a>
-                <a href="my_cv.html" class="btn btn-register cv">Voir mon cv</a>
-                <a href="candidatures.html" class="btn btn-primary" style="border: solid white 2px;">Suivre mes candidatures</a>
+ <!-- Affichage des offres d'emploi -->
+<div class="container py-5 d-flex flex-column align-items-center">
+    <div class="row g-4 w-100 mx-auto">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
+        <h1 class="mb-5">Détails de la candidature </h1>
+      </div>
+  
+      <!-- Section des détails de candidature -->
+<div class="container mb-5">
+    <div class="row g-4">
+      <!-- Colonne gauche - Détails de l'offre -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title">Tech Solutions</h3>
+            <div class="mb-3">
+              <p><strong>Domaine d'activité :</strong> Informatique et nouvelles Technologies</p>
+              <p><strong>Lieu :</strong> Cotonou</p>
+              <p><strong>Postes disponibles :</strong> 2 Développeurs Web, 3 Chargés de communication</p>
+              <p><strong>Expérience requise :</strong> 2 ans minimum</p>
+              <p><strong>Diplôme requis :</strong> Bac+3 en Informatique</p>
+              <p><strong>Rôles :</strong> Développement et maintenance de sites web, gestion de projets digitaux</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Colonne droite - Information de candidature (en lecture seule) -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title mb-4">Votre candidature</h3>
+            
+            <!-- Section d'information en lecture seule -->
+            <div class="mb-4 p-3 bg-light rounded">
+              <h5 class="mb-3">Informations personnelles</h5>
+              <div class="mb-2">
+                <strong>Nom complet :</strong> 
+                <span class="d-block p-2 bg-white rounded mt-1">GANKPE Ornel</span>
+              </div>
+              <div class="mb-2">
+                <strong>Email :</strong> 
+                <span class="d-block p-2 bg-white rounded mt-1">ornel.gankpe@example.com</span>
+              </div>
+              <div class="mb-2">
+                <strong>Téléphone :</strong> 
+                <span class="d-block p-2 bg-white rounded mt-1">+229 01 23 45 67</span>
+              </div>
+            </div>
+            
+            <!-- CV téléchargé -->
+            <div class="mb-4 p-3 bg-light rounded">
+              <h5 class="mb-3">CV soumis</h5>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-file-pdf me-2 text-danger" style="font-size: 1.5rem;"></i>
+                <div>
+                  <span class="d-block fw-bold">CV_GANKPE_Ornel.pdf</span>
+                  <small class="text-muted">Téléchargé le 15/04/2024</small>
+                </div>
+                <a href="#" class="ms-auto btn btn-sm btn-outline-primary">
+                  <i class="fas fa-download"></i> Télécharger
+                </a>
+              </div>
+            </div>
+            
+            <!-- Lettre de motivation -->
+            <div class="mb-4 p-3 bg-light rounded">
+              <h5 class="mb-3">Brève description</h5>
+              <div class="p-2 bg-white rounded">
+                <p>Je suis vivement intéressé par le poste de Développeur Full Stack au sein de votre entreprise. Avec mes 3 ans d'expérience en développement web et mes compétences en React et Node.js, je suis convaincu que je pourrais apporter une réelle valeur ajoutée à votre équipe.</p>
+              </div>
+            </div>
+            
+            <!-- Statut de la candidature -->
+            <div class="p-3 bg-light rounded">
+              <h5 class="mb-3">Statut de candidature</h5>
+              <div class="d-flex align-items-center">
+                <span class="badge bg-warning text-dark p-2">En attente de traitement</span>
+                <small class="text-muted ms-3">Dernière mise à jour : 15/04/2024</small>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <style>
-      .custom {
-          margin-top: -20px; /* Ajuste la valeur selon tes besoins */
-      }
-
-  </style>
+  
+    <!-- Boutons d'action -->
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+       <a href="modif_can.html"><button class="btn btn-warning me-3" id="modifierBtn" style="color: black;">
+          <i class="fas fa-edit me-2"></i>Modifier
+        </button></a> 
+        <button class="btn btn-danger" id="supprimerBtn">
+          <i class="fas fa-trash-alt me-2"></i>Supprimer
+        </button>
+      </div>
+    </div>
   </div>
   
- <!-- Affichage des offres d'emploi -->
-<div class="container py-5 d-flex flex-column align-items-center">
-  <!-- Passage de w-75 à w-100 pour rallonger horizontalement -->
-  <div class="row g-4 w-100 mx-auto">
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Recrutement</h6>
-      <h1 class="mb-5">Postes disponibles</h1>
-    </div>
-
-    <!-- Offre 1 -->
-    <div class="col-12 col-md-6">
-      <div class="card offre-card p-4">
-        <div class="d-flex align-items-center">
-          <div>
-            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045678</span></p>
-            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Tech Solutions</span></p>
-            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Informatique</span></p>
-            <p class="card-text"><strong>Postes recherchés :</strong> Développeur Web, Designer UI/UX, Chef de Projet</p>
-           <a href="postulat.html"><button class="btn btn-primary mt-3">Postuler</button></a>
-          </div>
+  <!-- Modal de confirmation de suppression -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-    </div>
-
-    <!-- Offre 2 -->
-    <div class="col-12 col-md-6">
-      <div class="card offre-card p-4">
-        <div class="d-flex align-items-center">
-          <div>
-            <p class="card-title mb-1"><strong>Référence :</strong> <span class="text-muted">ENTR00045679</span></p>
-            <p class="card-title mb-1"><strong>Nom de l'entreprise :</strong> <span class="text-muted">Inno Mécanique</span></p>
-            <p class="card-title mb-1"><strong>Domaine d'activité :</strong> <span class="text-muted">Mécanique</span></p>
-            <p class="card-text"><strong>Postes recherchés :</strong> Chef mécanicien, Electricien Auto</p>
-            <a href="postulat.html"><button class="btn btn-primary mt-3">Postuler</button></a>
-          </div>
+        <div class="modal-body">
+          Êtes-vous sûr de vouloir supprimer votre candidature ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Non</button>
+          <button type="button" class="btn btn-danger" id="confirmerSuppression">Oui, supprimer</button>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Bouton "Voir plus" -->
-<div class="d-flex justify-content-center">
-  <a href="connexionCan.html" class="plus">
-    <button class="btn btn-primary mt-3">
-      Voir plus <i class="bi bi-arrow-right-short" style="color:#fff"></i>
-    </button>
-  </a>
-</div>
+  
+  <style>
+    /* Style pour les champs en lecture seule */
+    .bg-light {
+      background-color: #f8f9fa !important;
+    }
+    .rounded {
+      border-radius: 0.375rem !important;
+    }
+    
+    /* Style des boutons */
+    #modifierBtn, #supprimerBtn {
+      min-width: 150px;
+      padding: 10px 20px;
+    }
+  </style>
+  
+  <script>
+    // Gestion du bouton Supprimer
+    document.getElementById('supprimerBtn').addEventListener('click', function() {
+      var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      confirmationModal.show();
+    });
+  
+    // Gestion de la confirmation de suppression
+    document.getElementById('confirmerSuppression').addEventListener('click', function() {
+      // Ici vous pouvez ajouter le code pour supprimer effectivement la candidature
+      alert('Candidature supprimée avec succès');
+      
+      // Fermer le modal
+      var confirmationModal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+      confirmationModal.hide();
+      
+      // Redirection ou autre action après suppression
+      // window.location.href = 'mes-candidatures.html';
+    });
+  
+    // Gestion du bouton Modifier
+    document.getElementById('modifierBtn').addEventListener('click', function() {
+      // Ici vous pouvez ajouter le code pour modifier la candidature
+      window.location.href = 'modifier-candidature.html';
+    });
+  </script>
 
 
   <!-- Section Partenaires avec Carrousel (Bootstrap) -->

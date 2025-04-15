@@ -56,90 +56,113 @@
             </div>
         </nav>
         
-        <!-- Div du profil -->
-        <div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <a href="modifRec.html">
-                <div class="d-flex align-items-center">
-                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
-                    <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
-                </div>
-            </a>
-            <a href="#" onclick="showModal(event)">
-                <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
-                    <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
-                </button>
-            </a>
+       <!-- Div du profil -->
+<div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+    <a href="modifRec.html">
+        <div class="d-flex align-items-center">
+            <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+            <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
         </div>
+    </a>
+    <div class="d-flex align-items-center">
+        <!-- Icône de panier -->
+        <a href="cvlist.html" class="btn btn-outline-light rounded-circle p-2 me-2" style="width: 40px; height: 40px;">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <!-- Bouton Déconnecter -->
+        <a href="#" onclick="showModal(event)">
+            <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
+                <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
+            </button>
+        </a>
+    </div>
+</div>
+
+<style>
+    /* Style de base pour le menu */
+    .navbar {
+        position: relative;
+        z-index: 1000;
+    }
+
+    /* Style de base pour la div du profil */
+    #profileSection {
+        background-color: #001f3f;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 999;
+        margin-top: 0;
+    }
+
+    /* Style de l'image de profil */
+    .profile-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid gray;
+        padding: 3px;
+    }
+
+    /* Style du bouton de déconnexion */
+    .exit {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .exit:hover {
+        background-color: #fff;
+        color: red;
+    }
+
+    /* Style de l'icône panier */
+    .fa-shopping-cart {
+        font-size: 1rem;
+        transition: transform 0.3s;
+    }
+    .btn-outline-light:hover .fa-shopping-cart {
+        transform: scale(1.1);
+    }
+
+    /* Ajustements pour les petits écrans */
+    @media (max-width: 768px) {
+        .navbar {
+            padding-bottom: 0;
+        }
+
+        #profileSection {
+            margin-top: 0;
+            padding-top: 10px;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+        }
+
+        h5.text-white {
+            font-size: 1rem;
+        }
+
+        .exit {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
         
-        <style>
-            /* Style de base pour le menu */
-            .navbar {
-                position: relative;
-                z-index: 1000;
-            }
-        
-            /* Style de base pour la div du profil */
-            #profileSection {
-                background-color: #001f3f;
-                padding: 10px 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-                position: relative;
-                z-index: 999;
-                margin-top: 0;
-            }
-        
-            /* Style de l'image de profil */
-            .profile-img {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 1px solid gray;
-                padding: 3px;
-            }
-        
-            /* Style du bouton de déconnexion */
-            .exit {
-                transition: background-color 0.3s, color 0.3s;
-            }
-        
-            .exit:hover {
-                background-color: #fff;
-                color: red;
-            }
-        
-            /* Ajustements pour les petits écrans */
-            @media (max-width: 768px) {
-                .navbar {
-                    padding-bottom: 0;
-                }
-        
-                #profileSection {
-                    margin-top: 0;
-                    padding-top: 10px;
-                }
-        
-                .profile-img {
-                    width: 50px;
-                    height: 50px;
-                }
-        
-                h5.text-white {
-                    font-size: 1rem;
-                }
-        
-                .exit {
-                    font-size: 0.9rem;
-                    padding: 5px 10px;
-                }
-            }
-        </style>
+        /* Adaptation de l'icône panier pour mobile */
+        .btn-outline-light {
+            width: 35px !important;
+            height: 35px !important;
+            padding: 0.25rem !important;
+        }
+    }
+</style>
 
           <!-- Modal -->
-          <div id="modal" class="modal">
+        <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
@@ -283,25 +306,32 @@
                         <h1 class="display-3 text-white mb-3 animated slideInDown"><i>CVthèque</i></h1>
                         <h3 class="text-white">Trouvez le candidat idéal : découvrez leurs expériences, leurs compétences et leur potentiel pour une embauche réussie.</h3>
     
-                        <!-- Barre de recherche -->
-                        <div class="mt-4">
-                            <form class="d-flex justify-content-center">
-                                <input class="form-control w-50" type="search" placeholder="Rechercher" aria-label="Search">
-                                <button class="btn btn-primary ms-2" type="submit"><i class="bi bi-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <style>
-                        .custom-margin-top {
-                            margin-top: -20px; /* Ajuste la valeur selon tes besoins */
-                        }
-
-                    </style>
-                </div>
-            </div>
-        </div>
+                       <!-- Barre de recherche -->
+<div class="mt-4">
+    <form class="d-flex justify-content-center">
+        <input class="form-control w-50" type="search" placeholder="Rechercher" aria-label="Search">
+        <button class="btn btn-primary ms-2" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+    <!-- Bouton Publier une offre ajouté ici -->
+    <div class="text-center mt-3">
+        <a href="offre_emploi.html" class="btn btn-success me-2">
+            <i class="bi bi-plus-circle"></i> Publier une offre
+        </a>
+        <a href="mes_offres.html" class="btn btn-primary" style="background-color: gray;">
+            <i class="bi bi-eye"></i> Voir mes offres
+        </a>
     </div>
-    
+</div>
+</div>
+<style>
+    .custom-margin-top {
+        margin-top: -20px; /* Ajuste la valeur selon tes besoins */
+    }
+</style>
+</div>
+</div>
+</div>
+</div>
 
     <style>
         .hero-header {
@@ -319,133 +349,89 @@
             </div>
 
             <div class="container py-2">
-                    <div class="container mt-5">
-                        <div class="row g-4">
-
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="card p-3 mb-3" style="cursor: pointer;" onclick="openPopup()">
-                                    <div class="d-flex align-items-center">
-                                        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
-                                        <div>
-                                            <p class="card-title mb-1"><strong>Référence : </strong> <span class="text-muted">REF00012320</span></p>
-                                            <p class="card-title mb-1"><strong>Diplôme :</strong> <span class="text-muted">Licence (BAC +3)</span></p>
-                                            <p class="card-title mb-1"><strong>Formation : </strong></p> <span class="text-muted">Génie Informatique</span></p>
-                                        </div>
+                <div class="container mt-5">
+                    <div class="row g-4">
+            
+                        <div class="col-12 col-md-6 col-lg-4" onclick="openPopup()">
+                            <div class="card p-3 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
+                                    <div>
+                                        <p class="card-title mb-1"><strong>Référence : </strong> <span class="text-muted">REF00012320</span></p>
+                                        <p class="card-title mb-1"><strong>Diplôme :</strong> <span class="text-muted">Licence (BAC +3)</span></p>
+                                        <p class="card-title mb-1"><strong>Formation : </strong> <span class="text-muted">Génie Informatique</span></p>
                                     </div>
-                                    <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                                    <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                                    <p class="card-text"><strong>Poste recherché :</strong> Secrétaire</p>
                                 </div>
-                                <!-- Overlay -->
-                                <div class="popup-overlay" onclick="closePopup()"></div>
-                                <!-- Pop-up -->
-                                <div class="popup">
-                                    <span class="close-btn" onclick="closePopup()">×</span>
-                                    <h5 class="mb-3">Veuillez vous connecter</h5>
-                                    <p>Pour accéder à cette information, veuillez vous connecter en tant que recruteur.</p>
-                                    <a href="cv.html" class="btn btn-primary mt-3">Se connecter</a>
+                                <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
+                                <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
+                                <p class="card-text"><strong>Poste recherché :</strong> Secrétaire</p>
+                                
+                                <!-- Bouton Ajouter -->
+                                <div class="d-flex justify-content-between mt-3">
+                                    <button class="btn btn-success" onclick="addToSelection(this)">
+                                        <i class="fas fa-plus me-2"></i>Ajouter
+                                    </button>
                                 </div>
-                            </div> 
-
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="card p-3 mb-3" style="cursor: pointer;" onclick="openPopup()">
-                                    <div class="d-flex align-items-center">
-                                        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
-                                        <div>
-                                            <p class="card-title mb-1"><strong>Référence : </strong> <span class="text-muted">REF00012320</span></p>
-                                            <p class="card-title mb-1"><strong>Diplôme :</strong> <span class="text-muted">Licence (BAC +3)</span></p>
-                                            <p class="card-title mb-1"><strong>Formation : </strong></p> <span class="text-muted">Génie Informatique</span></p>
-                                        </div>
-                                    </div>
-                                    <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                                    <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                                    <p class="card-text"><strong>Poste recherché :</strong> Secrétaire</p>
-                                </div>
-                                <!-- Overlay -->
-                                <div class="popup-overlay" onclick="closePopup()"></div>
-                                <!-- Pop-up -->
-                                <div class="popup">
-                                    <span class="close-btn" onclick="closePopup()">×</span>
-                                    <h5 class="mb-3">Veuillez vous connecter</h5>
-                                    <p>Pour accéder à cette information, veuillez vous connecter en tant que recruteur.</p>
-                                    <a href="connexionRec.html" class="btn btn-primary mt-3">Se connecter</a>
-                                </div>
-                            </div> 
-
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="card p-3 mb-3" style="cursor: pointer;" onclick="openPopup()">
-                                    <div class="d-flex align-items-center">
-                                        <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
-                                        <div>
-                                            <p class="card-title mb-1"><strong>Référence : </strong> <span class="text-muted">REF00012320</span></p>
-                                            <p class="card-title mb-1"><strong>Diplôme :</strong> <span class="text-muted">Licence (BAC +3)</span></p>
-                                            <p class="card-title mb-1"><strong>Formation : </strong></p> <span class="text-muted">Génie Informatique</span></p>
-                                        </div>
-                                    </div>
-                                    <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
-                                    <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
-                                    <p class="card-text"><strong>Poste recherché :</strong> Secrétaire</p>
-                                </div>
-                                <!-- Overlay -->
-                                <div class="popup-overlay" onclick="closePopup()"></div>
-                                <!-- Pop-up -->
-                                <div class="popup">
-                                    <span class="close-btn" onclick="closePopup()">×</span>
-                                    <h5 class="mb-3">Veuillez vous connecter</h5>
-                                    <p>Pour accéder à cette information, veuillez vous connecter en tant que recruteur.</p>
-                                    <a href="connexionRec.html" class="btn btn-primary mt-3">Se connecter</a>
-                                </div>
-                            </div> 
-
+                            </div>
                         </div>
+            
+                        <div class="col-12 col-md-6 col-lg-4" onclick="openPopup()">
+                            <div class="card p-3 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
+                                    <div>
+                                        <p class="card-title mb-1"><strong>Référence : </strong> <span class="text-muted">REF00012320</span></p>
+                                        <p class="card-title mb-1"><strong>Diplôme :</strong> <span class="text-muted">Licence (BAC +3)</span></p>
+                                        <p class="card-title mb-1"><strong>Formation : </strong> <span class="text-muted">Génie Informatique</span></p>
+                                    </div>
+                                </div>
+                                <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
+                                <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
+                                <p class="card-text"><strong>Poste recherché :</strong> Secrétaire</p>
+                                
+                                <!-- Bouton Ajouter -->
+                                <div class="d-flex justify-content-between mt-3">
+                                    <button class="btn btn-success" onclick="addToSelection(this)">
+                                        <i class="fas fa-plus me-2"></i>Ajouter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-12 col-md-6 col-lg-4" onclick="openPopup()">
+                            <div class="card p-3 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img" width="50">
+                                    <div>
+                                        <p class="card-title mb-1"><strong>Référence : </strong> <span class="text-muted">REF00012320</span></p>
+                                        <p class="card-title mb-1"><strong>Diplôme :</strong> <span class="text-muted">Licence (BAC +3)</span></p>
+                                        <p class="card-title mb-1"><strong>Formation : </strong> <span class="text-muted">Génie Informatique</span></p>
+                                    </div>
+                                </div>
+                                <p class="card-text"><strong>Expérience Professionnelle :</strong> Plus de 2 ans</p>
+                                <p class="card-text"><strong>Compétences :</strong> Rigoureux, Objectif, Travail sous pression</p>
+                                <p class="card-text"><strong>Poste recherché :</strong> Secrétaire</p>
+                                
+                                <!-- Bouton Ajouter -->
+                                <div class="d-flex justify-content-between mt-3">
+                                    <button class="btn btn-success" onclick="addToSelection(this)">
+                                        <i class="fas fa-plus me-2"></i>Ajouter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+            
                     </div>
-               
- 
-                <style>
-                    /* Styles pour la pop-up */
-                    .popup {
-                        display: none;
-                        position: fixed;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 300px;
-                        background: white;
-                        padding: 20px;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                        border-radius: 10px;
-                        z-index: 1000;
-                    }
-                    .popup-overlay {
-                        display: none;
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0, 0, 0, 0.5);
-                        z-index: 999;
-                    }
-                    .close-btn {
-                        position: absolute;
-                        top: 10px;
-                        right: 15px;
-                        cursor: pointer;
-                        font-size: 20px;
-                    }
-                </style>
-
-                <script>
-                    function openPopup() {
-                        document.querySelector(".popup").style.display = "block";
-                        document.querySelector(".popup-overlay").style.display = "block";
-                    }
-                    
-                    function closePopup() {
-                        document.querySelector(".popup").style.display = "none";
-                        document.querySelector(".popup-overlay").style.display = "none";
-                    }
-                </script>
+                </div>
+            
+                <!-- Pop-up -->
+                <div class="popup-overlay" onclick="closePopup()"></div>
+                <div class="popup">
+                    <span class="close-btn" onclick="closePopup()">×</span>
+                    <h5 class="mb-3">Veuillez vous connecter</h5>
+                    <p>Pour accéder à cette information, veuillez vous connecter en tant que recruteur.</p>
+                    <a href="connexionRec.html" class="btn btn-primary mt-3">Se connecter</a>
+                </div>
             
                 <div class="text-center text-md-end mt-3">
                     <a href="connexionRec.html" class="btn btn-primary rounded-pill py-2 px-4 buton">Voir plus <i class="bi bi-arrow-right-short"></i></a>
@@ -453,6 +439,7 @@
             </div>
             
             <style>
+                /* Styles pour les cartes */
                 .card {
                     max-width: 400px;
                     border-radius: 10px;
@@ -460,12 +447,7 @@
                     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
                     padding: 20px;
                     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-                    border-bottom: 2px;
-                    border-color: #86B817;
-                    border-style: solid;
-                    border-top: 0px;
-                    border-left: 0px;
-                    border-right: 0px;
+                    border-bottom: 2px solid #86B817;
                 }
             
                 .card:hover {
@@ -481,10 +463,89 @@
                     border: 2px solid #86B817;
                     padding: 3px;
                 }
-                .buton:hover{
+            
+                /* Styles pour les boutons */
+                .btn-success {
+                    background-color: #86B817;
+                    border-color: #86B817;
+                }
+                
+                .btn-success:hover {
+                    background-color: #6a980d;
+                    border-color: #6a980d;
+                }
+            
+                .buton:hover {
                     transform: scale(0.8);
                 }
+            
+                /* Styles pour la pop-up */
+                .popup {
+                    display: none;
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 300px;
+                    background: white;
+                    padding: 20px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
+                    z-index: 1000;
+                }
+                
+                .popup-overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 999;
+                }
+                
+                .close-btn {
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                    cursor: pointer;
+                    font-size: 20px;
+                }
             </style>
+            
+            <script>
+                function openPopup() {
+                    document.querySelector(".popup").style.display = "block";
+                    document.querySelector(".popup-overlay").style.display = "block";
+                }
+                
+                function closePopup() {
+                    document.querySelector(".popup").style.display = "none";
+                    document.querySelector(".popup-overlay").style.display = "none";
+                }
+            
+                function addToSelection(button) {
+                    // Animation de confirmation
+                    button.innerHTML = '<i class="fas fa-check me-2"></i>Ajouté';
+                    button.classList.remove('btn-success');
+                    button.classList.add('btn-secondary');
+                    
+                    // Désactiver le bouton après clic
+                    button.disabled = true;
+                    
+                    // Ici vous pourriez ajouter la logique pour stocker la sélection
+                    // Ex: localStorage, appel API, etc.
+                    
+                    // Réinitialiser après 2 secondes (optionnel)
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-plus me-2"></i>Ajouter';
+                        button.classList.remove('btn-secondary');
+                        button.classList.add('btn-success');
+                        button.disabled = false;
+                    }, 2000);
+                }
+            </script>
             
                 
             </div>
