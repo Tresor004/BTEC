@@ -366,7 +366,7 @@
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
     
-    <div class="app-wrapper">
+	<div class="app-wrapper">
 	    
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
@@ -437,7 +437,7 @@
                                                 <td class="cell">
                                                     <a class="btn-sm app-btn-secondary detail" href="detailadh.html"><i class="fas fa-eye"></i></a>
                                                     <a class="btn-sm app-btn-secondary modif" href="modifadh.html"><i class="fas fa-edit"></i></a>
-                                                    <a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
+                                                    <button class="btn-sm app-btn-secondary delete" onclick="confirmDelete('#15346', 'John Sanders Doe')"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -449,7 +449,7 @@
                                                 <td class="cell">
                                                     <a class="btn-sm app-btn-secondary detail" href="detailadh.html"><i class="fas fa-eye"></i></a>
                                                     <a class="btn-sm app-btn-secondary modif" href="modifadh.html"><i class="fas fa-edit"></i></a>
-                                                    <a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
+                                                    <button class="btn-sm app-btn-secondary delete" onclick="confirmDelete('#15345', 'Dylan Ambrose')"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -461,7 +461,7 @@
                                                 <td class="cell">
                                                     <a class="btn-sm app-btn-secondary detail" href="detailadh.html"><i class="fas fa-eye"></i></a>
                                                     <a class="btn-sm app-btn-secondary modif" href="modifadh.html"><i class="fas fa-edit"></i></a>
-                                                    <a class="btn-sm app-btn-secondary delete" href="#"><i class="fas fa-trash"></i></a>
+                                                    <button class="btn-sm app-btn-secondary delete" onclick="confirmDelete('#15344', 'Teresa Holland')"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -484,22 +484,63 @@
                         </nav><!--//app-pagination-->
                     </div><!--//tab-pane-->
                 </div><!--//tab-content-->
+				
+				<!-- Modal de confirmation de suppression -->
+				<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="deleteModalLabel">Confirmation de suppression</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<p id="deleteMessage">Voulez-vous vraiment supprimer cet utilisateur ?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+								<button type="button" class="btn btn-danger" id="confirmDeleteBtn">Oui, supprimer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 				<style>
 					/* Effet au survol */
-.detail:hover {
-border-color: #218838; /* Vert plus foncé */
-color: #218838;
-}
+					.detail:hover {
+						border-color: #218838; /* Vert plus foncé */
+						color: #218838;
+					}
 
-.modif:hover {
-border-color: #e0a800; /* Jaune plus foncé */
-color: #e0a800;
-}
+					.modif:hover {
+						border-color: #e0a800; /* Jaune plus foncé */
+						color: #e0a800;
+					}
 
-.delete:hover {
-border-color: #c82333; /* Rouge plus foncé */
-color: #c82333;
-}
+					.delete:hover {
+						border-color: #c82333; /* Rouge plus foncé */
+						color: #c82333;
+					}
+					
+					/* Style du modal */
+					.modal-content {
+						border-radius: 10px;
+					}
+					
+					.modal-header {
+						background-color: #f8f9fa;
+						border-bottom: 1px solid #dee2e6;
+						border-radius: 10px 10px 0 0;
+					}
+					
+					.modal-title {
+						color: #dc3545;
+						font-weight: 600;
+					}
+					
+					#confirmDeleteBtn {
+						background-color: #dc3545;
+						border-color: #dc3545;
+					}
 				</style>
 				 
 		    </div><!--//container-fluid-->
@@ -507,14 +548,55 @@ color: #c82333;
 	    
 	    <footer class="app-footer">
 		    <div class="container text-center py-3">
-		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Concu par TDEV</small>
-		       
+		         <small class="copyright">Conçu par TDEV</small>
 		    </div>
 	    </footer><!--//app-footer-->
 	    
-    </div><!--//app-wrapper-->    					
+    </div><!--//app-wrapper--> 
 
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+	// Variables pour stocker les informations de suppression
+	let currentUserId = null;
+	let currentUserName = null;
+	
+	// Fonction pour afficher la confirmation de suppression
+	function confirmDelete(userId, userName) {
+		currentUserId = userId;
+		currentUserName = userName;
+		
+		// Mettre à jour le message du modal
+		document.getElementById('deleteMessage').textContent = `Voulez-vous vraiment supprimer l'utilisateur ${userName} (${userId}) ?`;
+		
+		// Afficher le modal
+		const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+		deleteModal.show();
+	}
+	
+	// Fonction pour effectuer la suppression
+	function deleteUser() {
+		if (currentUserId) {
+			// Ici vous pouvez ajouter le code pour supprimer l'utilisateur
+			console.log(`Suppression de l'utilisateur ${currentUserName} (${currentUserId})`);
+			
+			// Afficher un message de succès (vous pouvez remplacer ça par une requête AJAX)
+			alert(`L'utilisateur ${currentUserName} a été supprimé avec succès.`);
+			
+			// Recharger la page ou mettre à jour le tableau
+			// window.location.reload();
+		}
+	}
+	
+	// Écouteur d'événement pour le bouton de confirmation
+	document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+		deleteUser();
+		// Fermer le modal
+		const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+		deleteModal.hide();
+	});
+</script>
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>

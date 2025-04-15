@@ -363,168 +363,130 @@
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
 
-   <div class="app-wrapper">
-    <div class="app-content pt-3 p-md-3 p-lg-4">
-        <div class="container-xl">
-            <div class="row g-0 app-auth-wrapper">
-                <div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-3 p-md-5">
-                    <div class="d-flex flex-column align-content-end">
-                        <div class="app-auth-body mx-auto w-100">
-                            <!-- Titre du formulaire -->
-                            <h2 class="auth-heading text-center mb-3 mb-md-4">Rechercher le candidat</h2>
-
-                            <!-- Formulaire -->
-                            <form class="details-container bg-white p-3 p-md-5 rounded shadow-sm w-100">
-                                <div class="auth-form-container text-start">
-                                    <div class="row">
-                                        <!-- Champ : Nom et Prénoms du candidat -->
-                                        <div class="col-12 mb-3">
-                                            <label class="form-label">Nom et Prénoms du candidat</label>
-                                            <input type="text" class="form-control" placeholder="Entrez le nom et prénoms du candidat">
-                                        </div>
-
-                                        <!-- Champ : Référence -->
-                                        <div class="col-12 mb-3">
-                                            <label class="form-label">Référence</label>
-                                            <input type="text" class="form-control" placeholder="Entrez la référence du CV">
-                                        </div>
-                                    </div>
-
-                                    <!-- Bouton pour réaliser le CV -->
-                                    <div class="text-center mt-3 mt-md-4">
-                                        <a href="realiser_cv.html" class="btn btn-success" style="display: inline-block; color: #fff; text-decoration: none;">Réaliser le CV</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pied de page -->
-    <footer class="app-footer">
-        <div class="container text-center py-3">
-            <small class="copyright">Conçu par TDEV</small>
-        </div>
-    </footer>
-</div>
-
-<!-- Styles CSS pour le formulaire -->
-<style>
-    /* Style général responsive */
-    .app-auth-wrapper {
-        background-color: #f8f9fa;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-    }
-
-    .auth-main-col {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    /* Conteneur des détails */
-    .details-container {
-        width: 100%;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
-
-    @media (min-width: 768px) {
-        .details-container {
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    }
-
-    /* Style des labels */
-    .form-label {
-        font-weight: 600;
-        color: #495057;
-        margin-bottom: 0.5rem;
-        font-size: 14px;
-    }
-
-    @media (min-width: 768px) {
-        .form-label {
-            font-size: 16px;
-        }
-    }
-
-    /* Style des champs de saisie */
-    .form-control {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ced4da;
-        border-radius: 6px;
-        font-size: 14px;
-        margin-bottom: 1rem;
-    }
-
-    @media (min-width: 768px) {
-        .form-control {
-            padding: 10px;
-            font-size: 16px;
-        }
-    }
-
-    .form-control:focus {
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-
-    /* Style du titre */
-    .auth-heading {
-        font-size: 20px;
-        font-weight: 700;
-        color: #343a40;
-        margin-bottom: 15px;
-    }
-
-    @media (min-width: 768px) {
-        .auth-heading {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-    }
-
-    /* Style du bouton */
-    .btn-success {
-        background-color: #28a745;
-        border: none;
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 100%;
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-    }
-
-    @media (min-width: 768px) {
-        .btn-success {
-            width: auto;
-            font-size: 16px;
-        }
-    }
-
-    .btn-success:hover {
-        background-color: #218838;
-        color: white;
-    }
-</style>
+	<div class="app-wrapper">
+		<div class="app-content pt-2 p-md-3 p-lg-4">
+			<div class="container-xl">
+				<div class="row g-0 app-auth-wrapper">
+					<div class="col-12 auth-main-col text-center p-2 p-md-5">
+						<div class="d-flex flex-column align-content-end">
+							<div class="app-auth-body mx-auto w-100">
+								<!-- Titre du formulaire -->
+								<h2 class="auth-heading text-center mb-2 mb-md-4">Rechercher le candidat</h2>
+	
+								<!-- Formulaire compact -->
+								<form class="details-container bg-white p-2 p-md-5 rounded shadow-sm w-100">
+									<div class="auth-form-container text-start">
+										<!-- Champ : Nom et Prénoms -->
+										<div class="mb-2">
+											<label class="form-label">Nom et Prénoms</label>
+											<input type="text" class="form-control form-control-sm" placeholder="Nom du candidat">
+										</div>
+	
+										<!-- Champ : Référence -->
+										<div class="mb-2">
+											<label class="form-label">Référence</label>
+											<input type="text" class="form-control form-control-sm" placeholder="Référence CV">
+										</div>
+	
+										<!-- Bouton Réaliser CV -->
+										<div class="text-center mt-2">
+											<a href="realiser_cv.html" class="btn btn-success btn-sm">Rechercher</a>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Pied de page compact -->
+		<footer class="app-footer">
+			<div class="container text-center py-2">
+				<small class="copyright">Conçu par TDEV</small>
+			</div>
+		</footer>
+	</div>
+	
+	<style>
+		/* Reset pour éviter les marges inutiles */
+		body, html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		
+		/* Conteneur principal */
+		.app-wrapper {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+			background-color: #f8f9fa;
+		}
+		
+		/* Contenu principal */
+		.app-content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0;
+		}
+		
+		/* Carte formulaire */
+		.details-container {
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+			margin: 0 auto;
+			max-width: 100%;
+		}
+		
+		/* Éléments du formulaire */
+		.form-label {
+			font-size: 13px;
+			font-weight: 600;
+			margin-bottom: 4px;
+		}
+		
+		.form-control {
+			font-size: 14px;
+			padding: 6px 8px;
+			height: auto;
+		}
+		
+		.auth-heading {
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+		
+		/* Bouton */
+		.btn-success {
+			padding: 6px 12px;
+			font-size: 14px;
+		}
+		
+		/* Adaptations pour écrans plus larges */
+		@media (min-width: 768px) {
+			.details-container {
+				padding: 30px;
+				max-width: 500px;
+			}
+			
+			.form-label {
+				font-size: 14px;
+			}
+			
+			.auth-heading {
+				font-size: 22px;
+			}
+			
+			.btn-success {
+				padding: 8px 16px;
+			}
+		}
+	</style>
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
