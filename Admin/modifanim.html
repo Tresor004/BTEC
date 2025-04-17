@@ -164,7 +164,7 @@
 		            <h3 style="color: #15a362;"><strong>BTEC - ADMIN</strong></h3>
 	
 		        </div><!--//app-branding-->  
-				<nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+                <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -239,7 +239,7 @@
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
 
-					    <li class="nav-item has-submenu">
+						<li class="nav-item has-submenu">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
 						        <span class="nav-icon">
@@ -258,12 +258,12 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link active" href="adherents.html">Adhérents</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="animprojet.html">Animateurs de projets</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="adherents.html">Adhérents</a></li>
+							        <li class="submenu-item"><a class="submenu-link active" href="animprojet.html">Animateurs de projets</a></li>
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->
-                        
+
 					    <li class="nav-item has-submenu">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
@@ -318,26 +318,26 @@
 						   
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="charts.html">
+					        <a class="nav-link" href="notifications.html">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-line" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 	  <path fill-rule="evenodd" d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
 	</svg>
 						         </span>
-		                         <span class="nav-link-text">Charts</span>
+		                         <span class="nav-link-text">Notifications</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
 					    
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="help.html">
+					        <a class="nav-link" href="https://tresor004.github.io/BTEC/">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
 </svg>
 						         </span>
-		                         <span class="nav-link-text">Help</span>
+		                         <span class="nav-link-text">plateforme BTEC</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->					    
 				    </ul><!--//app-menu-->
@@ -368,124 +368,71 @@
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
 				<div class="row g-0 app-auth-wrapper">
-					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-2 p-md-5">
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5">
 						<div class="d-flex flex-column align-content-end">
 							<div class="app-auth-body mx-auto w-100">
-								<h2 class="auth-heading text-center mb-4">Détails de l'adhérant</h2>
+								<!-- Conteneur principal -->
+								<div class="details-container bg-white p-4 p-md-5 rounded shadow-sm w-100">
+									<h2 class="auth-heading text-center mb-4">Modifier les données d'un animateur</h2>
 	
-								<!-- Conteneur des détails -->
-								<div class="details-container bg-white p-3 p-md-5 rounded shadow-sm w-100">
-									<!-- Titres des onglets -->
-									<div class="tabs-header d-flex justify-content-start mb-4 flex-wrap">
-										<button class="tab-title active" data-target="#personal">Informations personnelles</button>
-										<button class="tab-title" data-target="#adhesion">Informations d'adhésion</button>
-									</div>
-	
-									<!-- Contenu des onglets -->
-									<div class="tabs-content">
-										<!-- Onglet 1 : Informations personnelles -->
-										<div id="personal" class="tab-pane active">
-											<div class="auth-form-container text-start">
-												<div class="row">
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Nom</label>
-														<p class="form-control-static">Doe</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Prénoms</label>
-														<p class="form-control-static">John Sanders</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Né(e) le</label>
-														<p class="form-control-static">01/01/1990</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Situation matrimoniale</label>
-														<p class="form-control-static">Célibataire</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Contacts</label>
-														<p class="form-control-static">+123 456 789</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Lieu de résidence</label>
-														<p class="form-control-static">Paris, France</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Profession</label>
-														<p class="form-control-static">Ingénieur</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Profession actuelle</label>
-														<p class="form-control-static">Développeur Full-Stack</p>
-													</div>
-												</div>
+									<!-- Formulaire simplifié -->
+									<form>
+										<div class="row g-2">
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Nom</label>
+												<input type="text" class="form-control" required>
+											</div>
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Prénoms</label>
+												<input type="text" class="form-control" required>
+											</div>
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Téléphone</label>
+												<input type="tel" class="form-control" required>
+											</div>
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Adresse</label>
+												<input type="text" class="form-control" required>
 											</div>
 										</div>
 	
-										<!-- Onglet 2 : Informations d'adhésion -->
-										<div id="adhesion" class="tab-pane">
-											<div class="auth-form-container text-start">
-												<div class="row">
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Montant</label>
-														<p class="form-control-static">50 000 FCFA</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Motif</label>
-														<p class="form-control-static">Adhésion annuelle</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Parrain</label>
-														<p class="form-control-static">Jane Doe</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Code parrain</label>
-														<p class="form-control-static">#54321</p>
-													</div>
-													<div class="col-12 col-md-6 mb-3">
-														<label class="form-label">Encaissé par</label>
-														<p class="form-control-static">Admin</p>
-													</div>
-												</div>
+										<!-- Boutons d'action -->
+										<div class="nav-buttons mt-4">
+											<button type="button" class="btn btn-secondary">Annuler</button>
+											<div class="d-flex justify-content-center flex-grow-1">
+												<!-- Espace vide pour centrer les boutons -->
 											</div>
+											<button type="submit" class="btn btn-primary" style="background-color: #15a362;">Enregistrer</button>
 										</div>
-									</div><!--//tabs-content-->
-	
-									<!-- Boutons d'action -->
-									<div class="text-center mt-4">
-										<a href="modifadh.html"><button type="submit" class="btn btn-warning">Modifier</button></a>
-									</div>
-								</div><!--//details-container-->
-							</div><!--//auth-body-->
-						</div><!--//flex-column-->
-					</div><!--//auth-main-col-->
-				</div><!--//row-->
-			</div><!--//container-fluid-->
-		</div><!--//app-content--> 
-		<br class="d-none d-md-block"><br class="d-none d-md-block"><br class="d-none d-md-block">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<footer class="app-footer">
 			<div class="container text-center py-3">
 				<small class="copyright">Conçu par TDEV</small>
 			</div>
-		</footer><!--//app-footer-->
-	</div><!--//app-wrapper-->
+		</footer>
+	</div>
 	
-	<!-- Styles CSS -->
 	<style>
-		/* Style général */
+		/* Styles généraux */
 		.app-auth-wrapper {
 			background-color: #f8f9fa;
 			min-height: 100vh;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 10px;
+			padding: 0;
 		}
 	
 		.auth-main-col {
-			max-width: 1400px;
+			max-width: 100%;
 			margin: 0 auto;
 		}
 	
@@ -493,154 +440,124 @@
 		.details-container {
 			width: 100%;
 			background-color: #fff;
-			border-radius: 12px;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-			padding: 15px;
+			border-radius: 0;
+			box-shadow: none;
+			padding: 20px;
 		}
 	
+		/* Styles pour mobile */
+		@media (max-width: 767.98px) {
+			.auth-main-col {
+				padding: 0 !important;
+			}
+			
+			.form-control {
+				font-size: 14px;
+				padding: 8px 12px;
+			}
+			
+			.nav-buttons {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: white;
+				padding: 15px;
+				box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+				z-index: 100;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+			}
+			
+			.btn {
+				flex: 1;
+				padding: 10px;
+				font-size: 14px;
+			}
+			
+			.row.g-2 {
+				margin-left: -5px;
+				margin-right: -5px;
+			}
+			
+			.row.g-2 > [class^="col-"] {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	
+		/* Styles pour desktop */
 		@media (min-width: 768px) {
 			.details-container {
 				padding: 30px;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+				max-width: 700px;
+				margin: 0 auto;
 			}
-		}
-	
-		/* Titres des onglets */
-		.tabs-header {
-			display: flex;
-			border-bottom: 2px solid #dee2e6;
-			margin-bottom: 15px;
-			overflow-x: auto;
-			white-space: nowrap;
-			flex-wrap: nowrap;
-			-webkit-overflow-scrolling: touch;
-		}
-	
-		.tab-title {
-			padding: 8px 16px;
-			font-size: 14px;
-			font-weight: 500;
-			color: #6c757d;
-			background-color: transparent;
-			border: none;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			margin-right: 5px;
-		}
-	
-		@media (min-width: 768px) {
-			.tab-title {
-				padding: 12px 24px;
+			
+			.auth-heading {
+				font-size: 24px;
+			}
+			
+			.form-label, .form-control {
 				font-size: 16px;
-				margin-right: 10px;
 			}
-		}
-	
-		.tab-title.active {
-			color: #28a745;
-			border-bottom: 2px solid #28a745;
-		}
-	
-		.tab-title:hover {
-			color: #28a745;
-		}
-	
-		/* Contenu des onglets */
-		.tabs-content {
-			padding: 10px;
-		}
-	
-		@media (min-width: 768px) {
-			.tabs-content {
+			
+			.app-auth-wrapper {
 				padding: 20px;
 			}
+			
+			.nav-buttons {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+				padding: 15px 0;
+			}
 		}
 	
-		.tab-pane {
-			display: none;
-		}
-	
-		.tab-pane.active {
-			display: block;
-		}
-	
-		/* Style des labels et des données */
+		/* Styles communs */
 		.form-label {
 			font-weight: 600;
 			color: #495057;
-			font-size: 14px;
-			margin-bottom: 5px;
-		}
-	
-		@media (min-width: 768px) {
-			.form-label {
-				font-size: 16px;
-				margin-bottom: 8px;
-			}
-		}
-	
-		.form-control-static {
-			padding: 6px 0;
-			color: #6c757d;
-			font-size: 14px;
-			margin-bottom: 15px;
+			text-align: left;
 			display: block;
+			margin-bottom: 0.5rem;
 		}
 	
-		@media (min-width: 768px) {
-			.form-control-static {
-				font-size: 16px;
-				padding: 8px 0;
-			}
-		}
-	
-		/* Style du titre */
 		.auth-heading {
-			font-size: 20px;
 			font-weight: 700;
 			color: #343a40;
-			margin-bottom: 15px;
-		}
-	
-		@media (min-width: 768px) {
-			.auth-heading {
-				font-size: 24px;
-				margin-bottom: 20px;
-			}
+			margin-bottom: 20px;
 		}
 	
 		/* Boutons */
 		.btn {
-			padding: 8px 16px;
-			font-size: 14px;
-			width: 100%;
-			max-width: 200px;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			border: none;
+			transition: all 0.3s ease;
 		}
 	
-		@media (min-width: 768px) {
-			.btn {
-				padding: 10px 20px;
-				font-size: 16px;
-				width: auto;
-			}
+		.btn-secondary {
+			background-color: #6c757d;
+			color: white;
+		}
+	
+		.btn-primary {
+			background-color: #007bff;
+			color: white;
+		}
+	
+		.btn:hover {
+			opacity: 0.9;
+			transform: translateY(-1px);
 		}
 	</style>
-	
-	<!-- Script JavaScript -->
-	<script>
-		// Gestion du changement d'onglets
-		document.querySelectorAll('.tab-title').forEach((tab) => {
-			tab.addEventListener('click', () => {
-				// Retirer la classe active de tous les onglets
-				document.querySelectorAll('.tab-title').forEach((t) => t.classList.remove('active'));
-				document.querySelectorAll('.tab-pane').forEach((p) => p.classList.remove('active'));
-	
-				// Ajouter la classe active à l'onglet cliqué
-				tab.classList.add('active');
-				document.querySelector(tab.getAttribute('data-target')).classList.add('active');
-			});
-		});
-	</script>				
-
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>

@@ -168,7 +168,7 @@
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link " href="index.html">
+					        <a class="nav-link" href="index.html">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		  <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
@@ -180,7 +180,7 @@
 					    </li><!--//nav-item-->
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link " href="candidat.html">
+					        <a class="nav-link" href="candidat.html">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M9.828 4a3 3 0 0 1-2.12-.879l-.83-.828A1 1 0 0 0 6.173 2H2.5a1 1 0 0 0-1 .981L1.546 4h-1L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3v1z"/>
@@ -203,7 +203,7 @@
   <circle cx="3.5" cy="10.5" r=".5"/>
 </svg>
 						         </span>
-		                         <span class="nav-link-text">Recruteurs</span>
+		                         <span class="nav-link-text">Entreprises</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
 
@@ -225,7 +225,7 @@
 
 						<li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="orders.html">
+					        <a class="nav-link" href="cvtheque.html">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
@@ -258,12 +258,12 @@
 					        </a><!--//nav-link-->
 					        <div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
-							        <li class="submenu-item"><a class="submenu-link" href="notifications.html">Notifications</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="account.html">Account</a></li>
-							        <li class="submenu-item"><a class="submenu-link" href="settings.html">Settings</a></li>
+							        <li class="submenu-item"><a class="submenu-link " href="adherents.html">Adhérents</a></li>
+							        <li class="submenu-item"><a class="submenu-link active" href="animprojet.html">Animateurs de projets</a></li>
 						        </ul>
 					        </div>
 					    </li><!--//nav-item-->
+                        
 					    <li class="nav-item has-submenu">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
@@ -368,282 +368,196 @@
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
 				<div class="row g-0 app-auth-wrapper">
-					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-5">
+					<div class="col-12 col-md-12 col-lg-12 auth-main-col text-center p-0 p-md-5">
 						<div class="d-flex flex-column align-content-end">
 							<div class="app-auth-body mx-auto w-100">
-								<div class="details-container bg-white p-5 rounded shadow-sm w-100">
-									<h2 class="auth-heading text-center mb-4">Ajouter un candidat</h2>
+								<!-- Conteneur principal -->
+								<div class="details-container bg-white p-4 p-md-5 rounded shadow-sm w-100">
+									<h2 class="auth-heading text-center mb-4">Ajouter un animateur de projet</h2>
 	
-									<div class="tabs-header d-flex justify-content-start mb-4">
-										<button class="tab-title active" data-target="#personal">Informations personnelles</button>
-										<button class="tab-title" data-target="#additional">Informations supplémentaires</button>
-										<button class="tab-title" data-target="#academic">Informations académiques</button>
-									</div>
-	
-									<div class="tabs-content">
-										<!-- Onglet 1 : Informations personnelles -->
-										<div id="personal" class="tab-pane active">
-											<form>
-												<div class="row">
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Nom</label>
-														<input type="text" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Prénom</label>
-														<input type="text" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Email</label>
-														<input type="email" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Téléphone</label>
-														<input type="tel" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Mot de passe</label>
-														<input type="password" class="form-control">
-													</div>
-												</div>
-											</form>
+									<!-- Formulaire simplifié -->
+									<form>
+										<div class="row g-2">
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Nom</label>
+												<input type="text" class="form-control" required>
+											</div>
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Prénoms</label>
+												<input type="text" class="form-control" required>
+											</div>
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Téléphone</label>
+												<input type="tel" class="form-control" required>
+											</div>
+											<div class="col-12 col-md-6 mb-3 text-left">
+												<label class="form-label">Adresse</label>
+												<input type="text" class="form-control" required>
+											</div>
 										</div>
 	
-										<!-- Onglet 2 : Informations supplémentaires -->
-										<div id="additional" class="tab-pane">
-											<form>
-												<div class="row">
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Date de naissance</label>
-														<input type="date" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Lieu de naissance</label>
-														<input type="text" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Sexe</label>
-														<select class="form-control">
-															<option>Masculin</option>
-															<option>Féminin</option>
-														</select>
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Zone de résidence</label>
-														<input type="text" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Situation matrimoniale</label>
-														<select class="form-control">
-															<option>Célibataire sans enfant</option>
-															<option>Marié(e) sans enfant</option>
-															<option>Célibataire avec enfant</option>
-															<option>Marié(e) avec enfant</option>
-														</select>
-													</div>
-												</div>
-											</form>
+										<!-- Boutons d'action -->
+										<div class="nav-buttons mt-4">
+											<button type="button" class="btn btn-secondary">Annuler</button>
+											<div class="d-flex justify-content-center flex-grow-1">
+												<!-- Espace vide pour centrer les boutons -->
+											</div>
+											<button type="submit" class="btn btn-primary" style="background-color: #15a362;">Enregistrer</button>
 										</div>
-	
-										<!-- Onglet 3 : Informations académiques -->
-										<div id="academic" class="tab-pane">
-											<form>
-												<div class="row">
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Filière</label>
-														<input type="text" class="form-control">
-													</div>
-													<div class="col-md-6 mb-3 text-left">
-														<label class="form-label">Niveau d'étude</label>
-														<select class="form-control">
-															<option>Aucun</option>
-															<option>CEP</option>
-															<option>BEPC</option>
-															<option>Baccalauréat</option>
-															<option>Licence</option>
-															<option>Master</option>
-														</select>
-													</div>
-												</div>
-											</form>
-										</div>
-									</div>
-	
-									<!-- Boutons de navigation -->
-									<div class="text-center mt-4">
-										<button id="previousBtn" class="btn btn-secondary" style="display: none;">Précédent</button>
-										<button id="nextBtn" class="btn btn-success">Suivant</button>
-										<button id="saveBtn" class="btn btn-primary" style="display: none;">Enregistrer</button>
-									</div>
+									</form>
 								</div>
-	
-								<style>
-									/* Style général */
-									.app-auth-wrapper {
-										background-color: #f8f9fa;
-										min-height: 100vh;
-										display: flex;
-										align-items: center;
-										justify-content: center;
-										padding: 20px;
-									}
-	
-									.auth-main-col {
-										max-width: 1400px;
-										margin: 0 auto;
-									}
-	
-									/* Conteneur des détails */
-									.details-container {
-										width: 100%;
-										background-color: #fff;
-										border-radius: 12px;
-										box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-										padding: 30px;
-									}
-	
-									/* Titres des onglets */
-									.tabs-header {
-										display: flex;
-										border-bottom: 2px solid #dee2e6;
-										margin-bottom: 20px;
-									}
-	
-									.tab-title {
-										padding: 12px 24px;
-										font-size: 16px;
-										font-weight: 500;
-										color: #6c757d;
-										background-color: transparent;
-										border: none;
-										cursor: pointer;
-										transition: all 0.3s ease;
-										margin-right: 10px;
-									}
-	
-									.tab-title.active {
-										color: #28a745;
-										border-bottom: 2px solid #28a745;
-									}
-	
-									.tab-title:hover {
-										color: #28a745;
-									}
-	
-									/* Contenu des onglets */
-									.tabs-content {
-										padding: 20px;
-									}
-	
-									.tab-pane {
-										display: none;
-									}
-	
-									.tab-pane.active {
-										display: block;
-									}
-	
-									/* Style des labels et des données */
-									.form-label {
-										font-weight: 600;
-										color: #495057;
-										text-align: left; /* Alignement à gauche des labels */
-									}
-	
-									.form-control-static {
-										padding: 8px 0;
-										color: #6c757d;
-										font-size: 16px;
-									}
-	
-									/* Style du titre */
-									.auth-heading {
-										font-size: 24px;
-										font-weight: 700;
-										color: #343a40;
-										margin-bottom: 20px;
-									}
-	
-									/* Style du logo */
-									.app-logo img {
-										width: 50px;
-										height: auto;
-									}
-	
-									/* Alignement à gauche des champs */
-									.text-left {
-										text-align: left;
-									}
-								</style>
-	
-								<script>
-									// Script pour gérer le changement d'onglets
-									const tabs = document.querySelectorAll('.tab-title');
-									const tabPanes = document.querySelectorAll('.tab-pane');
-									const previousBtn = document.getElementById('previousBtn');
-									const nextBtn = document.getElementById('nextBtn');
-									const saveBtn = document.getElementById('saveBtn');
-	
-									let currentTabIndex = 0;
-	
-									tabs.forEach((tab, index) => {
-										tab.addEventListener('click', () => {
-											switchTab(index);
-										});
-									});
-	
-									nextBtn.addEventListener('click', () => {
-										if (currentTabIndex < tabs.length - 1) {
-											currentTabIndex++;
-											switchTab(currentTabIndex);
-										}
-									});
-	
-									previousBtn.addEventListener('click', () => {
-										if (currentTabIndex > 0) {
-											currentTabIndex--;
-											switchTab(currentTabIndex);
-										}
-									});
-	
-									function switchTab(index) {
-										// Retirer la classe active de tous les onglets
-										tabs.forEach((t) => t.classList.remove('active'));
-										tabPanes.forEach((p) => p.classList.remove('active'));
-	
-										// Ajouter la classe active à l'onglet cliqué
-										tabs[index].classList.add('active');
-										tabPanes[index].classList.add('active');
-	
-										// Gestion des boutons
-										if (index === 0) {
-											previousBtn.style.display = 'none';
-											nextBtn.style.display = 'inline-block';
-											saveBtn.style.display = 'none';
-										} else if (index === tabs.length - 1) {
-											previousBtn.style.display = 'inline-block';
-											nextBtn.style.display = 'none';
-											saveBtn.style.display = 'inline-block';
-										} else {
-											previousBtn.style.display = 'inline-block';
-											nextBtn.style.display = 'inline-block';
-											saveBtn.style.display = 'none';
-										}
-									}
-								</script>
-							</div><!--//auth-body-->
-						</div><!--//flex-column-->
-					</div><!--//auth-main-col-->
-				</div><!--//row-->
-			</div><!--//container-fluid-->
-		</div><!--//app-content-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<footer class="app-footer">
 			<div class="container text-center py-3">
-				<small class="copyright">Concu par TDEV</small>
+				<small class="copyright">Conçu par TDEV</small>
 			</div>
-		</footer><!--//app-footer-->
-	</div><!--//app-wrapper-->
+		</footer>
+	</div>
+	
+	<style>
+		/* Styles généraux */
+		.app-auth-wrapper {
+			background-color: #f8f9fa;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+		}
+	
+		.auth-main-col {
+			max-width: 100%;
+			margin: 0 auto;
+		}
+	
+		/* Conteneur des détails */
+		.details-container {
+			width: 100%;
+			background-color: #fff;
+			border-radius: 0;
+			box-shadow: none;
+			padding: 20px;
+		}
+	
+		/* Styles pour mobile */
+		@media (max-width: 767.98px) {
+			.auth-main-col {
+				padding: 0 !important;
+			}
+			
+			.form-control {
+				font-size: 14px;
+				padding: 8px 12px;
+			}
+			
+			.nav-buttons {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: white;
+				padding: 15px;
+				box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+				z-index: 100;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+			}
+			
+			.btn {
+				flex: 1;
+				padding: 10px;
+				font-size: 14px;
+			}
+			
+			.row.g-2 {
+				margin-left: -5px;
+				margin-right: -5px;
+			}
+			
+			.row.g-2 > [class^="col-"] {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	
+		/* Styles pour desktop */
+		@media (min-width: 768px) {
+			.details-container {
+				padding: 30px;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+				max-width: 700px;
+				margin: 0 auto;
+			}
+			
+			.auth-heading {
+				font-size: 24px;
+			}
+			
+			.form-label, .form-control {
+				font-size: 16px;
+			}
+			
+			.app-auth-wrapper {
+				padding: 20px;
+			}
+			
+			.nav-buttons {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+				padding: 15px 0;
+			}
+		}
+	
+		/* Styles communs */
+		.form-label {
+			font-weight: 600;
+			color: #495057;
+			text-align: left;
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+	
+		.auth-heading {
+			font-weight: 700;
+			color: #343a40;
+			margin-bottom: 20px;
+		}
+	
+		/* Boutons */
+		.btn {
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			border: none;
+			transition: all 0.3s ease;
+		}
+	
+		.btn-secondary {
+			background-color: #6c757d;
+			color: white;
+		}
+	
+		.btn-primary {
+			background-color: #007bff;
+			color: white;
+		}
+	
+		.btn:hover {
+			opacity: 0.9;
+			transform: translateY(-1px);
+		}
+	</style>
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
