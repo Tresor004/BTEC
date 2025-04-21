@@ -64,10 +64,7 @@
             <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
         </div>
     </a>
-    <!-- Icône de panier -->
-    <a href="cvlist.html" class="btn btn-outline-light rounded-circle p-2 me-2" style="width: 40px; height: 40px;">
-        <i class="fas fa-shopping-cart"></i>
-    </a>
+   
     <div class="d-flex align-items-center">
         
         <!-- Bouton Déconnecter -->
@@ -151,13 +148,6 @@
         .exit {
             font-size: 0.9rem;
             padding: 5px 10px;
-        }
-        
-        /* Adaptation de l'icône panier pour mobile */
-        .btn-outline-light {
-            width: 35px !important;
-            height: 35px !important;
-            padding: 0.25rem !important;
         }
     }
 </style>
@@ -276,61 +266,45 @@
             }
           </script>
     
-    <div class="hero-header" style="background-image: url('img/bib.jpg'); background-size: cover; background-position: center; position: relative;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-        
-        <div class="container py-5" style="position: relative; z-index: 2;">
-            <div class="row justify-content-center py-5">
-                <div class="container position-relative">
-                    <!-- Contenu supplémentaire pourrait aller ici -->
-                </div>
-                
-                <style>
-                    .modif {
-                        margin-top: 20px;
-                    }
-                    .profile-img {
-                        width: 80px;
-                        height: 80px;
-                        border-radius: 50%;
-                        object-fit: cover;
-                        border: 1px solid gray;
-                        padding: 3px;
-                    }
-                    .exit:hover {
-                        background-color: #fff;
-                        color: red;
-                    }
-                    .custom-margin-top {
-                        margin-top: -20px;
-                    }
-                </style>
-    
-                <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center custom-margin-top">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown"><i>CVthèque</i></h1>
-                    <h3 class="text-white">Trouvez le candidat idéal : découvrez leurs expériences, leurs compétences et leur potentiel pour une embauche réussie.</h3>
-        
-                    <!-- Barre de recherche -->
-                    <div class="mt-4">
-                        <form class="d-flex justify-content-center">
-                            <input class="form-control w-50" type="search" placeholder="Rechercher" aria-label="Search">
-                            <button class="btn btn-primary ms-2" type="submit"><i class="bi bi-search"></i></button>
-                        </form>
-                        
-                        <!-- Boutons d'action -->
-                        <div class="text-center mt-3">
-                            <a href="offre_emploi.html" class="btn btn-success me-2">
-                                <i class="bi bi-plus-circle"></i> Publier une offre
-                            </a>
-                            <a href="mes_offres.html" class="btn btn-primary" style="background-color: gray;">
-                                <i class="bi bi-eye"></i> Voir mes offres
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="hero-header d-flex align-items-center justify-content-center" 
+    style="background-image: url('img/bib.jpg'); background-size: cover; background-position: center; position: relative;">
+   
+   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+   
+   <div class="container text-center" style="position: relative; z-index: 2;">
+       <h1 class="display-3 text-white mb-3 animated slideInDown"><i>CVthèque</i></h1>
+       <h3 class="text-white">Trouvez le candidat idéal : découvrez leurs expériences, leurs compétences et leur potentiel pour une embauche réussie.</h3>
+
+       <!-- Barre de recherche -->
+       <div class="mt-4">
+           <form class="d-flex justify-content-center">
+               <input class="form-control w-50" type="search" placeholder="Rechercher" aria-label="Search">
+               <button class="btn btn-primary ms-2" type="submit"><i class="bi bi-search"></i></button>
+           </form>
+           
+           <!-- Boutons d'action responsive -->
+           <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-3 gap-2">
+               <a href="offre_emploi.html" class="btn btn-success" style="background-color: #fff; color: black;">
+                   <i class="bi bi-plus-circle"></i> Publier une offre
+               </a>
+               <a href="mes_offres.html" class="btn btn-primary" style="background-color: gray;">
+                   <i class="bi bi-eye"></i> Voir mes offres
+               </a>
+               <a href="profil.html" class="btn btn-success">
+                   <i class="bi bi-person-circle"></i> Voir mon profil
+               </a>
+           </div>
+       </div>
+   </div>
+</div>
+
+<style>
+   .hero-header {
+       height: 500px; /* Ajuste si besoin */
+       padding: 10px 0;
+   }
+</style>
+
 
     <style>
         .hero-header {

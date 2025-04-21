@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Entreprise - BTEC</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- External Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Bootstrap and Custom Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylecj.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            position: relative;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Profile Section */
+        #profileSection {
+            background-color: #001f3f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 999;
+        }
+        
+        #profileSection h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        /* Dashboard Content */
+        .dashboard-container {
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
+        
+        .welcome-message {
+            font-size: 28px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #86B817;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: #001f3f;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .card-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #86B817;
+        }
+        
+        .dashboard-menu {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .menu-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f1f1f1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item:hover, .menu-item.active {
+            background-color: #f8f9fa;
+            border-left: 4px solid #86B817;
+        }
+        
+        .menu-item i {
+            margin-right: 10px;
+            color: #86B817;
+        }
+        
+        .candidate-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .candidate-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #f1f1f1;
+            transition: all 0.2s ease;
+        }
+        
+        .candidate-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .candidate-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .candidate-info h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .candidate-info p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .badge-primary {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .badge-success {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            background-color: #86B817;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .welcome-message {
+                font-size: 24px;
+            }
+            
+            #profileSection h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-message {
+                font-size: 22px;
+                text-align: center;
+            }
+            
+            #profileSection h3 {
+                font-size: 1.1rem;
+            }
+            
+            .dashboard-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid position-relative p-0">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0">BTEC Bénin</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="offres.html" class="nav-item nav-link ">Offres</a>
+                    <a href="cvtheque.html" class="nav-item nav-link active">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
+                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                </div>
+                <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+            </div>
+        </nav>
+        
+        <!-- Profile Section -->
+        <div id="profileSection">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <h3 class="text-white mb-0">TABLEAU DE BORD ENTREPRISE</h3>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="container dashboard-container">
+            <!-- Welcome Section -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h1 class="welcome-message">Bienvenue, <span class="text-primary">Entreprise XYZ</span></h1>
+                    <p class="text-muted">Gérez vos candidats et vos offres d'emploi en toute simplicité</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Dashboard Menu -->
+                <div class="col-lg-3">
+                    <div class="dashboard-menu">
+                        <div class="menu-item active">
+                            <i class="fas fa-tachometer-alt"></i> Tableau de bord
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-heart"></i> Ma sélection
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-users"></i> Candidatures
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-bell"></i> Alertes
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-file-alt"></i> Mes offres
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-cog"></i> Paramètres
+                        </div>
+                    </div>
+                    
+                    <!-- Subscription Status -->
+                    <div class="dashboard-card">
+                        <h5 class="card-title">Votre abonnement</h5>
+                        <p class="mb-2"><strong>Premium</strong></p>
+                        <p class="text-muted small mb-3">Accès illimité jusqu'au 15/12/2023</p>
+                        <div class="progress mb-2">
+                            <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="text-muted small">65% du mois écoulé</p>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="dashboard-card">
+                                <h5 class="card-title">Candidatures reçues</h5>
+                                <p class="card-value">24</p>
+                                <p class="text-muted small">+5 depuis la semaine dernière</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dashboard-card">
+                                <h5 class="card-title">Profils consultés</h5>
+                                <p class="card-value">18/30</p>
+                                <p class="text-muted small">Limite mensuelle</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dashboard-card">
+                                <h5 class="card-title">Offres actives</h5>
+                                <p class="card-value">3</p>
+                                <p class="text-muted small">2 en attente de publication</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Applications -->
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="card-title mb-0">Dernières candidatures</h5>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Voir tout</a>
+                        </div>
+                        
+                        <ul class="candidate-list">
+                            <li class="candidate-item">
+                                <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                <div class="candidate-info flex-grow-1">
+                                    <h5>Marie Dupont</h5>
+                                    <p>Postulé pour: Assistante Marketing</p>
+                                </div>
+                                <span class="status-badge badge-primary">Nouveau</span>
+                            </li>
+                            <li class="candidate-item">
+                                <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                <div class="candidate-info flex-grow-1">
+                                    <h5>Jean Martin</h5>
+                                    <p>Postulé pour: Développeur Web</p>
+                                </div>
+                                <span class="status-badge badge-success">Consulté</span>
+                            </li>
+                            <li class="candidate-item">
+                                <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                <div class="candidate-info flex-grow-1">
+                                    <h5>Sophie Lambert</h5>
+                                    <p>Postulé pour: Comptable</p>
+                                </div>
+                                <span class="status-badge badge-primary">Nouveau</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Saved Candidates -->
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="card-title mb-0">Votre sélection de candidats</h5>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Voir tout</a>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="candidate-item">
+                                    <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                    <div class="candidate-info">
+                                        <h5>Sylvie Loiseau</h5>
+                                        <p>Esthéticienne - 15 ans d'expérience</p>
+                                        <a href="#" class="btn btn-sm btn-primary mt-2">Voir CV</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="candidate-item">
+                                    <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                    <div class="candidate-info">
+                                        <h5>Thomas Leroy</h5>
+                                        <p>Commercial - Secteur cosmétique</p>
+                                        <a href="#" class="btn btn-sm btn-primary mt-2">Voir CV</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Section -->
+                    <div class="col-md-6">
+                        <h4 class="text-white mb-3">Contact</h4>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+                        <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+                    </div>
+
+                    <!-- Stay Informed Section -->
+                    <div class="col-md-6">
+                        <h4 class="text-white mb-3">Restez informés</h4>
+                        <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+                        <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container py-3">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        <!-- Back to Top Button -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </div>
+</body>
+</html>
