@@ -278,19 +278,19 @@
        <!-- Barre de recherche -->
        <div class="mt-4">
            <form class="d-flex justify-content-center">
-               <input class="form-control w-50" type="search" placeholder="Rechercher" aria-label="Search">
-               <button class="btn btn-primary ms-2" type="submit"><i class="bi bi-search"></i></button>
+               <input class="form-control search-field" type="search" placeholder="Rechercher" aria-label="Search">
+               <button class="btn btn-primary search-btn" type="submit"><i class="bi bi-search"></i></button>
            </form>
 
            <!-- Boutons d'action -->
-           <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-3 gap-2">
-               <a href="offre_emploi.html" class="btn btn-success w-100 w-md-auto" style="background-color: #fff; color: black;">
+           <div class="d-flex flex-column flex-md-row justify-content-center mt-3 gap-2">
+               <a href="offre_emploi.html" class="btn btn-success action-btn" style="background-color: #fff; color: black;">
                    <i class="bi bi-plus-circle"></i> Publier une offre
                </a>
-               <a href="mes_offres.html" class="btn btn-primary w-100 w-md-auto" style="background-color: gray;">
+               <a href="mes_offres.html" class="btn btn-primary action-btn" style="background-color: gray;">
                    <i class="bi bi-eye"></i> Voir mes offres
                </a>
-               <a href="rec_dashboard.html" class="btn btn-success w-100 w-md-auto">
+               <a href="rec_dashboard.html" class="btn btn-success action-btn">
                    <i class="bi bi-person-circle"></i> Voir mon profil
                </a>
            </div>
@@ -303,13 +303,40 @@
        height: 500px;
        padding: 10px 0;
    }
-   @media (max-width: 767.98px) {
-       .w-md-auto {
-           width: 100% !important;
+   
+   /* Barre de recherche */
+   .search-field {
+       width: 70%;
+       min-width: 200px;
+   }
+   
+   .search-btn {
+       width: auto;
+       min-width: 50px;
+   }
+   
+   /* Boutons d'action */
+   .action-btn {
+       width: 100%;
+   }
+   
+   @media (min-width: 768px) {
+       .search-field {
+           width: 50%;
+       }
+       
+       .action-btn {
+           width: auto;
+       }
+   }
+   
+   @media (max-width: 400px) {
+       .search-field {
+           width: 65%;
+           min-width: 150px;
        }
    }
 </style>
-
 
     <style>
         .hero-header {
