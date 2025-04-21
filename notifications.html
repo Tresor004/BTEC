@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>BTEC-BEST TECHNOLOGY CORPORATION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link href="img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styleoff.css" rel="stylesheet">
+  <style>
+    /* Styles généraux */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Overlay de la pop-up */
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    /* Contenu de la pop-up */
+    .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 70vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.3s ease-in-out;
+        position: relative;
+    }
+
+    /* Sections gauche et droite de la pop-up */
+    .popup-left,
+    .popup-right {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .popup-content {
+            flex-direction: row;
+        }
+        .popup-left,
+        .popup-right {
+            width: 50%;
+        }
+    }
+
+    /* Animation de la pop-up */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Bouton de fermeture */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* Styles du formulaire */
+    .form-label {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn {
+       
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .btn:hover {
+        background-color: #85b8178b;
+    }
+
+    .alert {
+        padding: 15px;
+        background-color: #4CAF50;
+        color: white;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+</style>
+</head>
+
+<body>
+  <!-- Animation de chargement -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <!-- En-tête et Menu -->
+  <div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+      <a href="index.html" class="navbar-brand p-0">
+          <h1 class="text-primary m-0">BTEC Bénin</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">Accueil</a>
+              <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+              <a href="offres.html" class="nav-item nav-link active">Offres</a>
+              <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
+              <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+              <a href="event.html" class="nav-item nav-link">BTEC Event</a>
+              <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+          </div>
+          <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+      </div>
+    </nav>
+  
+  <!-- Div du profil -->
+  <div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+      <a href="modifCan.html">
+          <div class="d-flex align-items-center">
+              <img src="img/profil.webp" alt="Photo Profil" class="me-3 profile-img">
+              <h5 class="text-white mb-1">GANKPE <br> Ornel</h5>
+          </div>
+      </a>
+
+      <a href="#" onclick="showModal(event)">
+          <button class="btn btn-danger px-3 py-1 d-flex align-items-center exit">
+              <i class="bi bi-box-arrow-right me-2"></i> Déconnecter
+          </button>
+      </a>
+  </div>
+  
+  <style>
+      /* Style de base pour le menu */
+      .navbar {
+          position: relative;
+          z-index: 1000;
+      }
+  
+      /* Style de base pour la div du profil */
+      #profileSection {
+          background-color: #001f3f;
+          padding: 10px 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          z-index: 999;
+          margin-top: 0;
+      }
+  
+      /* Style de l'image de profil */
+      .profile-img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 1px solid gray;
+          padding: 3px;
+      }
+  
+      /* Style du bouton de déconnexion */
+      .exit {
+          transition: background-color 0.3s, color 0.3s;
+      }
+  
+      .exit:hover {
+          background-color: #fff;
+          color: red;
+      }
+  
+      /* Ajustements pour les petits écrans */
+      @media (max-width: 768px) {
+          .navbar {
+              padding-bottom: 0;
+          }
+  
+          #profileSection {
+              margin-top: 0;
+              padding-top: 10px;
+          }
+  
+          .profile-img {
+              width: 50px;
+              height: 50px;
+          }
+  
+          h5.text-white {
+              font-size: 1rem;
+          }
+  
+          .exit {
+              font-size: 0.9rem;
+              padding: 5px 10px;
+          }
+      }
+  </style>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Êtes-vous sûr de vouloir vous déconnecter ?</h3>
+        <button class="btn btn-primary me-2" onclick="deconnecter()">Oui, déconnecter</button>
+        <button class="btn btn-secondary" style="background-color: gray;" onclick="closeModal()">Annuler</button>
+    </div>
+</div>
+
+  <style>
+    /* Style du modal (fenêtre pop-up) */
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1050; /* Assurez-vous qu'il est supérieur à celui de la navbar */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      /* Centre la fenêtre */
+      padding: 20px;
+      border-radius: 5px;
+      width: 90%;
+      /* Plus large sur petits écrans */
+      max-width: 400px;
+      /* Taille maximale sur grands écrans */
+      text-align: center;
+    }
+  
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    .profile-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #85b817;
+      padding: 3px;
+    }
+  
+    .exit:hover {
+      background-color: #fff;
+      color: red;
+    }
+  
+    /* Responsivité */
+    @media (max-width: 768px) {
+      .col-12 {
+        position: static !important;
+        margin-bottom: 20px;
+        /* Espacement en bas */
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+  
+      .d-flex.align-items-center {
+        flex-direction: row !important;
+        align-items: center;
+      }
+  
+      .profile-img {
+        width: 40px;
+        height: 40px;
+      }
+  
+      .exit {
+        margin-top: 0 !important;
+      }
+    }
+  </style>
+  
+  <script>
+    // Fonction pour afficher le modal
+    function showModal(event) {
+      event.preventDefault(); // Empêche le lien de fonctionner immédiatement
+      document.getElementById('modal').style.display = 'block'; // Affiche le modal
+    }
+  
+    // Fonction pour fermer le modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none'; // Cache le modal
+    }
+  
+    // Fonction de déconnexion
+    function deconnecter() {
+      window.location.href = "index.html"; // Remplace par ta page de redirection
+    }
+  </script>   
+  </div>
+  
+<!-- Section Notifications -->
+<div class="container py-5">
+    <div class="row g-4 w-100 mx-auto">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Gestion des notifications</h6>
+        <h1 class="mb-5">Vos notifications récentes</h1>
+      </div>
+  
+      <!-- Tableau de gestion des notifications -->
+      <div class="container mb-5">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Historique des notifications</h5>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th class="py-3">Date</th>
+                    <th class="py-3">Type</th>
+                    <th class="py-3">Message</th>
+                    <th class="py-3 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Notification non lue (en gras) -->
+                  <tr class="fw-bold">
+                    <td class="py-3 align-middle">15/06/2023 09:30</td>
+                    <td class="py-3 align-middle">Nouvelle candidature</td>
+                    <td class="py-3 align-middle">John Doe a postulé à votre offre "Développeur Full Stack"</td>
+                    <td class="py-3 align-middle text-center">
+                      <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="1" style="color: black;">
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger delete-btn" data-bs-toggle="tooltip" title="Supprimer" data-notif-id="1" style="color: black;">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <!-- Notifications lues (normales) -->
+                  <tr>
+                    <td class="py-3 align-middle">14/06/2023 14:15</td>
+                    <td class="py-3 align-middle">Mise à jour</td>
+                    <td class="py-3 align-middle">Votre offre "Chef de Projet IT" a été mise à jour</td>
+                    <td class="py-3 align-middle text-center">
+                      <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="2" style="color: black;">
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger delete-btn" data-bs-toggle="tooltip" title="Supprimer" data-notif-id="2" style="color: black;">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="py-3 align-middle">13/06/2023 16:45</td>
+                    <td class="py-3 align-middle">Rappel</td>
+                    <td class="py-3 align-middle">Pensez à consulter les candidatures pour "Analyste Données"</td>
+                    <td class="py-3 align-middle text-center">
+                      <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="3" style="color: black;">
+                          <i class="fas fa-eye"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger delete-btn" data-bs-toggle="tooltip" title="Supprimer" data-notif-id="3" style="color: black;">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer bg-light">
+            <small class="text-muted">3 notifications au total</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de consultation de notification -->
+  <div class="modal fade" id="viewNotificationModal" tabindex="-1" aria-labelledby="viewNotificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewNotificationModalLabel">Détails de la notification</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="notificationDetails">
+          <!-- Contenu dynamique -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de confirmation de suppression -->
+  <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirmation de suppression</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Êtes-vous sûr de vouloir supprimer cette notification ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Activation des tooltips
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+  
+      // Initialisation des modals
+      var viewModal = new bootstrap.Modal(document.getElementById('viewNotificationModal'));
+      var deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
+      
+      var currentNotificationId = null;
+      var currentNotificationRow = null;
+  
+      // Données de notification (simulées)
+      const notifications = {
+        1: {
+          date: "15/06/2023 09:30",
+          type: "Nouvelle candidature",
+          message: "John Doe a postulé à votre offre 'Développeur Full Stack'",
+          details: "Le candidat John Doe (john.doe@email.com) a soumis sa candidature pour le poste de Développeur Full Stack. CV et lettre de motivation disponibles."
+        },
+        2: {
+          date: "14/06/2023 14:15",
+          type: "Mise à jour",
+          message: "Votre offre 'Chef de Projet IT' a été mise à jour",
+          details: "Votre offre a été mise à jour avec succès et est maintenant visible par les candidats. 12 vues depuis la mise à jour."
+        },
+        3: {
+          date: "13/06/2023 16:45",
+          type: "Rappel",
+          message: "Pensez à consulter les candidatures pour 'Analyste Données'",
+          details: "Vous avez 3 nouvelles candidatures non lues pour le poste d'Analyste Données. La dernière candidature date d'aujourd'hui."
+        }
+      };
+  
+      // Gestion du clic sur "Consulter"
+      document.querySelectorAll('.view-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const notifId = this.getAttribute('data-notif-id');
+          const notification = notifications[notifId];
+          
+          // Retirer le gras (marquer comme lue)
+          const notificationRow = this.closest('tr');
+          notificationRow.classList.remove('fw-bold');
+          
+          // Remplir le modal avec les détails
+          document.getElementById('notificationDetails').innerHTML = `
+            <p><strong>Date:</strong> ${notification.date}</p>
+            <p><strong>Type:</strong> ${notification.type}</p>
+            <p><strong>Message:</strong> ${notification.message}</p>
+            <hr>
+            <p><strong>Détails:</strong></p>
+            <p>${notification.details}</p>
+          `;
+          
+          viewModal.show();
+        });
+      });
+  
+      // Gestion du clic sur "Supprimer"
+      document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          currentNotificationId = this.getAttribute('data-notif-id');
+          currentNotificationRow = this.closest('tr');
+          deleteModal.show();
+        });
+      });
+  
+      // Confirmation de suppression
+      document.getElementById('confirmDelete').addEventListener('click', function() {
+        if (currentNotificationRow) {
+          currentNotificationRow.remove();
+          updateNotificationCount();
+        }
+        deleteModal.hide();
+      });
+  
+      // Mise à jour du compteur
+      function updateNotificationCount() {
+        const count = document.querySelectorAll('tbody tr').length;
+        document.querySelector('.card-footer small').textContent = count + ' notification' + (count !== 1 ? 's' : '') + ' au total';
+      }
+    });
+  </script>git
+
+  <!-- Section Partenaires avec Carrousel (Bootstrap) -->
+  <div class="container-fluid bg-white py-4">
+    <div class="container text-center">
+      <h4 class="mb-4">Nos Partenaires</h4>
+      <div id="carouselPartenaires" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img src="img/aa.jpg" class="img-fluid" alt="Partenaire 1" width="150" height="100">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/caa.png" class="img-fluid" alt="Partenaire 2" width="175" height="110">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/maf.jpg" class="img-fluid" alt="Partenaire 3" width="272" height="150">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/pac.png" class="img-fluid" alt="Partenaire 4" width="218" height="100">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/pi.jpg" class="img-fluid" alt="Partenaire 5" width="150" height="100">
+          </div>
+          <div class="carousel-item text-center">
+            <img src="img/sab.png" class="img-fluid" alt="Partenaire 6" width="359" height="110">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPartenaires" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Suivant</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <!-- Contact -->
+        <div class="col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+          <p><i class="fa fa-phone-alt me-3"></i>+229 0148552607 / 0162849541</p>
+          <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+        </div>
+        <!-- Restez informés -->
+        <div class="col-md-6">
+          <h4 class="text-white mb-3">Restez informés</h4>
+          <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+          <a href="pcjeb.html" class="btn btn-primary">Devenir entrepreneur</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="container py-3">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/tempusdominus/js/moment.min.js"></script>
+  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Ouvre et ferme la pop-up
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    // Message de succès pour le formulaire de candidature
+    document.getElementById("applyForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var successMessage = document.getElementById("successMessage");
+      successMessage.style.display = "block";
+      successMessage.classList.add("fade-in");
+      setTimeout(function () {
+        successMessage.style.display = "none";
+        closePopup();
+      }, 3000);
+    });
+
+    // Initialisation des tooltips Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Animation des statistiques
+    document.addEventListener("DOMContentLoaded", function () {
+      const fixedValues = {
+        candidates: 16451,
+        recruiters: 563,
+        formations: 50,
+        recrutements: 10000
+      };
+
+      function animateNumber(element, targetValue, duration) {
+        let startTime = Date.now();
+        let interval = setInterval(() => {
+          let elapsed = Date.now() - startTime;
+          if (elapsed >= duration) {
+            clearInterval(interval);
+            element.textContent = targetValue;
+          } else {
+            element.textContent = Math.floor(Math.random() * targetValue * 1.2);
+          }
+        }, 50);
+      }
+
+      animateNumber(document.querySelector(".number-candidates"), fixedValues.candidates, 2000);
+      animateNumber(document.querySelector(".number-recruiters"), fixedValues.recruiters, 2000);
+      animateNumber(document.querySelector(".number-formations"), fixedValues.formations, 2000);
+      animateNumber(document.querySelector(".number-recrutements"), fixedValues.recrutements, 2000);
+    });
+  </script>
+</body>
+
+</html>
