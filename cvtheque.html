@@ -281,16 +281,16 @@
                <input class="form-control w-50" type="search" placeholder="Rechercher" aria-label="Search">
                <button class="btn btn-primary ms-2" type="submit"><i class="bi bi-search"></i></button>
            </form>
-           
-           <!-- Boutons d'action responsive -->
+
+           <!-- Boutons d'action -->
            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-3 gap-2">
-               <a href="offre_emploi.html" class="btn btn-success" style="background-color: #fff; color: black;">
+               <a href="offre_emploi.html" class="btn btn-success w-100 w-md-auto" style="background-color: #fff; color: black;">
                    <i class="bi bi-plus-circle"></i> Publier une offre
                </a>
-               <a href="mes_offres.html" class="btn btn-primary" style="background-color: gray;">
+               <a href="mes_offres.html" class="btn btn-primary w-100 w-md-auto" style="background-color: gray;">
                    <i class="bi bi-eye"></i> Voir mes offres
                </a>
-               <a href="profil.html" class="btn btn-success">
+               <a href="rec_dashboard.html" class="btn btn-success w-100 w-md-auto">
                    <i class="bi bi-person-circle"></i> Voir mon profil
                </a>
            </div>
@@ -300,8 +300,13 @@
 
 <style>
    .hero-header {
-       height: 500px; /* Ajuste si besoin */
+       height: 500px;
        padding: 10px 0;
+   }
+   @media (max-width: 767.98px) {
+       .w-md-auto {
+           width: 100% !important;
+       }
    }
 </style>
 
