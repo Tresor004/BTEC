@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier une offre - BTEC</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- External Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Bootstrap and Custom Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylecj.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0">BTEC Bénin</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="offres.html" class="nav-item nav-link ">Offres</a>
+                    <a href="cvtheque.html" class="nav-item nav-link active">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
+                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                </div>
+                <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+            </div>
+          </nav>
+        
+          <div id="profileSection" style="background-color: #001f3f; padding: 10px 20px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <h3 class="text-white mb-0"> offre d'emploi</h3>
+            </div>
+         </div>
+        
+        <style>
+            /* Style de base pour le menu */
+            .navbar {
+                position: relative;
+                z-index: 1000;
+            }
+        
+            /* Style de base pour la div du profil */
+            #profileSection {
+                background-color: #001f3f;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                z-index: 999;
+                margin-top: 0;
+            }
+        
+
+            /* Ajustements pour les petits écrans */
+            @media (max-width: 768px) {
+                .navbar {
+                    padding-bottom: 0;
+                }
+        
+                #profileSection {
+                    margin-top: 0;
+                    padding-top: 10px;
+                }
+        
+                .profile-img {
+                    width: 50px;
+                    height: 50px;
+                }
+        
+                h5.text-white {
+                    font-size: 1rem;
+                }
+        
+                .exit {
+                    font-size: 0.9rem;
+                    padding: 5px 10px;
+                }
+            }
+        </style>
+
+<!-- Formulaire simplifié de publication d'offre d'emploi -->
+<div class="container py-5">
+    <h3 class="text-center mb-5"> Modifier mon offre </h3>
+    <form>
+        <!-- Informations sur l'entreprise (non modifiables) -->
+        <div class="row mb-4">
+            <div class="row g-3">
+                <!-- Nom de l'entreprise (non modifiable) -->
+                <div class="col-md-6">
+                    <label for="entreprise" class="form-label"><strong>Nom de l'entreprise</strong></label>
+                    <input type="text" class="form-control" id="entreprise" value="Nom Entreprise" readonly>
+                </div>
+                
+                <!-- Domaine d'activité (non modifiable) -->
+                <div class="col-md-6">
+                    <label for="domaine" class="form-label"><strong>Domaine d'activité</strong></label>
+                    <input type="text" class="form-control" id="domaine" value="Informatique" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations sur le poste -->
+        <div class="row mb-4">
+            <!-- Lieu -->
+            <div class="col-md-6">
+                <label for="lieu" class="form-label"><strong>Lieu</strong></label>
+                <input type="text" class="form-control" id="lieu" placeholder="Ville ou télétravail" required>
+            </div>
+            
+            <!-- Postes disponibles -->
+            <div class="col-md-6">
+                <label for="postes" class="form-label"><strong>Postes disponibles</strong></label>
+                <input type="text" class="form-control" id="postes" placeholder="Titre et nombre des postes" required>
+            </div>
+            
+            <!-- Expérience requise -->
+            <div class="col-12 mt-3">
+                <label for="experience" class="form-label"><strong>Expérience requise</strong></label>
+                <input type="text" class="form-control" id="experience" placeholder="Ex: 3 à 5 ans d'expérience" required>
+            </div>
+            
+            <!-- Diplôme requis -->
+            <div class="col-12 mt-3">
+                <label for="diplome" class="form-label"><strong>Diplôme requis</strong></label>
+                <input type="text" class="form-control" id="diplome" placeholder="Ex: Bac+5 en informatique" required>
+            </div>
+            
+            <!-- Rôles et responsabilités -->
+            <div class="col-12 mt-3">
+                <label for="roles" class="form-label"><strong>Rôles et responsabilités</strong></label>
+                <textarea class="form-control" id="roles" rows="6" placeholder="Décrivez les missions et responsabilités du poste..." required></textarea>
+            </div>
+        </div>
+
+        <!-- Boutons de soumission -->
+        <div class="text-center mt-4">
+            <a href="mes_offres.html">
+                <button type="submit" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-check me-2"></i>Valider
+                </button>
+            </a>
+            <button type="reset" class="btn btn-outline-secondary" style="background-color: gray; color: white;">
+                <i class="fas fa-eraser me-2"></i>Effacer
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+/* Style pour les champs en lecture seule */
+.form-control[readonly] {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+</style>
+
+     <!-- Footer  -->
+     <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+                    <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+                </div>
+
+                <!-- Stay Informed Section -->
+                <div class="col-md-6">
+                    <h4 class="text-white mb-3">Restez informés</h4>
+                    <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+                    <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container py-3">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

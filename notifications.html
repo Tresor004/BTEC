@@ -148,8 +148,8 @@
           <div class="navbar-nav ms-auto py-0">
               <a href="index.html" class="nav-item nav-link">Accueil</a>
               <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
-              <a href="offres.html" class="nav-item nav-link active">Offres</a>
-              <a href="cvtheque.html" class="nav-item nav-link ">CVthèque</a>
+              <a href="offres.html" class="nav-item nav-link ">Offres</a>
+              <a href="cvtheque.html" class="nav-item nav-link active">CVthèque</a>
               <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
               <a href="event.html" class="nav-item nav-link">BTEC Event</a>
               <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
@@ -389,9 +389,11 @@
                     <td class="py-3 align-middle">John Doe a postulé à votre offre "Développeur Full Stack"</td>
                     <td class="py-3 align-middle text-center">
                       <div class="btn-group btn-group-sm" role="group">
+                       <a href="detail_notif.html">
                         <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="1" style="color: black;">
                           <i class="fas fa-eye"></i>
                         </button>
+                       </a>
                         <button type="button" class="btn btn-outline-danger delete-btn" data-bs-toggle="tooltip" title="Supprimer" data-notif-id="1" style="color: black;">
                           <i class="fas fa-trash-alt"></i>
                         </button>
@@ -406,9 +408,11 @@
                     <td class="py-3 align-middle">Votre offre "Chef de Projet IT" a été mise à jour</td>
                     <td class="py-3 align-middle text-center">
                       <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="2" style="color: black;">
-                          <i class="fas fa-eye"></i>
-                        </button>
+                        <a href="detail_notif.html">
+                          <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="1" style="color: black;">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                         </a>
                         <button type="button" class="btn btn-outline-danger delete-btn" data-bs-toggle="tooltip" title="Supprimer" data-notif-id="2" style="color: black;">
                           <i class="fas fa-trash-alt"></i>
                         </button>
@@ -422,9 +426,11 @@
                     <td class="py-3 align-middle">Pensez à consulter les candidatures pour "Analyste Données"</td>
                     <td class="py-3 align-middle text-center">
                       <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="3" style="color: black;">
-                          <i class="fas fa-eye"></i>
-                        </button>
+                        <a href="detail_notif.html">
+                          <button type="button" class="btn btn-outline-primary view-btn" data-bs-toggle="tooltip" title="Consulter" data-notif-id="1" style="color: black;">
+                            <i class="fas fa-eye"></i>
+                          </button>
+                         </a>
                         <button type="button" class="btn btn-outline-danger delete-btn" data-bs-toggle="tooltip" title="Supprimer" data-notif-id="3" style="color: black;">
                           <i class="fas fa-trash-alt"></i>
                         </button>
@@ -473,7 +479,7 @@
           <p>Êtes-vous sûr de vouloir supprimer cette notification ?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Annuler</button>
           <button type="button" class="btn btn-danger" id="confirmDelete">Supprimer</button>
         </div>
       </div>

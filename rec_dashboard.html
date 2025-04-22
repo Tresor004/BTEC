@@ -246,8 +246,10 @@
 <div class="row mb-5 align-items-center">
     <!-- Photo de profil - Visible sur tous les écrans -->
     <div class="col-auto">
+       <a href="modifRec.html">
         <img src="assets/images/clients/c3.png" alt="Photo profil entreprise" 
-             class="rounded-circle profile-picture" style="width: 80px; height: 80px; object-fit: cover;">
+        class="rounded-circle profile-picture" style="width: 80px; height: 80px; object-fit: cover;">
+       </a>
     </div>
     
     <!-- Texte de bienvenue -->
@@ -283,12 +285,16 @@
                         <div class="menu-item">
                             <a href="notifications.html" style="color: gray;"><i class="fas fa-bell"></i> Alertes</a>
                         </div>
+                       <a href="mes_offres.html" style="color: gray;">
                         <div class="menu-item">
                             <i class="fas fa-file-alt"></i> Mes offres
                         </div>
-                        <div class="menu-item">
-                            <i class="fas fa-cog"></i> Paramètres
-                        </div>
+                       </a>
+                        <a href="modifRec.html" style="color: gray;">
+                            <div class="menu-item">
+                                <i class="fas fa-cog"></i> Paramètres
+                            </div>
+                        </a>
                     </div>
                     
                     <!-- Subscription Status -->
@@ -300,6 +306,11 @@
                             <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <p class="text-muted small">65% du mois écoulé</p>
+                        <div class="text-center mt-4">
+                            <a href="https://wa.me/22948552607?text=Bonjour.%20J'aimerais%20renouveler%20mon%20abonnement%20si%20possible."  style="width: 150px; color: #86B817;">
+                                Me réabonner
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -336,18 +347,21 @@
                     <div class="dashboard-card">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h5 class="card-title mb-0">Dernières candidatures</h5>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Voir tout</a>
+                            <a href="cvrecues.html" class="btn btn-sm btn-outline-primary">Voir tout</a>
                         </div>
                         
                         <ul class="candidate-list">
-                            <li class="candidate-item">
-                                <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
-                                <div class="candidate-info flex-grow-1">
-                                    <h5>Marie Dupont</h5>
-                                    <p>Postulé pour: Assistante Marketing</p>
-                                </div>
-                                <span class="status-badge badge-primary">Nouveau</span>
-                            </li>
+                            <a href="cv.html">
+                                <li class="candidate-item">
+                                    <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                    <div class="candidate-info flex-grow-1">
+                                        <h5>Marie Dupont</h5>
+                                        <p>Postulé pour: Assistante Marketing</p>
+                                    </div>
+                                    <span class="status-badge badge-primary">Nouveau</span>
+                                </li>
+                            </a>
+                           <a href="cv.html">
                             <li class="candidate-item">
                                 <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
                                 <div class="candidate-info flex-grow-1">
@@ -356,14 +370,17 @@
                                 </div>
                                 <span class="status-badge badge-success">Consulté</span>
                             </li>
-                            <li class="candidate-item">
-                                <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
-                                <div class="candidate-info flex-grow-1">
-                                    <h5>Sophie Lambert</h5>
-                                    <p>Postulé pour: Comptable</p>
-                                </div>
-                                <span class="status-badge badge-primary">Nouveau</span>
-                            </li>
+                           </a>
+                            <a href="cv.html">
+                                <li class="candidate-item">
+                                    <img src="img/contact.jpeg" alt="Candidate" class="candidate-img">
+                                    <div class="candidate-info flex-grow-1">
+                                        <h5>Sophie Lambert</h5>
+                                        <p>Postulé pour: Comptable</p>
+                                    </div>
+                                    <span class="status-badge badge-primary">Nouveau</span>
+                                </li>
+                            </a>
                         </ul>
                     </div>
                     
@@ -371,7 +388,7 @@
                     <div class="dashboard-card">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h5 class="card-title mb-0">Votre sélection de candidats</h5>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Voir tout</a>
+                            <a href="cvlist.html" class="btn btn-sm btn-outline-primary">Voir tout</a>
                         </div>
                         
                         <div class="row">
@@ -381,7 +398,7 @@
                                     <div class="candidate-info">
                                         <h5>Sylvie Loiseau</h5>
                                         <p>Esthéticienne - 15 ans d'expérience</p>
-                                        <a href="#" class="btn btn-sm btn-primary mt-2">Voir CV</a>
+                                        <a href="cv.html" class="btn btn-sm btn-primary mt-2">Voir CV</a>
                                     </div>
                                 </div>
                             </div>
@@ -391,7 +408,7 @@
                                     <div class="candidate-info">
                                         <h5>Thomas Leroy</h5>
                                         <p>Commercial - Secteur cosmétique</p>
-                                        <a href="#" class="btn btn-sm btn-primary mt-2">Voir CV</a>
+                                        <a href="cv.html" class="btn btn-sm btn-primary mt-2">Voir CV</a>
                                     </div>
                                 </div>
                             </div>
