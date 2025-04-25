@@ -243,31 +243,74 @@
         <!-- Dashboard Content -->
         <div class="container dashboard-container">
            <!-- Welcome Section -->
-<div class="row mb-5 align-items-center">
-    <!-- Photo de profil - Visible sur tous les écrans -->
-    <div class="col-auto">
-       <a href="modifRec.html">
-        <img src="assets/images/clients/c3.png" alt="Photo profil entreprise" 
-        class="rounded-circle profile-picture" style="width: 80px; height: 80px; object-fit: cover;">
-       </a>
-    </div>
-    
-    <!-- Texte de bienvenue -->
-    <div class="col">
-        <h1 class="welcome-message mb-1">Bienvenue, <span class="text-primary">Entreprise XYZ</span></h1>
-        <p class="text-muted mb-0">Gérez vos candidats et vos offres d'emploi en toute simplicité</p>
-    </div>
-</div>
-
-<style>
-    /* Adaptation pour mobile */
-    @media (max-width: 767.98px) {
-        .profile-picture {
-            width: 60px !important;
-            height: 60px !important;
-        }
-    }
-</style>
+           <div class="row mb-5 align-items-center">
+            <!-- Photo de profil - Visible sur tous les écrans -->
+            <div class="col-auto">
+               <a href="modifRec.html">
+                <img src="assets/images/clients/c3.png" alt="Photo profil entreprise" 
+                class="rounded-circle profile-picture" style="width: 80px; height: 80px; object-fit: cover;">
+               </a>
+            </div>
+            
+            <!-- Texte de bienvenue -->
+            <div class="col">
+                <h1 class="welcome-message mb-1">Bienvenue, <span class="text-primary">Entreprise XYZ</span></h1>
+                <p class="text-muted mb-0">Gérez vos candidats et vos offres d'emploi en toute simplicité</p>
+            </div>
+            
+            <!-- Bouton de déconnexion -->
+            <div class="col-auto">
+                <button class="btn btn-outline-danger" id="logoutBtn">Déconnexion</button>
+            </div>
+        </div>
+        
+        <!-- Pop-up de confirmation -->
+        <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirmation de déconnexion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Annuler</button>
+                        <button type="button" class="btn btn-danger" id="confirmLogout">Se déconnecter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            /* Adaptation pour mobile */
+            @media (max-width: 767.98px) {
+                .profile-picture {
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+            }
+        </style>
+        
+        <script>
+            // Script pour gérer la pop-up et la déconnexion
+            document.addEventListener('DOMContentLoaded', function() {
+                const logoutBtn = document.getElementById('logoutBtn');
+                const confirmLogout = document.getElementById('confirmLogout');
+                const logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
+                
+                logoutBtn.addEventListener('click', function() {
+                    logoutModal.show();
+                });
+                
+                confirmLogout.addEventListener('click', function() {
+                    // Ici vous pouvez ajouter la logique de déconnexion
+                    // Par exemple une redirection vers la page de déconnexion
+                    window.location.href = 'logout.html';
+                });
+            });
+        </script>
             
             <div class="row">
                 <!-- Dashboard Menu -->
@@ -290,7 +333,7 @@
                             <i class="fas fa-file-alt"></i> Mes offres
                         </div>
                        </a>
-                        <a href="modifRec.html" style="color: gray;">
+                        <a href="parametres.html" style="color: gray;">
                             <div class="menu-item">
                                 <i class="fas fa-cog"></i> Paramètres
                             </div>

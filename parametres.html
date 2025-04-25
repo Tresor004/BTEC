@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Entreprise - BTEC</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- External Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Bootstrap and Custom Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylecj.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            position: relative;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Profile Section */
+        #profileSection {
+            background-color: #001f3f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 999;
+        }
+        
+        #profileSection h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        /* Dashboard Content */
+        .dashboard-container {
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
+        
+        .welcome-message {
+            font-size: 28px;
+            font-weight: 700;
+            color: #001f3f;
+            margin-bottom: 15px;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #86B817;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: #001f3f;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .card-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #86B817;
+        }
+        
+        .dashboard-menu {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .menu-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f1f1f1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item:hover, .menu-item.active {
+            background-color: #f8f9fa;
+            border-left: 4px solid #86B817;
+        }
+        
+        .menu-item i {
+            margin-right: 10px;
+            color: #86B817;
+        }
+        
+        .candidate-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .candidate-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #f1f1f1;
+            transition: all 0.2s ease;
+        }
+        
+        .candidate-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .candidate-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .candidate-info h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .candidate-info p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .badge-primary {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .badge-success {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            background-color: #86B817;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .welcome-message {
+                font-size: 24px;
+            }
+            
+            #profileSection h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-message {
+                font-size: 22px;
+                text-align: center;
+            }
+            
+            #profileSection h3 {
+                font-size: 1.1rem;
+            }
+            
+            .dashboard-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid position-relative p-0">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="text-primary m-0">BTEC Bénin</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">Qui sommes-nous ?</a>
+                    <a href="offres.html" class="nav-item nav-link ">Offres</a>
+                    <a href="cvtheque.html" class="nav-item nav-link active">CVthèque</a>
+                    <a href="pcjeb.html" class="nav-item nav-link">Projet CJEB</a>
+                    <a href="btec_event/index.html" class="nav-item nav-link">BTEC Event</a>
+                    <a href="contact.html" class="nav-item nav-link">Contactez-Nous</a>
+                </div>
+                <a href="etickets.html" class="btn btn-primary rounded-pill py-2 px-4" target="_blank">E-tickets</a>
+            </div>
+        </nav>
+        
+       <!-- Profile Section -->
+<div id="profileSection">
+    <div class="d-flex align-items-center justify-content-center w-100">
+        <h3 class="text-white mb-0">PARAMÈTRES DE L'ENTREPRISE</h3>
+    </div>
+</div>
+
+<!-- Dashboard Content -->
+<div class="container dashboard-container">
+    <!-- Welcome Section -->
+    <div class="row mb-5 align-items-center">  
+        <!-- Texte de bienvenue -->
+        <div class="col">
+            <h1 class="welcome-message mb-1">Paramètres de <span class="text-primary">Entreprise XYZ</span></h1>
+            <p class="text-muted mb-0">Gérez les informations et préférences de votre compte</p>
+        </div>
+    </div>
+    
+    <style>
+        /* Adaptation pour mobile */
+        @media (max-width: 767.98px) {
+            .profile-picture {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            .settings-section {
+                padding: 15px !important;
+            }
+        }
+        
+        .settings-section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .settings-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-label {
+            font-weight: 600;
+        }
+        
+        .payment-history {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .payment-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .payment-item:last-child {
+            border-bottom: none;
+        }
+        
+        .status-badge {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-active {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .badge-expired {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .cover-photo {
+            height: 150px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .cover-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-upload {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .logo-upload img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-upload input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .danger-zone {
+            border: 1px solid #f8d7da;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff9fa;
+        }
+    </style>
+    
+    <div class="row">
+        <!-- Dashboard Menu -->
+        <div class="col-lg-3">
+            <div class="dashboard-menu">
+                <div class="menu-item" >
+                   <a href="rec_dashboard.html"style="color: gray;"> <i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+                </div>
+                <div class="menu-item">
+                   <a href="cvlist.html" style="color: gray;"> <i class="fas fa-heart"></i> Ma sélection</a>
+                </div>
+                <div class="menu-item">
+                    <a href="cvrecues.html" style="color: gray;"><i class="fas fa-users"></i> Candidatures</a>
+                </div>
+                <div class="menu-item">
+                    <a href="notifications.html" style="color: gray;"><i class="fas fa-bell"></i> Alertes</a>
+                </div>
+                <a href="mes_offres.html" style="color: gray;">
+                    <div class="menu-item">
+                        <i class="fas fa-file-alt"></i> Mes offres
+                    </div>
+                </a>
+                <div class="menu-item active">
+                    <a href="modifRec.html"><i class="fas fa-cog"></i> Paramètres</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Profil de l'entreprise -->
+            <div class="settings-section">
+                <h2><i class="fas fa-building me-2"></i>Profil de l'entreprise</h2>
+                
+                <!-- Photo de couverture et logo -->
+                <div class="cover-photo">
+                    <img src="assets/images/explore/e4.jpg" alt="Photo de couverture" id="coverPreview">
+                </div>
+                <button class="btn btn-sm btn-outline-secondary mb-4" id="changeCover" style="color: #86B817; background-color: white; border: 2px solid #86B817;">Changer la photo de couverture</button>
+                
+                <div class="logo-upload">
+                    <img src="assets/images/clients/c3.png" alt="Logo entreprise" id="logoPreview">
+                    <input type="file" id="logoUpload" accept="image/*">
+                </div>
+                
+                <!-- Formulaire d'informations -->
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="companyName" class="form-label">Nom de l'entreprise</label>
+                            <input type="text" class="form-control" id="companyName" value="Entreprise XYZ">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="website" class="form-label">Site web</label>
+                            <input type="url" class="form-control" id="website" value="www.entreprisexyz.com">
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="address" class="form-label">Adresse</label>
+                            <input type="text" class="form-control" id="address" value="123 Rue des Entreprises, Paris">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control" id="phone" value="+33 1 23 45 67 89">
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" value="contact@entreprisexyz.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="sector" class="form-label">Secteur d'activité</label>
+                            <select class="form-select" id="sector">
+                                <option>Technologie</option>
+                                <option selected>Conseil</option>
+                                <option>Finance</option>
+                                <option>Santé</option>
+                                <option>Industrie</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description de l'entreprise</label>
+                            <textarea class="form-control" id="description" rows="4">Entreprise XYZ est un leader dans le domaine du conseil en management avec plus de 15 ans d'expérience. Nous accompagnons nos clients dans leur transformation digitale et organisationnelle.</textarea>
+                    </div>
+                    
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Abonnement et facturation -->
+            <div class="settings-section">
+                <h2><i class="fas fa-credit-card me-2"></i>Abonnement et facturation</h2>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <p><strong>Type d'abonnement:</strong> Premium</p>
+                        <p><strong>Date de début:</strong> 15/06/2023</p>
+                        <p><strong>Date de fin:</strong> 15/12/2023</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Statut du paiement:</strong> <span class="status-badge badge-active">Actif</span></p>
+                        <p><strong>Renouvellement automatique:</strong> Oui</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="autoRenewal" checked>
+                            <label class="form-check-label" for="autoRenewal">Activer le renouvellement automatique</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <h5 class="mb-3">Historique des paiements</h5>
+                <div class="payment-history">
+                    <div class="payment-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Abonnement Premium</strong>
+                                <p class="mb-0 small text-muted">15/06/2023 - Paiement #INV-78945</p>
+                            </div>
+                            <div class="text-end">
+                                <p class="mb-0">299,99 €</p>
+                                <a href="#" class="small">Télécharger la facture</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Abonnement Standard</strong>
+                                <p class="mb-0 small text-muted">15/12/2022 - Paiement #INV-65432</p>
+                            </div>
+                            <div class="text-end">
+                                <p class="mb-0">199,99 €</p>
+                                <a href="#" class="small">Télécharger la facture</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Abonnement Standard</strong>
+                                <p class="mb-0 small text-muted">15/06/2022 - Paiement #INV-54321</p>
+                            </div>
+                            <div class="text-end">
+                                <p class="mb-0">199,99 €</p>
+                                <a href="#" class="small">Télécharger la facture</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="https://wa.me/22948552607?text=Bonjour.%20J'aimerais%20renouveler%20mon%20abonnement%20si%20possible." class="btn btn-primary" style="background-color: #86B817; border: none;">
+                        <i class="fas fa-sync-alt me-2"></i>Renouveler mon abonnement
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sécurité du compte -->
+            <div class="settings-section">
+                <h2><i class="fas fa-shield-alt me-2"></i>Sécurité du compte</h2>
+                
+                <div class="mb-4">
+                    <label class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" value="entreprise_xyz" readonly>
+                    <small class="text-muted">Vous ne pouvez pas modifier votre nom d'utilisateur</small>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Changer le mot de passe</label>
+                    <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#changePasswordModal" style="background-color: white; color: #86B817;">
+                        Cliquez ici pour changer votre mot de passe
+                    </button>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="recoveryEmail" class="form-label">Adresse email de récupération</label>
+                    <input type="email" class="form-control" id="recoveryEmail" value="admin@entreprisexyz.com">
+                    <small class="text-muted">Cette adresse sera utilisée pour récupérer votre compte en cas de problème</small>
+                </div>
+                
+                <div>
+                    <button class="btn btn-outline-danger">
+                        <i class="fas fa-sign-out-alt me-2"></i>Déconnexion de tous les appareils
+                    </button>
+                    <small class="text-muted d-block mt-2">Cette action déconnectera votre compte sur tous les appareils où il est actuellement connecté</small>
+                </div>
+            </div>
+            
+            <!-- Notifications -->
+            <div class="settings-section">
+                <h2><i class="fas fa-bell me-2"></i>Préférences de notifications</h2>
+                
+                <h5 class="mt-4 mb-3">Types de notifications</h5>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="newApplications" checked>
+                    <label class="form-check-label" for="newApplications">Nouvelles candidatures</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="interviewReminders" checked>
+                    <label class="form-check-label" for="interviewReminders">Rappels d'entretien</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="subscriptionAlerts" checked>
+                    <label class="form-check-label" for="subscriptionAlerts">Alertes de renouvellement d'abonnement</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="platformMessages" checked>
+                    <label class="form-check-label" for="platformMessages">Messages de la plateforme</label>
+                </div>
+                
+                <h5 class="mt-4 mb-3">Canaux de notification</h5>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="emailChannel" checked>
+                    <label class="form-check-label" for="emailChannel">Email</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="smsChannel">
+                    <label class="form-check-label" for="smsChannel">SMS</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="inAppChannel" checked>
+                    <label class="form-check-label" for="inAppChannel">Notification in-app</label>
+                </div>
+                
+                <div class="text-end mt-3">
+                    <button type="button" class="btn btn-primary">Enregistrer les préférences</button>
+                </div>
+            </div>
+            
+            <!-- Suppression ou désactivation du compte -->
+            <div class="settings-section danger-zone">
+                <h2><i class="fas fa-exclamation-triangle me-2"></i>Suppression ou désactivation du compte</h2>
+                
+                <div class="alert alert-warning">
+                    <strong>Attention :</strong> Ces actions sont irréversibles ou peuvent entraîner la perte de données.
+                </div>
+                
+                <div class="mb-4">
+                    <h5>Désactiver temporairement le compte</h5>
+                    <p class="text-muted">Votre compte sera masqué mais pas supprimé. Vous pourrez le réactiver à tout moment.</p>
+                    <button class="btn btn-outline-warning" style="color: gray;">
+                        <strong><i class="fas fa-pause me-2"></i>Désactiver mon compte</strong>
+                    </button>
+                </div>
+                
+                <div class="mb-4">
+                    <h5>Supprimer définitivement le compte</h5>
+                    <p class="text-muted">Toutes vos données seront supprimées de manière permanente et irréversible.</p>
+                    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                        <i class="fas fa-trash-alt me-2"></i>Supprimer mon compte
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Changer mot de passe -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Changer le mot de passe</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label">Mot de passe actuel</label>
+                        <input type="password" class="form-control" id="currentPassword">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">Nouveau mot de passe</label>
+                        <input type="password" class="form-control" id="newPassword">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirmer le nouveau mot de passe</label>
+                        <input type="password" class="form-control" id="confirmPassword">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Annuler</button>
+                <button type="button" class="btn btn-primary">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Suppression compte -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmer la suppression du compte</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <strong>Attention :</strong> Cette action est irréversible. Toutes vos données (offres, candidatures, etc.) seront définitivement supprimées.
+                </div>
+                <p>Pour confirmer, veuillez saisir votre mot de passe :</p>
+                <input type="password" class="form-control" placeholder="Votre mot de passe">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Annuler</button>
+                <button type="button" class="btn btn-danger">Supprimer définitivement</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Script pour prévisualiser les images uploadées
+    document.addEventListener('DOMContentLoaded', function() {
+        // Logo upload
+        const logoUpload = document.getElementById('logoUpload');
+        const logoPreview = document.getElementById('logoPreview');
+        
+        logoUpload.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    logoPreview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Cover photo change
+        const changeCover = document.getElementById('changeCover');
+        const coverPreview = document.getElementById('coverPreview');
+        
+        changeCover.addEventListener('click', function(e) {
+            e.preventDefault();
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        coverPreview.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+    });
+</script>
+
+        <!-- Footer -->
+        <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Section -->
+                    <div class="col-md-6">
+                        <h4 class="text-white mb-3">Contact</h4>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Mènontin, Cotonou</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+229 0161124302</p>
+                        <p><i class="fa fa-envelope me-3"></i>Bteco@example.com</p>
+                    </div>
+
+                    <!-- Stay Informed Section -->
+                    <div class="col-md-6">
+                        <h4 class="text-white mb-3">Restez informés</h4>
+                        <p>Connectez-vous pour profiter encore de plus de nos services.</p>
+                        <a href="connexionCan.html" class="btn btn-primary">Devenir entrepreneur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container py-3">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <p>&copy; <a href="#" class="text-black">BEST TECHNOLOGY CORPORATION</a>, Tous droits réservés. Conçu par TDEV</p>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        <!-- Back to Top Button -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </div>
+</body>
+</html>
