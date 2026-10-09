@@ -1,59 +1,55 @@
-# Btec
+# BTEC – BEST TECHNOLOGY CORPORATION
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+Site web de **BTEC Bénin**, entreprise basée à Cotonou (Mènontin), qui propose
+recrutement, CVthèque, formations, communication, événementiel et services digitaux.
 
-## Development server
+Le dépôt regroupe plusieurs espaces, écrits en HTML/CSS/JavaScript statiques
+(Bootstrap 5) :
 
-To start a local development server, run:
+| Espace | Dossier / fichiers | Description |
+|---|---|---|
+| Site vitrine | `index.html`, `about.html`, `offres.html`, `cvtheque.html`, `pcjeb.html`, `event.html`, `contact.html` | Pages publiques et navigation principale. |
+| Candidat / recruteur | `connexionCan.html`, `connexionRec.html`, `candidat.html`, `recruteur.html`, `can_dashboard.html`, `rec_dashboard.html`, `cv.html`, `formulaire_cv.html`, `parametres*.html`… | Tableaux de bord et formulaires (maquettes). |
+| Projet CJEB | `pcjeb.html`, `connexion_cjeb.html`, `cjeb_bord.html` | Espace du projet CJEB. |
+| BTEC Event | `btec_event/` | Billetterie, vote, profils. |
+| Hôtesses | `hotesse/` | Catalogue et profils d'hôtesses. |
+| Administration | `Admin/` | Back-office (template Bootstrap « Portal »). |
+| Ressources | `css/`, `js/`, `img/`, `assets/`, `lib/` | Feuilles de style, scripts, images et bibliothèques. |
 
-```bash
-ng serve
-```
+> **État actuel** : il s'agit d'un prototype front-end. Les formulaires de
+> connexion, d'inscription et de contact ne sont pas encore reliés à un serveur,
+> et l'espace d'administration n'est pas protégé par une authentification.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Lancer le site en local
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Aucune installation n'est nécessaire. Il suffit de servir le dossier avec un
+serveur HTTP statique (les pages utilisent des chemins relatifs) :
 
 ```bash
-ng build
+python3 -m http.server 8000
+# puis ouvrir http://localhost:8000/
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Les bibliothèques externes (jQuery, Bootstrap JS, FontAwesome, Google Fonts)
+sont chargées depuis un CDN : une connexion internet est nécessaire.
 
-## Running unit tests
+## Structure
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- `*.html` à la racine : pages du site vitrine et des espaces utilisateurs.
+- `css/style.css` : feuille de style principale du site.
+- `js/main.js` : scripts communs (spinner, navbar collante, bouton « retour en haut »).
+- `img/` : images du site (optimisées en 1920 px maximum).
+- `assets/logo/favicon.png` : icône du site.
+- `lib/` : WOW.js, Owl Carousel, Animate.css, Tempus Dominus…
 
-```bash
-ng test
-```
+## Projet Angular (inutilisé)
 
-## Running end-to-end tests
+Le dossier `src/` contient un squelette Angular 19 (SSR) généré par défaut. Il
+n'est pas utilisé par le site actuel. Il peut être supprimé ou remplacé lorsque
+la stratégie technique sera décidée.
 
-For end-to-end (e2e) testing, run:
+## Contribuer
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Travailler sur une branche dédiée, jamais directement sur `main`.
+2. Vérifier les liens internes et l'affichage sur mobile avant de proposer une modification.
+3. Optimiser les nouvelles images (largeur ≤ 1920 px, JPEG ≈ 80 %) avant de les ajouter.
